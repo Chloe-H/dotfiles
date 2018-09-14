@@ -25,3 +25,4 @@ I don't know whether it's possible to stow these things or how to do it, so **do
 - Remove all this bs from Google Drive once it's shown to work smoothly using `stow`
 - Add links to helpful pages for each configuration
 - Try to automate stowing
+- Maintain separate branches for different machines
