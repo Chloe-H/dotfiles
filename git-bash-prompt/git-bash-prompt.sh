@@ -51,13 +51,13 @@ git_color() {
     local staged=$([[ $1 =~ \+ ]] && echo yes)
     local dirty=$([[ $1 =~ [*\?] ]] && echo yes)
     if [[ -n $staged ]] && [[ -n $dirty ]]; then
-        echo -e '\033[1;35m'  # bold magenta
+        echo -e '\033[1;93m'  # bold yellow
     elif [[ -n $staged ]]; then
-        echo -e '\033[1;32m'  # bold green
+        echo -e '\033[1;92m'  # bold light green
     elif [[ -n $dirty ]]; then
-        echo -e '\033[1;36m'  # bold cyan
+        echo -e '\033[1;91m'  # bold light red
     else
-        echo -e '\033[1;37m'  # bold white
+        echo -e '\033[1;97m'  # bold white
     fi
 }
 
@@ -77,7 +77,7 @@ git_prompt() {
 # Sample prompt declaration based off of the default Ubuntu 14.04.1 color
 # prompt. Tweak as you see fit, or just stick "$(git_prompt)" into your
 # favorite prompt.
-PS1='\[\033[1;36m\][\D{%F %T}] $debian_chroot\[\033[01;30m\]\u@\h\[\033[00m\]:\[\033[01;33m\]\w $(git_prompt)\[\033[1;00m\]\n\$ '
+PS1='\[\033[1;36m\][\D{%F %T}] $debian_chroot\[\033[01;30m\]\u@\h\[\033[00m\]:\[\033[01;32m\]\w $(git_prompt)\[\033[1;00m\]\n\$ '
 
 # Do the virtualenv stuff
 if [ -z "${VIRTUAL_ENV_DISABLE_PROMPT-}" ] ; then
