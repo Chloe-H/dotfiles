@@ -1,0 +1,7 @@
+Section "InputClass"
+    Identifier "libinput"
+    Driver "libinput"
+    MatchDevicePath "/dev/input/event*"
+    MatchIsTouchpad "true"
+    Option "PalmDetection" "True"
+EndSection
