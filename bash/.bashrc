@@ -61,7 +61,7 @@ source ~/.git-bash-prompt.sh
 
 if [ "$color_prompt" = yes ]; then
     # My modified PS1 string (CEH)
-    PS1='\[\033[1;37m\][\D{%F %T}] $debian_chroot\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;95m\]\w $(git_prompt)\[\033[1;00m\]\n\$'
+    PS1='\[\033[1;37m\][\D{%F %T}] $debian_chroot\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;95m\]\w $(git_prompt)\[\033[1;00m\]\n\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
