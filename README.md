@@ -21,5 +21,5 @@ I don't know whether it's possible to stow these things or how to do it, so **do
 ## To Do
 
 - Remove all this bs from Google Drive once it's shown to work smoothly using `stow`
-- Add `gpom` alias to `.bashrc`
 - Add links to helpful pages for each configuration
+- Try to automate stowing
