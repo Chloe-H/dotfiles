@@ -56,8 +56,12 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+# Git prompt (CEH)
+source ~/.git-bash-prompt.sh
+
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    # Channell's PS1 string (CEH)
+    PS1='\[\033[1;36m\][\D{%F %T}] $debian_chroot\[\033[01;30m\]\u@\h\[\033[00m\]:\[\033[01;33m\]\w $(git_prompt)\[\033[1;00m\]\n\$'
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
