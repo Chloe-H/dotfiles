@@ -7,6 +7,8 @@ Navigate to repository's directory, then `stow {directory}` to symlink configura
 
 ## Caveats
 
-DO NOT stow `touchpad`: it belongs in `/etc`, and I haven't figured out whether it's even possible to stow that, much less how to do it.
+I don't know whether it's possible to stow these things or how to do it, so **do not** use `stow` on them:
 
-DO NOT stow `ckb-next` because it's just a screenshot of my favorite configuration. Same situation as with `touchpad`.
+- `touchpad`: it belongs in `/etc`
+- `ckb-next` it's just a screenshot of my favorite configuration
+- `compiz-config`: it's just a backup of my configurations
