@@ -12,6 +12,8 @@ When you change the gestures, use `libinput-gestures-setup restart` to load them
 
 ## Caveats
 
+I've only tried this on Ubuntu 16.04, and I don't know what I'm doing.
+
 I don't know whether it's possible to stow these things or how to do it, so **do not** use `stow` on them:
 
 - `touchpad`: it belongs in `/etc`
