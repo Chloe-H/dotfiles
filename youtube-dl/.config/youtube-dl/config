@@ -1,0 +1,12 @@
+
+# Lines starting with # are comments
+
+# Old save location:
+# -o /mnt/c/Users/chend/Videos/youtube-dl/%(title)s.%(ext)s
+
+# New save location (folder in Google Drive)
+-o /mnt/c/Users/chend/Google\ Drive/Videos/New\ \(To\ Be\ Sorted\)/%(title)s.%(ext)s
+
+# Download all of the available subtitles of the video
+--all-subs
+
