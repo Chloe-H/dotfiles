@@ -13,6 +13,8 @@ When you change the gestures, use `libinput-gestures-setup restart` to load them
 
 ### git-commit-hooks
 
+**Copy, don't symlink**
+
 On Linux, run `chmod +x ~/.git-templates/hooks/prepare-commit-msg` to make
 the script executable before running the command above.
 
@@ -34,6 +36,7 @@ I've only tried this on Ubuntu 16.04, and I don't know what I'm doing.
 
 I don't know whether it's possible to stow these things or how to do it, so **do not** use `stow` on them:
 
+- `git-commit-hooks`: doesn't seem to appreciate being symlinked
 - `touchpad`: it belongs in `/etc`
 - `ckb-next` it's just a screenshot of my favorite configuration
 - `compiz-config`: it's just a backup of my configurations
