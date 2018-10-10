@@ -47,3 +47,9 @@ I don't know whether it's possible to stow these things or how to do it, so **do
 - Add links to helpful pages for each configuration
 - Try to automate stowing
 - Maintain separate branches for different machines
+- Try to resolve the caveats
+    - Check out
+    [this](https://stackoverflow.com/questions/4592838/symbolic-link-to-a-hook-in-git)
+    to see whether there is a solution for the `git-commit-hook` symlink
+    nonsense
+
