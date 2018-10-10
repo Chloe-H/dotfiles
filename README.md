@@ -17,7 +17,7 @@ On Linux, run `chmod +x ~/.git-templates/hooks/prepare-commit-msg` to make
 the script executable before running the command above.
 
 Open Powershell or bash and enter
-`git config --global init.templatedir "~/.git-templates`.
+`git config --global init.templatedir "~/.git-templates"`.
 
 Any repositories cloned after this setup should automatically be configured to
 execute the commit hook. To use the commit hook in repositories you cloned before
