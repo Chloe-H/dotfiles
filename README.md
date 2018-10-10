@@ -5,13 +5,13 @@
 Navigate to repository's directory, then `stow {directory}` to symlink configurations.
 
 
-## libinput-gestures
+## Additional Setup/Information
+
+### libinput-gestures
 
 When you change the gestures, use `libinput-gestures-setup restart` to load them.
 
-## git-commit-hooks
-
-### Additional Setup
+### git-commit-hooks
 
 On Linux, run `chmod +x ~/.git-templates/hooks/prepare-commit-msg` to make
 the script executable before running the command above.
