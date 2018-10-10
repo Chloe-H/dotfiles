@@ -126,3 +126,4 @@ export NVM_DIR="$HOME/.nvm"
 
 # CEH
 alias gpom='git push origin master'
+alias gpo='git push origin'
