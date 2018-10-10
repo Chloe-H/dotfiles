@@ -9,6 +9,26 @@ Navigate to repository's directory, then `stow {directory}` to symlink configura
 
 When you change the gestures, use `libinput-gestures-setup restart` to load them.
 
+## git-commit-hooks
+
+### Additional Setup
+
+On Linux, run `chmod +x ~/.git-templates/hooks/prepare-commit-msg` to make
+the script executable before running the command above
+
+Open Powershell or bash and enter
+`git config --global init.templatedir "~/.git-templates`
+
+Any repositories cloned after this setup should automatically be configured to
+execute the commit hook. To use the commit hook in repositories you cloned before
+setting up the hook, navigate to their containing directories and run `git init`.
+
+You can test that the commit hook is working by creating a new branch and
+adding a commit to it. If the hook is working, the commit message should look
+like
+
+`[branch_name] Commit message`
+
 
 ## Caveats
 
