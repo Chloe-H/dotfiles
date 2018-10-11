@@ -15,6 +15,8 @@ When you change the gestures, use `libinput-gestures-setup restart` to load them
 
 **Copy, don't symlink**
 
+`cp git-commit-hooks/.git-templates/hooks/prepare-commit-msg ~/.git-templates/hooks/prepare-commit-msg`
+
 On Linux, run `chmod +x ~/.git-templates/hooks/prepare-commit-msg` to make
 the script executable before running the command above.
 
