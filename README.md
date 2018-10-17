@@ -34,7 +34,9 @@ like `[branch_name] Commit message`.
 
 I've only tried this on Ubuntu 16.04, and I don't know what I'm doing.
 
-I don't know whether it's possible to stow these things or how to do it, so **do not** use `stow` on them:
+I know there is a flag that will let me correctly stow these, but I haven't yet
+bothered to figure out what it is and document it, so **do not** use `stow` on
+them for now:
 
 - `git-commit-hooks`: doesn't seem to appreciate being symlinked
 - `touchpad`: it belongs in `/etc`
@@ -45,7 +47,6 @@ I don't know whether it's possible to stow these things or how to do it, so **do
 
 - Remove all this bs from Google Drive once it's shown to work smoothly using `stow`
 - Add links to helpful pages for each configuration
-- Try to automate stowing
 - Maintain separate branches for different machines
 - Try to resolve the caveats
     - Check out
