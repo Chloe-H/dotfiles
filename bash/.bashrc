@@ -124,6 +124,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# CEH
+# Useful git  aliases (CEH)
 alias gpom='git push origin master'
 alias gpo='git push origin'
+
+# Disable XON/XOFF so I can use <C-s> to search forward through command history (CEH)
+stty -ixon
