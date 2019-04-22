@@ -59,7 +59,6 @@ I had to run the following commands to fix the issue:
 
 - Add a script or something for git exclude files
 - Add Vim setup as a submodule
-- Remove all this BS from Google Drive once it's shown to work smoothly using `stow`
 - Add links to helpful pages for each configuration
 - Try to resolve the caveats
     - Check out
