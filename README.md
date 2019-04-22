@@ -45,7 +45,7 @@ like `[branch_name] Commit message`.
 
 ### SSH
 
-After stowing the config file, I got a message from git saying "Bad owner or permissions on <config file>".
+After stowing the config file, I got a message from git saying "Bad owner or permissions on ~/.ssh/config".
 I had to run the following commands to fix the issue:
 
 `chown $USER ~/.ssh/config`
