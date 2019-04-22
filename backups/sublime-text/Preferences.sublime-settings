@@ -1,0 +1,18 @@
+// located in C:\Users\%USER%\AppData\Roaming\Sublime Text 2\Packages\User\Preferences.sublime-settings
+
+{
+    "auto_complete_commit_on_tab": true,
+    "close_windows_when_empty": true,
+    "font_size": 10,
+    "rulers":
+    [
+        120,
+        100
+    ],
+    "save_on_focus_lost": true,
+    "spell_check": false,
+    "tab-size": 4,
+    "translate_tabs_to_spaces": true,
+    "wrap_width": 120, // set to 0 to wrap on the border of the window
+    "ignored_packages": []
+}
