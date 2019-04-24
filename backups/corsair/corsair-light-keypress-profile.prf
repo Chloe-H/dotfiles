@@ -1,0 +1,2456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExportedEverything>
+ <profiles>
+  <profile version="5">
+   <name>Default</name>
+   <id>{11500637-c30f-4ddc-9388-dbf69c8fac71}</id>
+   <note></note>
+   <programLink></programLink>
+   <script>{00000000-0000-0000-0000-000000000000}</script>
+   <OSD version="1">
+    <ModeShow>0</ModeShow>
+    <DpiShow>0</DpiShow>
+    <TimerShow>0</TimerShow>
+   </OSD>
+   <devices>
+    <device cookie="1" version="4">
+     <modelName>K70 LUX</modelName>
+     <is_xdevice_lighting_enabled>0</is_xdevice_lighting_enabled>
+     <modes>
+      <mode cookie="5" version="6">
+       <name>Default</name>
+       <buttonGroups>
+        <ButtonGroup version="1">
+         <Name>WASD</Name>
+         <Note></Note>
+         <Buttons>
+          <Button>S</Button>
+          <Button>A</Button>
+          <Button>W</Button>
+          <Button>D</Button>
+         </Buttons>
+         <InPredefinedState>true</InPredefinedState>
+        </ButtonGroup>
+        <ButtonGroup version="1">
+         <Name>All</Name>
+         <Note></Note>
+         <Buttons>
+          <Button>NonUsTilde</Button>
+          <Button>EqualsAndPlus</Button>
+          <Button>International1</Button>
+          <Button>Backspace</Button>
+          <Button>International3</Button>
+          <Button>End</Button>
+          <Button>Delete</Button>
+          <Button>RightShift</Button>
+          <Button>PageDown</Button>
+          <Button>UpArrow</Button>
+          <Button>RightCtrl</Button>
+          <Button>DownArrow</Button>
+          <Button>LeftArrow</Button>
+          <Button>Space</Button>
+          <Button>Lang2</Button>
+          <Button>International2</Button>
+          <Button>Lang1</Button>
+          <Button>RightGui</Button>
+          <Button>RightAlt</Button>
+          <Button>Application</Button>
+          <Button>F12</Button>
+          <Button>Brightness</Button>
+          <Button>ScrollLock</Button>
+          <Button>PrintScreen</Button>
+          <Button>Insert</Button>
+          <Button>PauseBreak</Button>
+          <Button>PageUp</Button>
+          <Button>Home</Button>
+          <Button>LeftShift</Button>
+          <Button>ApostropheAndDoubleQuote</Button>
+          <Button>Z</Button>
+          <Button>NonUsBackslash</Button>
+          <Button>C</Button>
+          <Button>X</Button>
+          <Button>B</Button>
+          <Button>V</Button>
+          <Button>M</Button>
+          <Button>N</Button>
+          <Button>PeriodAndBiggerThan</Button>
+          <Button>CommaAndLessThan</Button>
+          <Button>LeftCtrl</Button>
+          <Button>SlashAndQuestionMark</Button>
+          <Button>LeftAlt</Button>
+          <Button>LeftGui</Button>
+          <Button>I</Button>
+          <Button>U</Button>
+          <Button>P</Button>
+          <Button>O</Button>
+          <Button>CapsLock</Button>
+          <Button>BracketLeft</Button>
+          <Button>S</Button>
+          <Button>A</Button>
+          <Button>F</Button>
+          <Button>D</Button>
+          <Button>H</Button>
+          <Button>G</Button>
+          <Button>K</Button>
+          <Button>J</Button>
+          <Button>International5</Button>
+          <Button>SemicolonAndColon</Button>
+          <Button>L</Button>
+          <Button>4</Button>
+          <Button>International4</Button>
+          <Button>3</Button>
+          <Button>6</Button>
+          <Button>5</Button>
+          <Button>8</Button>
+          <Button>7</Button>
+          <Button>0</Button>
+          <Button>9</Button>
+          <Button>Tab</Button>
+          <Button>MinusAndUnderscore</Button>
+          <Button>W</Button>
+          <Button>Q</Button>
+          <Button>R</Button>
+          <Button>E</Button>
+          <Button>Y</Button>
+          <Button>T</Button>
+          <Button>Escape</Button>
+          <Button>F2</Button>
+          <Button>F1</Button>
+          <Button>F4</Button>
+          <Button>F3</Button>
+          <Button>F6</Button>
+          <Button>F5</Button>
+          <Button>F8</Button>
+          <Button>F7</Button>
+          <Button>F10</Button>
+          <Button>F9</Button>
+          <Button>GraveAccentAndTilde</Button>
+          <Button>F11</Button>
+          <Button>2</Button>
+          <Button>1</Button>
+          <Button>Keypad4</Button>
+          <Button>Keypad6</Button>
+          <Button>Keypad5</Button>
+          <Button>Keypad2</Button>
+          <Button>Keypad1</Button>
+          <Button>Keypad0</Button>
+          <Button>Keypad3</Button>
+          <Button>KeypadPeriodAndDelete</Button>
+          <Button>RightArrow</Button>
+          <Button>NumLock</Button>
+          <Button>ScanNextTrack</Button>
+          <Button>KeypadAsterisk</Button>
+          <Button>KeypadSlash</Button>
+          <Button>KeypadPlus</Button>
+          <Button>KeypadMinus</Button>
+          <Button>Keypad7</Button>
+          <Button>KeypadEnter</Button>
+          <Button>Keypad9</Button>
+          <Button>Keypad8</Button>
+          <Button>Backslash</Button>
+          <Button>BracketRight</Button>
+          <Button>Enter</Button>
+         </Buttons>
+         <InPredefinedState>true</InPredefinedState>
+        </ButtonGroup>
+        <ButtonGroup version="1">
+         <Name>Arrows</Name>
+         <Note></Note>
+         <Buttons>
+          <Button>UpArrow</Button>
+          <Button>DownArrow</Button>
+          <Button>LeftArrow</Button>
+          <Button>RightArrow</Button>
+         </Buttons>
+         <InPredefinedState>true</InPredefinedState>
+        </ButtonGroup>
+       </buttonGroups>
+       <id>{88fd59f0-ce37-47e8-ac39-7cdd955a4139}</id>
+       <note></note>
+       <script>{00000000-0000-0000-0000-000000000000}</script>
+       <skipped>0</skipped>
+       <currentPerformanceIndex>0</currentPerformanceIndex>
+       <performances>
+        <performance type="keyboard" version="1">
+         <brightnessLevelIndex>2</brightnessLevelIndex>
+         <winKey></winKey>
+        </performance>
+       </performances>
+       <clearedKeys/>
+       <assigments>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Keypad8"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Escape"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="M"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Backslash"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="J"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="RightAlt"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="0"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="PageUp"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="NumLock"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Q"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="NonUsBackslash"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="KeypadMinus"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="GraveAccentAndTilde"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="CapsLock"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="UpArrow"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Keypad2"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="D"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Lang2"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="KeypadPeriodAndDelete"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="6"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="ScrollLock"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Stop"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="F5"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="LeftGui"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="International3"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="F8"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="I"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="End"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Keypad4"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="7"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="PauseBreak"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="ScanPreviousTrack"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Y"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="B"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Keypad9"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="F1"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="CommaAndLessThan"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="NonUsTilde"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="K"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="RightGui"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="3"/>
+        <assigment action="{1d001c9f-f6f9-444e-91cc-0566fd281388}" key="Brightness"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="RightArrow"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="W"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Z"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="KeypadPlus"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="1"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="A"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="LeftArrow"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Keypad3"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="F"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Space"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="E"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="International5"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="X"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="KeypadEnter"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="F6"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="LeftAlt"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Backspace"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="F9"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="O"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="PageDown"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Keypad5"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="8"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Insert"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="PlayPause"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="MinusAndUnderscore"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="ApostropheAndDoubleQuote"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="KeypadSlash"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="F2"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="PeriodAndBiggerThan"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Enter"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="L"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Application"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="4"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="F12"/>
+        <assigment action="{c99e3439-5218-4334-ab48-ecaccaa14212}" key="WinLock"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="F3"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="SlashAndQuestionMark"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="International1"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="2"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="S"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="DownArrow"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Keypad0"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="G"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Lang1"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="R"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="International4"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="C"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Keypad7"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="N"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="BracketRight"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="F10"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="P"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="RightShift"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Keypad6"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="9"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Home"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="ScanNextTrack"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Tab"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="LeftShift"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="KeypadAsterisk"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="F11"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="BracketLeft"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="RightCtrl"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Keypad1"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="SemicolonAndColon"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="5"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="PrintScreen"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Mute"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="F4"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="LeftCtrl"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="EqualsAndPlus"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="F7"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="U"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Delete"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="H"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="International2"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="T"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="V"/>
+       </assigments>
+       <fgLightAssignments>
+        <fgLightAssignment fgLightAssignmentKey="WinLock" fgLightAssignmentValue="{902d5867-08a0-4821-9ba0-7337f2b70766}">
+         <ExecutionHints>
+          <StartOnPress>false</StartOnPress>
+          <StartWithMode>true</StartWithMode>
+          <StopOnPress>false</StopOnPress>
+          <StopOnRelease>false</StopOnRelease>
+         </ExecutionHints>
+        </fgLightAssignment>
+        <fgLightAssignment fgLightAssignmentKey="Brightness" fgLightAssignmentValue="{3777801e-5b75-409d-9a82-fe2092a7299c}">
+         <ExecutionHints>
+          <StartOnPress>false</StartOnPress>
+          <StartWithMode>true</StartWithMode>
+          <StopOnPress>false</StopOnPress>
+          <StopOnRelease>false</StopOnRelease>
+         </ExecutionHints>
+        </fgLightAssignment>
+       </fgLightAssignments>
+       <fgBasicLightAssignments>
+        <fgLightAssignment fgLightAssignmentKey="WinLock" fgLightAssignmentValue="{902d5867-08a0-4821-9ba0-7337f2b70766}">
+         <ExecutionHints>
+          <StartOnPress>false</StartOnPress>
+          <StartWithMode>true</StartWithMode>
+          <StopOnPress>false</StopOnPress>
+          <StopOnRelease>false</StopOnRelease>
+         </ExecutionHints>
+        </fgLightAssignment>
+        <fgLightAssignment fgLightAssignmentKey="Brightness" fgLightAssignmentValue="{3777801e-5b75-409d-9a82-fe2092a7299c}">
+         <ExecutionHints>
+          <StartOnPress>false</StartOnPress>
+          <StartWithMode>true</StartWithMode>
+          <StopOnPress>false</StopOnPress>
+          <StopOnRelease>false</StopOnRelease>
+         </ExecutionHints>
+        </fgLightAssignment>
+       </fgBasicLightAssignments>
+       <lightBackgrounds>
+        <groupBgLights>
+         <lightBackground groupName="All" color="#ff0000"/>
+        </groupBgLights>
+        <keyBgLights/>
+       </lightBackgrounds>
+       <basicLightBackgrounds>
+        <groupBgLights/>
+        <keyBgLights/>
+       </basicLightBackgrounds>
+       <disabledLightings/>
+       <groupsData>
+        <groupData groupName="WASD">
+         <groupLightingId>{6f98464c-b904-49a5-95c2-41d60f04fd91}</groupLightingId>
+         <ExecutionHints>
+          <StartOnPress>false</StartOnPress>
+          <StartWithMode>true</StartWithMode>
+          <StopOnPress>false</StopOnPress>
+          <StopOnRelease>false</StopOnRelease>
+         </ExecutionHints>
+        </groupData>
+        <groupData groupName="Arrows">
+         <groupLightingId>{6f98464c-b904-49a5-95c2-41d60f04fd91}</groupLightingId>
+         <ExecutionHints>
+          <StartOnPress>false</StartOnPress>
+          <StartWithMode>true</StartWithMode>
+          <StopOnPress>false</StopOnPress>
+          <StopOnRelease>false</StopOnRelease>
+         </ExecutionHints>
+        </groupData>
+       </groupsData>
+       <basicLightingsParameters>
+        <parameters basicLightingEffect="3">
+         <speed>0</speed>
+         <color>1</color>
+         <direction>0</direction>
+         <duration>2</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="8">
+         <speed>2</speed>
+         <color>0</color>
+         <direction>0</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="9">
+         <speed>2</speed>
+         <color>1</color>
+         <direction>0</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="10">
+         <speed>3</speed>
+         <color>0</color>
+         <direction>5</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="11">
+         <speed>2</speed>
+         <color>0</color>
+         <direction>2</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="4">
+         <speed>2</speed>
+         <color>1</color>
+         <direction>0</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="5">
+         <speed>2</speed>
+         <color>1</color>
+         <direction>0</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="6">
+         <speed>0</speed>
+         <color>0</color>
+         <direction>0</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="21">
+         <speed>3</speed>
+         <color>0</color>
+         <direction>5</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="7">
+         <speed>0</speed>
+         <color>2</color>
+         <direction>0</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="22">
+         <speed>0</speed>
+         <color>3</color>
+         <direction>3</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#51ff00</color>
+          <color order="2">#ff3300</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="0">
+         <speed>2</speed>
+         <color>0</color>
+         <direction>3</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="23">
+         <speed>0</speed>
+         <color>3</color>
+         <direction>3</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#51ff00</color>
+          <color order="2">#ff3300</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="1">
+         <speed>2</speed>
+         <color>1</color>
+         <direction>0</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="2">
+         <speed>2</speed>
+         <color>1</color>
+         <direction>3</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+       </basicLightingsParameters>
+       <currentLightingEffect>3</currentLightingEffect>
+       <isInAdvancedLightingMode>0</isInAdvancedLightingMode>
+       <lighting_zones>
+        <lighting_zone type="0" name="All">
+         <currentLightingEffect>5</currentLightingEffect>
+         <basicLightingsParameters>
+          <parameters basicLightingEffect="3">
+           <speed>0</speed>
+           <color>1</color>
+           <direction>0</direction>
+           <duration>2</duration>
+           <selectedColor>#ff0000</selectedColor>
+           <alternatingColors>
+            <color order="1">#ff0000</color>
+            <color order="2">#0000ff</color>
+           </alternatingColors>
+           <eqaliserPattern>1</eqaliserPattern>
+           <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+          </parameters>
+          <parameters basicLightingEffect="11">
+           <speed>2</speed>
+           <color>0</color>
+           <direction>2</direction>
+           <duration>0</duration>
+           <selectedColor>#ff0000</selectedColor>
+           <alternatingColors>
+            <color order="1">#ff0000</color>
+            <color order="2">#0000ff</color>
+           </alternatingColors>
+           <eqaliserPattern>1</eqaliserPattern>
+           <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+          </parameters>
+          <parameters basicLightingEffect="5">
+           <speed>2</speed>
+           <color>1</color>
+           <direction>0</direction>
+           <duration>0</duration>
+           <selectedColor>#ff0000</selectedColor>
+           <alternatingColors>
+            <color order="1">#ff0000</color>
+            <color order="2">#0000ff</color>
+           </alternatingColors>
+           <eqaliserPattern>1</eqaliserPattern>
+           <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+          </parameters>
+          <parameters basicLightingEffect="6">
+           <speed>0</speed>
+           <color>0</color>
+           <direction>0</direction>
+           <duration>0</duration>
+           <selectedColor>#ff0000</selectedColor>
+           <alternatingColors>
+            <color order="1">#ff0000</color>
+            <color order="2">#0000ff</color>
+           </alternatingColors>
+           <eqaliserPattern>1</eqaliserPattern>
+           <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+          </parameters>
+         </basicLightingsParameters>
+        </lighting_zone>
+       </lighting_zones>
+      </mode>
+     </modes>
+    </device>
+    <device cookie="1" version="4">
+     <modelName>K70 LUX RGB</modelName>
+     <is_xdevice_lighting_enabled>0</is_xdevice_lighting_enabled>
+     <modes>
+      <mode cookie="3" version="6">
+       <name>Default</name>
+       <buttonGroups>
+        <ButtonGroup version="1">
+         <Name>WASD</Name>
+         <Note></Note>
+         <Buttons>
+          <Button>S</Button>
+          <Button>A</Button>
+          <Button>W</Button>
+          <Button>D</Button>
+         </Buttons>
+         <InPredefinedState>true</InPredefinedState>
+        </ButtonGroup>
+        <ButtonGroup version="1">
+         <Name>All</Name>
+         <Note></Note>
+         <Buttons>
+          <Button>Application</Button>
+          <Button>RightGui</Button>
+          <Button>RightAlt</Button>
+          <Button>RightShift</Button>
+          <Button>PageDown</Button>
+          <Button>End</Button>
+          <Button>Delete</Button>
+          <Button>DownArrow</Button>
+          <Button>LeftArrow</Button>
+          <Button>UpArrow</Button>
+          <Button>RightCtrl</Button>
+          <Button>Enter</Button>
+          <Button>NonUsTilde</Button>
+          <Button>Backslash</Button>
+          <Button>BracketRight</Button>
+          <Button>Backspace</Button>
+          <Button>International3</Button>
+          <Button>EqualsAndPlus</Button>
+          <Button>International1</Button>
+          <Button>KeypadPlus</Button>
+          <Button>KeypadMinus</Button>
+          <Button>KeypadAsterisk</Button>
+          <Button>KeypadSlash</Button>
+          <Button>Keypad9</Button>
+          <Button>Keypad8</Button>
+          <Button>Keypad7</Button>
+          <Button>KeypadEnter</Button>
+          <Button>Stop</Button>
+          <Button>Mute</Button>
+          <Button>WinLock</Button>
+          <Button>RightArrow</Button>
+          <Button>NumLock</Button>
+          <Button>ScanNextTrack</Button>
+          <Button>PlayPause</Button>
+          <Button>ScanPreviousTrack</Button>
+          <Button>KeypadPeriodAndDelete</Button>
+          <Button>Keypad6</Button>
+          <Button>Keypad5</Button>
+          <Button>Keypad4</Button>
+          <Button>Keypad0</Button>
+          <Button>Keypad3</Button>
+          <Button>Keypad2</Button>
+          <Button>Keypad1</Button>
+          <Button>F10</Button>
+          <Button>F9</Button>
+          <Button>F8</Button>
+          <Button>F7</Button>
+          <Button>2</Button>
+          <Button>1</Button>
+          <Button>GraveAccentAndTilde</Button>
+          <Button>F11</Button>
+          <Button>F2</Button>
+          <Button>F1</Button>
+          <Button>Escape</Button>
+          <Button>F6</Button>
+          <Button>F5</Button>
+          <Button>F4</Button>
+          <Button>F3</Button>
+          <Button>W</Button>
+          <Button>Q</Button>
+          <Button>Tab</Button>
+          <Button>MinusAndUnderscore</Button>
+          <Button>Y</Button>
+          <Button>T</Button>
+          <Button>R</Button>
+          <Button>E</Button>
+          <Button>6</Button>
+          <Button>5</Button>
+          <Button>4</Button>
+          <Button>3</Button>
+          <Button>0</Button>
+          <Button>International4</Button>
+          <Button>9</Button>
+          <Button>International5</Button>
+          <Button>8</Button>
+          <Button>7</Button>
+          <Button>H</Button>
+          <Button>G</Button>
+          <Button>F</Button>
+          <Button>D</Button>
+          <Button>SemicolonAndColon</Button>
+          <Button>L</Button>
+          <Button>K</Button>
+          <Button>J</Button>
+          <Button>P</Button>
+          <Button>O</Button>
+          <Button>I</Button>
+          <Button>U</Button>
+          <Button>S</Button>
+          <Button>A</Button>
+          <Button>CapsLock</Button>
+          <Button>BracketLeft</Button>
+          <Button>PeriodAndBiggerThan</Button>
+          <Button>CommaAndLessThan</Button>
+          <Button>M</Button>
+          <Button>N</Button>
+          <Button>LeftAlt</Button>
+          <Button>LeftGui</Button>
+          <Button>LeftCtrl</Button>
+          <Button>SlashAndQuestionMark</Button>
+          <Button>Z</Button>
+          <Button>NonUsBackslash</Button>
+          <Button>LeftShift</Button>
+          <Button>ApostropheAndDoubleQuote</Button>
+          <Button>B</Button>
+          <Button>V</Button>
+          <Button>C</Button>
+          <Button>X</Button>
+          <Button>ScrollLock</Button>
+          <Button>PrintScreen</Button>
+          <Button>F12</Button>
+          <Button>Brightness</Button>
+          <Button>PageUp</Button>
+          <Button>Home</Button>
+          <Button>Insert</Button>
+          <Button>PauseBreak</Button>
+          <Button>International2</Button>
+          <Button>Lang1</Button>
+          <Button>Space</Button>
+          <Button>Lang2</Button>
+         </Buttons>
+         <InPredefinedState>true</InPredefinedState>
+        </ButtonGroup>
+        <ButtonGroup version="1">
+         <Name>Arrows</Name>
+         <Note></Note>
+         <Buttons>
+          <Button>DownArrow</Button>
+          <Button>LeftArrow</Button>
+          <Button>UpArrow</Button>
+          <Button>RightArrow</Button>
+         </Buttons>
+         <InPredefinedState>true</InPredefinedState>
+        </ButtonGroup>
+       </buttonGroups>
+       <id>{0095ef83-7b74-4884-a4af-1a513a701e4a}</id>
+       <note></note>
+       <script>{00000000-0000-0000-0000-000000000000}</script>
+       <skipped>0</skipped>
+       <currentPerformanceIndex>0</currentPerformanceIndex>
+       <performances>
+        <performance type="keyboard" version="1">
+         <brightnessLevelIndex>3</brightnessLevelIndex>
+         <winKey></winKey>
+        </performance>
+       </performances>
+       <clearedKeys/>
+       <assigments>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Keypad8"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Escape"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="M"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Backslash"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="J"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="RightAlt"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="0"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="PageUp"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="NumLock"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Q"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="NonUsBackslash"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="KeypadMinus"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="GraveAccentAndTilde"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="CapsLock"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="UpArrow"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Keypad2"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="D"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Lang2"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="KeypadPeriodAndDelete"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="6"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="ScrollLock"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Stop"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="F5"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="LeftGui"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="International3"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="F8"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="I"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="End"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Keypad4"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="7"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="PauseBreak"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="ScanPreviousTrack"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Y"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="B"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Keypad9"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="F1"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="CommaAndLessThan"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="NonUsTilde"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="K"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="RightGui"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="3"/>
+        <assigment action="{1d001c9f-f6f9-444e-91cc-0566fd281388}" key="Brightness"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="RightArrow"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="W"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Z"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="KeypadPlus"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="1"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="A"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="LeftArrow"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Keypad3"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="F"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Space"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="E"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="International5"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="X"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="KeypadEnter"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="F6"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="LeftAlt"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Backspace"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="F9"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="O"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="PageDown"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Keypad5"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="8"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Insert"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="PlayPause"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="MinusAndUnderscore"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="ApostropheAndDoubleQuote"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="KeypadSlash"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="F2"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="PeriodAndBiggerThan"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Enter"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="L"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Application"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="4"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="F12"/>
+        <assigment action="{c99e3439-5218-4334-ab48-ecaccaa14212}" key="WinLock"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="F3"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="SlashAndQuestionMark"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="International1"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="2"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="S"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="DownArrow"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Keypad0"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="G"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Lang1"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="R"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="International4"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="C"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Keypad7"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="N"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="BracketRight"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="F10"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="P"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="RightShift"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Keypad6"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="9"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Home"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="ScanNextTrack"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Tab"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="LeftShift"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="KeypadAsterisk"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="F11"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="BracketLeft"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="RightCtrl"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Keypad1"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="SemicolonAndColon"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="5"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="PrintScreen"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Mute"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="F4"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="LeftCtrl"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="EqualsAndPlus"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="F7"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="U"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Delete"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="H"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="International2"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="T"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="V"/>
+       </assigments>
+       <fgLightAssignments>
+        <fgLightAssignment fgLightAssignmentKey="WinLock" fgLightAssignmentValue="{502f64ec-fd23-4e1c-a632-0cf0bf7ad4be}">
+         <ExecutionHints>
+          <StartOnPress>false</StartOnPress>
+          <StartWithMode>true</StartWithMode>
+          <StopOnPress>false</StopOnPress>
+          <StopOnRelease>false</StopOnRelease>
+         </ExecutionHints>
+        </fgLightAssignment>
+        <fgLightAssignment fgLightAssignmentKey="Brightness" fgLightAssignmentValue="{3777801e-5b75-409d-9a82-fe2092a7299c}">
+         <ExecutionHints>
+          <StartOnPress>false</StartOnPress>
+          <StartWithMode>true</StartWithMode>
+          <StopOnPress>false</StopOnPress>
+          <StopOnRelease>false</StopOnRelease>
+         </ExecutionHints>
+        </fgLightAssignment>
+       </fgLightAssignments>
+       <fgBasicLightAssignments>
+        <fgLightAssignment fgLightAssignmentKey="WinLock" fgLightAssignmentValue="{502f64ec-fd23-4e1c-a632-0cf0bf7ad4be}">
+         <ExecutionHints>
+          <StartOnPress>false</StartOnPress>
+          <StartWithMode>true</StartWithMode>
+          <StopOnPress>false</StopOnPress>
+          <StopOnRelease>false</StopOnRelease>
+         </ExecutionHints>
+        </fgLightAssignment>
+        <fgLightAssignment fgLightAssignmentKey="Brightness" fgLightAssignmentValue="{3777801e-5b75-409d-9a82-fe2092a7299c}">
+         <ExecutionHints>
+          <StartOnPress>false</StartOnPress>
+          <StartWithMode>true</StartWithMode>
+          <StopOnPress>false</StopOnPress>
+          <StopOnRelease>false</StopOnRelease>
+         </ExecutionHints>
+        </fgLightAssignment>
+       </fgBasicLightAssignments>
+       <lightBackgrounds>
+        <groupBgLights>
+         <lightBackground groupName="All" color="#ff0000"/>
+        </groupBgLights>
+        <keyBgLights/>
+       </lightBackgrounds>
+       <basicLightBackgrounds>
+        <groupBgLights/>
+        <keyBgLights/>
+       </basicLightBackgrounds>
+       <disabledLightings/>
+       <groupsData>
+        <groupData groupName="WASD">
+         <groupLightingId>{235d4783-5af0-4db1-9a08-2718a1896d08}</groupLightingId>
+         <ExecutionHints>
+          <StartOnPress>false</StartOnPress>
+          <StartWithMode>true</StartWithMode>
+          <StopOnPress>false</StopOnPress>
+          <StopOnRelease>false</StopOnRelease>
+         </ExecutionHints>
+        </groupData>
+        <groupData groupName="Arrows">
+         <groupLightingId>{235d4783-5af0-4db1-9a08-2718a1896d08}</groupLightingId>
+         <ExecutionHints>
+          <StartOnPress>false</StartOnPress>
+          <StartWithMode>true</StartWithMode>
+          <StopOnPress>false</StopOnPress>
+          <StopOnRelease>false</StopOnRelease>
+         </ExecutionHints>
+        </groupData>
+       </groupsData>
+       <basicLightingsParameters>
+        <parameters basicLightingEffect="3">
+         <speed>0</speed>
+         <color>1</color>
+         <direction>0</direction>
+         <duration>2</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="8">
+         <speed>2</speed>
+         <color>0</color>
+         <direction>0</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="9">
+         <speed>2</speed>
+         <color>1</color>
+         <direction>0</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="10">
+         <speed>2</speed>
+         <color>1</color>
+         <direction>0</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="11">
+         <speed>2</speed>
+         <color>0</color>
+         <direction>2</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="4">
+         <speed>2</speed>
+         <color>1</color>
+         <direction>0</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="5">
+         <speed>2</speed>
+         <color>1</color>
+         <direction>0</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="6">
+         <speed>0</speed>
+         <color>0</color>
+         <direction>0</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="21">
+         <speed>3</speed>
+         <color>0</color>
+         <direction>5</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="7">
+         <speed>0</speed>
+         <color>2</color>
+         <direction>0</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="22">
+         <speed>0</speed>
+         <color>3</color>
+         <direction>3</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#51ff00</color>
+          <color order="2">#ff3300</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="0">
+         <speed>2</speed>
+         <color>0</color>
+         <direction>3</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="23">
+         <speed>0</speed>
+         <color>3</color>
+         <direction>3</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#51ff00</color>
+          <color order="2">#ff3300</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="1">
+         <speed>2</speed>
+         <color>1</color>
+         <direction>0</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="2">
+         <speed>2</speed>
+         <color>1</color>
+         <direction>3</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+       </basicLightingsParameters>
+       <currentLightingEffect>21</currentLightingEffect>
+       <isInAdvancedLightingMode>0</isInAdvancedLightingMode>
+       <lighting_zones>
+        <lighting_zone type="0" name="All">
+         <currentLightingEffect>0</currentLightingEffect>
+         <basicLightingsParameters>
+          <parameters basicLightingEffect="3">
+           <speed>0</speed>
+           <color>1</color>
+           <direction>0</direction>
+           <duration>2</duration>
+           <selectedColor>#ff0000</selectedColor>
+           <alternatingColors>
+            <color order="1">#ff0000</color>
+            <color order="2">#0000ff</color>
+           </alternatingColors>
+           <eqaliserPattern>1</eqaliserPattern>
+           <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+          </parameters>
+          <parameters basicLightingEffect="21">
+           <speed>3</speed>
+           <color>0</color>
+           <direction>5</direction>
+           <duration>0</duration>
+           <selectedColor>#ff0000</selectedColor>
+           <alternatingColors>
+            <color order="1">#ff0000</color>
+            <color order="2">#0000ff</color>
+           </alternatingColors>
+           <eqaliserPattern>1</eqaliserPattern>
+           <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+          </parameters>
+          <parameters basicLightingEffect="6">
+           <speed>0</speed>
+           <color>0</color>
+           <direction>0</direction>
+           <duration>0</duration>
+           <selectedColor>#ff0000</selectedColor>
+           <alternatingColors>
+            <color order="1">#ff0000</color>
+            <color order="2">#0000ff</color>
+           </alternatingColors>
+           <eqaliserPattern>1</eqaliserPattern>
+           <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+          </parameters>
+          <parameters basicLightingEffect="0">
+           <speed>2</speed>
+           <color>0</color>
+           <direction>3</direction>
+           <duration>0</duration>
+           <selectedColor>#ff0000</selectedColor>
+           <alternatingColors>
+            <color order="1">#ff0000</color>
+            <color order="2">#0000ff</color>
+           </alternatingColors>
+           <eqaliserPattern>1</eqaliserPattern>
+           <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+          </parameters>
+          <parameters basicLightingEffect="23">
+           <speed>0</speed>
+           <color>3</color>
+           <direction>3</direction>
+           <duration>0</duration>
+           <selectedColor>#ff0000</selectedColor>
+           <alternatingColors>
+            <color order="1">#51ff00</color>
+            <color order="2">#ff3300</color>
+           </alternatingColors>
+           <eqaliserPattern>1</eqaliserPattern>
+           <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+          </parameters>
+          <parameters basicLightingEffect="1">
+           <speed>2</speed>
+           <color>1</color>
+           <direction>0</direction>
+           <duration>0</duration>
+           <selectedColor>#ff0000</selectedColor>
+           <alternatingColors>
+            <color order="1">#ff0000</color>
+            <color order="2">#0000ff</color>
+           </alternatingColors>
+           <eqaliserPattern>1</eqaliserPattern>
+           <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+          </parameters>
+          <parameters basicLightingEffect="2">
+           <speed>2</speed>
+           <color>1</color>
+           <direction>3</direction>
+           <duration>0</duration>
+           <selectedColor>#ff0000</selectedColor>
+           <alternatingColors>
+            <color order="1">#ff0000</color>
+            <color order="2">#0000ff</color>
+           </alternatingColors>
+           <eqaliserPattern>1</eqaliserPattern>
+           <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+          </parameters>
+         </basicLightingsParameters>
+        </lighting_zone>
+       </lighting_zones>
+      </mode>
+     </modes>
+    </device>
+    <device cookie="1" version="4">
+     <modelName>K70 RGB RAPIDFIRE</modelName>
+     <is_xdevice_lighting_enabled>0</is_xdevice_lighting_enabled>
+     <modes>
+      <mode cookie="3" version="6">
+       <name>Default</name>
+       <buttonGroups>
+        <ButtonGroup version="1">
+         <Name>WASD</Name>
+         <Note></Note>
+         <Buttons>
+          <Button>W</Button>
+          <Button>D</Button>
+          <Button>S</Button>
+          <Button>A</Button>
+         </Buttons>
+         <InPredefinedState>true</InPredefinedState>
+        </ButtonGroup>
+        <ButtonGroup version="1">
+         <Name>All</Name>
+         <Note></Note>
+         <Buttons>
+          <Button>Keypad0</Button>
+          <Button>Keypad3</Button>
+          <Button>Keypad4</Button>
+          <Button>Keypad6</Button>
+          <Button>Keypad5</Button>
+          <Button>KeypadPeriodAndDelete</Button>
+          <Button>RightGui</Button>
+          <Button>RightAlt</Button>
+          <Button>Application</Button>
+          <Button>Space</Button>
+          <Button>Lang2</Button>
+          <Button>International2</Button>
+          <Button>Lang1</Button>
+          <Button>Insert</Button>
+          <Button>PauseBreak</Button>
+          <Button>PageUp</Button>
+          <Button>Home</Button>
+          <Button>F12</Button>
+          <Button>Brightness</Button>
+          <Button>ScrollLock</Button>
+          <Button>PrintScreen</Button>
+          <Button>EqualsAndPlus</Button>
+          <Button>International1</Button>
+          <Button>Backspace</Button>
+          <Button>International3</Button>
+          <Button>Backslash</Button>
+          <Button>BracketRight</Button>
+          <Button>Enter</Button>
+          <Button>NonUsTilde</Button>
+          <Button>UpArrow</Button>
+          <Button>RightCtrl</Button>
+          <Button>DownArrow</Button>
+          <Button>LeftArrow</Button>
+          <Button>End</Button>
+          <Button>Delete</Button>
+          <Button>RightShift</Button>
+          <Button>PageDown</Button>
+          <Button>CapsLock</Button>
+          <Button>BracketLeft</Button>
+          <Button>S</Button>
+          <Button>A</Button>
+          <Button>I</Button>
+          <Button>U</Button>
+          <Button>P</Button>
+          <Button>O</Button>
+          <Button>K</Button>
+          <Button>J</Button>
+          <Button>SemicolonAndColon</Button>
+          <Button>L</Button>
+          <Button>F</Button>
+          <Button>D</Button>
+          <Button>H</Button>
+          <Button>G</Button>
+          <Button>C</Button>
+          <Button>X</Button>
+          <Button>B</Button>
+          <Button>V</Button>
+          <Button>LeftShift</Button>
+          <Button>ApostropheAndDoubleQuote</Button>
+          <Button>Z</Button>
+          <Button>NonUsBackslash</Button>
+          <Button>LeftCtrl</Button>
+          <Button>SlashAndQuestionMark</Button>
+          <Button>LeftAlt</Button>
+          <Button>LeftGui</Button>
+          <Button>M</Button>
+          <Button>N</Button>
+          <Button>PeriodAndBiggerThan</Button>
+          <Button>CommaAndLessThan</Button>
+          <Button>F4</Button>
+          <Button>F3</Button>
+          <Button>F6</Button>
+          <Button>F5</Button>
+          <Button>Escape</Button>
+          <Button>F2</Button>
+          <Button>F1</Button>
+          <Button>GraveAccentAndTilde</Button>
+          <Button>F11</Button>
+          <Button>2</Button>
+          <Button>1</Button>
+          <Button>F8</Button>
+          <Button>F7</Button>
+          <Button>F10</Button>
+          <Button>F9</Button>
+          <Button>8</Button>
+          <Button>7</Button>
+          <Button>International5</Button>
+          <Button>0</Button>
+          <Button>9</Button>
+          <Button>4</Button>
+          <Button>International4</Button>
+          <Button>3</Button>
+          <Button>6</Button>
+          <Button>5</Button>
+          <Button>R</Button>
+          <Button>E</Button>
+          <Button>Y</Button>
+          <Button>T</Button>
+          <Button>Tab</Button>
+          <Button>MinusAndUnderscore</Button>
+          <Button>W</Button>
+          <Button>Q</Button>
+          <Button>PlayPause</Button>
+          <Button>ScanPreviousTrack</Button>
+          <Button>NumLock</Button>
+          <Button>ScanNextTrack</Button>
+          <Button>WinLock</Button>
+          <Button>RightArrow</Button>
+          <Button>Stop</Button>
+          <Button>Mute</Button>
+          <Button>Keypad7</Button>
+          <Button>KeypadEnter</Button>
+          <Button>Keypad9</Button>
+          <Button>Keypad8</Button>
+          <Button>KeypadAsterisk</Button>
+          <Button>KeypadSlash</Button>
+          <Button>KeypadPlus</Button>
+          <Button>KeypadMinus</Button>
+          <Button>Keypad2</Button>
+          <Button>Keypad1</Button>
+         </Buttons>
+         <InPredefinedState>true</InPredefinedState>
+        </ButtonGroup>
+        <ButtonGroup version="1">
+         <Name>Arrows</Name>
+         <Note></Note>
+         <Buttons>
+          <Button>UpArrow</Button>
+          <Button>RightArrow</Button>
+          <Button>DownArrow</Button>
+          <Button>LeftArrow</Button>
+         </Buttons>
+         <InPredefinedState>true</InPredefinedState>
+        </ButtonGroup>
+       </buttonGroups>
+       <id>{f78bb121-62ec-4a85-b10b-972905a5de1d}</id>
+       <note></note>
+       <script>{00000000-0000-0000-0000-000000000000}</script>
+       <skipped>0</skipped>
+       <currentPerformanceIndex>0</currentPerformanceIndex>
+       <performances>
+        <performance type="keyboard" version="1">
+         <brightnessLevelIndex>3</brightnessLevelIndex>
+         <winKey></winKey>
+        </performance>
+       </performances>
+       <clearedKeys/>
+       <assigments>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Keypad8"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Escape"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="M"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Backslash"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="J"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="RightAlt"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="0"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="PageUp"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="NumLock"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Q"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="NonUsBackslash"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="KeypadMinus"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="GraveAccentAndTilde"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="CapsLock"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="UpArrow"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Keypad2"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="D"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Lang2"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="KeypadPeriodAndDelete"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="6"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="ScrollLock"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Stop"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="F5"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="LeftGui"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="International3"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="F8"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="I"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="End"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Keypad4"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="7"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="PauseBreak"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="ScanPreviousTrack"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Y"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="B"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Keypad9"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="F1"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="CommaAndLessThan"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="NonUsTilde"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="K"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="RightGui"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="3"/>
+        <assigment action="{1d001c9f-f6f9-444e-91cc-0566fd281388}" key="Brightness"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="RightArrow"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="W"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Z"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="KeypadPlus"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="1"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="A"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="LeftArrow"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Keypad3"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="F"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Space"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="E"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="International5"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="X"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="KeypadEnter"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="F6"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="LeftAlt"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Backspace"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="F9"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="O"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="PageDown"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Keypad5"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="8"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Insert"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="PlayPause"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="MinusAndUnderscore"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="ApostropheAndDoubleQuote"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="KeypadSlash"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="F2"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="PeriodAndBiggerThan"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Enter"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="L"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Application"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="4"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="F12"/>
+        <assigment action="{c99e3439-5218-4334-ab48-ecaccaa14212}" key="WinLock"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="F3"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="SlashAndQuestionMark"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="International1"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="2"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="S"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="DownArrow"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Keypad0"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="G"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Lang1"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="R"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="International4"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="C"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Keypad7"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="N"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="BracketRight"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="F10"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="P"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="RightShift"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Keypad6"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="9"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Home"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="ScanNextTrack"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Tab"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="LeftShift"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="KeypadAsterisk"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="F11"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="BracketLeft"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="RightCtrl"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Keypad1"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="SemicolonAndColon"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="5"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="PrintScreen"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Mute"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="F4"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="LeftCtrl"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="EqualsAndPlus"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="F7"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="U"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="Delete"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="H"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="International2"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="T"/>
+        <assigment action="{4a9f32a7-28e1-4987-9b09-31f1940d01a3}" key="V"/>
+       </assigments>
+       <fgLightAssignments>
+        <fgLightAssignment fgLightAssignmentKey="WinLock" fgLightAssignmentValue="{502f64ec-fd23-4e1c-a632-0cf0bf7ad4be}">
+         <ExecutionHints>
+          <StartOnPress>false</StartOnPress>
+          <StartWithMode>true</StartWithMode>
+          <StopOnPress>false</StopOnPress>
+          <StopOnRelease>false</StopOnRelease>
+         </ExecutionHints>
+        </fgLightAssignment>
+        <fgLightAssignment fgLightAssignmentKey="Brightness" fgLightAssignmentValue="{3777801e-5b75-409d-9a82-fe2092a7299c}">
+         <ExecutionHints>
+          <StartOnPress>false</StartOnPress>
+          <StartWithMode>true</StartWithMode>
+          <StopOnPress>false</StopOnPress>
+          <StopOnRelease>false</StopOnRelease>
+         </ExecutionHints>
+        </fgLightAssignment>
+       </fgLightAssignments>
+       <fgBasicLightAssignments>
+        <fgLightAssignment fgLightAssignmentKey="WinLock" fgLightAssignmentValue="{502f64ec-fd23-4e1c-a632-0cf0bf7ad4be}">
+         <ExecutionHints>
+          <StartOnPress>false</StartOnPress>
+          <StartWithMode>true</StartWithMode>
+          <StopOnPress>false</StopOnPress>
+          <StopOnRelease>false</StopOnRelease>
+         </ExecutionHints>
+        </fgLightAssignment>
+        <fgLightAssignment fgLightAssignmentKey="Brightness" fgLightAssignmentValue="{3777801e-5b75-409d-9a82-fe2092a7299c}">
+         <ExecutionHints>
+          <StartOnPress>false</StartOnPress>
+          <StartWithMode>true</StartWithMode>
+          <StopOnPress>false</StopOnPress>
+          <StopOnRelease>false</StopOnRelease>
+         </ExecutionHints>
+        </fgLightAssignment>
+       </fgBasicLightAssignments>
+       <lightBackgrounds>
+        <groupBgLights>
+         <lightBackground groupName="All" color="#ff0000"/>
+        </groupBgLights>
+        <keyBgLights/>
+       </lightBackgrounds>
+       <basicLightBackgrounds>
+        <groupBgLights/>
+        <keyBgLights/>
+       </basicLightBackgrounds>
+       <disabledLightings/>
+       <groupsData>
+        <groupData groupName="WASD">
+         <groupLightingId>{235d4783-5af0-4db1-9a08-2718a1896d08}</groupLightingId>
+         <ExecutionHints>
+          <StartOnPress>false</StartOnPress>
+          <StartWithMode>true</StartWithMode>
+          <StopOnPress>false</StopOnPress>
+          <StopOnRelease>false</StopOnRelease>
+         </ExecutionHints>
+        </groupData>
+        <groupData groupName="Arrows">
+         <groupLightingId>{235d4783-5af0-4db1-9a08-2718a1896d08}</groupLightingId>
+         <ExecutionHints>
+          <StartOnPress>false</StartOnPress>
+          <StartWithMode>true</StartWithMode>
+          <StopOnPress>false</StopOnPress>
+          <StopOnRelease>false</StopOnRelease>
+         </ExecutionHints>
+        </groupData>
+       </groupsData>
+       <basicLightingsParameters>
+        <parameters basicLightingEffect="3">
+         <speed>0</speed>
+         <color>1</color>
+         <direction>0</direction>
+         <duration>2</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="8">
+         <speed>2</speed>
+         <color>0</color>
+         <direction>0</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="9">
+         <speed>2</speed>
+         <color>1</color>
+         <direction>0</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="10">
+         <speed>2</speed>
+         <color>1</color>
+         <direction>0</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="11">
+         <speed>2</speed>
+         <color>0</color>
+         <direction>2</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="4">
+         <speed>2</speed>
+         <color>1</color>
+         <direction>0</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="5">
+         <speed>2</speed>
+         <color>1</color>
+         <direction>0</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="6">
+         <speed>0</speed>
+         <color>0</color>
+         <direction>0</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="21">
+         <speed>3</speed>
+         <color>0</color>
+         <direction>5</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="7">
+         <speed>0</speed>
+         <color>2</color>
+         <direction>0</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="22">
+         <speed>0</speed>
+         <color>3</color>
+         <direction>3</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#51ff00</color>
+          <color order="2">#ff3300</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="0">
+         <speed>2</speed>
+         <color>0</color>
+         <direction>3</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="23">
+         <speed>0</speed>
+         <color>3</color>
+         <direction>3</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#51ff00</color>
+          <color order="2">#ff3300</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="1">
+         <speed>2</speed>
+         <color>1</color>
+         <direction>0</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="2">
+         <speed>2</speed>
+         <color>1</color>
+         <direction>3</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+       </basicLightingsParameters>
+       <currentLightingEffect>21</currentLightingEffect>
+       <isInAdvancedLightingMode>0</isInAdvancedLightingMode>
+       <lighting_zones>
+        <lighting_zone type="0" name="All">
+         <currentLightingEffect>0</currentLightingEffect>
+         <basicLightingsParameters>
+          <parameters basicLightingEffect="3">
+           <speed>0</speed>
+           <color>1</color>
+           <direction>0</direction>
+           <duration>2</duration>
+           <selectedColor>#ff0000</selectedColor>
+           <alternatingColors>
+            <color order="1">#ff0000</color>
+            <color order="2">#0000ff</color>
+           </alternatingColors>
+           <eqaliserPattern>1</eqaliserPattern>
+           <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+          </parameters>
+          <parameters basicLightingEffect="9">
+           <speed>2</speed>
+           <color>1</color>
+           <direction>0</direction>
+           <duration>0</duration>
+           <selectedColor>#ff0000</selectedColor>
+           <alternatingColors>
+            <color order="1">#ff0000</color>
+            <color order="2">#0000ff</color>
+           </alternatingColors>
+           <eqaliserPattern>1</eqaliserPattern>
+           <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+          </parameters>
+          <parameters basicLightingEffect="21">
+           <speed>3</speed>
+           <color>0</color>
+           <direction>5</direction>
+           <duration>0</duration>
+           <selectedColor>#ff0000</selectedColor>
+           <alternatingColors>
+            <color order="1">#ff0000</color>
+            <color order="2">#0000ff</color>
+           </alternatingColors>
+           <eqaliserPattern>1</eqaliserPattern>
+           <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+          </parameters>
+          <parameters basicLightingEffect="6">
+           <speed>0</speed>
+           <color>0</color>
+           <direction>0</direction>
+           <duration>0</duration>
+           <selectedColor>#ff0000</selectedColor>
+           <alternatingColors>
+            <color order="1">#ff0000</color>
+            <color order="2">#0000ff</color>
+           </alternatingColors>
+           <eqaliserPattern>1</eqaliserPattern>
+           <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+          </parameters>
+          <parameters basicLightingEffect="0">
+           <speed>2</speed>
+           <color>0</color>
+           <direction>3</direction>
+           <duration>0</duration>
+           <selectedColor>#ff0000</selectedColor>
+           <alternatingColors>
+            <color order="1">#ff0000</color>
+            <color order="2">#0000ff</color>
+           </alternatingColors>
+           <eqaliserPattern>1</eqaliserPattern>
+           <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+          </parameters>
+          <parameters basicLightingEffect="23">
+           <speed>0</speed>
+           <color>3</color>
+           <direction>3</direction>
+           <duration>0</duration>
+           <selectedColor>#ff0000</selectedColor>
+           <alternatingColors>
+            <color order="1">#51ff00</color>
+            <color order="2">#ff3300</color>
+           </alternatingColors>
+           <eqaliserPattern>1</eqaliserPattern>
+           <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+          </parameters>
+          <parameters basicLightingEffect="2">
+           <speed>2</speed>
+           <color>1</color>
+           <direction>3</direction>
+           <duration>0</duration>
+           <selectedColor>#ff0000</selectedColor>
+           <alternatingColors>
+            <color order="1">#ff0000</color>
+            <color order="2">#0000ff</color>
+           </alternatingColors>
+           <eqaliserPattern>1</eqaliserPattern>
+           <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+          </parameters>
+         </basicLightingsParameters>
+        </lighting_zone>
+       </lighting_zones>
+      </mode>
+     </modes>
+    </device>
+    <device cookie="1" version="4">
+     <modelName>M65 PRO RGB</modelName>
+     <is_xdevice_lighting_enabled>0</is_xdevice_lighting_enabled>
+     <modes>
+      <mode cookie="2" version="6">
+       <name>Default</name>
+       <buttonGroups/>
+       <id>{6b350322-6149-4b79-9c30-c3ba550747c7}</id>
+       <note></note>
+       <script>{00000000-0000-0000-0000-000000000000}</script>
+       <skipped>0</skipped>
+       <currentPerformanceIndex>0</currentPerformanceIndex>
+       <performances>
+        <performance type="mouse" liftHeight="5" enhancePointerPrecision="1" pointerMotionSpeed="10" name="Custom" version="1">
+         <brightnessLevelIndex>1</brightnessLevelIndex>
+         <dpiSettings dpiCount="5">
+          <dpiSetting index="1" dpiX="800" independentXY="0" enabled="1" version="1"/>
+          <dpiSetting default="1" index="2" dpiX="1500" independentXY="0" enabled="1" version="1"/>
+          <dpiSetting index="3" dpiX="3000" independentXY="0" enabled="1" version="1"/>
+          <dpiSetting index="4" dpiX="6000" independentXY="0" enabled="1" version="1"/>
+          <dpiSetting index="5" dpiX="9000" independentXY="0" enabled="1" version="1"/>
+         </dpiSettings>
+         <sniperDpiSetting index="-1" dpiX="400" independentXY="0" enabled="1" version="1"/>
+        </performance>
+       </performances>
+       <clearedKeys/>
+       <assigments>
+        <assigment action="{bcb6bf12-39b1-4d2a-bb89-6998e0b43d3a}" key="Mouse8"/>
+        <assigment action="{7d0f7952-8065-4601-a3f1-93d899b14eb2}" key="Mouse4"/>
+        <assigment action="{7d0f7952-8065-4601-a3f1-93d899b14eb2}" key="Mouse5"/>
+        <assigment action="{b20dce57-ac1f-416a-b090-835f4f654430}" key="Mouse6"/>
+        <assigment action="{6999a951-0c09-42e1-9abc-249d323602d8}" key="Mouse7"/>
+        <assigment action="{7d0f7952-8065-4601-a1f1-93d899b14eb2}" key="Mouse1"/>
+        <assigment action="{7d0f7952-8065-4601-a3f1-93d899b14eb2}" key="Mouse2"/>
+        <assigment action="{7d0f7952-8065-4601-a3f1-93d899b14eb2}" key="Mouse3"/>
+       </assigments>
+       <fgLightAssignments>
+        <fgLightAssignment fgLightAssignmentKey="MouseDpiLed" fgLightAssignmentValue="{1d455a66-077d-4da2-b46e-bba83a1f539e}">
+         <ExecutionHints>
+          <StartOnPress>false</StartOnPress>
+          <StartWithMode>true</StartWithMode>
+          <StopOnPress>false</StopOnPress>
+          <StopOnRelease>false</StopOnRelease>
+         </ExecutionHints>
+        </fgLightAssignment>
+       </fgLightAssignments>
+       <fgBasicLightAssignments>
+        <fgLightAssignment fgLightAssignmentKey="MouseDpiLed" fgLightAssignmentValue="{1d455a66-077d-4da2-b46e-bba83a1f539e}">
+         <ExecutionHints>
+          <StartOnPress>false</StartOnPress>
+          <StartWithMode>true</StartWithMode>
+          <StopOnPress>false</StopOnPress>
+          <StopOnRelease>false</StopOnRelease>
+         </ExecutionHints>
+        </fgLightAssignment>
+       </fgBasicLightAssignments>
+       <lightBackgrounds>
+        <groupBgLights/>
+        <keyBgLights/>
+       </lightBackgrounds>
+       <basicLightBackgrounds>
+        <groupBgLights/>
+        <keyBgLights/>
+       </basicLightBackgrounds>
+       <disabledLightings/>
+       <groupsData/>
+       <basicLightingsParameters>
+        <parameters basicLightingEffect="3">
+         <speed>0</speed>
+         <color>1</color>
+         <direction>0</direction>
+         <duration>2</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="8">
+         <speed>2</speed>
+         <color>0</color>
+         <direction>0</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="9">
+         <speed>2</speed>
+         <color>1</color>
+         <direction>0</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="10">
+         <speed>2</speed>
+         <color>1</color>
+         <direction>0</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="11">
+         <speed>2</speed>
+         <color>0</color>
+         <direction>2</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="4">
+         <speed>2</speed>
+         <color>1</color>
+         <direction>0</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="5">
+         <speed>2</speed>
+         <color>1</color>
+         <direction>0</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="6">
+         <speed>0</speed>
+         <color>0</color>
+         <direction>0</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="21">
+         <speed>3</speed>
+         <color>0</color>
+         <direction>5</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="7">
+         <speed>0</speed>
+         <color>2</color>
+         <direction>0</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="22">
+         <speed>0</speed>
+         <color>3</color>
+         <direction>3</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#51ff00</color>
+          <color order="2">#ff3300</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="0">
+         <speed>2</speed>
+         <color>0</color>
+         <direction>3</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="23">
+         <speed>0</speed>
+         <color>3</color>
+         <direction>3</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#51ff00</color>
+          <color order="2">#ff3300</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="1">
+         <speed>2</speed>
+         <color>1</color>
+         <direction>0</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+        <parameters basicLightingEffect="2">
+         <speed>2</speed>
+         <color>1</color>
+         <direction>3</direction>
+         <duration>0</duration>
+         <selectedColor>#ff0000</selectedColor>
+         <alternatingColors>
+          <color order="1">#ff0000</color>
+          <color order="2">#0000ff</color>
+         </alternatingColors>
+         <eqaliserPattern>1</eqaliserPattern>
+         <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+        </parameters>
+       </basicLightingsParameters>
+       <currentLightingEffect>6</currentLightingEffect>
+       <isInAdvancedLightingMode>1</isInAdvancedLightingMode>
+       <lighting_zones>
+        <lighting_zone type="4" name="2">
+         <currentLightingEffect>0</currentLightingEffect>
+         <basicLightingsParameters>
+          <parameters basicLightingEffect="6">
+           <speed>0</speed>
+           <color>0</color>
+           <direction>0</direction>
+           <duration>0</duration>
+           <selectedColor>#ff0000</selectedColor>
+           <alternatingColors>
+            <color order="1">#ff0000</color>
+            <color order="2">#0000ff</color>
+           </alternatingColors>
+           <eqaliserPattern>1</eqaliserPattern>
+           <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+          </parameters>
+          <parameters basicLightingEffect="7">
+           <speed>0</speed>
+           <color>2</color>
+           <direction>0</direction>
+           <duration>0</duration>
+           <selectedColor>#ff0000</selectedColor>
+           <alternatingColors>
+            <color order="1">#ff0000</color>
+            <color order="2">#0000ff</color>
+           </alternatingColors>
+           <eqaliserPattern>1</eqaliserPattern>
+           <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+          </parameters>
+          <parameters basicLightingEffect="0">
+           <speed>2</speed>
+           <color>0</color>
+           <direction>3</direction>
+           <duration>0</duration>
+           <selectedColor>#ff0000</selectedColor>
+           <alternatingColors>
+            <color order="1">#ff0000</color>
+            <color order="2">#0000ff</color>
+           </alternatingColors>
+           <eqaliserPattern>1</eqaliserPattern>
+           <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+          </parameters>
+          <parameters basicLightingEffect="1">
+           <speed>2</speed>
+           <color>1</color>
+           <direction>0</direction>
+           <duration>0</duration>
+           <selectedColor>#ff0000</selectedColor>
+           <alternatingColors>
+            <color order="1">#ff0000</color>
+            <color order="2">#0000ff</color>
+           </alternatingColors>
+           <eqaliserPattern>1</eqaliserPattern>
+           <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+          </parameters>
+         </basicLightingsParameters>
+        </lighting_zone>
+        <lighting_zone type="3" name="1">
+         <currentLightingEffect>0</currentLightingEffect>
+         <basicLightingsParameters>
+          <parameters basicLightingEffect="6">
+           <speed>0</speed>
+           <color>0</color>
+           <direction>0</direction>
+           <duration>0</duration>
+           <selectedColor>#ff0000</selectedColor>
+           <alternatingColors>
+            <color order="1">#ff0000</color>
+            <color order="2">#0000ff</color>
+           </alternatingColors>
+           <eqaliserPattern>1</eqaliserPattern>
+           <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+          </parameters>
+          <parameters basicLightingEffect="7">
+           <speed>0</speed>
+           <color>2</color>
+           <direction>0</direction>
+           <duration>0</duration>
+           <selectedColor>#ff0000</selectedColor>
+           <alternatingColors>
+            <color order="1">#ff0000</color>
+            <color order="2">#0000ff</color>
+           </alternatingColors>
+           <eqaliserPattern>1</eqaliserPattern>
+           <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+          </parameters>
+          <parameters basicLightingEffect="0">
+           <speed>2</speed>
+           <color>0</color>
+           <direction>3</direction>
+           <duration>0</duration>
+           <selectedColor>#ff0000</selectedColor>
+           <alternatingColors>
+            <color order="1">#ff0000</color>
+            <color order="2">#0000ff</color>
+           </alternatingColors>
+           <eqaliserPattern>1</eqaliserPattern>
+           <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+          </parameters>
+          <parameters basicLightingEffect="1">
+           <speed>2</speed>
+           <color>1</color>
+           <direction>0</direction>
+           <duration>0</duration>
+           <selectedColor>#ff0000</selectedColor>
+           <alternatingColors>
+            <color order="1">#ff0000</color>
+            <color order="2">#0000ff</color>
+           </alternatingColors>
+           <eqaliserPattern>1</eqaliserPattern>
+           <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+          </parameters>
+         </basicLightingsParameters>
+        </lighting_zone>
+       </lighting_zones>
+      </mode>
+     </modes>
+    </device>
+   </devices>
+   <currentXDeviceLightingEffect>6</currentXDeviceLightingEffect>
+   <xDeviceLightingsParameters>
+    <parameters basicLightingEffect="9">
+     <speed>2</speed>
+     <color>1</color>
+     <direction>0</direction>
+     <duration>0</duration>
+     <selectedColor>#ff0000</selectedColor>
+     <alternatingColors>
+      <color order="1">#ff0000</color>
+      <color order="2">#0000ff</color>
+     </alternatingColors>
+     <eqaliserPattern>1</eqaliserPattern>
+     <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+    </parameters>
+    <parameters basicLightingEffect="10">
+     <speed>2</speed>
+     <color>1</color>
+     <direction>0</direction>
+     <duration>0</duration>
+     <selectedColor>#ff0000</selectedColor>
+     <alternatingColors>
+      <color order="1">#ff0000</color>
+      <color order="2">#0000ff</color>
+     </alternatingColors>
+     <eqaliserPattern>1</eqaliserPattern>
+     <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+    </parameters>
+    <parameters basicLightingEffect="4">
+     <speed>2</speed>
+     <color>1</color>
+     <direction>0</direction>
+     <duration>0</duration>
+     <selectedColor>#ff0000</selectedColor>
+     <alternatingColors>
+      <color order="1">#ff0000</color>
+      <color order="2">#0000ff</color>
+     </alternatingColors>
+     <eqaliserPattern>1</eqaliserPattern>
+     <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+    </parameters>
+    <parameters basicLightingEffect="5">
+     <speed>2</speed>
+     <color>1</color>
+     <direction>0</direction>
+     <duration>0</duration>
+     <selectedColor>#ff0000</selectedColor>
+     <alternatingColors>
+      <color order="1">#ff0000</color>
+      <color order="2">#0000ff</color>
+     </alternatingColors>
+     <eqaliserPattern>1</eqaliserPattern>
+     <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+    </parameters>
+    <parameters basicLightingEffect="6">
+     <speed>0</speed>
+     <color>0</color>
+     <direction>0</direction>
+     <duration>0</duration>
+     <selectedColor>#ff0000</selectedColor>
+     <alternatingColors>
+      <color order="1">#ff0000</color>
+      <color order="2">#0000ff</color>
+     </alternatingColors>
+     <eqaliserPattern>1</eqaliserPattern>
+     <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+    </parameters>
+    <parameters basicLightingEffect="21">
+     <speed>3</speed>
+     <color>0</color>
+     <direction>5</direction>
+     <duration>0</duration>
+     <selectedColor>#ff0000</selectedColor>
+     <alternatingColors>
+      <color order="1">#ff0000</color>
+      <color order="2">#0000ff</color>
+     </alternatingColors>
+     <eqaliserPattern>1</eqaliserPattern>
+     <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+    </parameters>
+    <parameters basicLightingEffect="0">
+     <speed>2</speed>
+     <color>0</color>
+     <direction>3</direction>
+     <duration>0</duration>
+     <selectedColor>#ff0000</selectedColor>
+     <alternatingColors>
+      <color order="1">#ff0000</color>
+      <color order="2">#0000ff</color>
+     </alternatingColors>
+     <eqaliserPattern>1</eqaliserPattern>
+     <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+    </parameters>
+    <parameters basicLightingEffect="1">
+     <speed>2</speed>
+     <color>1</color>
+     <direction>0</direction>
+     <duration>0</duration>
+     <selectedColor>#ff0000</selectedColor>
+     <alternatingColors>
+      <color order="1">#ff0000</color>
+      <color order="2">#0000ff</color>
+     </alternatingColors>
+     <eqaliserPattern>1</eqaliserPattern>
+     <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+    </parameters>
+    <parameters basicLightingEffect="2">
+     <speed>2</speed>
+     <color>1</color>
+     <direction>3</direction>
+     <duration>0</duration>
+     <selectedColor>#ff0000</selectedColor>
+     <alternatingColors>
+      <color order="1">#ff0000</color>
+      <color order="2">#0000ff</color>
+     </alternatingColors>
+     <eqaliserPattern>1</eqaliserPattern>
+     <frequencyVisualizerAnimation>1</frequencyVisualizerAnimation>
+    </parameters>
+   </xDeviceLightingsParameters>
+  </profile>
+ </profiles>
+ <Lightings/>
+ <Actions/>
+ <EqualizerPresets/>
+</ExportedEverything>
