@@ -30,6 +30,6 @@ if [ -d "cls.impl.$siteName" ]; then
     # transform's repository in the archive we create.
     tar -cvf $currentDirectory/$siteName-transform.tar ${files[@]}
 else
-    echo "The directory \'cls.impl.$siteName\' does not exist!"
+    echo "The directory 'cls.impl.$siteName' does not exist!"
 fi
 
