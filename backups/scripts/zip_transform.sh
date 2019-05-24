@@ -34,7 +34,7 @@ if [ -d "cls.impl.${siteName}" ]; then
     archiveName="${currentDirectory}/${siteName}-transform"
 
     # Add suffix to archive name, if provided
-    if [ -z "${archiveSuffix}" ]; then
+    if [ -n "${archiveSuffix}" ]; then
         archiveName="${archiveName}-${archiveSuffix}"
     fi
 
