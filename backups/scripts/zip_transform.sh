@@ -38,6 +38,8 @@ if [ -d ${repoFolder} ]; then
 
     echo -e "\nZipping up files..."
     tar -cvf ${archiveName} ${files[@]}
+
+    echo -e "\nOutput archive: ${archiveName}"
 else
     echo "The directory '${repoFolder}' does not exist!"
 fi
