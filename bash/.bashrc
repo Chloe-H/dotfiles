@@ -131,8 +131,9 @@ export NVM_DIR="$HOME/.nvm"
 stty -ixon
 
 # For virtualenvwrapper (CEH)
+export WORKON_HOME='~/virtualenvs'
+export VIRTUALENVWRAPPER_PYTHON='/usr/bin/python3'
 source ~/.local/bin/virtualenvwrapper.sh
-export WORKON_HOME=/virtualenvs
 
 # For default editor (CEH)
 export EDITOR='vim'
