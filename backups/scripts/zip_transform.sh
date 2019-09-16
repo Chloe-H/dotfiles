@@ -12,10 +12,10 @@ read -p "Output archive suffix: " archiveSuffix
 
 if [ -d ${repoFolder} ]; then
     # Pattern to find the release binaries
-    searchPattern="*[REDACTED].Cls.Impl.*[^Test]/bin/Release/[REDACTED].Cls.Impl.*"
+    searchPattern="*[REDACTED].Cls.Impl.*/bin/Release/[REDACTED].Cls.Impl.*"
 
     # Get the path to the release directory
-    releaseDirectory=$(dirname $(find ${repoFolder} -wholename ${searchPattern}.dll))
+    releaseDirectory=$(dirname $(find ${repoFolder} -not -path *[REDACTED].Cls.Impl.*.Test/* -wholename ${searchPattern}.dll))
 
     # Get the names of the DLL and PDB files
     declare -a files
