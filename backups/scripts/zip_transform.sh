@@ -14,12 +14,15 @@ if [ -d ${repoFolder} ]; then
     # Pattern to find the release binaries
     searchPattern="*[REDACTED].Cls.Impl.*/bin/Release/[REDACTED].Cls.Impl.*"
 
+    # Pattern to exclude the test directory
+    excludePattern="*[REDACTED].Cls.Impl.*.Test/*"
+
     # Get the path to the release directory
-    releaseDirectory=$(dirname $(find ${repoFolder} -not -path *[REDACTED].Cls.Impl.*.Test/* -wholename ${searchPattern}.dll))
+    releaseDirectory=$(dirname $(find ${repoFolder} -not -path ${excludePattern} -wholename ${searchPattern}.dll))
 
     # Get the names of the DLL and PDB files
     declare -a files
-    for file in $(find ${repoFolder} -wholename ${searchPattern})
+    for file in $(find ${repoFolder} -not -path ${excludePattern} -wholename ${searchPattern})
         do files+=($(basename ${file}))
     done
 
