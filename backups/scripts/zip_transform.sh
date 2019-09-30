@@ -32,6 +32,7 @@ if [ -d ${repoFolder} ]; then
     if [ -z "${archiveSuffix}" ]; then
         cd ${repoFolder}
         archiveSuffix=$(git rev-parse --short HEAD)
+        cd ${outputDirectory}
     fi
 
     archiveName="${outputDirectory}/${siteName}-transform-${archiveSuffix}.tar"
