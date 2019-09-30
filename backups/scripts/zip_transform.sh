@@ -26,11 +26,7 @@ if [ -d ${repoFolder} ]; then
         do files+=($(basename ${file}))
     done
 
-    # By getting only the base names of the files and changing to the release
-    # binaries directory, I am able to avoid duplicating the structure of the
-    # transform's repository in the archive I create.
     outputDirectory=$(pwd)
-    cd ${releaseDirectory}
 
     # Get the short commit hash (must be in the Git repository)
     if [ -z "${archiveSuffix}" ]; then
@@ -40,7 +36,7 @@ if [ -d ${repoFolder} ]; then
     archiveName="${outputDirectory}/${siteName}-transform-${archiveSuffix}.tar"
 
     echo -e "\nZipping up files..."
-    tar -cvf ${archiveName} ${files[@]}
+    tar -cvf ${archiveName} -C ${releaseDirectory} ${files[@]}
 
     echo -e "\nOutput archive: ${archiveName}"
 else
