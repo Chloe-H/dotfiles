@@ -30,6 +30,7 @@ if [ -d ${repoFolder} ]; then
 
     # Get the short commit hash (must be in the Git repository)
     if [ -z "${archiveSuffix}" ]; then
+        cd ${repoFolder}
         archiveSuffix=$(git rev-parse --short HEAD)
     fi
 
