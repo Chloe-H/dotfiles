@@ -51,7 +51,10 @@ if [ -d ${repoFolder} ]; then
         -F file=@${archiveName} \
         "https://chat.[REDACTED].com/api/v1/rooms.upload/[REDACTED]"
 
-    echo -e "\n"
+    echo -e "\n\nRemoving local copy of archive..."
+    rm ${archiveName}
+
+    echo -e "\nDone!"
 else
     echo "The directory '${repoFolder}' does not exist!"
 fi
