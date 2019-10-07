@@ -7,8 +7,8 @@ echo -e "\nEnter the site name abbreviation as it appears in the repo folder nam
 read -p "Site name: " siteName
 repoFolder="cls.impl.${siteName}"
 
-echo -e "Enter a suffix for the archive's name or leave it blank to use the short commit hash." 
-read -p "Output archive suffix: " archiveSuffix
+echo -e "Enter a description for the file." 
+read -p "File description: " fileDescription
 
 if [ -d ${repoFolder} ]; then
     # Pattern to find the release binaries
@@ -29,11 +29,9 @@ if [ -d ${repoFolder} ]; then
     outputDirectory=$(pwd)
 
     # Get the short commit hash (must be in the Git repository)
-    if [ -z "${archiveSuffix}" ]; then
-        cd ${repoFolder}
-        archiveSuffix=$(git rev-parse --short HEAD)
-        cd ${outputDirectory}
-    fi
+    cd ${repoFolder}
+    archiveSuffix=$(git rev-parse --short HEAD)
+    cd ${outputDirectory}
 
     archiveName="${outputDirectory}/${siteName}-transform-${archiveSuffix}.tar"
 
@@ -41,6 +39,19 @@ if [ -d ${repoFolder} ]; then
     tar -cvf ${archiveName} -C ${releaseDirectory} ${files[@]}
 
     echo -e "\nOutput archive: ${archiveName}"
+
+    # Run the script that exports the auth tokens for [REDACTED]
+    source ./[REDACTED]_auth.sh
+
+    echo -e "\nUploading the archive to [REDACTED]..."
+    curl \
+        -H "X-User-Id: ${[REDACTED]UserId}" \
+        -H "X-Auth-Token: ${[REDACTED]Token}" \
+        -F "description=${fileDescription}" \
+        -F file=@${archiveName} \
+        "https://chat.[REDACTED].com/api/v1/rooms.upload/[REDACTED]"
+
+    echo -e "\n"
 else
     echo "The directory '${repoFolder}' does not exist!"
 fi

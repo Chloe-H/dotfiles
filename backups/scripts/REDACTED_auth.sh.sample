@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Usage
+# 1. Copy the file to the same directory that the script for zipping and
+#   uploading transform DLLs is run from.
+# 2. Remove ".sample" from the end of the copy of this file.
+# 3. Change the values of the variables in the copy to the current token and
+#   user ID.
+
+export [REDACTED] user ID"
+export [REDACTED] token"
