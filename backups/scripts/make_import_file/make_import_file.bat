@@ -12,7 +12,7 @@ IF EXIST "%import_file_name%" (
     (ECHO ^<files^>) >> %import_file_name%
 
     REM Dump all of the file names in; I haven't figured out how to get the whole import file written correctly
-    DIR /B "%search_string%" >> %import_file_name%
+    (DIR /B "%search_string%") >> %import_file_name%
 
     (ECHO ^<^/files^>) >> %import_file_name%
 
