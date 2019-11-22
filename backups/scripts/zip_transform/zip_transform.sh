@@ -7,7 +7,7 @@ echo -e "\nEnter the site name abbreviation as it appears in the repo folder nam
 read -p "Site name: " siteName
 repoFolder="cls.impl.${siteName}"
 
-echo -e "Enter a description for the file." 
+echo -e "\nEnter a description for the file." 
 read -p "File description: " fileDescription
 
 if [ -d ${repoFolder} ]; then
@@ -29,6 +29,7 @@ if [ -d ${repoFolder} ]; then
     outputDirectory=$(pwd)
 
     # Get names of more files to include in the archive
+    echo -e "\n(Optional) Additional files"
     echo -e "Enter the name of another file in the release directory to include in the archive."
     read -p "File name (leave blank to continue): " additionalFileName
 
