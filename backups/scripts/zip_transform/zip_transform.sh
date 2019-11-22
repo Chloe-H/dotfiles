@@ -22,19 +22,34 @@ if [ -d ${repoFolder} ]; then
 
     # Get the names of the DLL and PDB files
     declare -a files
-    for file in $(find ${repoFolder} -not -path ${excludePattern} -wholename ${searchPattern})
-        do files+=($(basename ${file}))
+    for file in $(find ${repoFolder} -not -path ${excludePattern} -wholename ${searchPattern}); do
+        files+=($(basename ${file}))
     done
 
     outputDirectory=$(pwd)
 
-    # Get the short commit hash (must be in the Git repository)
+    # Get names of more files to include in the archive
+    echo -e "Enter the name of another file in the release directory to include in the archive."
+    read -p "File name (leave blank to continue): " additionalFileName
+
+    while [ -n "${additionalFileName}" ]; do
+        # Only add the file to the list if it exists
+        if [ -e "${releaseDirectory}/${additionalFileName}" ]; then
+            files+=(${additionalFileName})
+        fi
+
+        read -p "File name (leave blank to continue): " additionalFileName
+    done
+
+    # Get the short commit hash and branch name
     cd ${repoFolder}
-    archiveSuffix=$(git rev-parse --short HEAD)
+    commitHash=$(git rev-parse --short HEAD)
+    branchName=$(git rev-parse --abbrev-ref HEAD)
     cd ${outputDirectory}
 
-    archiveName="${outputDirectory}/${siteName}-transform-${archiveSuffix}.tar"
+    archiveName="${outputDirectory}/${siteName}-transform-${branchName}-${commitHash}.tar"
 
+    # Create the archive
     echo -e "\nZipping up files..."
     tar -cvf ${archiveName} -C ${releaseDirectory} ${files[@]}
 
