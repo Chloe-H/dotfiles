@@ -37,6 +37,8 @@ if [ -d ${repoFolder} ]; then
         # Only add the file to the list if it exists
         if [ -e "${releaseDirectory}/${additionalFileName}" ]; then
             files+=(${additionalFileName})
+        else
+            echo -e "'${additionalFileName}' does not exist.\n"
         fi
 
         read -p "File name (leave blank to continue): " additionalFileName
