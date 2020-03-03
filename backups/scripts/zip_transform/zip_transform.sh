@@ -50,13 +50,14 @@ if [ -d ${repoFolder} ]; then
     branchName=$(git rev-parse --abbrev-ref HEAD)
     cd ${outputDirectory}
 
-    archiveName="${outputDirectory}/${siteName}-transform-${branchName}-${commitHash}.tar"
+    archiveName="${siteName}-transform-${branchName}-${commitHash}"
+    archiveFullPath="${outputDirectory}/${archiveName}.tar"
 
     # Create the archive
     echo -e "\nZipping up files..."
-    tar -cvf ${archiveName} -C ${releaseDirectory} ${files[@]}
+    tar -cvf ${archiveFullPath} -C ${releaseDirectory} ${files[@]}
 
-    echo -e "\nOutput archive: ${archiveName}"
+    echo -e "\nOutput archive: ${archiveFullPath}"
 
     # Run the script that exports the auth tokens for [REDACTED]
     source ./[REDACTED]_auth.sh
@@ -66,11 +67,11 @@ if [ -d ${repoFolder} ]; then
         -H "X-User-Id: ${[REDACTED]UserId}" \
         -H "X-Auth-Token: ${[REDACTED]Token}" \
         -F "description=${fileDescription}" \
-        -F file=@${archiveName} \
+        -F file=@${archiveFullPath} \
         "https://chat.[REDACTED].com/api/v1/rooms.upload/[REDACTED]"
 
     echo -e "\n\nRemoving local copy of archive..."
-    rm ${archiveName}
+    rm ${archiveFullPath}
 
     echo -e "\nDone!"
 else
