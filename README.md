@@ -10,11 +10,11 @@ Navigate to repository's directory, then `stow {directory}` to symlink configura
 - May need to delete the following before stowing:
   - `~/.bashrc`
   - `~/.gitconfig`
-- Stowed `bashrc` will complain if you don't have `virtualenvwrapper` set up
+- Stowed `.bashrc` will complain if you don't have `virtualenvwrapper` set up
 
 ### Caveats
 
-I've only tried this on Ubuntu 16.04, and I don't know what I'm doing.
+I don't know what I'm doing.
 
 I know there is a flag that will let me correctly stow these, but I haven't yet
 bothered to figure out what it is and document it, so **do not** use `stow` on
