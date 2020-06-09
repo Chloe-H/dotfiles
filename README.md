@@ -7,6 +7,11 @@ Navigate to repository's directory, then `stow {directory}` to symlink configura
 
 ## Additional Setup/Information
 
+- May need to delete the following before stowing:
+  - `~/.bashrc`
+  - `~/.gitconfig`
+- Stowed `bashrc` will complain if you don't have `virtualenvwrapper` set up
+
 ### Caveats
 
 I've only tried this on Ubuntu 16.04, and I don't know what I'm doing.
@@ -48,6 +53,7 @@ When you change the gestures, use `libinput-gestures-setup restart` to load them
 
 ## To Do
 
+- Update `.bashrc` so it doesn't complain if `virtualenvwrapper` isn't set up
 - Add a script or something for git exclude files
 - Add Vim setup as a submodule
 - Add links to helpful pages for each configuration
