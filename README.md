@@ -18,11 +18,8 @@ them for now:
 - `git-commit-hooks`: doesn't seem to appreciate being symlinked
 - `touchpad`: it belongs in `/etc`
 
-### libinput-gestures
 
-When you change the gestures, use `libinput-gestures-setup restart` to load them.
-
-### git-commit-hooks
+#### git-commit-hooks
 
 **Copy, don't symlink**
 
@@ -43,16 +40,10 @@ You can test that the commit hook is working by creating a new branch and
 adding a commit to it. If the hook is working, the commit message should look
 like `[branch_name] Commit message`.
 
-### SSH
 
-After stowing the config file, I got a message from git saying "Bad owner or permissions on ~/.ssh/config".
-I had to run the following commands to fix the issue:
+### libinput-gestures
 
-`chown $USER ~/.ssh/config`
-
-`chmod 644 ~/.ssh/config`
-
-[Source](https://serverfault.com/a/710453)
+When you change the gestures, use `libinput-gestures-setup restart` to load them.
 
 
 ## To Do
