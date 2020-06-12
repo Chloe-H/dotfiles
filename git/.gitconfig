@@ -1,9 +1,8 @@
 [user]
 	email = chloe.h[...]@[REDACTED].com
 	name = Chloe-H
-; For unused git commit hook
-; [init]
-; 	templatedir = ~/.git-templates
+[init]
+	templatedir = ~/.git-templates
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
