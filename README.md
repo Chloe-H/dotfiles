@@ -16,21 +16,21 @@
 
 I don't know what I'm doing.
 
-I know there is a flag that will let me correctly stow these, but I haven't yet
-bothered to figure out what it is and document it, so **do not** use `stow` on
-them for now:
+I know there is a flag that will let me correctly stow some of the
+configurations in the `caveats` directory, but I haven't yet bothered to figure
+out what it is and document it, so **do not** use `stow` on them for now.
+
+`caveats`
 
 - `git-commit-hooks`: doesn't seem to appreciate being symlinked
-- `touchpad`: it belongs in `/etc`
+- `touchpad-libinput-gestures`: the contents belong in `/etc`
 
 
-#### git-commit-hooks
-
-**Copy, don't symlink**
+#### `git-commit-hooks` setup
 
 `cp git-commit-hooks/.git-templates/hooks/prepare-commit-msg ~/.git-templates/hooks/prepare-commit-msg`
 
-On Linux, run `chmod +x ~/.git-templates/hooks/prepare-commit-msg` to make
+On Linux, run `chmod u+x ~/.git-templates/hooks/prepare-commit-msg` to make
 the script executable before running the command above.
 
 Open Powershell or bash and enter
@@ -46,7 +46,7 @@ adding a commit to it. If the hook is working, the commit message should look
 like `[branch_name] Commit message`.
 
 
-### libinput-gestures
+### `libinput-gestures` setup
 
 When you change the gestures, use `libinput-gestures-setup restart` to load them.
 
