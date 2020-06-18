@@ -5,12 +5,14 @@
 3. Navigate to the repository's directory, then run `stow {directory}` to symlink the configurations in `{directory}`.
 
 
-## Additional Setup/Information
+## Additional setup information
 
 - May need to delete the following before stowing:
   - `~/.bashrc`
   - `~/.gitconfig`
 - Stowed `.bashrc` will complain if you don't have `virtualenvwrapper` set up
+- `backups` is not meant to be symlinked; it contains files that either aren't
+    configurations or that must be imported into Windows programs
 
 ### Caveats
 
