@@ -24,9 +24,10 @@ function create_tmux_session() {
 # Attach to the first session created.
 function start_tmux() {
     starting_session_name="${1:-"scratch"}"
+
     session_names=$@
 
-    if [[ ${#session_names[@]} -eq 0 ]]; then
+    if [[ ${#session_names[@]} -eq 1 && ${#session_names} -eq 0 ]]; then
         create_tmux_session "${starting_session_name}"
     else
         for session_name in ${session_names[@]}; do
