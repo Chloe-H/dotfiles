@@ -1,6 +1,6 @@
 [user]
-	email = chloe.h[...]@[REDACTED].com
-	name = Chloe-H
+	email = Chloe-H@users.noreply.github.com
+	name = Chloe H.
 [init]
 	templatedir = ~/.git-templates
 [filter "lfs"]
