@@ -9,8 +9,6 @@
 
 ### `bash`
 
-Set up `virtualenvwrapper` to get rid of the error message about it.
-
 May need to delete `~/.bashrc` before stowing.
 
 **Note:** I've included "(custom)" as a comment above things I've added or
@@ -66,7 +64,6 @@ When you change the gestures, use `libinput-gestures-setup restart` to load them
 
 ## To Do
 
-- Update `.bashrc` so it doesn't complain if `virtualenvwrapper` isn't set up
 - Try to resolve the caveats
     - Check out
     [this](https://stackoverflow.com/questions/4592838/symbolic-link-to-a-hook-in-git)

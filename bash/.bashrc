@@ -130,10 +130,12 @@ export NVM_DIR="$HOME/.nvm"
 # Disable XON/XOFF so I can use <C-s> to search forward through command history (custom)
 stty -ixon
 
-# For virtualenvwrapper (custom)
-export WORKON_HOME='~/virtualenvs'
-export VIRTUALENVWRAPPER_PYTHON='/usr/bin/python3'
-source ~/.local/bin/virtualenvwrapper.sh
+# For virtualenvwrapper, if it's set up (custom)
+if [[ -e ~/virtualenvs && -e ~/.local/bin/virtualenvwrapper.sh ]]; then
+    export WORKON_HOME='~/virtualenvs'
+    export VIRTUALENVWRAPPER_PYTHON='/usr/bin/python3'
+    source ~/.local/bin/virtualenvwrapper.sh
+fi
 
 # For default editor (custom)
 export EDITOR='vim'
