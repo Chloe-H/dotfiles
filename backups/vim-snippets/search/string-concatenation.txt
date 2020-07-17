@@ -1,2 +1,3 @@
-# replace the glob pattern at the end with whatever
+/\("\|\w\|)\)\s\?+\s\?"\|"\s\?+\s\?\("\|\w\|(\)
+
 :Ggrep! -GIin --full-name --untracked '\(\"\|\w\|)\)\s\?+\s\?\"\|\"\s\?+\s\?\(\"\|\w\|(\)' -- '*.cs'
