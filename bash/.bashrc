@@ -19,7 +19,7 @@ shopt -s histappend
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-# add timestamp to each entry in the history (CEH)
+# add timestamp to each entry in the history (custom)
 HISTTIMEFORMAT="%F %T  "
 
 # check the window size after each command and, if necessary,
@@ -59,11 +59,11 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-# Git prompt (CEH)
+# Git prompt (custom)
 source ~/.git-bash-prompt.sh
 
 if [ "$color_prompt" = yes ]; then
-    # My modified PS1 string (CEH)
+    # My modified PS1 string (custom)
     PS1='$debian_chroot\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;95m\]\w$(git_prompt)\[\033[1;00m\] \$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
@@ -127,13 +127,13 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Disable XON/XOFF so I can use <C-s> to search forward through command history (CEH)
+# Disable XON/XOFF so I can use <C-s> to search forward through command history (custom)
 stty -ixon
 
-# For virtualenvwrapper (CEH)
+# For virtualenvwrapper (custom)
 export WORKON_HOME='~/virtualenvs'
 export VIRTUALENVWRAPPER_PYTHON='/usr/bin/python3'
 source ~/.local/bin/virtualenvwrapper.sh
 
-# For default editor (CEH)
+# For default editor (custom)
 export EDITOR='vim'
