@@ -5,7 +5,7 @@
 3. Navigate to the repository's directory, then run `stow {directory}` to
     symlink the configurations in `{directory}`.
     - Exceptions:
-        - [`libinput-gestures-touchpad-config`](#libinput-gestures-/-libinput-gestures-touchpad-config)
+        - [`libinput-gestures-touchpad-config`](#libinput-gestures--libinput-gestures-touchpad-config)
         - [`backups`](#backups)
 
 ## Additional information
