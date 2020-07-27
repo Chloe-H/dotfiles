@@ -5,6 +5,7 @@
 3. Navigate to the repository's directory, then run `stow {directory}` to
     symlink the configurations in `{directory}`.
 
+
 ## Additional setup information
 
 ### `bash`
@@ -23,29 +24,6 @@ or that must be imported into Windows programs.
 
 May need to delete `~/.gitconfig` before stowing.
 
-### `caveats`
-
-I don't know what I'm doing.
-
-I know there is a flag that will let me correctly stow some of the
-configurations in the `caveats` directory, but I haven't yet bothered to figure
-out what it is and document it, so **do not** use `stow` on them for now.
-
-- `git-commit-hooks`: doesn't seem to appreciate being symlinked
-- `touchpad-libinput-gestures`: contents belong in `/etc`
-
-
-#### `git-commit-hooks` setup
-
-1. (Linux only) Run `chmod u+x ~/.git-templates/hooks/prepare-commit-msg` to
-    make the script executable before copying it into the templates
-    directory.
-2. Copy the file into the templates directory:
-    `cp git-commit-hooks/.git-templates/hooks/prepare-commit-msg ~/.git-templates/hooks/prepare-commit-msg`
-3. Open the terminal you'll use git in and run
-    `git config --global init.templatedir "~/.git-templates"`.
-    - Alternatively, you might should get the same effect by stowing `git`.
-
 Any repositories cloned after this setup should automatically be configured to
 execute the commit hook.
 
@@ -57,20 +35,23 @@ adding a commit to it. If the hook is working, the commit message should look
 like `[branch_name] Commit message`.
 
 
+### `caveats`
+
+**Do not** use `stow` on anything in this directory.
+
+- `touchpad-libinput-gestures`: contents belong in `/etc`
+
 #### `touchpad-libinput-gestures` setup
+
+Contents belong in `/etc`.
 
 When you change the gestures, use `libinput-gestures-setup restart` to load them.
 
 `libinput-gestures` contains the user-specific gestures;
-`touchpad-libinput-gestures` contains the configurations needed to get Ubuntu
+`caveats/touchpad-libinput-gestures` contains the configurations needed to get Ubuntu
 to recognize the touchpad (or something like that).
 
 
 ## To Do
 
-- Try to resolve the caveats
-    - Check out
-    [this](https://stackoverflow.com/questions/4592838/symbolic-link-to-a-hook-in-git)
-    to see whether there is a solution for the `git-commit-hook` symlink
-    nonsense
-    - Look into `stow` parameters for symlinking to places like `etc`
+- Look into `stow` parameters for symlinking to places like `etc`
