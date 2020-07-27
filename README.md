@@ -4,28 +4,11 @@
 2. Clone the repository.
 3. Navigate to the repository's directory, then run `stow {directory}` to
     symlink the configurations in `{directory}`.
-
-## More setup
-
-- `tree`: `sudo apt-get install tree`
-- Python virtual environment manager and wrapper:
-    `sudo pip3 install virtualenv virtualenvwrapper`
-    - Additional setup is already in `.bashrc`
-- [Vim 8.2+](https://tipsonubuntu.com/2016/09/13/vim-8-0-released-install-ubuntu-16-04/):
-    1. `sudo add-apt-repository ppa:jonathonf/vim`
-    2. `sudo apt update`
-    3. `sudo apt install vim`
-    4. Clone down [Vim setup repo](https://bitbucket.org/ChloeH/vim-setup/src/master/)
-        and follow the instructions.
+    - Exceptions:
+        - [`libinput-gestures-touchpad-config`](#libinput-gestures-/-libinput-gestures-touchpad-config)
+        - [`backups`](#backups)
 
 ## Additional information
-
-### `bash`
-
-Delete `~/.bashrc` before stowing.
-
-**Note:** I've included "(custom)" as a comment above things I've added or
-modified in my `.bashrc` for easy searching.
 
 ### `backups`
 
@@ -39,6 +22,13 @@ or that must be imported into Windows programs.
     - The configuration file belongs in `%AppData%`.
 - [OneNote 2016](https://www.onenote.com/download)
 - [ShareX](https://getsharex.com/downloads/)
+
+### `bash`
+
+Delete `~/.bashrc` before stowing.
+
+**Note:** I've included "(custom)" as a comment above things I've added or
+modified in my `.bashrc` for easy searching.
 
 ### `git`
 
@@ -54,26 +44,33 @@ You can test that the commit hook is working by creating a new branch and
 adding a commit to it. If the hook is working, the commit message should look
 like `[branch_name] Commit message`.
 
-
-### `caveats`
-
-**Do not** use `stow` on anything in this directory.
-
-- `touchpad-libinput-gestures`: contents belong in `/etc`
-
-#### `touchpad-libinput-gestures` setup
+### `libinput-gestures` / `libinput-gestures-touchpad-config`
 
 [GitHub](https://github.com/bulletmark/libinput-gestures)
 
-Contents belong in `/etc`.
+`sudo stow --target=/etc libinput-gestures-touchpad-config`
+
+Stow `libinput-gestures` like normal.
 
 When you change the gestures, use `libinput-gestures-setup restart` to load them.
 
-`libinput-gestures` contains the user-specific gestures;
-`caveats/touchpad-libinput-gestures` contains the configurations needed to get Ubuntu
-to recognize the touchpad (or something like that).
+### `tmux`
 
+[GitHub wiki](https://github.com/tmux/tmux/wiki)
 
-## To Do
+### `youtube-dl`
 
-- Look into `stow` parameters for symlinking to places like `etc`
+[Homepage](https://ytdl-org.github.io/youtube-dl/index.html)
+
+## Other stuff to install
+
+- `tree`: `sudo apt-get install tree`
+- Python virtual environment manager and wrapper:
+    `sudo pip3 install virtualenv virtualenvwrapper`
+    - Additional setup is already in `.bashrc`
+- [Vim 8.2+](https://tipsonubuntu.com/2016/09/13/vim-8-0-released-install-ubuntu-16-04/):
+    1. `sudo add-apt-repository ppa:jonathonf/vim`
+    2. `sudo apt update`
+    3. `sudo apt install vim`
+    4. Clone down [Vim setup repo](https://bitbucket.org/ChloeH/vim-setup/src/master/)
+        and follow the instructions.
