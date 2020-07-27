@@ -15,6 +15,11 @@ Delete `~/.bashrc` before stowing.
 **Note:** I've included "(custom)" as a comment above things I've added or
 modified in my `.bashrc` for easy searching.
 
+#### Additional tools I like to install
+
+- `tree`: `sudo apt-get install tree`
+- Python virtual environments and the wrapper: `sudo pip3 install virtualenv virtualenvwrapper`
+
 ### `backups`
 
 Not meant to be symlinked; it contains files that either aren't configurations
