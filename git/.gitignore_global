@@ -3,4 +3,4 @@
 *.swo
 
 # Ignore ctags file
-/.gutenctags
+.gutenctags
