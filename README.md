@@ -48,7 +48,8 @@ like `[branch_name] Commit message`.
 
 [GitHub](https://github.com/bulletmark/libinput-gestures)
 
-`sudo stow --target=/etc libinput-gestures-touchpad-config`
+Stow `libinput-gestures-touchpad-config` with
+`sudo stow --target=/etc libinput-gestures-touchpad-config`.
 
 Stow `libinput-gestures` like normal.
 
