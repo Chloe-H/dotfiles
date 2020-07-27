@@ -1,4 +1,6 @@
 # Ignore vim's swapfiles
 *.swp
 *.swo
+
+# Ignore ctags file
 /.gutenctags
