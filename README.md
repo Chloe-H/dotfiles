@@ -9,7 +9,7 @@
 
 ### `bash`
 
-May need to delete `~/.bashrc` before stowing.
+Delete `~/.bashrc` before stowing.
 
 **Note:** I've included "(custom)" as a comment above things I've added or
 modified in my `.bashrc` for easy searching.
