@@ -1,7 +1,7 @@
 # Setup
 
 1. Install `stow`: `sudo apt install stow`
-2. Clone the repository.
+2. Clone this repository to your home directory.
 3. Navigate to the repository's directory, then run `stow {directory}` to
     symlink the configurations in `{directory}`.
     - Exceptions:
