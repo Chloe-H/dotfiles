@@ -8,13 +8,9 @@
         - [`libinput-gestures-touchpad-config`](#libinput-gestures--libinput-gestures-touchpad-config)
         - [`backups`](#backups)
 
+## Additional information
 
-
-# Additional information
-
-
-
-## `backups`
+### `backups`
 
 Not meant to be symlinked; it contains files that either aren't configurations
 or that must be imported into Windows programs.
@@ -27,18 +23,14 @@ or that must be imported into Windows programs.
 - [OneNote 2016](https://www.onenote.com/download)
 - [ShareX](https://getsharex.com/downloads/)
 
-
-
-## `bash`
+### `bash`
 
 Delete `~/.bashrc` before stowing.
 
 **Note:** I've included "(custom)" as a comment above things I've added or
 modified in my `.bashrc` for easy searching.
 
-
-
-## `git`
+### `git`
 
 May need to delete `~/.gitconfig` before stowing.
 
@@ -52,34 +44,25 @@ You can test that the commit hook is working by creating a new branch and
 adding a commit to it. If the hook is working, the commit message should look
 like `[branch_name] Commit message`.
 
-
-
-## `libinput-gestures` / `libinput-gestures-touchpad-config`
+### `libinput-gestures` / `libinput-gestures-touchpad-config`
 
 [GitHub](https://github.com/bulletmark/libinput-gestures)
 
-Stow `libinput-gestures-touchpad-config` with
 `sudo stow --target=/etc libinput-gestures-touchpad-config`
 
 Stow `libinput-gestures` like normal.
 
 When you change the gestures, use `libinput-gestures-setup restart` to load them.
 
-
-
-## `tmux`
+### `tmux`
 
 [GitHub wiki](https://github.com/tmux/tmux/wiki)
 
-
-
-## `youtube-dl`
+### `youtube-dl`
 
 [Homepage](https://ytdl-org.github.io/youtube-dl/index.html)
 
-
-
-# Other stuff to install
+## Other stuff to install
 
 - `tree`: `sudo apt-get install tree`
 - Python virtual environment manager and wrapper:
