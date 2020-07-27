@@ -5,8 +5,20 @@
 3. Navigate to the repository's directory, then run `stow {directory}` to
     symlink the configurations in `{directory}`.
 
+## More setup
 
-## Additional setup information
+- `tree`: `sudo apt-get install tree`
+- Python virtual environment manager and wrapper:
+    `sudo pip3 install virtualenv virtualenvwrapper`
+    - Additional setup is already in `.bashrc`
+- [Vim 8.2+](https://tipsonubuntu.com/2016/09/13/vim-8-0-released-install-ubuntu-16-04/):
+    1. `sudo add-apt-repository ppa:jonathonf/vim`
+    2. `sudo apt update`
+    3. `sudo apt install vim`
+    4. Clone down [Vim setup repo](https://bitbucket.org/ChloeH/vim-setup/src/master/)
+        and follow the instructions.
+
+## Additional information
 
 ### `bash`
 
@@ -15,15 +27,18 @@ Delete `~/.bashrc` before stowing.
 **Note:** I've included "(custom)" as a comment above things I've added or
 modified in my `.bashrc` for easy searching.
 
-#### Additional tools I like to install
-
-- `tree`: `sudo apt-get install tree`
-- Python virtual environments and the wrapper: `sudo pip3 install virtualenv virtualenvwrapper`
-
 ### `backups`
 
 Not meant to be symlinked; it contains files that either aren't configurations
 or that must be imported into Windows programs.
+
+- [JetBrains ReSharper](https://account.jetbrains.com/licenses)
+- [Sublime Text 3](https://www.sublimetext.com/3)
+- [Compiz Config](https://packages.ubuntu.com/search?keywords=compizconfig-settings-manager)
+- [MoveToDesktop](https://github.com/Eun/MoveToDesktop/releases)
+    - The configuration file belongs in `%AppData%`.
+- [OneNote 2016](https://www.onenote.com/download)
+- [ShareX](https://getsharex.com/downloads/)
 
 ### `git`
 
@@ -47,6 +62,8 @@ like `[branch_name] Commit message`.
 - `touchpad-libinput-gestures`: contents belong in `/etc`
 
 #### `touchpad-libinput-gestures` setup
+
+[GitHub](https://github.com/bulletmark/libinput-gestures)
 
 Contents belong in `/etc`.
 
