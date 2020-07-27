@@ -134,9 +134,9 @@ stty -ixon
 python_virtual_env_wrapper_script="${HOME}/.local/bin/virtualenvwrapper.sh"
 
 if [[ -e ${python_virtual_env_wrapper_script} ]]; then
-    python_virtual_env_dir='~/virtualenvs'
+    python_virtual_env_dir="${HOME}/virtualenvs"
 
-    if [[ -n ${python_virtual_env_dir} ]]; then
+    if [[ ! -e ${python_virtual_env_dir} ]]; then
         mkdir ${python_virtual_env_dir}
     fi
 
