@@ -61,6 +61,10 @@ like `[branch_name] Commit message`.
 
 When you change the gestures, use `libinput-gestures-setup restart` to load them.
 
+`libinput-gestures` contains the user-specific gestures;
+`touchpad-libinput-gestures` contains the configurations needed to get Ubuntu
+to recognize the touchpad (or something like that).
+
 
 ## To Do
 
