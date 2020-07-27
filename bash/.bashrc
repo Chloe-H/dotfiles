@@ -131,7 +131,7 @@ export NVM_DIR="$HOME/.nvm"
 stty -ixon
 
 # For virtualenvwrapper, if it's set up (custom)
-python_virtual_env_wrapper_script='~/.local/bin/virtualenvwrapper.sh'
+python_virtual_env_wrapper_script="${HOME}/.local/bin/virtualenvwrapper.sh"
 
 if [[ -e ${python_virtual_env_wrapper_script} ]]; then
     python_virtual_env_dir='~/virtualenvs'
@@ -140,7 +140,7 @@ if [[ -e ${python_virtual_env_wrapper_script} ]]; then
         mkdir ${python_virtual_env_dir}
     fi
 
-    export WORKON_HOME='${python_virtual_env_dir}'
+    export WORKON_HOME=${python_virtual_env_dir}
     export VIRTUALENVWRAPPER_PYTHON='/usr/bin/python3'
     source ${python_virtual_env_wrapper_script}
 fi
