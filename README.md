@@ -4,6 +4,9 @@
 2. Clone this repository to your home directory.
 3. Navigate to the repository's directory, then run `stow {directory}` to
     symlink the configurations in `{directory}`.
+    - Symlinks can't target existing files/directories, so if you run into any
+        errors when stowing, it's likely because one or more of the targets
+        already exist
     - Exceptions:
         - [`libinput-gestures-touchpad-config`](#libinput-gestures--libinput-gestures-touchpad-config)
         - [`backups`](#backups)
@@ -25,14 +28,12 @@ or that must be imported into Windows programs.
 
 ### `bash`
 
-Delete `~/.bashrc` before stowing.
-
-**Note:** I've included "(custom)" as a comment above things I've added or
-modified in my `.bashrc` for easy searching.
+I've included "(custom)" as a comment above things I've added or modified in my
+`.bashrc` for easy searching.
 
 ### `git`
 
-May need to delete `~/.gitconfig` before stowing.
+#### `.git-templates`
 
 Any repositories cloned after this setup should automatically be configured to
 execute the commit hook.
@@ -43,6 +44,13 @@ navigate to their containing directories and run `git init`.
 You can test that the commit hook is working by creating a new branch and
 adding a commit to it. If the hook is working, the commit message should look
 like `[branch_name] Commit message`.
+
+##### Setting up the commit hook manually
+
+1. Copy the `.git-templates` directory to your home directory (or somewhere
+    else, if you're a degenerate).
+2. Run `git config --global init.templatedir "path/to/.git-templates"` to update
+    your git config.
 
 ### `libinput-gestures` / `libinput-gestures-touchpad-config`
 
@@ -67,11 +75,12 @@ When you change the gestures, use `libinput-gestures-setup restart` to load them
 
 - `tree`: `sudo apt-get install tree`
 - Python virtual environment manager and wrapper:
-    `sudo pip3 install virtualenv virtualenvwrapper`
+    `sudo { pip3 | pip } install virtualenv virtualenvwrapper`
     - Additional setup is already in `.bashrc`
+    - **TODO:** is `sudo` okay and/or necessary?
 - [Vim 8.2+](https://tipsonubuntu.com/2016/09/13/vim-8-0-released-install-ubuntu-16-04/):
     1. `sudo add-apt-repository ppa:jonathonf/vim`
     2. `sudo apt update`
     3. `sudo apt install vim`
     4. Clone down [Vim setup repo](https://bitbucket.org/ChloeH/vim-setup/src/master/)
-        and follow the instructions.
+        and follow the instructions in its README.
