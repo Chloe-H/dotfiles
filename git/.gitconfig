@@ -23,4 +23,5 @@
 	excludesfile = ~/.gitignore_global
 	editor = vim
 	autocrlf = false
+	ignorecase = false
 [color]
