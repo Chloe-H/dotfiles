@@ -1,10 +1,13 @@
-# Git shorthand
+# == git ==
 alias gpo="git push origin"
+alias git_unpushed="git log --branches --not --remotes --no-walk --decorate --oneline"
 
-# My favorite ls flags
+
+# == ls ==
 alias lsc="ls --group-directories-first -1A"
 
-# tmux
+
+# == tmux ==
 
 # Check whether a tmux session with the given name exists; if it doesn't, create
 # it.
