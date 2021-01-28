@@ -52,6 +52,11 @@ like `[branch_name] Commit message`.
 2. Run `git config --global init.templatedir "path/to/.git-templates"` to update
     your git config.
 
+If you make any changes to an existing global hook, (`git init` will not
+overwrite the hook defined in your git repo)[https://coderwall.com/p/jp7d5q/create-a-global-git-commit-hook].
+You just gotta delete the offending file(s) from the local repo before
+running `git init`.
+
 ### `libinput-gestures` / `libinput-gestures-touchpad-config`
 
 [GitHub](https://github.com/bulletmark/libinput-gestures)
