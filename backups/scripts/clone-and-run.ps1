@@ -1,10 +1,12 @@
-$StartingDir = Get-Location
-$DirSuffix = Read-Host -Prompt "`nEnter directory suffix"
-$TargetDir = "[REDACTED].$DirSuffix\"
-
-New-Item -Confirm -ItemType Directory -Force .\$TargetDir
-cd $TargetDir
-$TargetDirAbsolutePath = Get-Location
+# Script for running [REDACTED] microservices and composites
+#
+# tl;dr: Clones and runs all the specified repos.
+#
+# Prompts for a name, then creates a directory into which all of the repos
+# in the list below will be cloned.
+# You will have a chance to specify a branch other than "develop" for each repo.
+# Once all the repos are cloned, each one's "run.ps1" script is run in a new
+# PowerShell window.
 
 # Update the list as needed
 $ReposToClone = @(
@@ -13,7 +15,16 @@ $ReposToClone = @(
     ,'[REDACTED].Utility.Api'
 )
 
-# clone repos
+# Create containing directory
+$StartingDir = Get-Location
+$DirSuffix = Read-Host -Prompt "`nEnter directory suffix"
+$TargetDir = "[REDACTED].$DirSuffix\"
+
+New-Item -Confirm -ItemType Directory -Force .\$TargetDir
+cd $TargetDir
+$TargetDirAbsolutePath = Get-Location
+
+# Clone repos
 foreach ($repo in $ReposToClone)
 {
     Write-Host "`n"
@@ -34,6 +45,7 @@ foreach ($repo in $ReposToClone)
     Write-Host "`n'$repo' cloned."
 }
 
+# Run everything
 cd $TargetDirAbsolutePath
 
 foreach ($dir in Get-ChildItem .\)
@@ -41,4 +53,5 @@ foreach ($dir in Get-ChildItem .\)
     Start-Process powershell.exe -WorkingDirectory $dir -ArgumentList '.\run.ps1'
 }
 
+# Quietly back away
 cd $StartingDir
