@@ -17,13 +17,13 @@ function Main-Logic {
 
     docker cp $DbBackupLocation ${DbContainerName}:/var/opt/mssql/data
 
-	foreach ($db in gci $DbBackupLocation)
-	{
-		RunSqlRestore `
+    foreach ($db in gci $DbBackupLocation)
+    {
+        RunSqlRestore `
             -DatabaseName $db.BaseName `
             -ContainerName $DbContainerName `
             -DatabasePassword $DbPassword
-	}
+    }
 }
 
 function RunSqlRestore {
