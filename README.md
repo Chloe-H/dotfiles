@@ -87,5 +87,5 @@ When you change the gestures, use `libinput-gestures-setup restart` to load them
     1. `sudo add-apt-repository ppa:jonathonf/vim`
     2. `sudo apt update`
     3. `sudo apt install vim`
-    4. Clone down [Vim setup repo](https://bitbucket.org/ChloeH/vim-setup/src/master/)
+    4. Clone down [Vim setup repo](https://bitbucket.org/ChloeH/vim-setup/)
         and follow the instructions in its README.
