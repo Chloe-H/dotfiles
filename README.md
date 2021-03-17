@@ -26,6 +26,15 @@ or that must be imported into Windows programs.
 - [OneNote 2016](https://www.onenote.com/download)
 - [ShareX](https://getsharex.com/downloads/)
 
+#### `scripts`
+
+Currently only contains (redacted) scripts I wrote for work, but I do have a
+legacy to uphold.
+
+The PowerShell script(s) in `powershell > modules` can be imported into a
+[PowerShell profile](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.1)
+using `Import-Module`.
+
 ### `bash`
 
 I've included "(custom)" as a comment above things I've added or modified in my
