@@ -20,7 +20,14 @@ or that must be imported into Windows programs.
 
 - [JetBrains ReSharper](https://account.jetbrains.com/licenses)
 - [Sublime Text 3](https://www.sublimetext.com/3)
+
+#### Ubuntu
+
 - [Compiz Config](https://packages.ubuntu.com/search?keywords=compizconfig-settings-manager)
+- [indicator-stickynotes](https://github.com/umangv/indicator-stickynotes)
+
+#### Windows
+
 - [MoveToDesktop](https://github.com/Eun/MoveToDesktop/releases)
     - The configuration file belongs in `%AppData%`.
 - [OneNote 2016](https://www.onenote.com/download)

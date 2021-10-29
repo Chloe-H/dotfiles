@@ -1,0 +1,91 @@
+{
+    "notes": [
+        {
+            "uuid": "27139287-920b-453a-a734-0780d230d2c5",
+            "body": "\t\t\t\t\t\t\t\t\t\t\t\tShareX\t\t\t\t\t\t\t\t\t\tUbuntu\n\nCtrl + PrtScn\t\t\t\t\t\tregion\t\t\t\t\t\t\t\t\t\tto clipboard\nShift + PrtScn\t\t\t\t\ttoggle region video\t\t\ttoggle short screencast\nCtrl + Shift + PrtScn\t\ttoggle region GIF\t\t\t\tPeek\nCtrl + Alt + PrtScn\t\t\t-\t\t\t\t\t\t\t\t\t\t\t\t\tsave to Pictures\n",
+            "last_modified": "2021-10-22T16:59:04",
+            "properties": {
+                "position": [
+                    5,
+                    33
+                ],
+                "size": [
+                    485,
+                    167
+                ],
+                "locked": true
+            },
+            "cat": "9277bb3f-9714-4fee-b729-a821238d7bf9"
+        },
+        {
+            "uuid": "6410ea81-7331-479d-a4ea-c8dc8384913f",
+            "body": "ga\t\t\t\t\tchar info\n\n---\n\n:History/\t\t\tsearch history\n\n:Snippets\n:Commits\n\n,fzb\tfuzzy search current buffer\n\n\n--- Fugitive ---\n\n[/]c\t\tprev/next hunk, expands inline diff\ni\t\t\tnext file or hunk, expands inline diff\n\n\n[/]m\tprev/next file, collapses inline diff\n(\\)\t\tprev/next hunk, does not expand inline diff\n\ngu\t\tjump to [count] untracked or unstaged\ngU\t\tjump to [count] unstaged\ngs\t\tjump to [count] staged\n\ncz?\t\tstash help\n\ncm<Space>\t\t\":Git merge \"\ncb<Space>\t\t\":Git branch \" (shows branches in window)",
+            "last_modified": "2021-10-22T16:59:04",
+            "properties": {
+                "position": [
+                    6,
+                    204
+                ],
+                "size": [
+                    404,
+                    532
+                ],
+                "locked": true
+            },
+            "cat": "9277bb3f-9714-4fee-b729-a821238d7bf9"
+        },
+        {
+            "uuid": "f666fecd-265e-4b6a-9e2c-09065667a3e9",
+            "body": "*panes* are splits within *windows*\n\n---\n\n:move-window -r\t\trenumber windows\n\n:select-layout even-{ horizontal | vertical }\nshortcut: Alt + { 1 | 2 }\n\n:splitw -f{ h | v }\t\t\t\tcreate pane spanning full window height/width\n\n---\n\n&\t/\tx\t\tkill curr window/pane\nl\t/\t;\t\tlast window/pane\n\ni\t\tdisplay msg\n~\t\tshow msgs\nt\t\ttime\n?\t\tlist hotkeys\n!\t\tbreak pane into window\n\n<Space>\t\tnext pane layout\n\n:join-pane -s <src> -t <target>\n\n:list-commands",
+            "last_modified": "2021-10-22T16:59:04",
+            "properties": {
+                "position": [
+                    415,
+                    205
+                ],
+                "size": [
+                    508,
+                    499
+                ],
+                "locked": true
+            },
+            "cat": "9277bb3f-9714-4fee-b729-a821238d7bf9"
+        },
+        {
+            "uuid": "c7109e60-e820-4578-b5ea-400e9858a74e",
+            "body": "$ git stash\t\tstash modified tracked files\n\n$ git reset <commit>\t\t\t\t\tundoes all commits after <commit>, preserving changes locally\n$ git reset --hard <commit>\tdiscards all history and changes back to <commit>",
+            "last_modified": "2021-10-22T16:59:04",
+            "properties": {
+                "position": [
+                    495,
+                    33
+                ],
+                "size": [
+                    639,
+                    117
+                ],
+                "locked": true
+            },
+            "cat": "9277bb3f-9714-4fee-b729-a821238d7bf9"
+        }
+    ],
+    "properties": {
+        "all_visible": true
+    },
+    "categories": {
+        "9277bb3f-9714-4fee-b729-a821238d7bf9": {
+            "name": "Basic",
+            "bgcolor_hsv": [
+                0.5416666666666666,
+                0.14814814814814814,
+                0.21176470588235294
+            ],
+            "font": "Ubuntu 11",
+            "textcolor": [
+                0.9333333333333333,
+                0.9333333333333333,
+                0.9254901960784314
+            ]
+        }
+    }
+}
