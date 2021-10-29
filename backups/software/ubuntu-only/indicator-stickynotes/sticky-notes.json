@@ -3,11 +3,11 @@
         {
             "uuid": "27139287-920b-453a-a734-0780d230d2c5",
             "body": "\t\t\t\t\t\t\t\t\t\t\t\tShareX\t\t\t\t\t\t\t\t\t\tUbuntu\n\nCtrl + PrtScn\t\t\t\t\t\tregion\t\t\t\t\t\t\t\t\t\tto clipboard\nShift + PrtScn\t\t\t\t\ttoggle region video\t\t\ttoggle short screencast\nCtrl + Shift + PrtScn\t\ttoggle region GIF\t\t\t\tPeek\nCtrl + Alt + PrtScn\t\t\t-\t\t\t\t\t\t\t\t\t\t\t\t\tsave to Pictures\n",
-            "last_modified": "2021-10-22T16:59:04",
+            "last_modified": "2021-10-29T11:31:33",
             "properties": {
                 "position": [
-                    5,
-                    33
+                    446,
+                    639
                 ],
                 "size": [
                     485,
