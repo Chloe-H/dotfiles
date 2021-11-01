@@ -1,103 +1,13 @@
 {
-    "notes": [
-        {
-            "uuid": "27139287-920b-453a-a734-0780d230d2c5",
-            "body": "\t\t\t\t\t\t\t\t\t\t\t\tShareX\t\t\t\t\t\t\t\t\t\tUbuntu\n\nCtrl + PrtScn\t\t\t\t\t\tregion\t\t\t\t\t\t\t\t\t\tto clipboard\nShift + PrtScn\t\t\t\t\ttoggle region video\t\t\ttoggle short screencast\nCtrl + Shift + PrtScn\t\ttoggle region GIF\t\t\t\tPeek\nCtrl + Alt + PrtScn\t\t\t-\t\t\t\t\t\t\t\t\t\t\t\t\tsave to Pictures\n",
-            "last_modified": "2021-11-01T11:56:14",
-            "properties": {
-                "position": [
-                    446,
-                    639
-                ],
-                "size": [
-                    485,
-                    167
-                ],
-                "locked": true
-            },
-            "cat": "9277bb3f-9714-4fee-b729-a821238d7bf9"
-        },
-        {
-            "uuid": "6410ea81-7331-479d-a4ea-c8dc8384913f",
-            "body": "ga\n\tchar info\n\n---\n\n## fzf-vim\n\n:History/\n\tsearch history\n\n:Snippets\n\tsearch snippets\n\tinsert at current location (no newline inserted)\n\n:Commits\n\tsearch commits\n\n--- \n\n## vim-fugitive\n\n,gfcd\n\tget commit diff between current branch and develop\n\n[/]c\n\tprev/next hunk\n\texpands inline diff\ni\n\tnext file or hunk\n\texpands inline diff\n\n[/]m\n\tprev/next file\n\tcollapses inline diff\n(\\)\n\tprev/next hunk\n\tdoes not expand inline diff\n\njump to <count>...\ngu\n\t...untracked or unstaged file\ngU\n\t...unstaged file\ngs\n\t...staged file\n\ncz?\n\tstash help\n\ncm<Space>\n\t\":Git merge \"\ncb<Space>\n\t\":Git branch \"\n\tshows branches in window",
-            "last_modified": "2021-11-01T11:56:14",
-            "properties": {
-                "position": [
-                    1437,
-                    33
-                ],
-                "size": [
-                    427,
-                    916
-                ],
-                "locked": true
-            },
-            "cat": "a8e54373-1184-42e2-b0eb-0c2563481b47"
-        },
-        {
-            "uuid": "f666fecd-265e-4b6a-9e2c-09065667a3e9",
-            "body": "# tmux\n\n*panes* are splits within *windows*\n\n---\n\n## Commands\n\n:move-window -r\n\t\trenumber windows\n\n:select-layout even-{ horizontal | vertical }\n\t\tsplit pane sizes evenly horizontally/vertically\n\n:splitw -f{ h | v }\n\t\tcreate pane spanning full window height/width\n\n:join-pane -s <src> -t <target>\n\n:list-commands\n\n---\n\n## Shortcuts\n\nAlt + { 1 | 2 }\n\t\tsplit pane sizes evenly horizontally/vertically\n\n&/x\t\tkill curr window/pane\nL/l/;\tlast session/window/pane\n\ni\t\tdisplay msg\n~\t\tshow msgs\nt\t\ttime\n?\t\tlist hotkeys\n!\t\tbreak pane into window\n\n<Space>\n\t\tnext pane layout",
-            "last_modified": "2021-11-01T11:56:14",
-            "properties": {
-                "position": [
-                    7,
-                    33
-                ],
-                "size": [
-                    433,
-                    660
-                ],
-                "locked": true
-            },
-            "cat": "de146421-3efd-4a79-b7c1-4334585b9fc5"
-        },
-        {
-            "uuid": "c7109e60-e820-4578-b5ea-400e9858a74e",
-            "body": "# Stash\n\nstaging info is not stored in stash commits\n\ngit stash [push]\n\t\t\tstash changes to tracked files\n\t\t\trevert changes to tracked files, staged or not\n\n\t--keep-index\n\t\t\tstash changes to tracked files\n\t\t\trevert changes to unstaged tracked files\n\n\t--include-untracked\n\t\t\tstash changes to tracked and untracked files\n\t\t\trevert changes to all files, staged or unstaged, tracked or untracked\n\ngit show stash@{n}^3\n\t\t\tshow any untracked files in a stash commit\n\n---\n\ngit clean\n\t\tdelete untracked files\ngit reset\n\t\trevert tracked changes\n\ngit reset <commit>\n\t\tundoes all changes after <commit>\n\t\tpreserves the changes locally\n\ngit reset --hard <commit>\n\t\tundoes all changes after <commit>\n\t\tdiscards the reverted changes\n\n\t\tdiscards all history and changes back to <commit>",
-            "last_modified": "2021-11-01T11:56:14",
-            "properties": {
-                "position": [
-                    447,
-                    33
-                ],
-                "size": [
-                    598,
-                    600
-                ],
-                "locked": true
-            },
-            "cat": "de146421-3efd-4a79-b7c1-4334585b9fc5"
-        },
-        {
-            "uuid": "c548a7e4-f1aa-4118-832d-1322ba46a98a",
-            "body": "# Snippets\n\n///\n\tXML summary comment\n<p\n\tparam\n<r\n\treturns\n<rem\n\tremarks\n\n## Access Modifiers\n\n+\tpublic\n&\tinternal\n|\tprotected\n-\tprivate\n\n\n## Class Modifiers\n\n^ = static\n% = abstract\n\n\n## Method and Property Type Modifiers\n\ni\tinteger\ns\tstring\nb\tbool\n\n---\n\n<snippet> <access modifier> <class modifier>\n\nExamples:\n\n\tcls&\tinternal class $1\n\tcls|%\tprotected abstract class $1\n\n\tpb+-\tpublic bool $1 { get; private set; }\n\tpi+&\tpublic int $1 { get; internal set; }\n\n---\n\nhttps://github.com/honza/vim-snippets/blob/4600da87a064bf63b37c7135be154b34c40dec20/snippets/cs.snippets",
-            "last_modified": "2021-11-01T11:56:14",
-            "properties": {
-                "position": [
-                    1049,
-                    33
-                ],
-                "size": [
-                    384,
-                    802
-                ],
-                "locked": true
-            },
-            "cat": "a8e54373-1184-42e2-b0eb-0c2563481b47"
-        }
-    ],
-    "properties": {
-        "all_visible": true
-    },
     "categories": {
         "9277bb3f-9714-4fee-b729-a821238d7bf9": {
-            "name": "Basic",
             "bgcolor_hsv": [
                 0.5416666666666666,
                 0.14814814814814814,
                 0.21176470588235294
             ],
             "font": "Ubuntu 11",
+            "name": "Basic",
             "textcolor": [
                 0.9333333333333333,
                 0.9333333333333333,
@@ -105,32 +15,122 @@
             ]
         },
         "a8e54373-1184-42e2-b0eb-0c2563481b47": {
-            "name": "Vim",
             "bgcolor_hsv": [
-                0.0,
-                0.0,
-                0.0
+                0,
+                0,
+                0
             ],
+            "font": "UbuntuMonoDerivativePowerline Nerd Font 11",
+            "name": "Vim",
             "textcolor": [
                 0.9333333333333333,
                 0.9333333333333333,
                 0.9254901960784314
-            ],
-            "font": "UbuntuMonoDerivativePowerline Nerd Font 11"
+            ]
         },
         "de146421-3efd-4a79-b7c1-4334585b9fc5": {
-            "name": "Software",
             "bgcolor_hsv": [
                 0.7993197278911565,
                 0.4803921568627451,
                 0.4
             ],
+            "font": "Ubuntu Mono 11",
+            "name": "Software",
             "textcolor": [
                 0.9333333333333333,
                 0.9333333333333333,
                 0.9254901960784314
-            ],
-            "font": "Ubuntu Mono 11"
+            ]
         }
+    },
+    "notes": [
+        {
+            "body": "\t\t\t\t\t\t\t\t\t\t\t\tShareX\t\t\t\t\t\t\t\t\t\tUbuntu\n\nCtrl + PrtScn\t\t\t\t\t\tregion\t\t\t\t\t\t\t\t\t\tto clipboard\nShift + PrtScn\t\t\t\t\ttoggle region video\t\t\ttoggle short screencast\nCtrl + Shift + PrtScn\t\ttoggle region GIF\t\t\t\tPeek\nCtrl + Alt + PrtScn\t\t\t-\t\t\t\t\t\t\t\t\t\t\t\t\tsave to Pictures\n",
+            "cat": "9277bb3f-9714-4fee-b729-a821238d7bf9",
+            "last_modified": "2021-11-01T11:56:14",
+            "properties": {
+                "locked": true,
+                "position": [
+                    446,
+                    639
+                ],
+                "size": [
+                    485,
+                    167
+                ]
+            },
+            "uuid": "27139287-920b-453a-a734-0780d230d2c5"
+        },
+        {
+            "body": "ga\n\tchar info\n\n---\n\n## fzf-vim\n\n:History/\n\tsearch history\n\n:Snippets\n\tsearch snippets\n\tinsert at current location (no newline inserted)\n\n:Commits\n\tsearch commits\n\n--- \n\n## vim-fugitive\n\n,gfcd\n\tget commit diff between current branch and develop\n\n[/]c\n\tprev/next hunk\n\texpands inline diff\ni\n\tnext file or hunk\n\texpands inline diff\n\n[/]m\n\tprev/next file\n\tcollapses inline diff\n(\\)\n\tprev/next hunk\n\tdoes not expand inline diff\n\njump to <count>...\ngu\n\t...untracked or unstaged file\ngU\n\t...unstaged file\ngs\n\t...staged file\n\ncz?\n\tstash help\n\ncm<Space>\n\t\":Git merge \"\ncb<Space>\n\t\":Git branch \"\n\tshows branches in window",
+            "cat": "a8e54373-1184-42e2-b0eb-0c2563481b47",
+            "last_modified": "2021-11-01T11:56:14",
+            "properties": {
+                "locked": true,
+                "position": [
+                    1437,
+                    33
+                ],
+                "size": [
+                    427,
+                    916
+                ]
+            },
+            "uuid": "6410ea81-7331-479d-a4ea-c8dc8384913f"
+        },
+        {
+            "body": "# tmux\n\n*panes* are splits within *windows*\n\n---\n\n## Commands\n\n:move-window -r\n\t\trenumber windows\n\n:select-layout even-{ horizontal | vertical }\n\t\tsplit pane sizes evenly horizontally/vertically\n\n:splitw -f{ h | v }\n\t\tcreate pane spanning full window height/width\n\n:join-pane -s <src> -t <target>\n\n:list-commands\n\n---\n\n## Shortcuts\n\nAlt + { 1 | 2 }\n\t\tsplit pane sizes evenly horizontally/vertically\n\n&/x\t\tkill curr window/pane\nL/l/;\tlast session/window/pane\n\ni\t\tdisplay msg\n~\t\tshow msgs\nt\t\ttime\n?\t\tlist hotkeys\n!\t\tbreak pane into window\n\n<Space>\n\t\tnext pane layout",
+            "cat": "de146421-3efd-4a79-b7c1-4334585b9fc5",
+            "last_modified": "2021-11-01T11:56:14",
+            "properties": {
+                "locked": true,
+                "position": [
+                    7,
+                    33
+                ],
+                "size": [
+                    433,
+                    660
+                ]
+            },
+            "uuid": "f666fecd-265e-4b6a-9e2c-09065667a3e9"
+        },
+        {
+            "body": "# Stash\n\nstaging info is not stored in stash commits\n\ngit stash [push]\n\t\t\tstash changes to tracked files\n\t\t\trevert changes to tracked files, staged or not\n\n\t--keep-index\n\t\t\tstash changes to tracked files\n\t\t\trevert changes to unstaged tracked files\n\n\t--include-untracked\n\t\t\tstash changes to tracked and untracked files\n\t\t\trevert changes to all files, staged or unstaged, tracked or untracked\n\ngit show stash@{n}^3\n\t\t\tshow any untracked files in a stash commit\n\n---\n\ngit clean\n\t\tdelete untracked files\ngit reset\n\t\trevert tracked changes\n\ngit reset <commit>\n\t\tundoes all changes after <commit>\n\t\tpreserves the changes locally\n\ngit reset --hard <commit>\n\t\tundoes all changes after <commit>\n\t\tdiscards the reverted changes\n\n\t\tdiscards all history and changes back to <commit>",
+            "cat": "de146421-3efd-4a79-b7c1-4334585b9fc5",
+            "last_modified": "2021-11-01T11:56:14",
+            "properties": {
+                "locked": true,
+                "position": [
+                    447,
+                    33
+                ],
+                "size": [
+                    598,
+                    600
+                ]
+            },
+            "uuid": "c7109e60-e820-4578-b5ea-400e9858a74e"
+        },
+        {
+            "body": "# Snippets\n\n///\n\tXML summary comment\n<p\n\tparam\n<r\n\treturns\n<rem\n\tremarks\n\n## Access Modifiers\n\n+\tpublic\n&\tinternal\n|\tprotected\n-\tprivate\n\n\n## Class Modifiers\n\n^ = static\n% = abstract\n\n\n## Method and Property Type Modifiers\n\ni\tinteger\ns\tstring\nb\tbool\n\n---\n\n<snippet> <access modifier> <class modifier>\n\nExamples:\n\n\tcls&\tinternal class $1\n\tcls|%\tprotected abstract class $1\n\n\tpb+-\tpublic bool $1 { get; private set; }\n\tpi+&\tpublic int $1 { get; internal set; }\n\n---\n\nhttps://github.com/honza/vim-snippets/blob/4600da87a064bf63b37c7135be154b34c40dec20/snippets/cs.snippets",
+            "cat": "a8e54373-1184-42e2-b0eb-0c2563481b47",
+            "last_modified": "2021-11-01T11:56:14",
+            "properties": {
+                "locked": true,
+                "position": [
+                    1049,
+                    33
+                ],
+                "size": [
+                    384,
+                    802
+                ]
+            },
+            "uuid": "c548a7e4-f1aa-4118-832d-1322ba46a98a"
+        }
+    ],
+    "properties": {
+        "all_visible": true
     }
 }
