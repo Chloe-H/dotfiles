@@ -24,3 +24,5 @@
 	editor = vim
 	autocrlf = false
 	ignorecase = false
+[url "git@github.com:[REDACTED]/"]
+    insteadOf = rs:
