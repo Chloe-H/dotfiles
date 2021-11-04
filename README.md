@@ -15,32 +15,25 @@
 
 ### `backups`
 
-Not meant to be symlinked; it contains files that either aren't configurations
-or that must be imported into Windows programs.
+Manually copy contents of top-level to the locations provided below:
 
-- [JetBrains ReSharper](https://account.jetbrains.com/licenses)
-- [Sublime Text 3](https://www.sublimetext.com/3)
+- `move-to-desktop`
+    - [Move To Desktop](https://github.com/Eun/MoveToDesktop/releases)
+    - **Destination:** `%AppData%`
+- `sublime-text-2`
+    - [Sublime Text 2](https://www.sublimetext.com/2)
+    - **Destination:** `C:\Users\%USER%\AppData\Roaming\Sublime Text 2\Packages\User\Preferences.sublime-settings`
 
-#### Ubuntu
+#### `import`
 
-- [Compiz Config](https://packages.ubuntu.com/search?keywords=compizconfig-settings-manager)
-- [indicator-stickynotes](https://github.com/umangv/indicator-stickynotes)
+Import directory contents into their respective programs:
 
-#### Windows
-
-- [MoveToDesktop](https://github.com/Eun/MoveToDesktop/releases)
-    - The configuration file belongs in `%AppData%`.
-- [OneNote 2016](https://www.onenote.com/download)
-- [ShareX](https://getsharex.com/downloads/)
-
-#### `scripts`
-
-Currently only contains (redacted) scripts I wrote for work, but I do have a
-legacy to uphold.
-
-The PowerShell script(s) in `powershell > modules` can be imported into a
-[PowerShell profile](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.1)
-using `Import-Module`.
+- `indictaor-stickynotes`
+    - [Indicator Stickynotes](https://github.com/umangv/indicator-stickynotes)
+- `onenote-2016`
+    - [OneNote 2016](https://www.onenote.com/download)
+- `sharex`
+    - [ShareX](https://getsharex.com/downloads/)
 
 ### `bash`
 

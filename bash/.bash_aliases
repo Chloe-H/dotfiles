@@ -1,5 +1,4 @@
 # == git ==
-alias gpo="git push origin"
 alias git_unpushed="git log --branches --not --remotes --no-walk --decorate --oneline"
 
 
