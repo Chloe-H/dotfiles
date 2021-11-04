@@ -40,6 +40,8 @@ Manually copy contents of top-level to the locations provided below:
     - **Destination:** `%AppData%`
 - `powershell`
     - **Destination:** `C:\Users\%USERNAME%\Documents\WindowsPowerShell\`
+    - `(custom)` denotes my additions
+    - `(work)` denotes additions for work
 - `sublime-text-2`
     - [Sublime Text 2](https://www.sublimetext.com/2)
     - **Destination:** `C:\Users\%USERNAME%\AppData\Roaming\Sublime Text 2\Packages\User\Preferences.sublime-settings`

@@ -1,10 +1,11 @@
 $PSScriptRoot = "$Home\\Documents\\WindowsPowerShell"
 
+# Modules for work (custom) (work)
 Import-Module $PSScriptRoot\[REDACTED].Powershell.Utilities\AddPackageToLocalFeed.ps1
 Import-Module $PSScriptRoot\[REDACTED].Powershell.Utilities\Load[REDACTED]DbBackups.ps1
 Import-Module $PSScriptRoot\[REDACTED].Powershell.Utilities\CloneAndRun[REDACTED]Repos.ps1
 
-# Function for creating a [REDACTED] db Docker container (custom)
+# Function for creating a [REDACTED] db Docker container (custom) (work)
 function Create[REDACTED]DbContainer {
     Param(
         [String]$ContainerName,
@@ -19,7 +20,7 @@ function Create[REDACTED]DbContainer {
 # Show an arrow key-navigable menu of options for tab completion (custom)
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 
-# Tab completion for Docker container names
+# Tab completion for Docker container names (custom)
 Import-Module DockerCompletion
 
 # Chocolatey profile
