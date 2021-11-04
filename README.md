@@ -40,7 +40,7 @@ Manually copy contents of top-level to the locations provided below:
     - **Destination:** `%AppData%`
 - `sublime-text-2`
     - [Sublime Text 2](https://www.sublimetext.com/2)
-    - **Destination:** `C:\Users\%USER%\AppData\Roaming\Sublime Text 2\Packages\User\Preferences.sublime-settings`
+    - **Destination:** `C:\Users\%USERNAME%\AppData\Roaming\Sublime Text 2\Packages\User\Preferences.sublime-settings`
 
 ##### `import`
 
