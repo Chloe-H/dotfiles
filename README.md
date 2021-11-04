@@ -38,6 +38,8 @@ Manually copy contents of top-level to the locations provided below:
 - `move-to-desktop`
     - [Move To Desktop](https://github.com/Eun/MoveToDesktop/releases)
     - **Destination:** `%AppData%`
+- `powershell`
+    - **Destination:** `C:\Users\%USERNAME%\Documents\WindowsPowerShell\`
 - `sublime-text-2`
     - [Sublime Text 2](https://www.sublimetext.com/2)
     - **Destination:** `C:\Users\%USERNAME%\AppData\Roaming\Sublime Text 2\Packages\User\Preferences.sublime-settings`
