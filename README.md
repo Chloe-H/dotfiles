@@ -91,6 +91,10 @@ overwrite the hook defined in your git repo](https://coderwall.com/p/jp7d5q/crea
 You just gotta delete the offending file(s) from the local repo before
 running `git init`.
 
+### `git-work`
+
+Git configuration(s) for work.
+
 ### `tmux`
 
 [GitHub wiki](https://github.com/tmux/tmux/wiki)
