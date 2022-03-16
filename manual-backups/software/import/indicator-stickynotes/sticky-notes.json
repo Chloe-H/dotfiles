@@ -47,7 +47,7 @@
         {
             "body": "\t\t\t\t\t\t\t\t\t\t\t\tShareX\t\t\t\t\t\t\t\t\t\tUbuntu\n\nCtrl + PrtScn\t\t\t\t\t\tregion\t\t\t\t\t\t\t\t\t\tto clipboard\nShift + PrtScn\t\t\t\t\ttoggle region video\t\t\ttoggle short screencast\nCtrl + Shift + PrtScn\t\ttoggle region GIF\t\t\t\tPeek\nCtrl + Alt + PrtScn\t\t\t-\t\t\t\t\t\t\t\t\t\t\t\t\tsave to Pictures\n",
             "cat": "9277bb3f-9714-4fee-b729-a821238d7bf9",
-            "last_modified": "2021-11-11T15:21:54",
+            "last_modified": "2022-03-16T09:22:23",
             "properties": {
                 "locked": true,
                 "position": [
@@ -62,9 +62,9 @@
             "uuid": "27139287-920b-453a-a734-0780d230d2c5"
         },
         {
-            "body": "ga\n\tchar info\n\n---\n\n## fzf-vim\n\n:History/\n\tsearch history\n\n:Snippets\n\tsearch snippets\n\tinsert at current location (no newline inserted)\n\n:Commits\n\tsearch commits\n\n--- \n\n## vim-fugitive\n\n,gfcd\n\tget commit diff between current branch and develop\n\n[/]c\n\tprev/next hunk\n\texpands inline diff\ni\n\tnext file or hunk\n\texpands inline diff\n\n[/]m\n\tprev/next file\n\tcollapses inline diff\n(\\)\n\tprev/next hunk\n\tdoes not expand inline diff\n\njump to <count>...\ngu\n\t...untracked or unstaged file\ngU\n\t...unstaged file\ngs\n\t...staged file\n\ncz?\n\tstash help\n\ncm<Space>\n\t\":Git merge \"\ncb<Space>\n\t\":Git branch \"\n\tshows branches in window",
+            "body": "ga\n\tchar info\n\n\nCtrl + W\"<register>\n\tpaste from register (works in terminal)\n\n---\n\n## fzf-vim\n\n:History/\n\tsearch history\n\n:Snippets\n\tsearch snippets\n\tinsert at current location (no newline inserted)\n\n:Commits\n\tsearch commits\n\n--- \n\n## vim-fugitive\n\ni\n\tnext file or hunk\n\texpands inline diff\n\n(\\)\n\tprev/next hunk\n\tdoes not expand inline diff\n\njump to <count>...\ngu\n\t...untracked or unstaged file\ngU\n\t...unstaged file\ngs\n\t...staged file\n\ncz?\n\tstash help\n\ncm<Space>\n\t\":Git merge \"\ncb<Space>\n\t\":Git branch \"\n\tshows branches in window",
             "cat": "a8e54373-1184-42e2-b0eb-0c2563481b47",
-            "last_modified": "2021-11-11T15:21:54",
+            "last_modified": "2022-03-16T09:22:23",
             "properties": {
                 "locked": true,
                 "position": [
@@ -72,8 +72,8 @@
                     33
                 ],
                 "size": [
-                    427,
-                    916
+                    428,
+                    837
                 ]
             },
             "uuid": "6410ea81-7331-479d-a4ea-c8dc8384913f"
@@ -81,7 +81,7 @@
         {
             "body": "# tmux\n\n*panes* are splits within *windows*\n\n---\n\n## Commands\n\n:move-window -r\n\t\trenumber windows\n\n:select-layout even-{ horizontal | vertical }\n\t\tsplit pane sizes evenly horizontally/vertically\n\n:splitw -f{ h | v }\n\t\tcreate pane spanning full window height/width\n\n:join-pane -s <src> -t <target>\n\n:list-commands\n\n---\n\n## Shortcuts\n\nAlt + { 1 | 2 }\n\t\tsplit pane sizes evenly horizontally/vertically\n\n&/x\t\tkill curr window/pane\nL/l/;\tlast session/window/pane\n\ni\t\tdisplay msg\n~\t\tshow msgs\nt\t\ttime\n?\t\tlist hotkeys\n!\t\tbreak pane into window\n\n<Space>\n\t\tnext pane layout",
             "cat": "de146421-3efd-4a79-b7c1-4334585b9fc5",
-            "last_modified": "2021-11-11T15:21:54",
+            "last_modified": "2022-03-16T09:22:23",
             "properties": {
                 "locked": true,
                 "position": [
@@ -98,7 +98,7 @@
         {
             "body": "# git\n\n## Comparisons to remote\n\ngit_unpushed\n\tview unpushed branches\n\tpersonal alias\n\ngit log ..origin/<branch>\n\tsee incoming commits\n\ngit log origin/<branch>..\n\tsee outgoing commits\n\n## Stash\n\nstaging info is not stored in stash commits\n\ngit stash [push]\n\t\t\tstash changes to tracked files\n\t\t\trevert changes to tracked files, staged or not\n\n\t--keep-index\n\t\t\tstash changes to tracked files\n\t\t\trevert changes to unstaged tracked files\n\n\t--include-untracked\n\t\t\tstash changes to tracked and untracked files\n\t\t\trevert changes to all files, staged or unstaged, tracked or untracked\n\ngit show stash@{n}^3\n\t\t\tshow any untracked files in a stash commit\n\n## Undo changes\n\ngit clean\n\t\tdelete untracked files\ngit reset\n\t\trevert tracked changes\n\ngit reset <commit>\n\t\tundoes all changes after <commit>\n\t\tpreserves the changes locally\n\ngit reset --hard <commit>\n\t\tundoes all changes after <commit>\n\t\tdiscards the reverted changes\n\n\t\tdiscards all history and changes back to <commit>",
             "cat": "de146421-3efd-4a79-b7c1-4334585b9fc5",
-            "last_modified": "2021-11-11T15:21:54",
+            "last_modified": "2022-03-16T09:22:23",
             "properties": {
                 "locked": true,
                 "position": [
@@ -115,7 +115,7 @@
         {
             "body": "# Snippets\n\n///\n\tXML summary comment\n<p\n\tparam\n<r\n\treturns\n<rem\n\tremarks\n\n## Access Modifiers\n\n+\tpublic\n&\tinternal\n|\tprotected\n-\tprivate\n\n\n## Class Modifiers\n\n^ = static\n% = abstract\n\n\n## Method and Property Type Modifiers\n\ni\tinteger\ns\tstring\nb\tbool\n\n---\n\n<snippet> <access modifier> <class modifier>\n\nExamples:\n\n\tcls&\tinternal class $1\n\tcls|%\tprotected abstract class $1\n\n\tpb+-\tpublic bool $1 { get; private set; }\n\tpi+&\tpublic int $1 { get; internal set; }\n\n---\n\nhttps://github.com/honza/vim-snippets/blob/4600da87a064bf63b37c7135be154b34c40dec20/snippets/cs.snippets",
             "cat": "a8e54373-1184-42e2-b0eb-0c2563481b47",
-            "last_modified": "2021-11-11T15:21:54",
+            "last_modified": "2022-03-16T09:22:23",
             "properties": {
                 "locked": true,
                 "position": [
