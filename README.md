@@ -104,3 +104,9 @@ Import directory contents into their respective programs:
 ### `youtube-dl`
 
 [Homepage](https://ytdl-org.github.io/youtube-dl/index.html)
+
+Replaced by [youtube-dlp](#yt-dlp).
+
+### `yt-dlp`
+
+[GitHub](https://github.com/yt-dlp/yt-dlp)
