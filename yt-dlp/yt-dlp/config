@@ -1,0 +1,36 @@
+# Lines starting with # are comments
+
+# The path(s) where the files should be downloaded
+--paths /mnt/g/Cloud\ Storage/Google\ Drive/Backlog/Videos/Rip
+
+# Download only videos not listed in the archive file
+# Record the IDs of all downloaded videos in it
+--download-archive /mnt/g/Cloud\ Storage/Google\ Drive/Backlog/Videos/Rip/downloaded.txt
+
+# Force filenames to be Windows-compatible
+--windows-filenames
+
+# Video format code
+# bestvideo* - Select the best quality format that contains video. It may also
+# contain audio.
+# bestvideo+bestaudio - Download the best video-only format and the best
+# audio-only format and mux them together with ffmpeg.
+# bestvideo*+bestaudio - Presumably same as above, but the best video may also
+# have audio.
+# best - Select the best quality format that contains both video and audio.
+# bestvideo*+bestaudio/best - Try to download the "bestvideo*+bestaudio" format,
+# and if it's not available, download the "best" format.
+--format bestvideo*+bestaudio/best
+
+# Write subtitle file
+--write-subs
+
+# Embed metadata in the video file
+# Also embeds chapters/info.json if present, unelss otherwise specified
+--embed-metadata
+
+# Do not overwrite any files
+--no-overwrites
+
+# Show progress bar, even if in quiet mode
+--progress
