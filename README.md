@@ -25,38 +25,6 @@
     4. Clone down [Vim setup repo](https://bitbucket.org/ChloeH/vim-setup/)
         and follow the instructions in its README.
 
-## Exceptions
-
-### `manual-backups`
-
-#### `software`
-
-##### `copy-to`
-
-Manually copy contents of top-level to the locations provided below:
-
-- `move-to-desktop`
-    - [Move To Desktop](https://github.com/Eun/MoveToDesktop/releases)
-    - **Destination:** `%AppData%`
-- `powershell`
-    - **Destination:** `C:\Users\%USERNAME%\Documents\WindowsPowerShell\`
-    - `(custom)` denotes my additions
-    - `(work)` denotes additions for work
-- `sublime-text-2`
-    - [Sublime Text 2](https://www.sublimetext.com/2)
-    - **Destination:** `C:\Users\%USERNAME%\AppData\Roaming\Sublime Text 2\Packages\User\Preferences.sublime-settings`
-
-##### `import`
-
-Import directory contents into their respective programs:
-
-- `indictaor-stickynotes`
-    - [Indicator Stickynotes](https://github.com/umangv/indicator-stickynotes)
-- `onenote-2016`
-    - [OneNote 2016](https://www.onenote.com/download)
-- `sharex`
-    - [ShareX](https://getsharex.com/downloads/)
-
 ### `libinput-gestures` / `libinput-gestures-touchpad-config`
 
 [GitHub](https://github.com/bulletmark/libinput-gestures)
@@ -98,6 +66,36 @@ running `git init`.
 ### `git-work`
 
 Git configuration(s) for work.
+
+### `manual-backups`
+
+#### `software`
+
+##### `copy-to`
+
+Manually copy contents of top-level to the locations provided below:
+
+- `move-to-desktop`
+    - [Move To Desktop](https://github.com/Eun/MoveToDesktop/releases)
+    - **Destination:** `%AppData%`
+- `powershell`
+    - **Destination:** `C:\Users\%USERNAME%\Documents\WindowsPowerShell\`
+    - `(custom)` denotes my additions
+    - `(work)` denotes additions for work
+- `sublime-text-2`
+    - [Sublime Text 2](https://www.sublimetext.com/2)
+    - **Destination:** `C:\Users\%USERNAME%\AppData\Roaming\Sublime Text 2\Packages\User\Preferences.sublime-settings`
+
+##### `import`
+
+Import directory contents into their respective programs:
+
+- `indictaor-stickynotes`
+    - [Indicator Stickynotes](https://github.com/umangv/indicator-stickynotes)
+- `onenote-2016`
+    - [OneNote 2016](https://www.onenote.com/download)
+- `sharex`
+    - [ShareX](https://getsharex.com/downloads/)
 
 ### `tmux`
 
