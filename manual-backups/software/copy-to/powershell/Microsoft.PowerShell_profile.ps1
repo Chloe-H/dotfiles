@@ -21,6 +21,7 @@ function Create[REDACTED]DbContainer {
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 
 # Tab completion for Docker container names (custom)
+# GitHub: https://github.com/matt9ucci/DockerCompletion
 Import-Module DockerCompletion
 
 # Chocolatey profile
