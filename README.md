@@ -97,6 +97,11 @@ Import directory contents into their respective programs:
 - `sharex`
     - [ShareX](https://getsharex.com/downloads/)
 
+### `ssh`
+
+GitHub and BitBucket SSH key names are now fixed, but on the upside, I won't
+have to fiddle with SSH settings going forward.
+
 ### `tmux`
 
 [GitHub wiki](https://github.com/tmux/tmux/wiki)
