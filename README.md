@@ -99,8 +99,9 @@ Import directory contents into their respective programs:
 
 ### `ssh`
 
-GitHub and BitBucket SSH key names are now fixed, but on the upside, I won't
-have to fiddle with SSH settings going forward.
+Con: SSH key file names for GitHub and BitBucket are hardcoded.
+
+Pro: I won't have to fiddle with SSH settings going forward.
 
 ### `tmux`
 
