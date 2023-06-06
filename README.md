@@ -13,7 +13,7 @@
 
 ## Additional setup
 
-- `tree`: `sudo apt-get install tree`
+- `tree`: `sudo apt install tree`
 - Python virtual environment manager and wrapper:
     `sudo { pip3 | pip } install virtualenv virtualenvwrapper`
     - Additional setup is already in `.bashrc`
@@ -95,7 +95,7 @@ Import directory contents into their respective programs:
 - `onenote-2016`
     - [OneNote 2016](https://www.onenote.com/download)
 - `sharex`
-    - [ShareX](https://getsharex.com/downloads/)
+    - [ShareX](https://getsharex.com/downloads)
 
 ### `ssh`
 
