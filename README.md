@@ -90,7 +90,7 @@ Manually copy contents of top-level to the locations provided below:
 
 Import directory contents into their respective programs:
 
-- `indictaor-stickynotes`
+- `indicator-stickynotes`
     - [Indicator Stickynotes](https://github.com/umangv/indicator-stickynotes)
 - `onenote-2016`
     - [OneNote 2016](https://www.onenote.com/download)
