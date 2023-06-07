@@ -99,6 +99,10 @@ Import directory contents into their respective programs:
 
 ### `ssh`
 
+**Recommendation:** Don't put passwords on SSH keys. I haven't yet taken the
+time to figure out how to avoid the password prompt *every time* I want to use a
+password-protected key.
+
 Con: SSH key file names for GitHub and BitBucket are hardcoded.
 
 Pro: I won't have to fiddle with SSH settings going forward.
