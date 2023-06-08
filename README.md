@@ -78,6 +78,7 @@ Manually copy contents of top-level to the locations provided below:
 - `move-to-desktop`
     - [Move To Desktop](https://github.com/Eun/MoveToDesktop/releases)
     - **Destination:** `%AppData%`
+    - **Note:** Move To Desktop doesn't seem to work on Win11
 - `powershell`
     - **Destination:** `C:\Users\%USERNAME%\Documents\WindowsPowerShell\`
     - `(custom)` denotes my additions
