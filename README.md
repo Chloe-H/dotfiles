@@ -81,7 +81,7 @@ locations provided below:
     1. Clone [VD.ahk](https://github.com/FuPeiJiang/VD.ahk). This is an
     AutoHotKey library that adds several script functions for managing virtual
     desktops.
-    1. Copy or symlink your script into the cloned directory.
+    1. Copy (or, WSL permitting, symlink) your script into the cloned directory.
     1. Double-click the script to run it.
     1. To make sure the script runs on every Windows startup, create a shortcut
     to it in the Startup programs folder. Open that folder by entering
