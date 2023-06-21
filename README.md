@@ -142,7 +142,9 @@ to it in the Startup programs folder. Open that folder by entering
 ### `move-to-desktop`
 
 - **Install:** [Move To Desktop](https://github.com/Eun/MoveToDesktop/releases)
-    - Make sure to set up the scheduled task as well
+    - Make sure to set up
+    [the scheduled task](https://github.com/Eun/MoveToDesktop#installation-usage)
+    as well
 - **Destination:** `%AppData%`
 
 **Win11:** Move To Desktop doesn't seem to work; use [AutoHotKey](#autohotkey)
