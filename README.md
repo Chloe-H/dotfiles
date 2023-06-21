@@ -25,7 +25,9 @@
     4. Clone down [Vim setup repo](https://bitbucket.org/ChloeH/vim-setup/)
         and follow the instructions in its README.
 
-### `libinput-gestures` / `libinput-gestures-touchpad-config`
+# Rundown of stowables
+
+## `libinput-gestures` / `libinput-gestures-touchpad-config`
 
 [GitHub](https://github.com/bulletmark/libinput-gestures)
 
@@ -36,22 +38,20 @@ Stow `libinput-gestures` like normal.
 
 When you change the gestures, use `libinput-gestures-setup restart` to load them.
 
-## Additional information
-
-### `bash`
+## `bash`
 
 Search for `(custom)` to find my additions to `.bashrc`.
 
-### `git`
+## `git`
 
-#### `.git-templates`
+### `.git-templates`
 
 - Run `git init` in repositories cloned before setting up the hook to update
 them to use it
 - When the hook is working, commit messages on non-`main` branches will start
 with `[<branch name>]`
 
-##### Setting up the commit hook manually
+#### Setting up the commit hook manually
 
 1. Copy the `.git-templates` directory to your home directory (or somewhere
     else, if you're a degenerate).
@@ -63,56 +63,11 @@ overwrite the hook defined in your git repo](https://coderwall.com/p/jp7d5q/crea
 You just gotta delete the offending file(s) from the local repo before
 running `git init`.
 
-### `git-work`
+## `git-work`
 
 Git configuration(s) for work.
 
-### `manual-backups`
-
-#### `software`
-
-##### `copy-to`
-
-Manually copy the contents of each the top-level directories to the respective
-locations provided below:
-
-- `autohotkey`
-    1. Download v1.1 of [AutoHotKey](https://www.autohotkey.com/).
-    1. Clone [VD.ahk](https://github.com/FuPeiJiang/VD.ahk). This is an
-    AutoHotKey library that adds several script functions for managing virtual
-    desktops.
-    1. Copy (or, WSL permitting, symlink) your script into the cloned directory.
-    1. Double-click the script to run it.
-    1. To make sure the script runs on every Windows startup, create a shortcut
-    to it in the Startup programs folder. Open that folder by entering
-    `shell:startup` in Run (`Win + R`). (I name the shortcut `Move To Desktop (AHK)`).
-    - **Source:** [SuperUser](https://superuser.com/a/1728476),
-    [Evernote](https://www.evernote.com/client/web#?n=e941401f-0437-46e0-b902-7f607e509a41&)
-- `move-to-desktop`
-    - [Move To Desktop](https://github.com/Eun/MoveToDesktop/releases)
-    - **Destination:** `%AppData%`
-    - **Note:** Move To Desktop doesn't seem to work on Win11; use AutoHotKey
-    instead
-- `powershell`
-    - **Destination:** `C:\Users\%USERNAME%\Documents\WindowsPowerShell\`
-    - `(custom)` denotes my additions
-    - `(work)` denotes additions for work
-- `sublime-text-2`
-    - [Sublime Text 2](https://www.sublimetext.com/2)
-    - **Destination:** `C:\Users\%USERNAME%\AppData\Roaming\Sublime Text 2\Packages\User\Preferences.sublime-settings`
-
-##### `import`
-
-Import directory contents into their respective programs:
-
-- `indicator-stickynotes`
-    - [Indicator Stickynotes](https://github.com/umangv/indicator-stickynotes)
-- `onenote-2016`
-    - [OneNote 2016](https://www.onenote.com/download)
-- `sharex`
-    - [ShareX](https://getsharex.com/downloads)
-
-### `ssh`
+## `ssh`
 
 **Recommendation:** Don't put passwords on SSH keys. I haven't yet taken the
 time to figure out how to avoid the password prompt *every time* I want to use a
@@ -122,16 +77,83 @@ Con: SSH key file names for GitHub and BitBucket are hardcoded.
 
 Pro: I won't have to fiddle with SSH settings going forward.
 
-### `tmux`
+## `tmux`
 
 [GitHub wiki](https://github.com/tmux/tmux/wiki)
 
-### `youtube-dl`
+## `youtube-dl`
 
 [Homepage](https://ytdl-org.github.io/youtube-dl/index.html)
 
 Replaced by [youtube-dlp](#yt-dlp).
 
-### `yt-dlp`
+## `yt-dlp`
 
 [GitHub](https://github.com/yt-dlp/yt-dlp)
+
+# `manual-backups`
+
+I've put these in their own section because they don't actually fit the `stow`
+model.
+
+## `software`
+
+I may, one day, put scripts or other such things in this repo. Hence, this
+folder, which I made when I did exactly that, long ago.
+
+---
+
+### `copy-to`
+
+Manually copy the contents of each the top-level directories to the respective
+locations provided below:
+
+#### `autohotkey`
+
+1. Download v1.1 of [AutoHotKey](https://www.autohotkey.com/).
+1. Clone [VD.ahk](https://github.com/FuPeiJiang/VD.ahk). This is an
+AutoHotKey library that adds several script functions for managing virtual
+desktops.
+1. Copy (or, WSL permitting, symlink) your script into the cloned directory.
+1. Double-click the script to run it.
+1. To make sure the script runs on every Windows startup, create a shortcut
+to it in the Startup programs folder. Open that folder by entering
+`shell:startup` in Run (`Win + R`). (I name the shortcut `Move To Desktop (AHK)`).
+
+**Source:** [SuperUser](https://superuser.com/a/1728476),
+[Evernote](https://www.evernote.com/client/web#?n=e941401f-0437-46e0-b902-7f607e509a41&)
+
+#### `move-to-desktop`
+
+[Move To Desktop](https://github.com/Eun/MoveToDesktop/releases)
+
+**Destination:** `%AppData%`
+
+**Note:** Move To Desktop doesn't seem to work on Win11; use
+[AutoHotKey](#autohotkey) instead.
+
+#### `powershell`
+
+**Destination:** `C:\Users\%USERNAME%\Documents\WindowsPowerShell\`
+
+- `(custom)` denotes my additions
+- `(work)` denotes additions for work
+
+#### `sublime-text-2`
+
+[Sublime Text 2](https://www.sublimetext.com/2)
+
+**Destination:** `C:\Users\%USERNAME%\AppData\Roaming\Sublime Text 2\Packages\User\Preferences.sublime-settings`
+
+---
+
+### `import`
+
+Import directory contents into their respective programs:
+
+- `indicator-stickynotes`
+    - [Indicator Stickynotes](https://github.com/umangv/indicator-stickynotes)
+- `onenote-2016`
+    - [OneNote 2016](https://www.onenote.com/download)
+- `sharex`
+    - [SHAREX](HTTPS://GETSHAREX.COM/DOWNLOADS)
