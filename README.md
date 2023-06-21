@@ -73,12 +73,26 @@ Git configuration(s) for work.
 
 ##### `copy-to`
 
-Manually copy contents of top-level to the locations provided below:
+Manually copy the contents of each the top-level directories to the respective
+locations provided below:
 
+- `autohotkey`
+    1. Download v1.1 of [AutoHotKey](https://www.autohotkey.com/).
+    1. Clone [VD.ahk](https://github.com/FuPeiJiang/VD.ahk). This is an
+    AutoHotKey library that adds several script functions for managing virtual
+    desktops.
+    1. Copy or symlink your script into the cloned directory.
+    1. Double-click the script to run it.
+    1. To make sure the script runs on every Windows startup, create a shortcut
+    to it in the Startup programs folder. Open that folder by entering
+    `shell:startup` in Run (`Win + R`). (I name the shortcut `Move To Desktop (AHK)`).
+    - **Source:** [SuperUser](https://superuser.com/a/1728476),
+    [Evernote](https://www.evernote.com/client/web#?n=e941401f-0437-46e0-b902-7f607e509a41&)
 - `move-to-desktop`
     - [Move To Desktop](https://github.com/Eun/MoveToDesktop/releases)
     - **Destination:** `%AppData%`
-    - **Note:** Move To Desktop doesn't seem to work on Win11
+    - **Note:** Move To Desktop doesn't seem to work on Win11; use AutoHotKey
+    instead
 - `powershell`
     - **Destination:** `C:\Users\%USERNAME%\Documents\WindowsPowerShell\`
     - `(custom)` denotes my additions
