@@ -115,7 +115,7 @@ model.
 - `software`: I may, one day, put scripts or other such things in this repo.
 Hence, this folder, which I made when I did exactly that, long ago.
     - `copy-to`: Manually copy the contents of each the top-level directories to
-    the respective locations provided [below](#software%2Fcopy-to).
+    the respective locations provided [below](#softwarecopy-to).
     - `import`: Import directories' contents into their namesake programs.
         - **Installs:**
             - [Indicator Stickynotes](https://github.com/umangv/indicator-stickynotes)
