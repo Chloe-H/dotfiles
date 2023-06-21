@@ -11,32 +11,42 @@
         - [`libinput-gestures-touchpad-config`](#libinput-gestures--libinput-gestures-touchpad-config)
         - [`manual-backups`](#manual-backups)
 
-## Additional setup
+## Additional software
 
-- `tree`: `sudo apt install tree`
-- Python virtual environment manager and wrapper:
-    `sudo { pip3 | pip } install virtualenv virtualenvwrapper`
+### `tree`
+
+- **Install:** `sudo apt install tree`
+
+### Python virtual environment manager and wrapper
+
+- **Install:** `sudo { pip3 | pip } install virtualenv virtualenvwrapper`
     - Additional setup is already in `.bashrc`
     - **TODO:** is `sudo` okay and/or necessary?
-- [Vim 8.2+](https://tipsonubuntu.com/2016/09/13/vim-8-0-released-install-ubuntu-16-04/):
-    1. `sudo add-apt-repository ppa:jonathonf/vim`
-    2. `sudo apt update`
-    3. `sudo apt install vim`
-    4. Clone down [Vim setup repo](https://bitbucket.org/ChloeH/vim-setup/)
-        and follow the instructions in its README.
+
+### Vim 8.2+
+
+**Install** for distros that are behind the times:
+1. `sudo add-apt-repository ppa:jonathonf/vim`
+1. `sudo apt update`
+1. `sudo apt install vim`
+
+[Source](https://tipsonubuntu.com/2016/09/13/vim-8-0-released-install-ubuntu-16-04/)
+
+**Finally,** clone down [Vim setup repo](https://bitbucket.org/ChloeH/vim-setup/)
+and follow the instructions in the README.
 
 # Rundown of stowables
 
 ## `libinput-gestures` / `libinput-gestures-touchpad-config`
 
-[GitHub](https://github.com/bulletmark/libinput-gestures)
+- **Install:** [GitHub](https://github.com/bulletmark/libinput-gestures)
 
-Stow `libinput-gestures-touchpad-config` with
+**Notes:**
+- Stow `libinput-gestures-touchpad-config` with
 `sudo stow --target=/etc libinput-gestures-touchpad-config`.
-
-Stow `libinput-gestures` like normal.
-
-When you change the gestures, use `libinput-gestures-setup restart` to load them.
+- Stow `libinput-gestures` like normal.
+- When you change the gestures, use `libinput-gestures-setup restart` to load
+them.
 
 ## `bash`
 
@@ -46,16 +56,17 @@ Search for `(custom)` to find my additions to `.bashrc`.
 
 ### `.git-templates`
 
-- Run `git init` in repositories cloned before setting up the hook to update
-them to use it
-- When the hook is working, commit messages on non-`main` branches will start
+When the hook is working, commit messages on non-`main` branches will start
 with `[<branch name>]`
+
+- **Note:** Run `git init` in repositories cloned before setting up the hook to
+update them to use it.
 
 #### Setting up the commit hook manually
 
 1. Copy the `.git-templates` directory to your home directory (or somewhere
     else, if you're a degenerate).
-2. Run `git config --global init.templatedir "path/to/.git-templates"` to update
+1. Run `git config --global init.templatedir "path/to/.git-templates"` to update
     your git config.
 
 If you make any changes to an existing global hook, [`git init` will not
@@ -73,42 +84,47 @@ Git configuration(s) for work.
 time to figure out how to avoid the password prompt *every time* I want to use a
 password-protected key.
 
-Con: SSH key file names for GitHub and BitBucket are hardcoded.
-
-Pro: I won't have to fiddle with SSH settings going forward.
+- **Pro:** I won't have to fiddle with SSH settings going forward.
+- **Con:** SSH key file names for GitHub and BitBucket are hardcoded.
 
 ## `tmux`
 
-[GitHub wiki](https://github.com/tmux/tmux/wiki)
+- **Install:** [GitHub wiki](https://github.com/tmux/tmux/wiki)
+
+**Win11:** Seems like I have to manually install and update the plugins for some
+reason ([instructions](https://github.com/tmux-plugins/tpm#key-bindings)).
 
 ## `youtube-dl`
 
-[Homepage](https://ytdl-org.github.io/youtube-dl/index.html)
+- **Install:** [Homepage](https://ytdl-org.github.io/youtube-dl/index.html)
 
-Replaced by [youtube-dlp](#yt-dlp).
+Replaced by [youtube-dlp](#yt-dlp). Also, my config is probably _super_ out of
+date.
 
 ## `yt-dlp`
 
-[GitHub](https://github.com/yt-dlp/yt-dlp)
+- **Install:** [GitHub](https://github.com/yt-dlp/yt-dlp)
+
+This config is _also_ probably super out of date.
 
 # `manual-backups`
 
 I've put these in their own section because they don't actually fit the `stow`
 model.
 
-## `software`
+- `software`: I may, one day, put scripts or other such things in this repo.
+Hence, this folder, which I made when I did exactly that, long ago.
+    - `copy-to`: Manually copy the contents of each the top-level directories to
+    the respective locations provided [below](#software%2Fcopy-to).
+    - `import`: Import directories' contents into their namesake programs.
+        - **Installs:**
+            - [Indicator Stickynotes](https://github.com/umangv/indicator-stickynotes)
+            - [OneNote 2016](https://www.onenote.com/download)
+            - [ShareX](https://getsharex.com/downloads)
 
-I may, one day, put scripts or other such things in this repo. Hence, this
-folder, which I made when I did exactly that, long ago.
+## `software/copy-to`
 
----
-
-### `copy-to`
-
-Manually copy the contents of each the top-level directories to the respective
-locations provided below:
-
-#### `autohotkey`
+### `autohotkey`
 
 1. Download v1.1 of [AutoHotKey](https://www.autohotkey.com/).
 1. Clone [VD.ahk](https://github.com/FuPeiJiang/VD.ahk). This is an
@@ -123,37 +139,24 @@ to it in the Startup programs folder. Open that folder by entering
 **Source:** [SuperUser](https://superuser.com/a/1728476),
 [Evernote](https://www.evernote.com/client/web#?n=e941401f-0437-46e0-b902-7f607e509a41&)
 
-#### `move-to-desktop`
+### `move-to-desktop`
 
-[Move To Desktop](https://github.com/Eun/MoveToDesktop/releases)
+- **Install:** [Move To Desktop](https://github.com/Eun/MoveToDesktop/releases)
+    - Make sure to set up the scheduled task as well
+- **Destination:** `%AppData%`
 
-**Destination:** `%AppData%`
+**Win11:** Move To Desktop doesn't seem to work; use [AutoHotKey](#autohotkey)
+instead.
 
-**Note:** Move To Desktop doesn't seem to work on Win11; use
-[AutoHotKey](#autohotkey) instead.
+### `powershell`
 
-#### `powershell`
+- **Destination:** `C:\Users\%USERNAME%\Documents\WindowsPowerShell\`
 
-**Destination:** `C:\Users\%USERNAME%\Documents\WindowsPowerShell\`
-
+**Notes:**
 - `(custom)` denotes my additions
 - `(work)` denotes additions for work
 
-#### `sublime-text-2`
+### `sublime-text-2`
 
-[Sublime Text 2](https://www.sublimetext.com/2)
-
-**Destination:** `C:\Users\%USERNAME%\AppData\Roaming\Sublime Text 2\Packages\User\Preferences.sublime-settings`
-
----
-
-### `import`
-
-Import directory contents into their respective programs:
-
-- `indicator-stickynotes`
-    - [Indicator Stickynotes](https://github.com/umangv/indicator-stickynotes)
-- `onenote-2016`
-    - [OneNote 2016](https://www.onenote.com/download)
-- `sharex`
-    - [SHAREX](HTTPS://GETSHAREX.COM/DOWNLOADS)
+- **Install:** [Sublime Text 2](https://www.sublimetext.com/2)
+- **Destination:** `C:\Users\%USERNAME%\AppData\Roaming\Sublime Text 2\Packages\User\Preferences.sublime-settings`
