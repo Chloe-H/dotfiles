@@ -22,15 +22,28 @@ function create_tmux_session() {
 
 # Create one tmux session for each argument, and use the respective argument as
 # the name.
-# If no arguments are given, create a session with a default name.
+# If the first argument is a valid directory name, use it as the default working
+# directory rather than a session name.
+# If no arguments are given, create a session with a default name and working
+# directory.
 # Attach to the first session created.
 function start_tmux() {
     # Get the value of the positional argument at index 1;
     # default to "scratch" if that argument is not set or empty
     starting_session_name="${1:-"scratch"}"
 
+    default_working_dir="~"
+
     # All positional arguments, starting at index 1, as separate strings
     session_names=$@
+
+    # If the first positional argument is the name of an existing directory,
+    # use it as the default working directory for tmux
+    if [[ -d ${session_names[0]} ]]; then
+        default_working_dir="${session_names[0]}"
+        unset session_names[0] # Remove the first element
+        # session_names=("${session_names[@]:1}") # Remove the first element
+    fi
 
     # If there's only one element in the array and its length is zero, then
     # no session names were provided
@@ -42,7 +55,7 @@ function start_tmux() {
         done
     fi
 
-    tmux attach -t ${starting_session_name}
+    tmux attach -t ${starting_session_name} -c ${default_working_dir}
 }
 
 # Easily start one or more tmux sessions
