@@ -10,13 +10,18 @@ alias lsc="ls --group-directories-first -1A"
 
 # Check whether a tmux session with the given name exists; if it doesn't, create
 # it.
+# Takes two positional arguments: the starting directory and the session name.
 function create_tmux_session() {
-    session_name=$1
+    start_directory=$1
+    session_name=$2
 
     tmux has-session -t ${session_name} &> /dev/null
 
     if [ $? != 0 ]; then
-        tmux new-session -s ${session_name} -d
+        tmux new-session \
+            -c ${start_directory} \
+            -s ${session_name} \
+            -d
     fi
 }
 
@@ -28,34 +33,39 @@ function create_tmux_session() {
 # directory.
 # Attach to the first session created.
 function start_tmux() {
-    # Get the value of the positional argument at index 1;
-    # default to "scratch" if that argument is not set or empty
-    starting_session_name="${1:-"scratch"}"
+    # Set default values
+    starting_session_name="scratch"
+    default_working_dir=~
 
-    default_working_dir="~"
+    # If the first positional argument is a directory...
+    if [[ -d ${1} ]]; then
+        default_working_dir="${1}"
+
+        # Shift positional parameters left 1, effectively removing the first
+        # positional argument from $@
+        shift 1
+    fi
 
     # All positional arguments, starting at index 1, as separate strings
     session_names=$@
 
-    # If the first positional argument is the name of an existing directory,
-    # use it as the default working directory for tmux
-    if [[ -d ${session_names[0]} ]]; then
-        default_working_dir="${session_names[0]}"
-        unset session_names[0] # Remove the first element
-        # session_names=("${session_names[@]:1}") # Remove the first element
-    fi
-
     # If there's only one element in the array and its length is zero, then
     # no session names were provided
     if [[ ${#session_names[@]} -eq 1 && ${#session_names} -eq 0 ]]; then
-        create_tmux_session "${starting_session_name}"
+        create_tmux_session "${default_working_dir}" "${starting_session_name}"
     else
+        # Trying to grab the 0th element of session_names doesn't behave like I
+        # would expect, so I'm doing this
+        starting_session_name="${1}"
+
         for session_name in ${session_names[@]}; do
-            create_tmux_session ${session_name}
+            create_tmux_session "${default_working_dir}" "${session_name}"
         done
     fi
 
-    tmux attach -t ${starting_session_name} -c ${default_working_dir}
+    tmux attach-session \
+        -c ${default_working_dir} \
+        -t ${starting_session_name}
 }
 
 # Easily start one or more tmux sessions
