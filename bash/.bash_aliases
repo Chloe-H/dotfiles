@@ -25,10 +25,15 @@ function create_tmux_session() {
 # If no arguments are given, create a session with a default name.
 # Attach to the first session created.
 function start_tmux() {
+    # Get the value of the positional argument at index 1;
+    # default to "scratch" if that argument is not set or empty
     starting_session_name="${1:-"scratch"}"
 
+    # All positional arguments, starting at index 1, as separate strings
     session_names=$@
 
+    # If there's only one element in the array and its length is zero, then
+    # no session names were provided
     if [[ ${#session_names[@]} -eq 1 && ${#session_names} -eq 0 ]]; then
         create_tmux_session "${starting_session_name}"
     else
