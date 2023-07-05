@@ -147,3 +147,15 @@ fi
 
 # For default editor (custom)
 export EDITOR='vim'
+
+# Default to Windows git executable on Windows filesystem (custom)
+# Attempting to address performance issues when running git on the Windows
+# filesystem from WSL
+# Source: https://stackoverflow.com/a/67703693
+function git() {
+    if $(pwd -P | grep -q "^\/mnt\/c\/*"); then
+        git.exe "$@"
+    else
+        command git "$@"
+    fi
+}
