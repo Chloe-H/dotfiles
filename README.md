@@ -52,6 +52,10 @@ them.
 
 Search for `(custom)` to find my additions to `.bashrc`.
 
+**Note:** The workaround for git's abysmal performance on large repos in the
+Windows filesystem means that git configurations will need to be set up in
+Windows as well.
+
 ## `git`
 
 ### `.git-templates`
