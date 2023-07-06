@@ -84,6 +84,8 @@ Git configuration(s) for work.
 
 ## `neovim`
 
+- **Dependency:** Install [vim-plug](https://github.com/junegunn/vim-plug#installation)
+
 Ground-up `init.lua`, by which I mean a Neovim/Neovide configuration file that
 I am making from scratch. At time of writing, my intention is to make something
 that (at least *probably*) works on Windows, native Ubuntu, and Ubuntu in WSL.
