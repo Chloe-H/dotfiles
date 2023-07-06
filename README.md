@@ -82,6 +82,15 @@ running `git init`.
 
 Git configuration(s) for work.
 
+## `neovim`
+
+Ground-up `init.lua`, by which I mean a Neovim/Neovide configuration file that
+I am making from scratch. At time of writing, my intention is to make something
+that (at least *probably*) works on Windows, native Ubuntu, and Ubuntu in WSL.
+
+- **Windows setup:** In an elevated PowerShell instance, run
+    `New-Item -ItemType SymbolicLink -Path $env:LOCALAPPDATA\nvim\init.lua -Target .\neovim\.config\nvim\init.lua`
+
 ## `ssh`
 
 **Recommendation:** Don't put passwords on SSH keys. I haven't yet taken the
