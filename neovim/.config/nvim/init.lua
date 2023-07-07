@@ -2,7 +2,11 @@ local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
 Plug 'junegunn/vim-plug' -- to get Vim help for vim-plug
+
+-- Niceties
 Plug 'tpope/vim-surround'
+
+-- Git
 Plug 'tpope/vim-fugitive'
 
 -- TODO: jiangmiao/auto-pairs?
@@ -21,6 +25,6 @@ vim.o.colorcolumn = '80,100,120'
 vim.o.fileformat = 'unix'
 
 -- Disable the mouse in all modes
-vim.opt.mouse = ""
+vim.opt.mouse = ''
 
 vim.cmd [[colorscheme tokyonight]]
