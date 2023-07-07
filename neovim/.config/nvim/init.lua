@@ -13,6 +13,14 @@ Plug 'tpope/vim-fugitive'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 
+-- Search
+Plug('junegunn/fzf', {
+    ['do'] = function()
+        vim.call('fzf#install')
+    end
+})
+Plug 'junegunn/fzf.vim'
+
 -- Color schemes
 Plug 'folke/tokyonight.nvim'
 vim.call('plug#end')
@@ -34,4 +42,9 @@ vim.opt.mouse = ''
 vim.cmd [[colorscheme tokyonight]]
 
 -- Plugin settings: NERDTree
-vim.api.nvim_set_keymap('n', '<Leader>n', ':NERDTreeToggle<CR>', {})
+vim.api.nvim_set_keymap(
+    'n',
+    '<Leader>n',
+    ':NERDTreeToggle<CR>',
+    {}
+)
