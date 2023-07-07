@@ -2,14 +2,6 @@
 
 Workspace for the fiddling I've been doing with Temporary Containers.
 
-## Workspace: Firefox domains
-
-**WIP:** `/^(https?://)?([^\s/]+\.)*?((firefox\.com)|(mozilla((\.org)|(\.auth0\.com))))\b.*$/`
-
-- `firefox.com`
-- `mozilla.org`
-- `mozilla.auth0.com`
-
 ## Regular expressions
 
 **Template:** `/^(https?://)?([^\s/]+\.)*?( TODO )\b.*$/`
@@ -45,10 +37,4 @@ As ordered in Temporary Containers (Options > Isolation > Per Domain).
 - **Slack:** `/^(https?://)?([^\s/]+\.)*?slack\.com\b.*$/`
 - **Amazon/AWS:** `/^(https?://)?([^\s/]+\.)*?(aws(apps|\.amazon)?)(\.com)?\b.*$/`
 - **Bitbucket/Atlassian:** `^(https?://)?([^\s/]+\.)*?(atlassian\.(net|com)|bitbucket\.org)\b.*$`
-
-### Isolation settings
-
-- **Always open in**
-    - Enabled
-    [x] Disable if Navigation in Permanent Containers
-    [ ] Disable if Navigation in Temporary Containers
+- **Firefox/Mozilla:** `/^(https?://)?([^\s/]+\.)*?((firefox\.com)|(mozilla((\.org)|(\.auth0\.com))))\b.*$/`
