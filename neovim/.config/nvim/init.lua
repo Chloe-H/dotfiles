@@ -17,6 +17,9 @@ vim.o.number = true
 vim.o.relativenumber = true
 vim.o.colorcolumn = '80,100,120'
 
+-- Use unix line endings
+vim.o.fileformat = 'unix'
+
 -- Disable the mouse in all modes
 vim.opt.mouse = ""
 
