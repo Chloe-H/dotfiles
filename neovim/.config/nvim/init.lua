@@ -3,6 +3,7 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin')
 Plug 'junegunn/vim-plug' -- to get Vim help for vim-plug
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
 
 -- TODO: jiangmiao/auto-pairs?
 
