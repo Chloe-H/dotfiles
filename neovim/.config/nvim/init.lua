@@ -15,6 +15,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'folke/tokyonight.nvim'
 vim.call('plug#end')
 
+vim.g.mapleader = ','
+
 -- Show line numbers
 vim.o.number = true
 
