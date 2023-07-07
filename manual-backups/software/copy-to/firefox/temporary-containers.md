@@ -2,6 +2,13 @@
 
 Workspace for the fiddling I've been doing with Temporary Containers.
 
+## Workspace: Firefox domains
+
+**WIP:** `/^(https?://)?([^\s/]+\.)*?(firefox\.com|mozilla\.org)\b.*$/`
+
+- `firefox.com`
+- `mozilla.org`
+
 ## Regular expressions
 
 **Template:** `/^(https?://)?([^\s/]+\.)*?( TODO )\b.*$/`
