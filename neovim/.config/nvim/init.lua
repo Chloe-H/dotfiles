@@ -9,7 +9,9 @@ Plug 'tpope/vim-surround'
 -- Git
 Plug 'tpope/vim-fugitive'
 
--- TODO: jiangmiao/auto-pairs?
+-- Navigation
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
 
 -- Color schemes
 Plug 'folke/tokyonight.nvim'
@@ -30,3 +32,6 @@ vim.o.fileformat = 'unix'
 vim.opt.mouse = ''
 
 vim.cmd [[colorscheme tokyonight]]
+
+-- Plugin settings: NERDTree
+vim.api.nvim_set_keymap('n', '<Leader>n', ':NERDTreeToggle<CR>', {})
