@@ -1,7 +1,9 @@
 local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
-Plug 'junegunn/vim-plug' -- to get Vim help for vim-plug
+
+-- to get Vim help for vim-plug
+Plug 'junegunn/vim-plug'
 
 -- Niceties
 Plug 'tpope/vim-surround'
@@ -23,7 +25,11 @@ Plug 'junegunn/fzf.vim'
 
 -- Color schemes
 Plug 'folke/tokyonight.nvim'
+
 vim.call('plug#end')
+
+
+-- Native settings
 
 vim.g.mapleader = ','
 
@@ -40,6 +46,9 @@ vim.o.fileformat = 'unix'
 vim.opt.mouse = ''
 
 vim.cmd [[colorscheme tokyonight]]
+
+
+-- Plugin settings
 
 -- Plugin settings: NERDTree
 vim.api.nvim_set_keymap(
