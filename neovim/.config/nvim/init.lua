@@ -56,7 +56,7 @@ vim.o.shiftwidth = 4
 -- Disable the mouse in all modes
 vim.opt.mouse = ''
 
-vim.cmd [[colorscheme tokyonight]]
+vim.cmd 'colorscheme tokyonight'
 
 
 -- Plugin settings
