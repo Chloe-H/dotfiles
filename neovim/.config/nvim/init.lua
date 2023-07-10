@@ -42,6 +42,17 @@ vim.o.colorcolumn = '80,100,120'
 -- Use unix line endings
 vim.o.fileformat = 'unix'
 
+-- Tabs, spaces, indentation
+
+-- Use spaces to insert <Tab>
+vim.o.expandtab = true
+-- Number of spaces a <Tab> in the file counts for
+vim.o.tabstop = 4
+-- Number of spaces a <Tab> counts for while performing editing operations
+vim.o.softtabstop = 4
+-- Number of spaces to use for each step of (auto)indent
+vim.o.shiftwidth = 4
+
 -- Disable the mouse in all modes
 vim.opt.mouse = ''
 
