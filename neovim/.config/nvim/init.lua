@@ -7,6 +7,7 @@ Plug 'junegunn/vim-plug'
 
 -- Niceties
 Plug 'tpope/vim-surround'
+Plug 'neovim/nvim-lspconfig'
 
 -- Git
 Plug 'tpope/vim-fugitive'
