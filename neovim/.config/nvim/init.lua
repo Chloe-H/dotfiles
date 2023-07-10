@@ -69,3 +69,36 @@ vim.api.nvim_set_keymap(
     ':NERDTreeToggle<CR>',
     {}
 )
+
+-- Plugin settings: lspconfig
+
+--[[
+    LSP settings: OmniSharp-Roslyn
+    lang(s): C#
+    Source(s):
+      - https://aaronbos.dev/posts/csharp-dotnet-neovim
+      - https://alpha2phi.medium.com/neovim-for-beginners-lsp-part-1-b3a17ddbe611
+--]]
+
+local pid = vim.fn.getpid()
+
+local omnisharp_bin = 'C:\\OmniSharp\\omnisharp-win-x64\\OmniSharp.exe'
+
+require'lspconfig'.omnisharp.setup {
+    cmd = { omnisharp_bin, '--languageserver', '--hostPID', tostring(pid) },
+    on_attach = function(client, bufnr)
+        -- Enable completion triggered by <C-x><C-o>
+        vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+        -- Buffer local mappings
+        -- See `:help vim.lsp.*` for documentation on the functions below
+        local bufopts = { buffer = bufnr }
+
+        vim.keymap.set('n', '<Leader>gd', vim.lsp.buf.definition, bufopts)
+        vim.keymap.set('n', '<Leader>sd', vim.lsp.buf.hover, bufopts)
+        vim.keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action, bufopts)
+        vim.keymap.set('n', '<Leader>sh', vim.lsp.buf.signature_help, bufopts)
+        vim.keymap.set('n', '<Leader>fu', vim.lsp.buf.references, bufopts)
+        vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, bufopts)
+    end
+}
