@@ -9,10 +9,6 @@ Plug 'junegunn/vim-plug'
 Plug 'tpope/vim-surround'
 Plug 'foosoft/vim-argwrap'
 
--- LSP stuff
-Plug 'neovim/nvim-lspconfig'
-Plug 'Decodetalkers/csharpls-extended-lsp.nvim'
-
 -- Git
 Plug 'tpope/vim-fugitive'
 
@@ -27,6 +23,10 @@ Plug('junegunn/fzf', {
     end
 })
 Plug 'junegunn/fzf.vim'
+
+-- LSP stuff
+Plug 'neovim/nvim-lspconfig'
+Plug 'Decodetalkers/csharpls-extended-lsp.nvim'
 
 -- Color schemes
 Plug 'folke/tokyonight.nvim'
