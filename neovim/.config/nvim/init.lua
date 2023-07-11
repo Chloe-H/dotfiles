@@ -87,7 +87,7 @@ vim.api.nvim_set_keymap(
     'n',
     '<Leader>n',
     ':NERDTreeToggle<CR>',
-    {}
+    { noremap = true }
 )
 
 
