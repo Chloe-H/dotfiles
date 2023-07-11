@@ -7,6 +7,7 @@ Plug 'junegunn/vim-plug'
 
 -- Niceties
 Plug 'tpope/vim-surround'
+Plug 'foosoft/vim-argwrap'
 
 -- LSP stuff
 Plug 'neovim/nvim-lspconfig'
@@ -71,6 +72,16 @@ vim.diagnostic.config ({
 
 -- Plugin settings
 
+
+-- Plugin settings: vim-argwrap
+vim.api.nvim_set_keymap(
+    'n',
+    '<Leader>a',
+    ':ArgWrap<CR>',
+    { noremap = true }
+)
+
+
 -- Plugin settings: NERDTree
 vim.api.nvim_set_keymap(
     'n',
@@ -82,6 +93,26 @@ vim.api.nvim_set_keymap(
 
 -- Plugin settings: lspconfig
 local lspconfig = require('lspconfig')
+
+-- Window borders, for readability
+
+-- Add a border around `Lsp...` windows
+require('lspconfig.ui.windows').default_options.border = 'rounded'
+
+--[[
+    Add borders to floating windows for all LSP clients.
+
+    Source: https://github.com/neovim/nvim-lspconfig/wiki/UI-Customization#borders
+--]]
+local lsp_orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+
+function vim.lsp.util.open_floating_preview(contents, syntax, opts)
+  opts = opts or {}
+  opts.border = opts.border or 'rounded'
+
+  return lsp_orig_util_open_floating_preview(contents, syntax, opts)
+end
+
 
 local on_attach_apply_universal_lsp_configs = function(client, bufnr)
     -- Enable completion triggered by <C-x><C-o>
