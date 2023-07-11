@@ -100,6 +100,13 @@ vim.api.nvim_set_keymap(
 )
 
 
+-- Plugin settings: CtrlP
+vim.g.ctrlp_match_current_file = 1
+
+-- For Windows
+vim.g.ctrlp_user_command = 'dir %s /-n /b /s /a-d'
+
+
 -- Plugin settings: NERDTree
 vim.api.nvim_set_keymap(
     'n',
