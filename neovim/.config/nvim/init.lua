@@ -52,6 +52,24 @@ vim.o.colorcolumn = '80,100,120'
 -- Use unix line endings
 vim.o.fileformat = 'unix'
 
+-- Custom function for stripping trailing white space
+strip_trailing_white_space = function()
+    local cursor_pos = vim.fn.getpos('.')
+    local current_query = vim.fn.getreg('/')
+
+    vim.cmd [[ %s/\s\+$//e ]]
+
+    vim.fn.setpos('.', cursor_pos)
+    vim.fn.setreg('/', current_query)
+end
+
+vim.keymap.set(
+    'n',
+    '<Leader>ss',
+    strip_trailing_white_space,
+    { remap = false }
+)
+
 -- Tabs, spaces, indentation
 
 -- Use spaces to insert <Tab>
