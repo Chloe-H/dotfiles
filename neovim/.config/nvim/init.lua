@@ -123,6 +123,15 @@ vim.api.nvim_set_keymap(
 )
 
 
+-- Plugin settings: fzf / fzf.vim
+vim.g.fzf_action = {
+    ['ctrl-t'] = 'tab split',
+    ['ctrl-x'] = 'split',
+    ['ctrl-v'] = 'vsplit',
+    ['ctrl-q'] = 'fill_quickfix',
+}
+
+
 -- Plugin settings: lspconfig
 local lspconfig = require('lspconfig')
 
