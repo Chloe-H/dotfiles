@@ -34,6 +34,11 @@ vim.call('plug#end')
 
 vim.g.mapleader = ','
 
+-- Disable the mouse in all modes
+vim.opt.mouse = ''
+
+vim.cmd 'colorscheme tokyonight'
+
 -- Show line numbers
 vim.o.number = true
 
@@ -54,10 +59,6 @@ vim.o.softtabstop = 4
 -- Number of spaces to use for each step of (auto)indent
 vim.o.shiftwidth = 4
 
--- Disable the mouse in all modes
-vim.opt.mouse = ''
-
-vim.cmd 'colorscheme tokyonight'
 
 
 -- Plugin settings
@@ -69,6 +70,7 @@ vim.api.nvim_set_keymap(
     ':NERDTreeToggle<CR>',
     {}
 )
+
 
 -- Plugin settings: lspconfig
 
