@@ -306,6 +306,7 @@ lspconfig['csharp_ls'].setup({
         '--solution',
         csharp_source(),
     },
+    init_options = {},
     root_dir = csharp_root_dir,
     on_attach = on_attach_apply_universal_lsp_configs,
     handlers = {
