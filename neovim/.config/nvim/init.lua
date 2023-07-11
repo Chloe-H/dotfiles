@@ -115,6 +115,13 @@ vim.api.nvim_set_keymap(
     { noremap = true }
 )
 
+vim.api.nvim_set_keymap(
+    'n',
+    '<Leader>fn',
+    ':NERDTreeFind<CR>',
+    { noremap = true }
+)
+
 
 -- Plugin settings: lspconfig
 local lspconfig = require('lspconfig')
