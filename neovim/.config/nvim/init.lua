@@ -82,9 +82,9 @@ vim.keymap.set('n', '[q', '<cmd>cprevious<CR>', { remap = false })
 -- Tab mappings
 vim.keymap.set('n', '<Leader>th', '<cmd>tabfirst<CR>', { remap = false })
 vim.keymap.set('n', '<Leader>tl', '<cmd>tablast<CR>', { remap = false })
-vim.keymap.set('n', '<Leader>tt', '<cmd>tabedit<Space>', { remap = false })
-vim.keymap.set('n', '<Leader>gt', '<cmd>tabnext<Space>', { remap = false })
-vim.keymap.set('n', '<Leader>tm', '<cmd>tabmove<Space>', { remap = false })
+vim.keymap.set('n', '<Leader>tt', ':tabedit<Space>', { remap = false })
+vim.keymap.set('n', '<Leader>gt', ':tabnext<Space>', { remap = false })
+vim.keymap.set('n', '<Leader>tm', ':tabmove<Space>', { remap = false })
 vim.keymap.set('n', '<Leader>td', '<cmd>tabclose<CR>', { remap = false })
 vim.keymap.set('n', '<Leader>wt', '<cmd>tab split<CR>', { remap = false })
 
