@@ -8,8 +8,11 @@ Plug('junegunn/vim-plug')
 -- Niceties
 Plug('tpope/vim-fugitive')
 Plug('tpope/vim-surround')
+Plug('tpope/vim-commentary')
 Plug('foosoft/vim-argwrap')
+Plug('jiangmiao/auto-pairs')
 Plug('milkypostman/vim-togglelist')
+Plug('nvim-lualine/lualine.nvim')
 
 -- Navigation
 Plug('ctrlpvim/ctrlp.vim')
