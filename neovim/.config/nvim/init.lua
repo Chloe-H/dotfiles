@@ -9,6 +9,7 @@ Plug('junegunn/vim-plug')
 Plug('tpope/vim-fugitive')
 Plug('tpope/vim-surround')
 Plug('foosoft/vim-argwrap')
+Plug('milkypostman/vim-togglelist')
 
 -- Navigation
 Plug('ctrlpvim/ctrlp.vim')
@@ -66,6 +67,22 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 -- Number of spaces to use for each step of (auto)indent
 vim.opt.shiftwidth = 4
+
+-- QuickFix list / Location list mappings (pair nicely with vim-togglelist)
+vim.keymap.set('n', ']l', '<cmd>lnext<CR>', { remap = false })
+vim.keymap.set('n', '[l', '<cmd>lprevious<CR>', { remap = false })
+
+vim.keymap.set('n', ']q', '<cmd>cnext<CR>', { remap = false })
+vim.keymap.set('n', '[q', '<cmd>cprevious<CR>', { remap = false })
+
+-- Tab mappings
+vim.keymap.set('n', '<Leader>th', '<cmd>tabfirst<CR>', { remap = false })
+vim.keymap.set('n', '<Leader>tl', '<cmd>tablast<CR>', { remap = false })
+vim.keymap.set('n', '<Leader>tt', '<cmd>tabedit<Space>', { remap = false })
+vim.keymap.set('n', '<Leader>gt', '<cmd>tabnext<Space>', { remap = false })
+vim.keymap.set('n', '<Leader>tm', '<cmd>tabmove<Space>', { remap = false })
+vim.keymap.set('n', '<Leader>td', '<cmd>tabclose<CR>', { remap = false })
+vim.keymap.set('n', '<Leader>wt', '<cmd>tab split<CR>', { remap = false })
 
 -- Custom function for stripping trailing white space
 strip_trailing_white_space = function()
