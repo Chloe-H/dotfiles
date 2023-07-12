@@ -126,7 +126,14 @@ vim.keymap.set(
 
 
 -- Plugin settings: lualine.nvim
-require('lualine').setup()
+require('lualine').setup({
+    options = {
+        disabled_filetypes = {
+            'ctrlp',
+            'nerdtree',
+        },
+    }
+})
 
 
 -- Plugin settings: CtrlP
