@@ -29,6 +29,7 @@ Plug('junegunn/fzf.vim')
 -- LSP stuff
 Plug('neovim/nvim-lspconfig')
 Plug('Decodetalkers/csharpls-extended-lsp.nvim')
+Plug('Hoffs/omnisharp-extended-lsp.nvim')
 
 -- Color schemes
 Plug('folke/tokyonight.nvim')
@@ -343,7 +344,7 @@ lspconfig['csharp_ls'].setup({
             -- Disable diagnostics because they're ALL WRONG
             result.diagnostics = {}
         end,
-    }
+    },
 })
 
 --[[
@@ -394,4 +395,7 @@ lspconfig['omnisharp'].setup({
         on_attach_apply_universal_lsp_configs(client, bufnr)
         on_attach_apply_omnisharp_workaround(client, bufnr)
     end,
+    handlers = {
+        ['textDocument/definition'] = require('omnisharp_extended').handler,
+    },
 })
