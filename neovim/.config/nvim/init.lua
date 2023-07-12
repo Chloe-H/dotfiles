@@ -47,9 +47,14 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.colorcolumn = '80,100,120'
 
+vim.opt.splitright = true
+vim.opt.splitbelow = true
 
 -- Use unix line endings
 vim.opt.fileformat = 'unix'
+
+-- Add angle brackets to matched character pairs
+vim.opt.matchpairs:append('<:>')
 
 -- Tabs, spaces, indentation
 
