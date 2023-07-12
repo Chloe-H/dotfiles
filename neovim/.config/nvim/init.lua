@@ -3,18 +3,16 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin')
 
 -- to get Vim help for vim-plug
-Plug 'junegunn/vim-plug'
+Plug('junegunn/vim-plug')
 
 -- Niceties
-Plug 'tpope/vim-surround'
-Plug 'foosoft/vim-argwrap'
-
--- Git
-Plug 'tpope/vim-fugitive'
+Plug('tpope/vim-fugitive')
+Plug('tpope/vim-surround')
+Plug('foosoft/vim-argwrap')
 
 -- Navigation
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'scrooloose/nerdtree'
+Plug('ctrlpvim/ctrlp.vim')
+Plug('scrooloose/nerdtree')
 
 -- Search
 Plug('junegunn/fzf', {
@@ -22,14 +20,14 @@ Plug('junegunn/fzf', {
         vim.call('fzf#install')
     end
 })
-Plug 'junegunn/fzf.vim'
+Plug('junegunn/fzf.vim')
 
 -- LSP stuff
-Plug 'neovim/nvim-lspconfig'
-Plug 'Decodetalkers/csharpls-extended-lsp.nvim'
+Plug('neovim/nvim-lspconfig')
+Plug('Decodetalkers/csharpls-extended-lsp.nvim')
 
 -- Color schemes
-Plug 'folke/tokyonight.nvim'
+Plug('folke/tokyonight.nvim')
 
 vim.call('plug#end')
 
@@ -38,26 +36,38 @@ vim.call('plug#end')
 
 vim.g.mapleader = ','
 
+vim.cmd.colorscheme('tokyonight')
+
 -- Disable the mouse in all modes
 vim.opt.mouse = ''
 
-vim.cmd 'colorscheme tokyonight'
-
 -- Show line numbers
-vim.o.number = true
+vim.opt.number = true
 
-vim.o.relativenumber = true
-vim.o.colorcolumn = '80,100,120'
+vim.opt.relativenumber = true
+vim.opt.colorcolumn = '80,100,120'
+
 
 -- Use unix line endings
-vim.o.fileformat = 'unix'
+vim.opt.fileformat = 'unix'
+
+-- Tabs, spaces, indentation
+
+-- Use spaces to insert <Tab>
+vim.opt.expandtab = true
+-- Number of spaces a <Tab> in the file counts for
+vim.opt.tabstop = 4
+-- Number of spaces a <Tab> counts for while performing editing operations
+vim.opt.softtabstop = 4
+-- Number of spaces to use for each step of (auto)indent
+vim.opt.shiftwidth = 4
 
 -- Custom function for stripping trailing white space
 strip_trailing_white_space = function()
     local cursor_pos = vim.fn.getpos('.')
     local current_query = vim.fn.getreg('/')
 
-    vim.cmd [[ %s/\s\+$//e ]]
+    vim.cmd([[ %s/\s\+$//e ]])
 
     vim.fn.setpos('.', cursor_pos)
     vim.fn.setreg('/', current_query)
@@ -70,17 +80,7 @@ vim.keymap.set(
     { remap = false }
 )
 
--- Tabs, spaces, indentation
-
--- Use spaces to insert <Tab>
-vim.o.expandtab = true
--- Number of spaces a <Tab> in the file counts for
-vim.o.tabstop = 4
--- Number of spaces a <Tab> counts for while performing editing operations
-vim.o.softtabstop = 4
--- Number of spaces to use for each step of (auto)indent
-vim.o.shiftwidth = 4
-
+-- Disable virtual text for diagnostics
 vim.diagnostic.config ({
     virtual_text = false,
     signs = true,
@@ -90,13 +90,12 @@ vim.diagnostic.config ({
 
 -- Plugin settings
 
-
 -- Plugin settings: vim-argwrap
-vim.api.nvim_set_keymap(
+vim.keymap.set(
     'n',
     '<Leader>a',
-    ':ArgWrap<CR>',
-    { noremap = true }
+    '<cmd>ArgWrap<CR>',
+    { remap = false }
 )
 
 
@@ -108,18 +107,18 @@ vim.g.ctrlp_user_command = 'dir %s /-n /b /s /a-d'
 
 
 -- Plugin settings: NERDTree
-vim.api.nvim_set_keymap(
+vim.keymap.set(
     'n',
     '<Leader>n',
-    ':NERDTreeToggle<CR>',
-    { noremap = true }
+    '<cmd>NERDTreeToggle<CR>',
+    { remap = false }
 )
 
-vim.api.nvim_set_keymap(
+vim.keymap.set(
     'n',
     '<Leader>fn',
-    ':NERDTreeFind<CR>',
-    { noremap = true }
+    '<cmd>NERDTreeFind<CR>',
+    { remap = false }
 )
 
 
