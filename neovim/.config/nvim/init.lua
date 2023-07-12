@@ -124,6 +124,10 @@ vim.keymap.set(
 )
 
 
+-- Plugin settings: lualine.nvim
+require('lualine').setup()
+
+
 -- Plugin settings: CtrlP
 vim.g.ctrlp_match_current_file = 1
 
