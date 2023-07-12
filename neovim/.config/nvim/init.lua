@@ -46,6 +46,9 @@ vim.cmd.colorscheme('tokyonight')
 -- Disable the mouse in all modes
 vim.opt.mouse = ''
 
+vim.opt.cursorline = true
+vim.opt.cursorcolumn = true
+
 -- Show line numbers
 vim.opt.number = true
 
