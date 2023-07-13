@@ -26,6 +26,11 @@ Plug('junegunn/fzf', {
 })
 Plug('junegunn/fzf.vim')
 
+-- IDE-like stuff
+Plug('majutsushi/tagbar', {
+    on = { 'TagbarToggle', 'TagbarOpen' }
+})
+
 -- LSP stuff
 Plug('neovim/nvim-lspconfig')
 Plug('Decodetalkers/csharpls-extended-lsp.nvim')
@@ -169,6 +174,23 @@ vim.g.fzf_action = {
     ['ctrl-v'] = 'vsplit',
     ['ctrl-q'] = 'fill_quickfix',
 }
+
+
+-- Plugin settings: tagbar
+vim.g.tagbar_left = 1
+
+vim.keymap.set(
+    'n',
+    '<Leader>tb',
+    '<cmd>TagbarToggle<CR>',
+    { remap = false }
+)
+vim.keymap.set(
+    'n',
+    '<Leader>ftb',
+    '<cmd>TagbarOpen fj<CR>',
+    { remap = false }
+)
 
 
 -- Plugin settings: lspconfig

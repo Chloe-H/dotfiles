@@ -19,8 +19,8 @@ scoop install vcredist2022
 scoop install neovide
 
 # Install vim-plug: https://github.com/junegunn/vim-plug#windows-powershell-1
-# fzf.vim dependencies:
-# scoop install perl # For `:Tags`, `:Helptags`
+# scoop install perl # For `:Tags`, `:Helptags` in fzf.vim
+# scoop install universal-ctags # For tagbar
 
 # TODO: reset execution policy (depending on the machine)
 # Keeping in mind you need RemoteSigned to run scoop commands
