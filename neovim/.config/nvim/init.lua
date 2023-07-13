@@ -263,7 +263,21 @@ lspconfig['csharp_ls'].setup({
         csharp_source(),
     },
     root_dir = csharp_root_dir,
-    on_attach = on_attach_apply_universal_lsp_configs,
+    on_attach = function(client, bufnr)
+        local bufopts = {
+            buffer = bufnr,
+            remap = false,
+        }
+
+        vim.keymap.set('n', '<Leader>csgd', vim.lsp.buf.definition, bufopts)
+        vim.keymap.set('n', '<Leader>cssd', vim.lsp.buf.hover, bufopts)
+        vim.keymap.set('n', '<Leader>csca', vim.lsp.buf.code_action, bufopts)
+        vim.keymap.set('n', '<Leader>cssh', vim.lsp.buf.signature_help, bufopts)
+        vim.keymap.set('n', '<Leader>csfu', vim.lsp.buf.references, bufopts)
+        vim.keymap.set('n', '<Leader>csrn', vim.lsp.buf.rename, bufopts)
+
+        vim.keymap.set('n', '<Leader>csed', vim.diagnostic.open_float, bufopts)
+    end,
     handlers = {
         ['textDocument/definition'] = require('csharpls_extended').handler,
         ['textDocument/publishDiagnostics'] = function(err, result, ctx, config)
