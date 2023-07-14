@@ -27,6 +27,11 @@ scoop install perl # For `:Tags`, `:Helptags` in fzf.vim
 scoop install universal-ctags # For tagbar
 
 # /All/ needed for telescope-fzf-native (90% sure)
+# TODO: I've experienced weirdness around getting telescope-fzf-native working;
+# I wasn't very careful when getting it fixed both times, but my best guess is
+# that navigating to its directory in PowerShell and running `make` again fixes
+# it? Or opening a new neovide instance to get the updated PATH? Or some
+# combination of the two?
 scoop install mingw
 scoop install gcc
 scoop install make
