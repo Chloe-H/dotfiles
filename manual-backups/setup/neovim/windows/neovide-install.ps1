@@ -3,7 +3,7 @@
 # Get current execution policy, in case you want to reset it after the install
 Get-ExecutionPolicy -Scope CurrentUser
 
-# Optional: Needed to run a remote script the first time
+# Optional (kind of): Needed to run a remote script the first time
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 # Install scoop
@@ -18,9 +18,18 @@ scoop install neovim
 scoop install vcredist2022
 scoop install neovide
 
-# Install vim-plug: https://github.com/junegunn/vim-plug#windows-powershell-1
-# scoop install perl # For `:Tags`, `:Helptags` in fzf.vim
-# scoop install universal-ctags # For tagbar
+# Install vim-plug (https://github.com/junegunn/vim-plug#windows-powershell-1)
+iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |`
+    ni "$(@($env:XDG_DATA_HOME, $env:LOCALAPPDATA)[$null -eq $env:XDG_DATA_HOME])/nvim-data/site/autoload/plug.vim" -Force
+
+scoop install ripgrep # For `:Rg` in fzf.vim, `live-grep` in telescope
+scoop install perl # For `:Tags`, `:Helptags` in fzf.vim
+scoop install universal-ctags # For tagbar
+
+# /All/ needed for telescope-fzf-native (90% sure)
+scoop install mingw
+scoop install gcc
+scoop install make
 
 # TODO: reset execution policy (depending on the machine)
 # Keeping in mind you need RemoteSigned to run scoop commands

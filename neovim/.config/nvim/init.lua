@@ -20,11 +20,17 @@ Plug('scrooloose/nerdtree')
 
 -- Search
 Plug('junegunn/fzf', {
-    ['do'] = function()
-        vim.call('fzf#install')
-    end
+    ['do'] = vim.fn['fzf#install'],
 })
 Plug('junegunn/fzf.vim')
+-- Trying out, may replace fzf/fzf.vim + CtrlP
+Plug('nvim-lua/plenary.nvim')
+Plug('nvim-telescope/telescope.nvim', {
+    branch = '0.1.x',
+})
+Plug('nvim-telescope/telescope-fzf-native.nvim', {
+    ['do'] = 'make'
+})
 
 -- IDE-like stuff
 Plug('majutsushi/tagbar', {
@@ -174,6 +180,19 @@ vim.g.fzf_action = {
     ['ctrl-v'] = 'vsplit',
     ['ctrl-q'] = 'fill_quickfix',
 }
+
+
+-- Plugin settings: telescope.nvim
+local telescope = require('telescope')
+telescope.setup()
+telescope.load_extension('fzf')
+
+vim.keymap.set(
+    'n',
+    '<Leader>ts',
+    ':Telescope<Space>',
+    { remap = false }
+)
 
 
 -- Plugin settings: tagbar
