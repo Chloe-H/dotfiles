@@ -27,10 +27,12 @@ somehow).
 ## Per domain isolation patterns
 
 As ordered in Temporary Containers (Options > Isolation > Per Domain).
+https://[REDACTED]-com.access.mcas.ms/aad_login
 
-- **[REDACTED]:** `/^(https?://)?([^\s/]+\.)*?(live|microsoft(online)?|office|one(drive|note)|outlook|sharepoint|visualstudio|windowsazure)\.com(\.mcas\.ms)?\b.*$/`
+- **[REDACTED]:** `/^(https?://)?(([REDACTED]-com\.access\.mcas\.ms)|(([^\s/]+\.)*?(live|microsoft(online)?|office|one(drive|note)|outlook|sharepoint|visualstudio|windowsazure)\.com(\.mcas\.ms)?))\b.*$/`
     - **Microsoft:** `/^(https?://)?([^\s/]+\.)*?(live|microsoft(online)?|office|one(drive|note)|outlook|sharepoint|visualstudio|windowsazure)\.com(\.mcas\.ms)?\b.*$/`
     - **Teams:** `/^(https?://)?([^\s/]+\.)*?statics\.teams\.cdn\.office\.net\b.*$/`
+    - **[REDACTED]-specific:** `/^(https?://)?([REDACTED]-com\.access\.mcas\.ms)\b.*$/`
 - **Microsoft:** `/^(https?://)?([^\s/]+\.)*?(live|microsoft(online)?|office|one(drive|note)|outlook|sharepoint|visualstudio|windowsazure)\.com\b.*$/`
 - **Google:** `/^(https?://)?([^\s/]+\.)*?(google|youtube)\.com\b.*$/`
 - **Slack:** `/^(https?://)?([^\s/]+\.)*?slack\.com\b.*$/`
