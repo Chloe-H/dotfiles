@@ -28,10 +28,9 @@ somehow).
 
 As ordered in Temporary Containers (Options > Isolation > Per Domain).
 
-- **[REDACTED]:** `/^(https?://)?([^\s/]+\.)*?(((([REDACTED](u\.litmos)?|keepersecurity|myfreshworks|planitpoker|urldefense)|(live|microsoft(online)?|office|one(drive|note)|outlook|sharepoint|visualstudio|windowsazure))\.com)|(statics\.teams\.cdn\.office\.net))\b.*$/`
-    - **Microsoft:** `/^(https?://)?([^\s/]+\.)*?(live|microsoft(online)?|office|one(drive|note)|outlook|sharepoint|visualstudio|windowsazure)\.com\b.*$/`
+- **[REDACTED]:** `/^(https?://)?([^\s/]+\.)*?(live|microsoft(online)?|office|one(drive|note)|outlook|sharepoint|visualstudio|windowsazure)\.com(\.mcas\.ms)?\b.*$/`
+    - **Microsoft:** `/^(https?://)?([^\s/]+\.)*?(live|microsoft(online)?|office|one(drive|note)|outlook|sharepoint|visualstudio|windowsazure)\.com(\.mcas\.ms)?\b.*$/`
     - **Teams:** `/^(https?://)?([^\s/]+\.)*?statics\.teams\.cdn\.office\.net\b.*$/`
-    - **[REDACTED]-specific:** `/^(https?://)?([^\s/]+\.)*?([REDACTED](u\.litmos)?|keepersecurity|myfreshworks|planitpoker|urldefense)\.com\b.*$/`
 - **Microsoft:** `/^(https?://)?([^\s/]+\.)*?(live|microsoft(online)?|office|one(drive|note)|outlook|sharepoint|visualstudio|windowsazure)\.com\b.*$/`
 - **Google:** `/^(https?://)?([^\s/]+\.)*?(google|youtube)\.com\b.*$/`
 - **Slack:** `/^(https?://)?([^\s/]+\.)*?slack\.com\b.*$/`
