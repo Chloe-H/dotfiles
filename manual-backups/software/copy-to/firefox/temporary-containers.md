@@ -31,7 +31,7 @@ https://[REDACTED]-com.access.mcas.ms/aad_login
 
 - **[REDACTED]:** `/^(https?://)?(([REDACTED]-com\.access\.mcas\.ms)|(([^\s/]+\.)*?(live|microsoft(online)?|office|one(drive|note)|outlook|sharepoint|visualstudio|windowsazure)\.com(\.mcas\.ms)?))\b.*$/`
     - **Microsoft:** `/^(https?://)?([^\s/]+\.)*?(live|microsoft(online)?|office|one(drive|note)|outlook|sharepoint|visualstudio|windowsazure)\.com(\.mcas\.ms)?\b.*$/`
-    - **Teams:** `/^(https?://)?([^\s/]+\.)*?statics\.teams\.cdn\.office\.net\b.*$/`
+    - **Teams:** `/^(https?://)?([^\s/]+\.)*?statics\.teams\.cdn\.office\.net(\.mcas\.ms)?\b.*$/`
     - **[REDACTED]-specific:** `/^(https?://)?([REDACTED]-com\.access\.mcas\.ms)\b.*$/`
 - **Microsoft:** `/^(https?://)?([^\s/]+\.)*?(live|microsoft(online)?|office|one(drive|note)|outlook|sharepoint|visualstudio|windowsazure)\.com\b.*$/`
 - **Google:** `/^(https?://)?([^\s/]+\.)*?(google|youtube)\.com\b.*$/`
