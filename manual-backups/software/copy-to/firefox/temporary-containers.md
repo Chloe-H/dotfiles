@@ -29,11 +29,13 @@ somehow).
 As ordered in Temporary Containers (Options > Isolation > Per Domain).
 https://[REDACTED]-com.access.mcas.ms/aad_login
 
-- **[REDACTED]:** `/^(https?://)?(([REDACTED]-com\.access\.mcas\.ms)|(([^\s/]+\.)*?(live|microsoft(online)?|office|one(drive|note)|outlook|sharepoint|visualstudio|windowsazure)\.com(\.mcas\.ms)?))\b(/.*)?$/`
+- **[REDACTED]:** `/^(https?://)?((([^\s/]+\.)*?[REDACTED]\.com)|([REDACTED]-com\.access\.mcas\.ms)|(([^\s/]+\.)*?(live|microsoft(online)?|office|one(drive|note)|outlook|sharepoint|visualstudio|windowsazure)\.com(\.mcas\.ms)?)|(statics\.teams\.cdn\.office\.net)(\.mcas\.ms)?)\b(/.*)?$/`
     - **Microsoft:** `/^(https?://)?([^\s/]+\.)*?(live|microsoft(online)?|office|one(drive|note)|outlook|sharepoint|visualstudio|windowsazure)\.com(\.mcas\.ms)?\b(/.*)?$/`
-    - **Teams:** `/^(https?://)?([^\s/]+\.)*?statics\.teams\.cdn\.office\.net(\.mcas\.ms)?\b(/.*)?$/`
-    - **[REDACTED]-specific:** `/^(https?://)?([REDACTED]-com\.access\.mcas\.ms)\b(/.*)?$/`
-- **Microsoft:** `/^(https?://)?([^\s/]+\.)*?(live|microsoft(online)?|office|one(drive|note)|outlook|sharepoint|visualstudio|windowsazure)\.com\b(/.*)?$/`
+    - **Teams:** `/^(https?://)?(statics\.teams\.cdn\.office\.net)(\.mcas\.ms)?\b(/.*)?$/`
+    - **[REDACTED]-specific:** `/^(https?://)?((([^\s/]+\.)*?[REDACTED]\.com)|([REDACTED]-com\.access\.mcas\.ms))\b(/.*)?$/`
+- **Microsoft:** `/^(https?://)?((([^\s/]+\.)*?(live|microsoft(online)?|office|one(drive|note)|outlook|sharepoint|visualstudio|windowsazure)\.com)|(statics\.teams\.cdn\.office\.net))\b(/.*)?$/`
+    - **Microsoft:** `/^(https?://)?(([^\s/]+\.)*?(live|microsoft(online)?|office|one(drive|note)|outlook|sharepoint|visualstudio|windowsazure)\.com)\b(/.*)?$/`
+    - **Teams:** `/^(https?://)?(statics\.teams\.cdn\.office\.net)\b(/.*)?$/`
 - **Google:** `/^(https?://)?([^\s/]+\.)*?(google|youtube)\.com\b(/.*)?$/`
 - **Slack:** `/^(https?://)?([^\s/]+\.)*?slack\.com\b(/.*)?$/`
 - **Amazon/AWS:** `/^(https?://)?([^\s/]+\.)*?(aws(apps|\.amazon)?)(\.com)?\b(/.*)?$/`
