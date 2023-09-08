@@ -23,7 +23,7 @@ Plug('junegunn/fzf', {
     ['do'] = vim.fn['fzf#install'],
 })
 Plug('junegunn/fzf.vim')
--- Trying out, may replace fzf/fzf.vim + CtrlP
+-- Trying out, may replace fzf/fzf.vim + CtrlP (TODO)
 Plug('nvim-lua/plenary.nvim')
 Plug('nvim-telescope/telescope.nvim', {
     branch = '0.1.x',
