@@ -1,0 +1,35 @@
+# add timestamp to each entry in the history
+HISTTIMEFORMAT="%F %T  "
+
+# Disable XON/XOFF so I can use <C-s> to search forward through command history
+stty -ixon
+
+# For virtualenvwrapper, if it's set up
+python_virtual_env_wrapper_script="${HOME}/.local/bin/virtualenvwrapper.sh"
+
+if [[ -e ${python_virtual_env_wrapper_script} ]]; then
+    python_virtual_env_dir="${HOME}/virtualenvs"
+
+    if [[ ! -e ${python_virtual_env_dir} ]]; then
+        mkdir ${python_virtual_env_dir}
+    fi
+
+    export WORKON_HOME=${python_virtual_env_dir}
+    export VIRTUALENVWRAPPER_PYTHON='/usr/bin/python3'
+    source ${python_virtual_env_wrapper_script}
+fi
+
+# For default editor
+export EDITOR='vim'
+
+# Default to Windows git executable on Windows filesystem
+# Attempting to address performance issues when running git on the Windows
+# filesystem from WSL
+# Source: https://stackoverflow.com/a/67703693
+function git() {
+    if $(pwd -P | grep -q "^\/mnt\/c\/*"); then
+        git.exe "$@"
+    else
+        command git "$@"
+    fi
+}

@@ -19,9 +19,6 @@ shopt -s histappend
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-# add timestamp to each entry in the history (custom)
-HISTTIMEFORMAT="%F %T  "
-
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
@@ -126,36 +123,3 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# Disable XON/XOFF so I can use <C-s> to search forward through command history (custom)
-stty -ixon
-
-# For virtualenvwrapper, if it's set up (custom)
-python_virtual_env_wrapper_script="${HOME}/.local/bin/virtualenvwrapper.sh"
-
-if [[ -e ${python_virtual_env_wrapper_script} ]]; then
-    python_virtual_env_dir="${HOME}/virtualenvs"
-
-    if [[ ! -e ${python_virtual_env_dir} ]]; then
-        mkdir ${python_virtual_env_dir}
-    fi
-
-    export WORKON_HOME=${python_virtual_env_dir}
-    export VIRTUALENVWRAPPER_PYTHON='/usr/bin/python3'
-    source ${python_virtual_env_wrapper_script}
-fi
-
-# For default editor (custom)
-export EDITOR='vim'
-
-# Default to Windows git executable on Windows filesystem (custom)
-# Attempting to address performance issues when running git on the Windows
-# filesystem from WSL
-# Source: https://stackoverflow.com/a/67703693
-function git() {
-    if $(pwd -P | grep -q "^\/mnt\/c\/*"); then
-        git.exe "$@"
-    else
-        command git "$@"
-    fi
-}
