@@ -50,11 +50,20 @@ them.
 
 ## `bash`
 
-Search for `(custom)` to find my additions to `.bashrc`.
+(Relatively) platform-agnostic configurations.
 
-**Note:** The workaround for git's abysmal performance on large repos in the
-Windows filesystem means that git configurations will need to be set up in
-Windows as well.
+Search for `(custom)` to find my additions to an otherwise generalized bash
+script file.
+
+### `bash-ubuntu`
+
+Bash configurations for Ubuntu systems.
+Automatically sourced by `.bashrc`.
+
+### `bash-rhel`
+
+Bash configurations for Red Hat Enterprise Linux systems.
+Automatically sourced by `.bashrc`.
 
 ## `git`
 
