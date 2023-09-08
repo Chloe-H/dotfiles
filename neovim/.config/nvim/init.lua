@@ -153,8 +153,9 @@ require('lualine').setup({
 -- Plugin settings: CtrlP
 vim.g.ctrlp_match_current_file = 1
 
--- For Windows
-vim.g.ctrlp_user_command = 'dir %s /-n /b /s /a-d'
+if jit.os == 'Windows' then
+    vim.g.ctrlp_user_command = 'dir %s /-n /b /s /a-d'
+end
 
 
 -- Plugin settings: NERDTree
