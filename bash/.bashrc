@@ -6,3 +6,13 @@
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+
+if [ -f ~/.bashrc_extended ]; then
+    . ~/.bashrc_extended
+fi
+
+if [ -f ~/.bashrc_ubuntu ]; then
+    . ~/.bashrc_ubuntu
+elif [ -f ~/.bashrc_rhel ]; then
+    . ~/.bashrc_rhel
+fi
