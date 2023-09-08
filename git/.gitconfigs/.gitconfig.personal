@@ -1,0 +1,25 @@
+[user]
+	email = Chloe-H@users.noreply.github.com
+	name = Chloe
+[alias]
+	d = difftool
+[core]
+	editor = vim
+	autocrlf = false
+	ignorecase = false
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = true
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[init]
+    defaultBranch = main
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+[push]
+	default = nothing
