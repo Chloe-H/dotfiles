@@ -56,9 +56,6 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-# Git prompt (custom)
-source ~/.git-bash-prompt.sh
-
 if [ "$color_prompt" = yes ]; then
     # My modified PS1 string (custom)
     if [[ $(type -t git_prompt) == function ]]; then

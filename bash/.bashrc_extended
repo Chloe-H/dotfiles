@@ -35,3 +35,6 @@ function git() {
         command git "$@"
     fi
 }
+
+# Git prompt (useful for custom PS1, at bare minimum)
+source ~/.git-bash-prompt.sh
