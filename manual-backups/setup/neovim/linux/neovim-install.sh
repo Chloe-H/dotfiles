@@ -34,6 +34,10 @@ if [ -f /etc/os-release ]; then
         sudo snap install universal-ctags # Untested
 
         # Finally, install neovim
+        # If the installation fails, update the script according to
+        # https://github.com/neovim/neovim/wiki/Installing-Neovim#ubuntu
+        sudo add-apt-repository ppa:neovim-ppa/stable
+        sudo apt-get update
         sudo apt-get install -y neovim
 
         # Bonus: Install neovide
