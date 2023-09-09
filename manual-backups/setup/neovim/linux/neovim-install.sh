@@ -36,9 +36,7 @@ if [ -f /etc/os-release ]; then
         # Finally, install neovim
         # If the installation fails, update the script according to
         # https://github.com/neovim/neovim/wiki/Installing-Neovim#ubuntu
-        sudo add-apt-repository ppa:neovim-ppa/stable
-        sudo apt-get update
-        sudo apt-get install -y neovim
+        pip install neovim
 
         # Bonus: Install neovide
         sudo snap install neovide
