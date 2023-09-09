@@ -36,7 +36,16 @@ if [ -f /etc/os-release ]; then
         # Finally, install neovim
         # If the installation fails, update the script according to
         # https://github.com/neovim/neovim/wiki/Installing-Neovim#ubuntu
-        pip install neovim
+        sudo apt-get install -y ninja-build gettext cmake unzip curl
+        setup_dir=$(pwd) # Save current directory, just in case it matters
+        dev_dir="${HOME}/dev"
+        mkdir -p ${dev_dir}
+        cd ${dev_dir}
+        git clone https://github.com/neovim/neovim
+        cd neovim && git checkout stable && make CMAKE_BUILD_TYPE=Release
+        sudo make install
+        cd ${setup_dir}
+        unset dev_dir setup_dir
 
         # Bonus: Install neovide
         sudo snap install neovide
