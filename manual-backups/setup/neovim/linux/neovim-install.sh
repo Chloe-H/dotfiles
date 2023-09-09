@@ -94,7 +94,7 @@ if [ -f /etc/os-release ]; then
 
             # Install universal ctags the hard way
             setup_dir=$(pwd) # Save current directory, just in case it matters
-            dev_dir="~/dev"
+            dev_dir="${HOME}/dev"
             mkdir -p ${dev_dir}
             cd ${dev_dir}
             git clone https://github.com/universal-ctags/ctags.git
