@@ -167,8 +167,7 @@ require('lualine').setup({
                 'tabs',
                 mode = 2,
                 use_mode_colors = true,
-                component_separators = { left = '', right = ''},
-                section_separators = { left = '', right = ''},
+                max_length = vim.o.columns,
             }
         },
     },
