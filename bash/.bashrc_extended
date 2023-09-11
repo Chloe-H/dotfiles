@@ -27,6 +27,12 @@ fi
 # Allegation: "Control R or start typing to auto complete."
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+# git-completion.bash may need to be downloaded:
+#  curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
+# It's probably safest to replace "master" with your installed version
+# (e.g. "v2.39.1")
+[ -f ~/.git-completion.bash ] && source ~/.git-completion.bash
+
 # For default editor
 export EDITOR='vim'
 
