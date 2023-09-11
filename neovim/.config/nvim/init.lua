@@ -178,6 +178,12 @@ require('lualine').setup({
                 path = 3,
             }
         },
+        lualine_z = {
+            {
+                'windows',
+                mode = 1,
+            },
+        },
     },
 })
 
