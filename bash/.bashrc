@@ -13,6 +13,9 @@ fi
 
 
 # My platform-agnostic, relatively modular customizations
+# Kind of has to be sourced before distro-specific customizations on account
+# of the git prompt being used in the modified Ubuntu PS1 (at time of writing,
+# at least)
 
 if [ -f ~/.bashrc_extended ]; then
     . ~/.bashrc_extended
@@ -25,4 +28,10 @@ if [ -f ~/.bashrc_ubuntu ]; then
     . ~/.bashrc_ubuntu
 elif [ -f ~/.bashrc_rhel ]; then
     . ~/.bashrc_rhel
+fi
+
+
+# Sensitive, work-specific customizations
+if [ -f ~/.bashrc_work ]; then
+    . ~/.bashrc_work
 fi
