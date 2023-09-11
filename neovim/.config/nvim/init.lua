@@ -151,6 +151,7 @@ vim.keymap.set(
 
 
 -- Plugin settings: lualine.nvim
+-- Handy symbols: 
 require('lualine').setup({
     options = {
         disabled_filetypes = {
