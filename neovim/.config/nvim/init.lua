@@ -50,7 +50,7 @@ vim.call('plug#end')
 
 -- Native settings
 
-vim.g.mapleader = ','
+vim.g.mapleader = ' '
 
 vim.cmd.colorscheme('tokyonight')
 
