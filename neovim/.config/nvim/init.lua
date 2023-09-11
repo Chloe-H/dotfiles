@@ -224,7 +224,14 @@ vim.g.fzf_action = {
 
 -- Plugin settings: telescope.nvim
 local telescope = require('telescope')
-telescope.setup()
+telescope.setup({
+    pickers = {
+        find_files = {
+            hidden = true,
+        },
+    },
+})
+
 telescope.load_extension('fzf')
 
 vim.keymap.set(
