@@ -156,8 +156,29 @@ require('lualine').setup({
         disabled_filetypes = {
             'ctrlp',
             'nerdtree',
+            'fugitive',
         },
-    }
+        globalstatus = true,
+    },
+    tabline = {
+        lualine_a = {
+            {
+                'tabs',
+                mode = 2,
+                use_mode_colors = true,
+                component_separators = { left = '', right = ''},
+                section_separators = { left = '', right = ''},
+            }
+        },
+    },
+    inactive_winbar = {
+        lualine_a = {
+            {
+                'filename',
+                path = 3,
+            }
+        },
+    },
 })
 
 
