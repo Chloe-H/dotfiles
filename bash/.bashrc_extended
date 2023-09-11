@@ -21,6 +21,12 @@ if [[ -e ${python_virtual_env_wrapper_script} ]]; then
     source ${python_virtual_env_wrapper_script}
 fi
 
+# Most likely cause of this line was running the following:
+#  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+#  ~/.fzf/install
+# Allegation: "Control R or start typing to auto complete."
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 # For default editor
 export EDITOR='vim'
 
