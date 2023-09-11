@@ -152,6 +152,7 @@ vim.keymap.set(
 
 -- Plugin settings: lualine.nvim
 -- Handy symbols: 
+
 require('lualine').setup({
     options = {
         disabled_filetypes = {
@@ -178,11 +179,8 @@ require('lualine').setup({
                 path = 3,
             }
         },
-        lualine_z = {
-            {
-                'windows',
-                mode = 1,
-            },
+        lualine_y = {
+	        'vim.api.nvim_win_get_number(0)',
         },
     },
 })
