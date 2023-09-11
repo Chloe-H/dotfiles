@@ -130,6 +130,14 @@ vim.diagnostic.config ({
 
 -- Plugin settings
 
+-- Plugin settings: vim-fugitive
+vim.keymap.set(
+    'n',
+    '<Leader>gflv',
+    '<cmd>vertical Git --paginate log<CR>',
+    { remap = false }
+)
+
 -- Plugin settings: vim-argwrap
 vim.keymap.set(
     'n',
