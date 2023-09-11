@@ -229,7 +229,7 @@ telescope.load_extension('fzf')
 
 vim.keymap.set(
     'n',
-    '<Leader>ts',
+    '<Leader>ts<Space>',
     ':Telescope<Space>',
     { remap = false }
 )
