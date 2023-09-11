@@ -195,6 +195,9 @@ end
 
 
 -- Plugin settings: NERDTree
+vim.g.NERDTreeDirArrowExpandable = '+'
+vim.g.NERDTreeDirArrowCollapsible = '~'
+
 vim.keymap.set(
     'n',
     '<Leader>n',
