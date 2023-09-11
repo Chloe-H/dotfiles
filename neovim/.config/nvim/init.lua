@@ -102,6 +102,9 @@ vim.keymap.set('n', '<Leader>tm', ':tabmove<Space>', { remap = false })
 vim.keymap.set('n', '<Leader>td', '<cmd>tabclose<CR>', { remap = false })
 vim.keymap.set('n', '<Leader>wt', '<cmd>tab split<CR>', { remap = false })
 
+-- Search mappings
+vim.keymap.set('n', '<Leader>/w', '/\\<<C-R>/\\><CR>', { remap = false })
+
 -- Custom function for stripping trailing white space
 strip_trailing_white_space = function()
     local cursor_pos = vim.fn.getpos('.')
