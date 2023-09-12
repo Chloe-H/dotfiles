@@ -32,6 +32,10 @@ Plug('nvim-telescope/telescope-fzf-native.nvim', {
     ['do'] = 'make'
 })
 
+-- Session management
+Plug('rmagatti/auto-session')
+Plug('rmagatti/session-lens')
+
 -- IDE-like stuff
 Plug('majutsushi/tagbar', {
     on = { 'TagbarToggle', 'TagbarOpen' }
@@ -152,7 +156,6 @@ vim.keymap.set(
 
 -- Plugin settings: lualine.nvim
 -- Handy symbols: 
-
 require('lualine').setup({
     options = {
         disabled_filetypes = {
@@ -169,8 +172,9 @@ require('lualine').setup({
                 mode = 2,
                 use_mode_colors = true,
                 max_length = vim.o.columns,
-            }
+            },
         },
+        lualine_z = { require('auto-session.lib').current_session_name },
     },
     inactive_winbar = {
         lualine_a = {
@@ -195,7 +199,6 @@ end
 
 
 -- Plugin settings: NERDTree
-
 -- Workaround for glyphs not displaying correctly in RHEL via MobaXterm
 vim.g.NERDTreeDirArrowExpandable = '+'
 vim.g.NERDTreeDirArrowCollapsible = '~'
@@ -235,6 +238,7 @@ telescope.setup({
 })
 
 telescope.load_extension('fzf')
+telescope.load_extension('session-lens')
 
 vim.keymap.set(
     'n',
@@ -242,6 +246,10 @@ vim.keymap.set(
     ':Telescope<Space>',
     { remap = false }
 )
+
+
+-- Plugin settings: auto-session
+require('auto-session').setup()
 
 
 -- Plugin settings: tagbar
