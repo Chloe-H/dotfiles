@@ -14,6 +14,14 @@ Plug('jiangmiao/auto-pairs')
 Plug('milkypostman/vim-togglelist')
 Plug('nvim-lualine/lualine.nvim')
 
+-- If you don't have nodejs and yarn
+-- use pre build, add 'vim-plug' to the filetype list so vim-plug can update this plugin
+-- see: https://github.com/iamcco/markdown-preview.nvim/issues/50
+Plug('iamcco/markdown-preview.nvim', {
+    ['do'] = vim.fn['mkdp#util#install'],
+    ['for'] = { 'markdown', 'vim-plug' },
+})
+
 -- Navigation
 Plug('ctrlpvim/ctrlp.vim')
 Plug('scrooloose/nerdtree')
