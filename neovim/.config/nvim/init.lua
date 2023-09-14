@@ -64,6 +64,7 @@ vim.call('plug#end')
 
 vim.g.mapleader = ' '
 
+vim.opt.termguicolors = true
 vim.cmd.colorscheme('tokyonight')
 
 -- Disable the mouse in all modes
