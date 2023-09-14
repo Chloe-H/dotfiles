@@ -50,7 +50,22 @@ Plug('majutsushi/tagbar', {
 })
 
 -- LSP stuff
+-- LSP configurations for neovim's built in LSP client/framework
 Plug('neovim/nvim-lspconfig')
+-- Bridge between nvim-cmp and nvim-lspconfig
+Plug('VonHeikemen/lsp-zero.nvim', {
+    branch = 'v3.x', -- TODO: Only necessary until v3.x becomes default (soon(TM), Sep 2023)
+})
+-- Auto-completion engine
+Plug('hrsh7th/nvim-cmp')
+-- nvim-cmp source for neovim's built-in LSP client
+Plug('hrsh7th/cmp-nvim-lsp')
+-- External editor tooling management from within neovim
+Plug('williamboman/mason.nvim')
+-- Bridge from mason.nvim to nvim-lspconfig + some niceties
+Plug('williamboman/mason-lspconfig.nvim')
+-- Snippets engine (snippets sold separately)
+Plug('L3MON4D3/LuaSnip')
 
 -- Color schemes
 Plug('folke/tokyonight.nvim')
@@ -278,7 +293,7 @@ vim.keymap.set(
 )
 
 
--- Plugin settings: lspconfig
+-- Plugin settings: nvim-lspconfig
 
 local lspconfig = require('lspconfig')
 
@@ -302,10 +317,10 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts)
 end
 
 
-local on_attach_apply_universal_lsp_configs = function(client, bufnr)
-    -- Enable completion triggered by <C-x><C-o>
-    vim.bo[bufnr].omnifunc = 'v:lua.vim.lsp.omnifunc'
+-- Plugin settings: lsp-zero.nvim
 
+local lsp_zero = require('lsp-zero')
+lsp_zero.on_attach(function(client, bufnr)
     --[[
         Buffer local mappings
         See `:help vim.lsp.*` for documentation on the functions below
@@ -325,4 +340,45 @@ local on_attach_apply_universal_lsp_configs = function(client, bufnr)
     vim.keymap.set('n', '<Leader>ed', vim.diagnostic.open_float, bufopts)
     vim.keymap.set('n', '[e', vim.diagnostic.goto_prev, bufopts)
     vim.keymap.set('n', ']e', vim.diagnostic.goto_next, bufopts)
-end
+end)
+
+
+-- Plugin settings: nvim-cmp
+
+local nvim_cmp = require('cmp')
+local cmp_action = lsp_zero.cmp_action()
+
+nvim_cmp.setup({
+    mapping = nvim_cmp.mapping.preset.insert({
+        -- <Enter> to confirm completion
+        ['<CR>'] = nvim_cmp.mapping.confirm({select = false}),
+
+        -- Ctrl + x, Ctrl + o to trigger completion menu
+        ['<C-x><C-o>'] = nvim_cmp.mapping.complete(),
+
+        -- Navigate between snippet placeholders
+        ['<C-f>'] = cmp_action.luasnip_jump_forward(),
+        ['<C-b>'] = cmp_action.luasnip_jump_backward(),
+
+        -- Scroll through the completion documentation
+        ['<C-d>'] = nvim_cmp.mapping.scroll_docs(4),
+        ['<C-u>'] = nvim_cmp.mapping.scroll_docs(-4),
+    }),
+})
+
+
+-- Plugin settings: mason.nvim, mason-lspconfig.nvim
+
+require('mason').setup({})
+require('mason-lspconfig').setup({
+    ensure_installed = {
+        'lua_ls',
+    },
+    handlers = {
+        lsp_zero.default_setup,
+        lua_ls = function ()
+            local lua_opts = lsp_zero.nvim_lua_ls()
+            lspconfig.lua_ls.setup(lua_opts)
+        end,
+    },
+})
