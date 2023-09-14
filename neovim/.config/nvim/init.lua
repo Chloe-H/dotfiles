@@ -51,8 +51,6 @@ Plug('majutsushi/tagbar', {
 
 -- LSP stuff
 Plug('neovim/nvim-lspconfig')
-Plug('Decodetalkers/csharpls-extended-lsp.nvim')
-Plug('Hoffs/omnisharp-extended-lsp.nvim')
 
 -- Color schemes
 Plug('folke/tokyonight.nvim')
