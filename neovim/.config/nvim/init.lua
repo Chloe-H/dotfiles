@@ -82,7 +82,9 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 
 -- Use unix line endings
-vim.opt.fileformat = 'unix'
+if jit.os == 'Windows' then
+    vim.opt.fileformats = 'unix'
+end
 
 -- Add angle brackets to matched character pairs
 vim.opt.matchpairs:append('<:>')
