@@ -1,4 +1,7 @@
-source /etc/bash_completion.d/git-prompt
+# I think this install location may be specific to Ubuntu?
+if [ -f /etc/bash_completion.d/git-prompt ]; then
+    source /etc/bash_completion.d/git-prompt
+fi
 
 # Adds the current branch to the bash prompt when the working directory is
 # part of a Git repository. Includes color-coding and indicators to quickly
