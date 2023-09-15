@@ -360,3 +360,12 @@ require('mason-lspconfig').setup({
         end,
     },
 })
+
+
+-- Plugin settings: nvim-lspconfig
+local lspconfig = require('lspconfig')
+
+-- Has to come after mason, mason-lspconfig, and lsp-zero setup
+lspconfig.html.setup({
+    filetypes = { 'html', 'htmldjango', },
+})
