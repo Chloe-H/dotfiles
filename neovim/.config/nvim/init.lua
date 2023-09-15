@@ -329,17 +329,12 @@ end)
 
 
 -- Plugin settings: nvim-cmp
+lsp_zero.extend_cmp()
 local nvim_cmp = require('cmp')
 local cmp_action = lsp_zero.cmp_action()
 
 nvim_cmp.setup({
     mapping = nvim_cmp.mapping.preset.insert({
-        -- <Enter> to confirm completion
-        ['<CR>'] = nvim_cmp.mapping.confirm({select = false}),
-
-        -- Ctrl + x, Ctrl + o to trigger completion menu
-        ['<C-x><C-o>'] = nvim_cmp.mapping.complete(),
-
         -- Navigate between snippet placeholders
         ['<C-f>'] = cmp_action.luasnip_jump_forward(),
         ['<C-b>'] = cmp_action.luasnip_jump_backward(),
