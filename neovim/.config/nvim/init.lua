@@ -2,21 +2,23 @@ local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
 
--- to get Vim help for vim-plug
-Plug('junegunn/vim-plug')
+Plug('junegunn/vim-plug') -- Added to get Vim help for vim-plug
 
 -- Niceties
 Plug('tpope/vim-fugitive')
-Plug('tpope/vim-surround')
-Plug('tpope/vim-commentary')
-Plug('foosoft/vim-argwrap')
-Plug('jiangmiao/auto-pairs')
-Plug('milkypostman/vim-togglelist')
+Plug('tpope/vim-surround') -- Plugin to easily add, change, and remove surrounding character pairs
+Plug('tpope/vim-commentary') -- Plugin to comment/un-comment with keybinds
+Plug('foosoft/vim-argwrap') -- Plugin to quickly expand/collapse lists of things (e.g. function arg lists)
+Plug('jiangmiao/auto-pairs') -- Pretty old plugin for inserting or deleting brackets, parentheses, and quotes in pairs
+Plug('milkypostman/vim-togglelist') -- Very old plugin for toggling location list and quickfix list with keybinds
 Plug('nvim-lualine/lualine.nvim')
 
--- If you don't have nodejs and yarn
--- use pre build, add 'vim-plug' to the filetype list so vim-plug can update this plugin
--- see: https://github.com/iamcco/markdown-preview.nvim/issues/50
+--[[
+    (copied straight from the README)
+    If you don't have nodejs and yarn
+    use pre build, add 'vim-plug' to the filetype list so vim-plug can update this plugin
+    see: https://github.com/iamcco/markdown-preview.nvim/issues/50
+--]]
 Plug('iamcco/markdown-preview.nvim', {
     ['do'] = vim.fn['mkdp#util#install'],
     ['for'] = { 'markdown', 'vim-plug' },
@@ -27,22 +29,22 @@ Plug('ctrlpvim/ctrlp.vim')
 Plug('scrooloose/nerdtree')
 
 -- Search
-Plug('junegunn/fzf', {
-    ['do'] = vim.fn['fzf#install'],
+Plug('junegunn/fzf', { -- Bare bones (n)vim integration for fzf, defaults to using fzf binary in $PATH, if available
+    ['do'] = vim.fn['fzf#install'], -- (Optional) Post-update hook to get latest version of fzf binary
 })
-Plug('junegunn/fzf.vim')
--- Trying out, may replace fzf/fzf.vim + CtrlP (TODO)
-Plug('nvim-lua/plenary.nvim')
-Plug('nvim-telescope/telescope.nvim', {
+Plug('junegunn/fzf.vim') -- Provides native (n)vim commands that leverage fzf
+-- TODO: Trying out, may replace fzf/fzf.vim + CtrlP
+Plug('nvim-lua/plenary.nvim') -- Dependency for telescope.nvim
+Plug('nvim-telescope/telescope.nvim', { -- Highly extensible fuzzy finder
     branch = '0.1.x',
 })
-Plug('nvim-telescope/telescope-fzf-native.nvim', {
+Plug('nvim-telescope/telescope-fzf-native.nvim', { -- Recommended native telescope sorter (whatever that means); improves sort performance
     ['do'] = 'make'
 })
 
 -- Session management
 Plug('rmagatti/auto-session')
-Plug('rmagatti/session-lens')
+Plug('rmagatti/session-lens') -- auto-session extension, adds fzf-enhanced session switching
 
 -- IDE-like stuff
 Plug('majutsushi/tagbar', {
@@ -50,22 +52,15 @@ Plug('majutsushi/tagbar', {
 })
 
 -- LSP stuff
--- LSP configurations for neovim's built in LSP client/framework
-Plug('neovim/nvim-lspconfig')
--- Bridge between nvim-cmp and nvim-lspconfig
-Plug('VonHeikemen/lsp-zero.nvim', {
+Plug('neovim/nvim-lspconfig') -- LSP configurations for neovim's built in LSP client/framework
+Plug('VonHeikemen/lsp-zero.nvim', { -- Bridge between nvim-cmp and nvim-lspconfig
     branch = 'v3.x', -- TODO: Only necessary until v3.x becomes default (soon(TM), Sep 2023)
 })
--- Auto-completion engine
-Plug('hrsh7th/nvim-cmp')
--- nvim-cmp source for neovim's built-in LSP client
-Plug('hrsh7th/cmp-nvim-lsp')
--- External editor tooling management from within neovim
-Plug('williamboman/mason.nvim')
--- Bridge from mason.nvim to nvim-lspconfig + some niceties
-Plug('williamboman/mason-lspconfig.nvim')
--- Snippets engine (snippets sold separately)
-Plug('L3MON4D3/LuaSnip')
+Plug('hrsh7th/nvim-cmp') -- Auto-completion engine
+Plug('hrsh7th/cmp-nvim-lsp') -- nvim-cmp source for neovim's built-in LSP client
+Plug('williamboman/mason.nvim') -- External editor tooling management from within neovim
+Plug('williamboman/mason-lspconfig.nvim') -- Bridge from mason.nvim to nvim-lspconfig + some niceties
+Plug('L3MON4D3/LuaSnip') -- Snippets engine (snippets sold separately)
 
 -- Color schemes
 Plug('folke/tokyonight.nvim')
@@ -77,17 +72,15 @@ vim.call('plug#end')
 
 vim.g.mapleader = ' '
 
-vim.opt.termguicolors = true
+vim.opt.termguicolors = true -- TODO: Do I need this?
 vim.cmd.colorscheme('tokyonight')
 
--- Disable the mouse in all modes
-vim.opt.mouse = ''
+vim.opt.mouse = '' -- Disable the mouse in all modes
 
 vim.opt.cursorline = true
 vim.opt.cursorcolumn = true
 
--- Show line numbers
-vim.opt.number = true
+vim.opt.number = true -- Show line numbers
 
 vim.opt.relativenumber = true
 vim.opt.colorcolumn = '80,100,120'
@@ -95,7 +88,7 @@ vim.opt.colorcolumn = '80,100,120'
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
--- Use unix line endings
+-- Use unix line endings by default on Windows
 if jit.os == 'Windows' then
     vim.opt.fileformats = 'unix,dos'
 end
@@ -104,15 +97,10 @@ end
 vim.opt.matchpairs:append('<:>')
 
 -- Tabs, spaces, indentation
-
--- Use spaces to insert <Tab>
-vim.opt.expandtab = true
--- Number of spaces a <Tab> in the file counts for
-vim.opt.tabstop = 4
--- Number of spaces a <Tab> counts for while performing editing operations
-vim.opt.softtabstop = 4
--- Number of spaces to use for each step of (auto)indent
-vim.opt.shiftwidth = 4
+vim.opt.expandtab = true -- Use spaces to insert <Tab>
+vim.opt.tabstop = 4 -- Number of spaces a <Tab> in the file counts for
+vim.opt.softtabstop = 4 -- Number of spaces a <Tab> counts for while performing editing operations
+vim.opt.shiftwidth = 4 -- Number of spaces to use for each step of (auto)indent
 
 -- QuickFix list / Location list mappings (pair nicely with vim-togglelist)
 vim.keymap.set('n', ']l', '<cmd>lnext<CR>', { remap = false })
@@ -294,7 +282,6 @@ vim.keymap.set(
 
 
 -- Plugin settings: nvim-lspconfig
-
 local lspconfig = require('lspconfig')
 
 -- Window borders, for readability
@@ -318,7 +305,6 @@ end
 
 
 -- Plugin settings: lsp-zero.nvim
-
 local lsp_zero = require('lsp-zero')
 lsp_zero.on_attach(function(client, bufnr)
     --[[
@@ -344,7 +330,6 @@ end)
 
 
 -- Plugin settings: nvim-cmp
-
 local nvim_cmp = require('cmp')
 local cmp_action = lsp_zero.cmp_action()
 
@@ -368,7 +353,6 @@ nvim_cmp.setup({
 
 
 -- Plugin settings: mason.nvim, mason-lspconfig.nvim
-
 require('mason').setup({})
 require('mason-lspconfig').setup({
     ensure_installed = {
