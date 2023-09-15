@@ -286,6 +286,7 @@ local lspconfig = require('lspconfig')
 
 -- Window borders, for readability
 
+-- TODO: Do I even need this anymore?
 -- Add a border around `Lsp...` windows
 require('lspconfig.ui.windows').default_options.border = 'rounded'
 
@@ -302,6 +303,7 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts)
 
   return lsp_orig_util_open_floating_preview(contents, syntax, opts)
 end
+-- end TODO: Do I even need this anymore?
 
 
 -- Plugin settings: lsp-zero.nvim
