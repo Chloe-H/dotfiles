@@ -280,10 +280,6 @@ vim.keymap.set(
     { remap = false }
 )
 
-
--- Plugin settings: nvim-lspconfig
-local lspconfig = require('lspconfig')
-
 -- Window borders, for readability
 
 -- TODO: Do I even need this anymore?
@@ -308,6 +304,7 @@ end
 
 -- Plugin settings: lsp-zero.nvim
 local lsp_zero = require('lsp-zero')
+lsp_zero.extend_lspconfig() -- Must call before setting up a language server or setting up mason-lspconfig
 lsp_zero.on_attach(function(client, bufnr)
     --[[
         Buffer local mappings
@@ -364,7 +361,7 @@ require('mason-lspconfig').setup({
         lsp_zero.default_setup,
         lua_ls = function ()
             local lua_opts = lsp_zero.nvim_lua_ls()
-            lspconfig.lua_ls.setup(lua_opts)
+            require('lspconfig').lua_ls.setup(lua_opts)
         end,
     },
 })
