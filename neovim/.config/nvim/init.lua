@@ -34,7 +34,7 @@ Plug('junegunn/fzf', { -- Bare bones (n)vim integration for fzf, defaults to usi
 })
 Plug('junegunn/fzf.vim') -- Provides native (n)vim commands that leverage fzf
 -- TODO: Trying out, may replace fzf/fzf.vim + CtrlP
-Plug('nvim-lua/plenary.nvim') -- Dependency for telescope.nvim
+Plug('nvim-lua/plenary.nvim') -- Dependency for telescope.nvim / common library
 Plug('nvim-telescope/telescope.nvim', { -- Highly extensible fuzzy finder
     branch = '0.1.x',
 })
