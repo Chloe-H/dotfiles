@@ -211,9 +211,6 @@ end
 
 
 -- Plugin settings: NERDTree
--- Workaround for glyphs not displaying correctly in RHEL via MobaXterm
-vim.g.NERDTreeDirArrowExpandable = '+'
-vim.g.NERDTreeDirArrowCollapsible = '~'
 
 vim.keymap.set(
     'n',
