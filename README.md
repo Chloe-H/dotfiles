@@ -172,6 +172,8 @@ instead.
 
 - **Destination:** `C:\Users\%USERNAME%\Documents\WindowsPowerShell\`
 
+TODO: Move it to the top level and add symlinking instructions
+
 **Notes:**
 - `(custom)` denotes my additions
 - `(work)` denotes additions for work
