@@ -38,3 +38,7 @@ scoop install make
 
 # TODO: reset execution policy (depending on the machine)
 # Keeping in mind you need RemoteSigned to run scoop commands
+
+# Install vim-plug
+iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |`
+    ni "$(@($env:XDG_DATA_HOME, $env:LOCALAPPDATA)[$null -eq $env:XDG_DATA_HOME])/nvim-data/site/autoload/plug.vim" -Force
