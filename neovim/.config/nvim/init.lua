@@ -51,7 +51,7 @@ Plug('majutsushi/tagbar', { -- file tag browser; depends on universal-ctags
     on = { 'TagbarToggle', 'TagbarOpen' }
 })
 Plug('nvim-treesitter/nvim-treesitter', { -- tree-sitter functionality (e.g. better syntax highlighting based on tree-sitter's concrete syntax tree; https://github.com/tree-sitter/tree-sitter)
-    ['do'] = ':TSUpdate'
+    ['do'] = ':TSUpdate' -- will fail on fresh install, should work fine on updates (https://github.com/nvim-treesitter/nvim-treesitter/issues/1989)
 })
 
 -- LSP stuff
