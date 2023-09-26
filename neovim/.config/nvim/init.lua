@@ -47,7 +47,7 @@ Plug('rmagatti/auto-session')
 Plug('rmagatti/session-lens') -- auto-session extension, adds fzf-enhanced session switching
 
 -- IDE-like stuff
-Plug('majutsushi/tagbar', {
+Plug('majutsushi/tagbar', { -- file tag browser; depends on universal-ctags
     on = { 'TagbarToggle', 'TagbarOpen' }
 })
 
