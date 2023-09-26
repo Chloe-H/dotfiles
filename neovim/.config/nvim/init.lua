@@ -50,6 +50,9 @@ Plug('rmagatti/session-lens') -- auto-session extension, adds fzf-enhanced sessi
 Plug('majutsushi/tagbar', { -- file tag browser; depends on universal-ctags
     on = { 'TagbarToggle', 'TagbarOpen' }
 })
+Plug('nvim-treesitter/nvim-treesitter', { -- tree-sitter functionality (e.g. better syntax highlighting based on tree-sitter's concrete syntax tree; https://github.com/tree-sitter/tree-sitter)
+    ['do'] = ':TSUpdate'
+})
 
 -- LSP stuff
 Plug('neovim/nvim-lspconfig') -- LSP configurations for neovim's built in LSP client/framework
@@ -276,6 +279,51 @@ vim.keymap.set(
     '<cmd>TagbarOpen fj<CR>',
     { remap = false }
 )
+
+
+-- Plugin settings: nvim-treesitter
+require('nvim-treesitter.configs').setup({
+    -- Parsers to install by default
+    ensure_installed = {
+        'c',
+        'javascript',
+        'lua',
+        'query',
+        'typescript',
+        'vim',
+        'vimdoc',
+    },
+
+    --[[
+        Automatically install missing parsers when entering buffer
+        Recommendation: disable if you don't have tree-sitter CLI installed locally
+    -- ]]
+    auto_install = false,
+
+    highlight = {
+        enable = true,
+    },
+
+    -- Warning: Experimental (at time of writing)
+    indent = {
+        enable = true,
+
+        --[[
+            Disable for languages where it doesn't work well
+            Source: https://www.reddit.com/r/neovim/comments/svywql/comment/hxr0xjl/?context=3
+        --]]
+        disable = {
+            'c',
+            'python',
+        },
+    },
+})
+
+-- Tree-sitter based folding
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.opt.foldenable = false -- Set all folds to be open by default
+
 
 -- Window borders, for readability
 
