@@ -47,6 +47,7 @@ Plug('rmagatti/auto-session')
 Plug('rmagatti/session-lens') -- auto-session extension, adds fzf-enhanced session switching
 
 -- IDE-like stuff
+Plug('lewis6991/gitsigns.nvim') -- git decorations, chunk navigation, etc.
 Plug('majutsushi/tagbar', { -- file tag browser; depends on universal-ctags
     on = { 'TagbarToggle', 'TagbarOpen' }
 })
@@ -262,6 +263,59 @@ vim.keymap.set(
 
 -- Plugin settings: auto-session
 require('auto-session').setup()
+
+
+-- Plugin settings: gitsigns.nvim
+require('gitsigns').setup({
+    on_attach = function(bufnr)
+        local gitsigns = package.loaded.gitsigns
+
+        local function gitsigns_map(mode, lhs, rhs, opts)
+            opts = opts or {}
+            opts.buffer = bufnr
+            vim.keymap.set(mode, lhs, rhs, opts)
+        end
+
+        -- Hunk navigation (falls back to default behavior for diff-mode)
+        gitsigns_map(
+            'n',
+            ']c',
+            function()
+                if vim.wo.diff then
+                    return ']c'
+                end
+
+                vim.schedule(
+                    function()
+                        gitsigns.next_hunk()
+                    end
+                )
+
+                return '<Ignore>'
+            end,
+            { expr = true }
+        )
+
+        gitsigns_map(
+            'n',
+            '[c',
+            function()
+                if vim.wo.diff then
+                    return '[c'
+                end
+
+                vim.schedule(
+                    function()
+                        gitsigns.prev_hunk()
+                    end
+                )
+
+                return '<Ignore>'
+            end,
+            { expr = true }
+        )
+    end
+})
 
 
 -- Plugin settings: tagbar
