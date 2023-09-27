@@ -66,9 +66,11 @@ Plug('VonHeikemen/lsp-zero.nvim', { -- Bridge between nvim-cmp and nvim-lspconfi
 })
 Plug('hrsh7th/nvim-cmp') -- Auto-completion engine
 Plug('hrsh7th/cmp-nvim-lsp') -- nvim-cmp source for neovim's built-in LSP client
+Plug('saadparwaiz1/cmp_luasnip') -- nvim-cmp source for LuaSnip
 Plug('williamboman/mason.nvim') -- External editor tooling management from within neovim
 Plug('williamboman/mason-lspconfig.nvim') -- Bridge from mason.nvim to nvim-lspconfig + some niceties
 Plug('L3MON4D3/LuaSnip') -- Snippets engine (snippets sold separately)
+Plug('rafamadriz/friendly-snippets') -- Collection of snippets for various languages
 
 -- Color schemes
 Plug('folke/tokyonight.nvim')
@@ -457,7 +459,7 @@ require('nvim-treesitter.configs').setup({
     },
 })
 
--- Tree-sitter based folding
+-- Tree-sitter-based folding
 vim.opt.foldmethod = 'expr'
 vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 vim.opt.foldenable = false -- Set all folds to be open by default
@@ -511,6 +513,10 @@ lsp_zero.on_attach(function(client, bufnr)
 end)
 
 
+-- Plugin settings: LuaSnip
+require('luasnip.loaders.from_vscode').lazy_load()
+
+
 -- Plugin settings: nvim-cmp
 lsp_zero.extend_cmp()
 local nvim_cmp = require('cmp')
@@ -526,6 +532,9 @@ nvim_cmp.setup({
         ['<C-d>'] = nvim_cmp.mapping.scroll_docs(4),
         ['<C-u>'] = nvim_cmp.mapping.scroll_docs(-4),
     }),
+    sources = {
+        { name = 'luasnip' },
+    },
 })
 
 
