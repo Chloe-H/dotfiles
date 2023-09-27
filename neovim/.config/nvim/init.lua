@@ -44,20 +44,20 @@ Plug('nvim-telescope/telescope-fzf-native.nvim', { -- Recommended native telesco
 
 -- Session management
 Plug('rmagatti/auto-session')
-Plug('rmagatti/session-lens') -- auto-session extension, adds fzf-enhanced session switching
+Plug('rmagatti/session-lens') -- Auto-session extension, adds fzf-enhanced session switching
 
 -- IDE-like stuff
-Plug('lewis6991/gitsigns.nvim') -- git decorations, chunk navigation, etc.
-Plug('majutsushi/tagbar', { -- file tag browser; depends on universal-ctags
+Plug('lewis6991/gitsigns.nvim') -- Plugin for git decorations, chunk navigation, etc.
+Plug('majutsushi/tagbar', { -- File tag browser; depends on universal-ctags
     on = { 'TagbarToggle', 'TagbarOpen' }
 })
-Plug('nvim-treesitter/nvim-treesitter', { -- tree-sitter functionality (e.g. better syntax highlighting based on tree-sitter's concrete syntax tree; https://github.com/tree-sitter/tree-sitter)
+Plug('nvim-treesitter/nvim-treesitter', { -- Plugin for tree-sitter functionality (e.g. better syntax highlighting based on tree-sitter's concrete syntax tree; https://github.com/tree-sitter/tree-sitter)
     ['do'] = ':TSUpdate' -- will fail on fresh install, should work fine on updates (https://github.com/nvim-treesitter/nvim-treesitter/issues/1989)
 })
-Plug('nvim-treesitter/nvim-treesitter-context') -- sticky headers (using tree-sitter's syntax trees)
+Plug('nvim-treesitter/nvim-treesitter-context') -- Plugin for sticky headers (using tree-sitter's syntax trees)
 
 -- LSP stuff
-Plug('folke/neodev.nvim') -- Automatic configuration of lua-language-server for init.lua development (doesn't impact non-nvim config lua development!)
+Plug('folke/neodev.nvim') -- Plugin for automatic configuration of lua-language-server for init.lua development (doesn't impact non-nvim config lua development!)
 Plug('neovim/nvim-lspconfig') -- LSP configurations for neovim's built in LSP client/framework
 Plug('VonHeikemen/lsp-zero.nvim', { -- Bridge between nvim-cmp and nvim-lspconfig
     branch = 'v3.x', -- TODO: Only necessary until v3.x becomes default (soon(TM), Sep 2023)
