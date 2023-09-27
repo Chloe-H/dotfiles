@@ -494,6 +494,26 @@ end
 -- end TODO: Do I even need this anymore?
 
 
+-- Plugin settings: nvim-treesitter-context
+local treesitter_context = require('treesitter-context')
+
+treesitter_context.setup({
+    max_lines = 3,
+    mode = 'topline',
+    trim_scope = 'inner',
+})
+
+-- TODO: remove keymap, try folke/flash?
+vim.keymap.set(
+    'n',
+    '<Leader>tsc',
+    function()
+        treesitter_context.go_to_context()
+    end,
+    { remap = false }
+)
+
+
 -- Plugin settings: lsp-zero.nvim
 local lsp_zero = require('lsp-zero')
 lsp_zero.extend_lspconfig() -- Must call before setting up a language server or setting up mason-lspconfig
