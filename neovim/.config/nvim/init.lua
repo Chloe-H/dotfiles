@@ -6,6 +6,7 @@ Plug('junegunn/vim-plug') -- Added to get Vim help for vim-plug
 
 -- Niceties
 Plug('tpope/vim-fugitive')
+Plug('mbbill/undotree') -- Undo history tree visualizer
 Plug('tpope/vim-surround') -- Plugin to easily add, change, and remove surrounding character pairs
 Plug('tpope/vim-commentary') -- Plugin to comment/un-comment with keybinds
 Plug('foosoft/vim-argwrap') -- Plugin to quickly expand/collapse lists of things (e.g. function arg lists)
@@ -153,8 +154,6 @@ vim.diagnostic.config ({
 })
 
 
--- Plugin settings
-
 -- Plugin settings: vim-fugitive
 vim.keymap.set(
     'n',
@@ -162,6 +161,16 @@ vim.keymap.set(
     '<cmd>vertical Git --paginate log<CR>',
     { remap = false }
 )
+
+
+-- Plugin settings: undotree
+vim.keymap.set(
+    'n',
+    '<Leader>ut',
+    '<cmd>UndotreeToggle<CR>',
+    { remap = false }
+)
+
 
 -- Plugin settings: vim-argwrap
 vim.keymap.set(
