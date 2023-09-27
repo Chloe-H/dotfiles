@@ -56,6 +56,7 @@ Plug('nvim-treesitter/nvim-treesitter', { -- tree-sitter functionality (e.g. bet
 })
 
 -- LSP stuff
+Plug('folke/neodev.nvim') -- Automatic configuration of lua-language-server for init.lua development (doesn't impact non-nvim config lua development!)
 Plug('neovim/nvim-lspconfig') -- LSP configurations for neovim's built in LSP client/framework
 Plug('VonHeikemen/lsp-zero.nvim', { -- Bridge between nvim-cmp and nvim-lspconfig
     branch = 'v3.x', -- TODO: Only necessary until v3.x becomes default (soon(TM), Sep 2023)
@@ -453,12 +454,17 @@ require('mason-lspconfig').setup({
     },
     handlers = {
         lsp_zero.default_setup,
-        lua_ls = function ()
+        lua_ls = function()
             local lua_opts = lsp_zero.nvim_lua_ls()
             require('lspconfig').lua_ls.setup(lua_opts)
         end,
     },
 })
+
+
+-- Plugin settings: neodev.nvim
+-- Must set up neodev /before/ nvim-lspconfig
+require('neodev').setup()
 
 
 -- Plugin settings: nvim-lspconfig
