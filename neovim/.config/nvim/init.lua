@@ -183,7 +183,68 @@ vim.keymap.set(
 
 
 -- Plugin settings: nvim-autopairs
-require('nvim-autopairs').setup()
+local npairs = require('nvim-autopairs')
+local npairs_rule = require('nvim-autopairs.rule')
+local npairs_conditions = require('nvim-autopairs.conds')
+
+npairs.setup()
+
+--[[
+    Add custom rules to auto-pair <bracket><Space> (i.e. to automatically add
+    a space before the automatically paired closing character when one is
+    added after the opening character that triggered the auto-pair)
+    Source: https://github.com/windwp/nvim-autopairs/wiki/Custom-rules#add-spaces-between-parentheses
+--]]
+local npairs_brackets = {
+    { '(', ')' },
+    { '[', ']' },
+    { '{', '}' },
+}
+npairs.add_rules({
+    -- Rule for a pair with left-side ' ' and right side ' '
+    npairs_rule(' ', ' ')
+        -- Pair will only occur if the conditional function returns true
+        :with_pair(function(opts)
+            -- We are checking if we are inserting a space in (), [], or {}
+            local pair = opts.line:sub(opts.col - 1, opts.col)
+            return vim.tbl_contains(
+                {
+                    npairs_brackets[1][1] .. npairs_brackets[1][2],
+                    npairs_brackets[2][1] .. npairs_brackets[2][2],
+                    npairs_brackets[3][1] .. npairs_brackets[3][2],
+                },
+                pair
+            )
+        end)
+        :with_move(npairs_conditions.none())
+        :with_cr(npairs_conditions.none())
+        -- We only want to delete the pair of spaces when the cursor is as such: ( | )
+        :with_del(function(opts)
+            local col = vim.api.nvim_win_get_cursor(0)[2]
+            local context = opts.line:sub(col - 1, col + 2)
+            return vim.tbl_contains(
+                {
+                    npairs_brackets[1][1] .. '  ' .. npairs_brackets[1][2],
+                    npairs_brackets[2][1] .. '  ' .. npairs_brackets[2][2],
+                    npairs_brackets[3][1] .. '  ' .. npairs_brackets[3][2]
+                },
+                context
+            )
+        end)
+})
+-- For each pair of brackets we will add another rule
+for _, bracket in pairs(npairs_brackets) do
+    npairs.add_rules({
+        -- Each of these rules is for a pair with left-side '( ' and right-side ' )' for each bracket type
+        npairs_rule(bracket[1] .. ' ', ' ' .. bracket[2])
+            :with_pair(npairs_conditions.none())
+            :with_move(function(opts) return opts.char == bracket[2] end)
+            :with_del(npairs_conditions.none())
+            :use_key(bracket[2])
+            -- Removes the trailing whitespace that can occur without this
+            :replace_map_cr(function(_) return '<C-c>2xi<CR><C-c>O' end)
+    })
+end
 
 
 -- Plugin settings: lualine.nvim
