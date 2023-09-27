@@ -7,6 +7,7 @@ Plug('junegunn/vim-plug') -- Added to get Vim help for vim-plug
 -- Niceties
 Plug('tpope/vim-fugitive')
 Plug('mbbill/undotree') -- Undo history tree visualizer
+Plug('folke/todo-comments.nvim') -- Plugin to highlight and search for TODOs and other TODO-type comments
 Plug('tpope/vim-surround') -- Plugin to easily add, change, and remove surrounding character pairs
 Plug('tpope/vim-commentary') -- Plugin to comment/un-comment with keybinds
 Plug('foosoft/vim-argwrap') -- Plugin to quickly expand/collapse lists of things (e.g. function arg lists)
@@ -175,6 +176,11 @@ vim.keymap.set(
 )
 
 
+-- Plugin settings: todo-comments.nvim
+-- TODO: why isn't it finding TODOs in init.lua?
+require('todo-comments').setup()
+
+
 -- Plugin settings: vim-argwrap
 vim.keymap.set(
     'n',
@@ -331,6 +337,7 @@ telescope.setup({
 
 telescope.load_extension('fzf')
 telescope.load_extension('session-lens')
+telescope.load_extension('todo-comments') -- Undocumented, but makes todo-comments show up in telescope's builtins list right away, rather than after running a todo-comments command
 
 vim.keymap.set(
     'n',
