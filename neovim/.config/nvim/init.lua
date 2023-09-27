@@ -549,9 +549,10 @@ nvim_cmp.setup({
         ['<C-d>'] = nvim_cmp.mapping.scroll_docs(4),
         ['<C-u>'] = nvim_cmp.mapping.scroll_docs(-4),
     }),
-    sources = {
+    sources = nvim_cmp.config.sources({
+        { name = 'nvim_lsp' },
         { name = 'luasnip' },
-    },
+    }),
 })
 
 
