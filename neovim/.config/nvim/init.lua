@@ -528,6 +528,16 @@ nvim_cmp.setup({
         ['<C-f>'] = cmp_action.luasnip_jump_forward(),
         ['<C-b>'] = cmp_action.luasnip_jump_backward(),
 
+        --[[
+            Completion menu visible -> navigate to next/prev item in list
+            Cursor on snippet trigger -> expand snippet
+            Snippet placeholder reachable -> navigate to next/prev placeholder
+            Cursor in word that doesn't trigger snippet -> display completion menu
+            Otherwise, use the fallback (i.e. the key's default behavior)
+        --]]
+        ['<C-n>'] = cmp_action.luasnip_supertab(),
+        ['<C-p>'] = cmp_action.luasnip_shift_supertab(),
+
         -- Scroll through the completion documentation
         ['<C-d>'] = nvim_cmp.mapping.scroll_docs(4),
         ['<C-u>'] = nvim_cmp.mapping.scroll_docs(-4),
