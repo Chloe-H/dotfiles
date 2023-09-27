@@ -10,7 +10,8 @@ Plug('mbbill/undotree') -- Undo history tree visualizer
 Plug('tpope/vim-surround') -- Plugin to easily add, change, and remove surrounding character pairs
 Plug('tpope/vim-commentary') -- Plugin to comment/un-comment with keybinds
 Plug('foosoft/vim-argwrap') -- Plugin to quickly expand/collapse lists of things (e.g. function arg lists)
-Plug('jiangmiao/auto-pairs') -- Pretty old plugin for inserting or deleting brackets, parentheses, and quotes in pairs
+Plug('windwp/nvim-autopairs') -- Autopairs plugin (insert/delete brackets, parentheses, quotes in pairs)
+Plug('windwp/nvim-ts-autotag') -- Auto-pairing and renaming of HTML tags (achieved by leveraging treesitter)
 Plug('milkypostman/vim-togglelist') -- Very old plugin for toggling location list and quickfix list with keybinds
 Plug('nvim-lualine/lualine.nvim')
 
@@ -181,6 +182,10 @@ vim.keymap.set(
 )
 
 
+-- Plugin settings: nvim-autopairs
+require('nvim-autopairs').setup()
+
+
 -- Plugin settings: lualine.nvim
 -- Handy symbols: 
 require('lualine').setup({
@@ -346,7 +351,7 @@ vim.keymap.set(
 )
 
 
--- Plugin settings: nvim-treesitter
+-- Plugin settings: nvim-treesitter, nvim-ts-autotag
 require('nvim-treesitter.configs').setup({
     -- Parsers to install by default
     ensure_installed = {
@@ -364,6 +369,13 @@ require('nvim-treesitter.configs').setup({
         Recommendation: disable if you don't have tree-sitter CLI installed locally
     -- ]]
     auto_install = false,
+
+    -- Plugin settings: nvim-ts-autotag
+    -- Configure automatic closing and renaming of tags by nvim-ts-autotag
+    -- It's unclear to me how tightly nvim-ts-autotag is coupled with nvim-treesitter
+    autotag = {
+        enable = true,
+    },
 
     highlight = {
         enable = true,
