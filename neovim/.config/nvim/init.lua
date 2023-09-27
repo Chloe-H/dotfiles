@@ -54,6 +54,7 @@ Plug('majutsushi/tagbar', { -- file tag browser; depends on universal-ctags
 Plug('nvim-treesitter/nvim-treesitter', { -- tree-sitter functionality (e.g. better syntax highlighting based on tree-sitter's concrete syntax tree; https://github.com/tree-sitter/tree-sitter)
     ['do'] = ':TSUpdate' -- will fail on fresh install, should work fine on updates (https://github.com/nvim-treesitter/nvim-treesitter/issues/1989)
 })
+Plug('nvim-treesitter/nvim-treesitter-context') -- sticky headers (using tree-sitter's syntax trees)
 
 -- LSP stuff
 Plug('folke/neodev.nvim') -- Automatic configuration of lua-language-server for init.lua development (doesn't impact non-nvim config lua development!)
