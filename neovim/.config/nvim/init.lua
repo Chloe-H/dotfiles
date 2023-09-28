@@ -470,28 +470,6 @@ vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 vim.opt.foldenable = false -- Set all folds to be open by default
 
 
--- Window borders, for readability
-
--- TODO: Do I even need this anymore?
--- Add a border around `Lsp...` windows
-require('lspconfig.ui.windows').default_options.border = 'rounded'
-
---[[
-    Add borders to floating windows for all LSP clients.
-
-    Source: https://github.com/neovim/nvim-lspconfig/wiki/UI-Customization#borders
---]]
-local lsp_orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
-
-function vim.lsp.util.open_floating_preview(contents, syntax, opts)
-  opts = opts or {}
-  opts.border = opts.border or 'rounded'
-
-  return lsp_orig_util_open_floating_preview(contents, syntax, opts)
-end
--- end TODO: Do I even need this anymore?
-
-
 -- Plugin settings: nvim-treesitter-context
 local treesitter_context = require('treesitter-context')
 
@@ -595,9 +573,12 @@ require('neodev').setup()
 
 
 -- Plugin settings: nvim-lspconfig
+-- Has to come after mason, mason-lspconfig, and lsp-zero setup
 local lspconfig = require('lspconfig')
 
--- Has to come after mason, mason-lspconfig, and lsp-zero setup
+-- Add a border around `Lsp...` windows
+require('lspconfig.ui.windows').default_options.border = 'rounded'
+
 lspconfig.html.setup({
     filetypes = { 'html', 'htmldjango', },
 })
