@@ -60,8 +60,6 @@ Plug('nvim-treesitter/nvim-treesitter', { -- Plugin for tree-sitter functionalit
 Plug('nvim-treesitter/nvim-treesitter-context') -- Plugin for sticky headers (using tree-sitter's syntax trees)
 
 -- LSP stuff
--- TODO: Do I /need/ neodev /and/ cmp-nvim-lua? Latter seems more helpful
-Plug('folke/neodev.nvim') -- Plugin for automatic configuration of lua-language-server for init.lua development (doesn't impact non-nvim config lua development!)
 Plug('neovim/nvim-lspconfig') -- LSP configurations for neovim's built in LSP client/framework
 Plug('VonHeikemen/lsp-zero.nvim') -- Bridge between nvim-cmp and nvim-lspconfig
 Plug('hrsh7th/nvim-cmp') -- Auto-completion engine
@@ -570,11 +568,6 @@ require('mason-lspconfig').setup({
         end,
     },
 })
-
-
--- Plugin settings: neodev.nvim
--- Must set up neodev /before/ nvim-lspconfig
-require('neodev').setup()
 
 
 -- Plugin settings: nvim-lspconfig
