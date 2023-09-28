@@ -499,7 +499,6 @@ local treesitter_context = require('treesitter-context')
 
 treesitter_context.setup({
     max_lines = 3,
-    mode = 'topline',
     trim_scope = 'inner',
 })
 
