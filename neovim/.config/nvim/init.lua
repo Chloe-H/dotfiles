@@ -60,11 +60,14 @@ Plug('nvim-treesitter/nvim-treesitter', { -- Plugin for tree-sitter functionalit
 Plug('nvim-treesitter/nvim-treesitter-context') -- Plugin for sticky headers (using tree-sitter's syntax trees)
 
 -- LSP stuff
+-- TODO: Do I /need/ neodev /and/ cmp-nvim-lua? Latter seems more helpful
 Plug('folke/neodev.nvim') -- Plugin for automatic configuration of lua-language-server for init.lua development (doesn't impact non-nvim config lua development!)
 Plug('neovim/nvim-lspconfig') -- LSP configurations for neovim's built in LSP client/framework
 Plug('VonHeikemen/lsp-zero.nvim') -- Bridge between nvim-cmp and nvim-lspconfig
 Plug('hrsh7th/nvim-cmp') -- Auto-completion engine
 Plug('hrsh7th/cmp-nvim-lsp') -- nvim-cmp source for neovim's built-in LSP client
+Plug('hrsh7th/cmp-nvim-lsp-signature-help') -- nvim-cmp source for showing function signatures with current parameter emphasized
+Plug('hrsh7th/cmp-nvim-lua') -- nvim-cmp source for neovim's Lua API
 Plug('saadparwaiz1/cmp_luasnip') -- nvim-cmp source for LuaSnip
 Plug('williamboman/mason.nvim') -- External editor tooling management from within neovim
 Plug('williamboman/mason-lspconfig.nvim') -- Bridge from mason.nvim to nvim-lspconfig + some niceties
@@ -545,6 +548,8 @@ nvim_cmp.setup({
         ['<C-u>'] = nvim_cmp.mapping.scroll_docs(-4),
     }),
     sources = nvim_cmp.config.sources({
+        { name = 'nvim_lua' },
+        { name = 'nvim_lsp_signature_help' },
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
     }),
