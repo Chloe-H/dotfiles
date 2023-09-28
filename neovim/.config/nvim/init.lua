@@ -62,9 +62,7 @@ Plug('nvim-treesitter/nvim-treesitter-context') -- Plugin for sticky headers (us
 -- LSP stuff
 Plug('folke/neodev.nvim') -- Plugin for automatic configuration of lua-language-server for init.lua development (doesn't impact non-nvim config lua development!)
 Plug('neovim/nvim-lspconfig') -- LSP configurations for neovim's built in LSP client/framework
-Plug('VonHeikemen/lsp-zero.nvim', { -- Bridge between nvim-cmp and nvim-lspconfig
-    branch = 'v3.x', -- TODO: Only necessary until v3.x becomes default (soon(TM), Sep 2023)
-})
+Plug('VonHeikemen/lsp-zero.nvim') -- Bridge between nvim-cmp and nvim-lspconfig
 Plug('hrsh7th/nvim-cmp') -- Auto-completion engine
 Plug('hrsh7th/cmp-nvim-lsp') -- nvim-cmp source for neovim's built-in LSP client
 Plug('saadparwaiz1/cmp_luasnip') -- nvim-cmp source for LuaSnip
