@@ -116,14 +116,15 @@ reason ([instructions](https://github.com/tmux-plugins/tpm#key-bindings)).
 
 - **Install:** [Homepage](https://ytdl-org.github.io/youtube-dl/index.html)
 
-Replaced by [youtube-dlp](#yt-dlp). Also, my config is probably _super_ out of
-date.
+**Note** [this outstanding issue](https://github.com/ytdl-org/youtube-dl/issues/31530)
+
+[yt-dlp](#yt-dlp) is actively maintained and more consistently functional
+nowadays, so it should probably be your go-to. As nice as youtube-dlg is, my
+`youtube-dl` config will only get more out of date with time.
 
 ## `yt-dlp`
 
 - **Install:** [GitHub](https://github.com/yt-dlp/yt-dlp)
-
-This config is _also_ probably super out of date.
 
 # `manual-backups`
 
