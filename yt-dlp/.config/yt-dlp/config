@@ -1,11 +1,14 @@
 # Lines starting with # are comments
 
+# Use Firefox cookies for age-restricted videos
+--cookies-from-browser "firefox::Primary Google"
+
 # The path(s) where the files should be downloaded
---paths /mnt/g/Cloud\ Storage/Google\ Drive/Backlog/Videos/Rip
+--paths "G:\Cloud Storage\Google Drive\Backlog\Videos\Rip"
 
 # Download only videos not listed in the archive file
 # Record the IDs of all downloaded videos in it
---download-archive /mnt/g/Cloud\ Storage/Google\ Drive/Backlog/Videos/Rip/downloaded.txt
+--download-archive "G:\Cloud Storage\Google Drive\Backlog\Videos\Rip\downloaded.txt" 
 
 # Force filenames to be Windows-compatible
 --windows-filenames
@@ -24,9 +27,10 @@
 
 # Write subtitle file
 --write-subs
+--sub-langs all
 
 # Embed metadata in the video file
-# Also embeds chapters/info.json if present, unelss otherwise specified
+# Also embeds chapters/info.json if present, unless otherwise specified
 --embed-metadata
 
 # Do not overwrite any files

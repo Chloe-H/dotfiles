@@ -1,11 +1,14 @@
 # Lines starting with # are comments
 
+# Cookies file, for age-restricted videos
+--cookies G:\Win10\Desktop\youtube-cookies.txt
+
 # Output filename template
---output /mnt/g/Cloud\ Storage/Google\ Drive/Backlog/Videos/Rip/%(title)s.%(ext)s
+--output  "G:\Cloud Storage\Google Drive\Backlog\Videos\Rip%(title)s.%(ext)s"
 
 # Download only videos not listed in the archive file
 # Record the IDs of all downloaded videos in it
---download-archive /mnt/g/Cloud\ Storage/Google\ Drive/Backlog/Videos/Rip/downloaded.txt
+--download-archive "G:\Cloud Storage\Google Drive\Backlog\Videos\Rip\downloaded.txt" 
 
 # Select the best quality format represented by a single file with video and audio
 --format best
