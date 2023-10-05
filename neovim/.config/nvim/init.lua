@@ -282,7 +282,7 @@ require('lualine').setup({
             }
         },
         lualine_y = {
-	        'vim.api.nvim_win_get_number(0)',
+            'vim.api.nvim_win_get_number(0)',
         },
     },
 })
@@ -570,13 +570,13 @@ require('luasnip.loaders.from_vscode').lazy_load()
 -- Plugin settings: nvim-cmp
 lsp_zero.extend_cmp()
 local nvim_cmp = require('cmp')
-local cmp_action = lsp_zero.cmp_action()
+local lsp_zero_cmp_action = lsp_zero.cmp_action()
 
 nvim_cmp.setup({
     mapping = nvim_cmp.mapping.preset.insert({
         -- Navigate between snippet placeholders
-        ['<C-f>'] = cmp_action.luasnip_jump_forward(),
-        ['<C-b>'] = cmp_action.luasnip_jump_backward(),
+        ['<C-f>'] = lsp_zero_cmp_action.luasnip_jump_forward(),
+        ['<C-b>'] = lsp_zero_cmp_action.luasnip_jump_backward(),
 
         --[[
             Completion menu visible -> navigate to next/prev item in list
@@ -585,8 +585,8 @@ nvim_cmp.setup({
             Cursor in word that doesn't trigger snippet -> display completion menu
             Otherwise, use the fallback (i.e. the key's default behavior)
         --]]
-        ['<C-n>'] = cmp_action.luasnip_supertab(),
-        ['<C-p>'] = cmp_action.luasnip_shift_supertab(),
+        ['<C-n>'] = lsp_zero_cmp_action.luasnip_supertab(),
+        ['<C-p>'] = lsp_zero_cmp_action.luasnip_shift_supertab(),
 
         -- Scroll through the completion documentation
         ['<C-d>'] = nvim_cmp.mapping.scroll_docs(4),
