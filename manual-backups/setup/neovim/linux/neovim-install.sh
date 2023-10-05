@@ -1,3 +1,4 @@
+# TODO: Add sharkdp/fd? (https://github.com/sharkdp/fd#installation)
 if [ -f /etc/os-release ]; then
     # Courtesy of https://askubuntu.com/a/459425
     # Extract OS identifier

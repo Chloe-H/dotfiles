@@ -22,7 +22,8 @@ scoop bucket add extras
 scoop install neovim
 scoop install vcredist2022 neovide
 
-scoop install ripgrep # For `:Rg` in fzf.vim, `live-grep` in telescope
+scoop install ripgrep # For `:Rg` in fzf.vim, `live-grep` and `grep_string` in telescope
+scoop install fd # (Optional) Alternative to `find` for `find_files` and `fd` in telescope (fairly certain)
 scoop install perl # For `:Tags`, `:Helptags` in fzf.vim
 scoop install universal-ctags # For tagbar
 
