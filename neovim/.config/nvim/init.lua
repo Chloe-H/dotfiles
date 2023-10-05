@@ -324,8 +324,57 @@ vim.g.fzf_action = {
 
 -- Plugin settings: telescope.nvim
 local telescope = require('telescope')
+local ts_actions = require('telescope.actions')
 telescope.setup({
+    defaults = {
+        mappings = {
+            i = {
+                -- Send selected/all results to quickfix list and open it
+                ['<C-q>'] = ts_actions.smart_send_to_qflist + ts_actions.open_qflist,
+                -- Add selected/all results to quickfix list and open it
+                ['<M-q>'] = ts_actions.smart_add_to_qflist + ts_actions.open_qflist,
+
+                -- Preview scrolling
+                ['<C-f>'] = 'preview_scrolling_right',
+                ['<C-b>'] = 'preview_scrolling_left',
+                ['<C-k>'] = false, -- Disable
+
+                -- Results scrolling
+                ['<M-f>'] = 'results_scrolling_right',
+                ['<M-b>'] = 'results_scrolling_left',
+                ['<M-k>'] = false, -- Disable
+            },
+            n = {
+                -- Send selected/all results to quickfix list and open it
+                ['<C-q>'] = ts_actions.smart_send_to_qflist + ts_actions.open_qflist,
+                -- Add selected/all results to quickfix list and open it
+                ['<M-q>'] = ts_actions.smart_add_to_qflist + ts_actions.open_qflist,
+
+                -- Preview scrolling
+                ['<C-f>'] = 'preview_scrolling_right',
+                ['<C-b>'] = 'preview_scrolling_left',
+                ['<C-k>'] = false,
+
+                -- Results scrolling
+                ['<M-f>'] = 'results_scrolling_right',
+                ['<M-b>'] = 'results_scrolling_left',
+                ['<M-k>'] = false, -- Disable
+            },
+        },
+    },
     pickers = {
+        buffers = {
+            mappings = {
+                i = {
+                    -- Delete selected/all buffers
+                    ['<M-d>'] = 'delete_buffer',
+                },
+                n = {
+                    -- Delete selected/all buffers
+                    ['<M-d>'] = 'delete_buffer',
+                },
+            },
+        },
         find_files = {
             hidden = true,
         },
