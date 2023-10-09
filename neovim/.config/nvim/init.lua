@@ -302,6 +302,12 @@ require('lualine').setup({
         lualine_a = {
             {
                 'filename',
+                --[[
+                    When displaying the name of a new file, append the
+                    "newfile" symbol if the first write of the new file hasn't
+                    happened yet.
+                --]]
+                newfile_status = true,
                 path = 3,
             }
         },
