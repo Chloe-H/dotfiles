@@ -263,6 +263,21 @@ require('lualine').setup({
         },
         globalstatus = true,
     },
+    sections = {
+        lualine_c = {
+            {
+                'filename',
+                --[[
+                    When displaying the name of a new file, append the
+                    "newfile" symbol if the first write of the new file hasn't
+                    happened yet.
+                --]]
+                newfile_status = true,
+                path = 3, -- Absolute path, ~ as home dir
+                shorting_target = 5,
+            },
+        },
+    },
     tabline = {
         lualine_a = {
             {
