@@ -274,6 +274,11 @@ require('lualine').setup({
                 --]]
                 newfile_status = true,
                 path = 3, -- Absolute path, ~ as home dir
+                --[[
+                    Shorten path to leave 100 spaces in the window for other
+                    components.
+                --]]
+                shorting_target = 100,
             },
         },
     },
