@@ -274,7 +274,6 @@ require('lualine').setup({
                 --]]
                 newfile_status = true,
                 path = 3, -- Absolute path, ~ as home dir
-                shorting_target = 5,
             },
         },
     },
