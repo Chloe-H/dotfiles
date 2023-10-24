@@ -36,7 +36,7 @@ https://[REDACTED]-com.access.mcas.ms/aad_login
 - **Microsoft:** `/^(https://)?((([^\s/]+\.)*?(live|microsoft(online)?|office|one(drive|note)|outlook|sharepoint|visualstudio|windowsazure)\.com)|(statics\.teams\.cdn\.office\.net))\b(/.*)?$/`
     - **Microsoft:** `/^(https://)?(([^\s/]+\.)*?(live|microsoft(online)?|office|one(drive|note)|outlook|sharepoint|visualstudio|windowsazure)\.com)\b(/.*)?$/`
     - **Teams:** `/^(https://)?(statics\.teams\.cdn\.office\.net)\b(/.*)?$/`
-- **Google:** `/^(https://)?([^\s/]+\.)*?(google|youtube)\.com\b(/.*)?$/`
+- **Google:** `/^(https://)?([^\s/]+\.)*?(google(usercontent)?|youtube)\.com\b(/.*)?$/`
 - **Slack:** `/^(https://)?([^\s/]+\.)*?slack\.com\b(/.*)?$/`
 - **Amazon/AWS:** `/^(https://)?([^\s/]+\.)*?(aws(apps|\.amazon)?)(\.com)?\b(/.*)?$/`
 - **Bitbucket/Atlassian:** `^(https://)?([^\s/]+\.)*?(atlassian\.(net|com)|bitbucket\.org)\b(/.*)?$`
