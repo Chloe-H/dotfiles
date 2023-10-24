@@ -1,6 +1,6 @@
 {
   "version": "1.9.2",
-  "date": 1693929924329,
+  "date": 1698165151785,
   "preferences": {
     "automaticMode": {
       "active": true,
@@ -44,7 +44,7 @@
       },
       "domain": [
         {
-          "pattern": "/^(https?://)?((([^\\s/]+\\.)*?([REDACTED]|myworkday)\\.com)|([REDACTED]-com\\.access\\.mcas\\.ms)|(([^\\s/]+\\.)*?(live|microsoft(online)?|office|one(drive|note)|outlook|sharepoint|visualstudio|windowsazure)\\.com(\\.mcas\\.ms)?)|(statics\\.teams\\.cdn\\.office\\.net)(\\.mcas\\.ms)?)\\b(/.*)?$/",
+          "pattern": "/^(https://)?((([^\\s/]+\\.)*?([REDACTED]|myworkday)\\.com)|([REDACTED]-com\\.access\\.mcas\\.ms)|(([^\\s/]+\\.)*?(live|microsoft(online)?|office|one(drive|note)|outlook|sharepoint|visualstudio|windowsazure)\\.com(\\.mcas\\.ms)?)|(statics\\.teams\\.cdn\\.office\\.net)(\\.mcas\\.ms)?)\\b(/.*)?$/",
           "always": {
             "action": "enabled",
             "allowedInPermanent": true,
@@ -65,13 +65,13 @@
             }
           },
           "excluded": {
-            "/^(https?://)?([^\\s/]+\\.)*?(live|microsoft(online)?|office|one(drive|note)|outlook|sharepoint|visualstudio|windowsazure)\\.com(\\.mcas\\.ms)?\\b(/.*)?$/": {},
-            "/^(https?://)?(statics\\.teams\\.cdn\\.office\\.net)(\\.mcas\\.ms)?\\b(/.*)?$/": {},
-            "/^(https?://)?((([^\\s/]+\\.)*?([REDACTED]|myworkday)\\.com)|([REDACTED]-com\\.access\\.mcas\\.ms))\\b(/.*)?$/": {}
+            "/^(https://)?([^\\s/]+\\.)*?(live|microsoft(online)?|office|one(drive|note)|outlook|sharepoint|visualstudio|windowsazure)\\.com(\\.mcas\\.ms)?\\b(/.*)?$/": {},
+            "/^(https://)?(statics\\.teams\\.cdn\\.office\\.net)(\\.mcas\\.ms)?\\b(/.*)?$/": {},
+            "/^(https://)?((([^\\s/]+\\.)*?([REDACTED]|myworkday)\\.com)|([REDACTED]-com\\.access\\.mcas\\.ms))\\b(/.*)?$/": {}
           }
         },
         {
-          "pattern": "/^(https?://)?((([^\\s/]+\\.)*?(live|microsoft(online)?|office|one(drive|note)|outlook|sharepoint|visualstudio|windowsazure)\\.com)|(statics\\.teams\\.cdn\\.office\\.net))\\b(/.*)?$/",
+          "pattern": "/^(https://)?((([^\\s/]+\\.)*?(live|microsoft(online)?|office|one(drive|note)|outlook|sharepoint|visualstudio|windowsazure)\\.com)|(statics\\.teams\\.cdn\\.office\\.net))\\b(/.*)?$/",
           "always": {
             "action": "enabled",
             "allowedInPermanent": true,
@@ -92,12 +92,12 @@
             }
           },
           "excluded": {
-            "/^(https?://)?(([^\\s/]+\\.)*?(live|microsoft(online)?|office|one(drive|note)|outlook|sharepoint|visualstudio|windowsazure)\\.com)\\b(/.*)?$/": {},
-            "/^(https?://)?(statics\\.teams\\.cdn\\.office\\.net)\\b(/.*)?$/": {}
+            "/^(https://)?(([^\\s/]+\\.)*?(live|microsoft(online)?|office|one(drive|note)|outlook|sharepoint|visualstudio|windowsazure)\\.com)\\b(/.*)?$/": {},
+            "/^(https://)?(statics\\.teams\\.cdn\\.office\\.net)\\b(/.*)?$/": {}
           }
         },
         {
-          "pattern": "/^(https?://)?([^\\s/]+\\.)*?(google|youtube)\\.com\\b(/.*)?$/",
+          "pattern": "/^(https://)?([^\\s/]+\\.)*?(google(usercontent)?|youtube)\\.com\\b(/.*)?$/",
           "always": {
             "action": "enabled",
             "allowedInPermanent": true,
@@ -118,11 +118,11 @@
             }
           },
           "excluded": {
-            "/^(https?://)?([^\\s/]+\\.)*?(google|youtube)\\.com\\b(/.*)?$/": {}
+            "/^(https://)?([^\\s/]+\\.)*?(google(usercontent)?|youtube)\\.com\\b(/.*)?$/": {}
           }
         },
         {
-          "pattern": "/^(https?://)?([^\\s/]+\\.)*?slack\\.com\\b(/.*)?$/",
+          "pattern": "/^(https://)?([^\\s/]+\\.)*?slack\\.com\\b(/.*)?$/",
           "always": {
             "action": "enabled",
             "allowedInPermanent": true,
@@ -143,11 +143,11 @@
             }
           },
           "excluded": {
-            "/^(https?://)?([^\\s/]+\\.)*?slack\\.com\\b(/.*)?$/": {}
+            "/^(https://)?([^\\s/]+\\.)*?slack\\.com\\b(/.*)?$/": {}
           }
         },
         {
-          "pattern": "/^(https?://)?([^\\s/]+\\.)*?(aws(apps|\\.amazon)?)(\\.com)?\\b(/.*)?$/",
+          "pattern": "/^(https://)?([^\\s/]+\\.)*?(aws(apps|\\.amazon)?)(\\.com)?\\b(/.*)?$/",
           "always": {
             "action": "enabled",
             "allowedInPermanent": true,
@@ -168,11 +168,11 @@
             }
           },
           "excluded": {
-            "/^(https?://)?([^\\s/]+\\.)*?(aws(apps|\\.amazon)?)(\\.com)?\\b(/.*)?$/": {}
+            "/^(https://)?([^\\s/]+\\.)*?(aws(apps|\\.amazon)?)(\\.com)?\\b(/.*)?$/": {}
           }
         },
         {
-          "pattern": "^(https?://)?([^\\s/]+\\.)*?(atlassian\\.(net|com)|bitbucket\\.org)\\b(/.*)?$",
+          "pattern": "/^(https://)?([^\\s/]+\\.)*?(atlassian\\.(net|com)|bitbucket\\.org)\\b(/.*)?$/",
           "always": {
             "action": "enabled",
             "allowedInPermanent": true,
@@ -193,11 +193,11 @@
             }
           },
           "excluded": {
-            "^(https?://)?([^\\s/]+\\.)*?(atlassian\\.(net|com)|bitbucket\\.org)\\b(/.*)?$": {}
+            "/^(https://)?([^\\s/]+\\.)*?(atlassian\\.(net|com)|bitbucket\\.org)\\b(/.*)?$/": {}
           }
         },
         {
-          "pattern": "/^(https?://)?([^\\s/]+\\.)*?((firefox\\.com)|(mozilla((\\.org)|(\\.auth0\\.com))))\\b(/.*)?$/",
+          "pattern": "/^(https://)?([^\\s/]+\\.)*?((firefox\\.com)|(mozilla((\\.org)|(\\.auth0\\.com))))\\b(/.*)?$/",
           "always": {
             "action": "enabled",
             "allowedInPermanent": true,
@@ -218,7 +218,7 @@
             }
           },
           "excluded": {
-            "/^(https?://)?([^\\s/]+\\.)*?((firefox\\.com)|(mozilla((\\.org)|(\\.auth0\\.com))))\\b(/.*)?$/": {}
+            "/^(https://)?([^\\s/]+\\.)*?((firefox\\.com)|(mozilla((\\.org)|(\\.auth0\\.com))))\\b(/.*)?$/": {}
           }
         }
       ],
