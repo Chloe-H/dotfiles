@@ -39,5 +39,5 @@ https://[REDACTED]-com.access.mcas.ms/aad_login
 - **Google:** `/^(https://)?([^\s/]+\.)*?(google(usercontent)?|youtube)\.com\b(/.*)?$/`
 - **Slack:** `/^(https://)?([^\s/]+\.)*?slack\.com\b(/.*)?$/`
 - **Amazon/AWS:** `/^(https://)?([^\s/]+\.)*?(aws(apps|\.amazon)?)(\.com)?\b(/.*)?$/`
-- **Bitbucket/Atlassian:** `^(https://)?([^\s/]+\.)*?(atlassian\.(net|com)|bitbucket\.org)\b(/.*)?$`
+- **Bitbucket/Atlassian:** `/^(https://)?([^\s/]+\.)*?(atlassian\.(net|com)|bitbucket\.org)\b(/.*)?$/`
 - **Firefox/Mozilla:** `/^(https://)?([^\s/]+\.)*?((firefox\.com)|(mozilla((\.org)|(\.auth0\.com))))\b(/.*)?$/`
