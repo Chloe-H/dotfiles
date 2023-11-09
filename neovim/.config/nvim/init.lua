@@ -516,10 +516,7 @@ require('nvim-treesitter.configs').setup({
             Disable for languages where it doesn't work well
             Source: https://www.reddit.com/r/neovim/comments/svywql/comment/hxr0xjl/?context=3
         --]]
-        disable = {
-            'c',
-            'python',
-        },
+        disable = { 'c', },
     },
 })
 
