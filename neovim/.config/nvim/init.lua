@@ -90,7 +90,6 @@ vim.opt.cursorcolumn = true
 
 vim.opt.number = true -- Show line numbers
 
-vim.opt.relativenumber = true
 vim.opt.colorcolumn = '80,100,120'
 
 vim.opt.splitright = true
