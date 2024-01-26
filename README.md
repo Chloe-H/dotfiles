@@ -162,7 +162,7 @@ to it in the Startup programs folder. Open that folder by entering
 
 - **Install:** [Move To Desktop](https://github.com/Eun/MoveToDesktop/releases)
     - Make sure to set up
-    [the scheduled task](https://github.com/Eun/MoveToDesktop#installation-usage)
+    [the scheduled task](https://github.com/Eun/MoveToDesktop/blob/master/help/scheduled-tasks.md)
     as well
 - **Destination:** `%AppData%`
 
