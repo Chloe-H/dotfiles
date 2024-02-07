@@ -359,14 +359,20 @@ vim.g.fzf_action = {
 -- Plugin settings: telescope.nvim
 local telescope = require('telescope')
 local ts_actions = require('telescope.actions')
+local ts_actions_layout = require('telescope.actions.layout')
 local ts_mappings = {
     -- Send selected/all results to quickfix list and open it
     ['<C-q>'] = ts_actions.smart_send_to_qflist + ts_actions.open_qflist,
     -- Add selected/all results to quickfix list and open it
     ['<M-q>'] = ts_actions.smart_add_to_qflist + ts_actions.open_qflist,
+    -- Toggle preview
+    ['<M-p>'] = ts_actions_layout.toggle_preview,
+    -- Cycle to next layout
+    ['<M-n>'] = ts_actions_layout.cycle_layout_next,
 }
 telescope.setup({
     defaults = {
+        cycle_layout_list = { 'horizontal', 'vertical', 'center' },
         mappings = {
             i = ts_mappings,
             n = ts_mappings,
