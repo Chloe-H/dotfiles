@@ -372,7 +372,8 @@ local ts_mappings = {
 }
 telescope.setup({
     defaults = {
-        cycle_layout_list = { 'horizontal', 'vertical', 'center' },
+        cycle_layout_list = { 'horizontal', 'center', 'vertical' },
+        layout_strategy = 'vertical',
         mappings = {
             i = ts_mappings,
             n = ts_mappings,
