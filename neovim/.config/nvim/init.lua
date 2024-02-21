@@ -88,6 +88,8 @@ vim.opt.mouse = '' -- Disable the mouse in all modes
 vim.opt.cursorline = true
 vim.opt.cursorcolumn = true
 
+vim.opt.wrap = false -- Disable line wrapping
+
 vim.opt.number = true -- Show line numbers
 
 vim.opt.colorcolumn = '80,100,120'
