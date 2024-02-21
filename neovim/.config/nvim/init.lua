@@ -380,6 +380,7 @@ telescope.setup({
             i = ts_mappings,
             n = ts_mappings,
         },
+        path_display = { 'smart' },
     },
     pickers = {
         buffers = {
@@ -393,6 +394,7 @@ telescope.setup({
                     ['<M-d>'] = 'delete_buffer',
                 },
             },
+            sort_mru = true,
         },
         find_files = {
             hidden = true,
