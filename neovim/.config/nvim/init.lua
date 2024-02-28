@@ -28,7 +28,6 @@ Plug('iamcco/markdown-preview.nvim', {
 })
 
 -- Navigation
-Plug('ctrlpvim/ctrlp.vim')
 Plug('scrooloose/nerdtree')
 
 -- Search
@@ -36,7 +35,7 @@ Plug('junegunn/fzf', { -- Bare bones (n)vim integration for fzf, defaults to usi
     ['do'] = vim.fn['fzf#install'], -- (Optional) Post-update hook to get latest version of fzf binary
 })
 Plug('junegunn/fzf.vim') -- Provides native (n)vim commands that leverage fzf
--- TODO: Trying out, may replace fzf/fzf.vim + CtrlP
+-- TODO: Trying out, may replace fzf/fzf.vim
 Plug('nvim-lua/plenary.nvim') -- Dependency for telescope.nvim / common library
 Plug('nvim-telescope/telescope.nvim') -- Highly extensible fuzzy finder
 Plug('nvim-telescope/telescope-fzf-native.nvim', { -- Recommended native telescope sorter (whatever that means); improves sort performance
@@ -258,7 +257,6 @@ end
 require('lualine').setup({
     options = {
         disabled_filetypes = {
-            'ctrlp',
             'nerdtree',
             'fugitive',
         },
@@ -322,14 +320,6 @@ require('lualine').setup({
         },
     },
 })
-
-
--- Plugin settings: CtrlP
-vim.g.ctrlp_match_current_file = 1
-
-if jit.os == 'Windows' then
-    vim.g.ctrlp_user_command = 'dir %s /-n /b /s /a-d'
-end
 
 
 -- Plugin settings: NERDTree
