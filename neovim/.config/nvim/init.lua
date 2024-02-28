@@ -16,32 +16,37 @@ Plug('windwp/nvim-ts-autotag')      -- Auto-pairing and renaming of HTML tags (a
 Plug('milkypostman/vim-togglelist') -- Very old plugin for toggling location list and quickfix list with keybinds
 Plug('nvim-lualine/lualine.nvim')
 
---[[
-    (copied straight from the README)
-    If you don't have nodejs and yarn
-    use pre build, add 'vim-plug' to the filetype list so vim-plug can update this plugin
-    see: https://github.com/iamcco/markdown-preview.nvim/issues/50
---]]
-Plug('iamcco/markdown-preview.nvim', {
-    ['do'] = vim.fn['mkdp#util#install'],
-    ['for'] = { 'markdown', 'vim-plug' },
-})
+Plug(
+    --[[
+        (copied straight from the README)
+        If you don't have nodejs and yarn
+        use pre build, add 'vim-plug' to the filetype list so vim-plug can update this plugin
+        see: https://github.com/iamcco/markdown-preview.nvim/issues/50
+    --]]
+    'iamcco/markdown-preview.nvim',
+    {
+        ['do'] = vim.fn['mkdp#util#install'],
+        ['for'] = { 'markdown', 'vim-plug' },
+    }
+)
 
 -- Navigation
 Plug('scrooloose/nerdtree')
 
 -- Search
-Plug('junegunn/fzf', {                             -- Bare bones (n)vim integration for fzf, defaults to using fzf binary in $PATH, if available
-    ['do'] = vim.fn['fzf#install'],                -- (Optional) Post-update hook to get latest version of fzf binary
-})
-Plug('junegunn/fzf.vim')                           -- Provides native (n)vim commands that leverage fzf
+Plug( -- Bare bones (n)vim integration for fzf, defaults to using fzf binary in $PATH, if available
+    'junegunn/fzf',
+    -- (Optional) Post-update hook to get latest version of fzf binary
+    { ['do'] = vim.fn['fzf#install'], }
+)
+Plug('junegunn/fzf.vim')              -- Provides native (n)vim commands that leverage fzf
 -- TODO: Trying out, may replace fzf/fzf.vim
-Plug('nvim-lua/plenary.nvim')                      -- Dependency for telescope.nvim / common library
-Plug('nvim-telescope/telescope.nvim')              -- Highly extensible fuzzy finder
-Plug('nvim-telescope/telescope-fzf-native.nvim',
-    {                                              -- Recommended native telescope sorter (whatever that means); improves sort performance
-        ['do'] = 'make'
-    })
+Plug('nvim-lua/plenary.nvim')         -- Dependency for telescope.nvim / common library
+Plug('nvim-telescope/telescope.nvim') -- Highly extensible fuzzy finder
+Plug(                                 -- Recommended native telescope sorter (whatever that means); improves sort performance
+    'nvim-telescope/telescope-fzf-native.nvim',
+    { ['do'] = 'make' }
+)
 
 -- Session management
 Plug('rmagatti/auto-session')
@@ -49,26 +54,36 @@ Plug('rmagatti/session-lens') -- Auto-session extension, adds fzf-enhanced sessi
 
 -- IDE-like stuff
 Plug('lewis6991/gitsigns.nvim') -- Plugin for git decorations, chunk navigation, etc.
-Plug('majutsushi/tagbar', {     -- File tag browser; depends on universal-ctags
-    on = { 'TagbarToggle', 'TagbarOpen' }
-})
-Plug('nvim-treesitter/nvim-treesitter',
-    {                                           -- Plugin for tree-sitter functionality (e.g. better syntax highlighting based on tree-sitter's concrete syntax tree; https://github.com/tree-sitter/tree-sitter)
-        ['do'] = ':TSUpdate'                    -- will fail on fresh install, should work fine on updates (https://github.com/nvim-treesitter/nvim-treesitter/issues/1989)
-    })
+Plug(                           -- File tag browser; depends on universal-ctags
+    'majutsushi/tagbar',
+    { on = { 'TagbarToggle', 'TagbarOpen' } }
+)
+Plug(
+--[[
+        Plugin for tree-sitter functionality
+
+        (e.g. better syntax highlighting based on tree-sitter's concrete syntax
+        tree; https://github.com/tree-sitter/tree-sitter)
+
+        `:TSUpdate` will fail on fresh install, but should work fine on updates.
+        Source: https://github.com/nvim-treesitter/nvim-treesitter/issues/1989
+    --]]
+    'nvim-treesitter/nvim-treesitter',
+    { ['do'] = ':TSUpdate' }
+)
 Plug('nvim-treesitter/nvim-treesitter-context') -- Plugin for sticky headers (using tree-sitter's syntax trees)
 
 -- LSP stuff
-Plug('neovim/nvim-lspconfig')               -- LSP configurations for neovim's built in LSP client/framework
-Plug('VonHeikemen/lsp-zero.nvim')           -- Bridge between nvim-cmp and nvim-lspconfig
-Plug('hrsh7th/nvim-cmp')                    -- Auto-completion engine
-Plug('hrsh7th/cmp-buffer')                  -- nvim-cmp source for words in buffers
+Plug('neovim/nvim-lspconfig')     -- LSP configurations for neovim's built in LSP client/framework
+Plug('VonHeikemen/lsp-zero.nvim') -- Bridge between nvim-cmp and nvim-lspconfig
+Plug('hrsh7th/nvim-cmp')          -- Auto-completion engine
+Plug('hrsh7th/cmp-buffer')        -- nvim-cmp source for words in buffers
 --[[
--- Best I can piece together, nvim-cmp supports providing completions in command
--- mode (I guess that means :, /, /and/ ?), but it won't actually do it
--- unless/until you install cmp-cmdline.
---
--- Source: https://github.com/hrsh7th/nvim-cmp/pull/362#issuecomment-952568174
+    Best I can piece together, nvim-cmp supports providing completions in command
+    mode (I guess that means `:`, `/`, /and/ `?`), but it won't actually do it
+    unless/until you install cmp-cmdline.
+
+    Source: https://github.com/hrsh7th/nvim-cmp/pull/362#issuecomment-952568174
 --]]
 Plug('hrsh7th/cmp-cmdline')                 -- nvim-cmp source for vim/neovim's command line
 Plug('hrsh7th/cmp-nvim-lsp')                -- nvim-cmp source for neovim's built-in LSP client
@@ -637,8 +652,8 @@ nvim_cmp.setup({
     -- Do not pre-select any items
     preselect = nvim_cmp.PreselectMode.None,
     --[[
-    -- The order of the sources dictates the order in which the grouped results
-    -- appear in the completion list.
+        The order of the sources dictates the order in which the grouped results
+        appear in the completion list.
     --]]
     sources = nvim_cmp.config.sources({
         { name = 'nvim_lua' },
@@ -680,10 +695,10 @@ nvim_cmp.setup.cmdline({ '/', '?' }, {
             c = function()
                 if not nvim_cmp.visible() then
                     --[[
-                    -- Once completion is triggered, it will continue to occur
-                    -- for that word. I don't know whether this is intentional,
-                    -- and I have yet to find a way to, like...return to not
-                    -- auto-completing once auto-completion has been triggered.
+                        Once completion is triggered, it will continue to occur
+                        for that word. I don't know whether this is intentional,
+                        and I have yet to find a way to, like...return to not
+                        auto-completing once auto-completion has been triggered.
                     --]]
                     nvim_cmp.complete()
                 end
@@ -692,7 +707,7 @@ nvim_cmp.setup.cmdline({ '/', '?' }, {
     }),
     sources = nvim_cmp.config.sources({
         { name = 'fuzzy_buffer', option = { get_bufnrs = get_small_visible_buffers, }, },
-        { name = 'buffer', option = { get_bufnrs = get_small_visible_buffers, }, },
+        { name = 'buffer',       option = { get_bufnrs = get_small_visible_buffers, }, },
     }),
 })
 
