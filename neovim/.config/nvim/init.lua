@@ -63,10 +63,21 @@ Plug('neovim/nvim-lspconfig')               -- LSP configurations for neovim's b
 Plug('VonHeikemen/lsp-zero.nvim')           -- Bridge between nvim-cmp and nvim-lspconfig
 Plug('hrsh7th/nvim-cmp')                    -- Auto-completion engine
 Plug('hrsh7th/cmp-buffer')                  -- nvim-cmp source for words in buffers
+--[[
+-- Best I can piece together, nvim-cmp supports providing completions in command
+-- mode (I guess that means :, /, /and/ ?), but it won't actually do it
+-- unless/until you install cmp-cmdline.
+--
+-- Source: https://github.com/hrsh7th/nvim-cmp/pull/362#issuecomment-952568174
+--]]
+Plug('hrsh7th/cmp-cmdline')                 -- nvim-cmp source for vim/neovim's command line
 Plug('hrsh7th/cmp-nvim-lsp')                -- nvim-cmp source for neovim's built-in LSP client
 Plug('hrsh7th/cmp-nvim-lsp-signature-help') -- nvim-cmp source for showing function signatures with current parameter emphasized
 Plug('hrsh7th/cmp-nvim-lua')                -- nvim-cmp source for neovim's Lua API
 Plug('saadparwaiz1/cmp_luasnip')            -- nvim-cmp source for LuaSnip
+Plug('tzachar/fuzzy.nvim')                  -- Dependency for cmp-fuzzy-buffer, cmp-fuzzy-path
+Plug('tzachar/cmp-fuzzy-buffer')            -- nvim-cmp source for fuzzy searchingrcurrent buffer
+Plug('tzachar/cmp-fuzzy-path')              -- nvim-cmp source for fuzzy searching filesystem paths
 Plug('williamboman/mason.nvim')             -- External editor tooling management from within neovim
 Plug('williamboman/mason-lspconfig.nvim')   -- Bridge from mason.nvim to nvim-lspconfig + some niceties
 Plug('L3MON4D3/LuaSnip')                    -- Snippets engine (snippets sold separately)
@@ -583,7 +594,27 @@ lsp_zero.extend_cmp()
 local nvim_cmp = require('cmp')
 local lsp_zero_cmp_action = lsp_zero.cmp_action()
 
+local get_small_visible_buffers = function()
+    local bufs = {}
+
+    -- Only get visible buffers <= 1 Megabyte in size
+    for _, win in ipairs(vim.api.nvim_list_wins()) do
+        local buf = vim.api.nvim_win_get_buf(win)
+        local buf_size_bytes = vim.api.nvim_buf_get_offset(
+            buf,
+            vim.api.nvim_buf_line_count(buf)
+        )
+
+        if buf_size_bytes <= 1024 * 1024 then
+            bufs[vim.api.nvim_win_get_buf(win)] = true
+        end
+    end
+
+    return vim.tbl_keys(bufs)
+end
+
 nvim_cmp.setup({
+    completion = { keyword_length = 3 },
     mapping = nvim_cmp.mapping.preset.insert({
         -- Navigate between snippet placeholders
         ['<C-f>'] = lsp_zero_cmp_action.luasnip_jump_forward(),
@@ -603,33 +634,69 @@ nvim_cmp.setup({
         ['<C-d>'] = nvim_cmp.mapping.scroll_docs(4),
         ['<C-u>'] = nvim_cmp.mapping.scroll_docs(-4),
     }),
+    -- Do not pre-select any items
+    preselect = nvim_cmp.PreselectMode.None,
+    --[[
+    -- The order of the sources dictates the order in which the grouped results
+    -- appear in the completion list.
+    --]]
     sources = nvim_cmp.config.sources({
         { name = 'nvim_lua' },
         { name = 'nvim_lsp_signature_help' },
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
-        {
-            name = 'buffer',
-            option = {
-                -- Specifies the buffer numbers to complete
-                get_bufnrs = function()
-                    local curr_buf = vim.api.nvim_get_current_buf()
-                    local curr_buf_size_bytes = vim.api.nvim_buf_get_offset(
-                        curr_buf,
-                        vim.api.nvim_buf_line_count(curr_buf)
-                    )
-
-                    -- 1 Megabyte max
-                    if curr_buf_size_bytes > 1024 * 1024 then
-                        return {}
-                    end
-
-                    return { curr_buf }
-                end
+        { name = 'fuzzy_path' },
+        { -- Fall back to manually triggered completions from buffers. Maybe. Untested. TODO: Test this somehow
+            {
+                name = 'fuzzy_buffer',
+                completion = { autocomplete = false, },
+                option = {
+                    -- specifies the buffer numbers to complete
+                    get_bufnrs = get_small_visible_buffers,
+                },
+            },
+            {
+                name = 'buffer',
+                completion = { autocomplete = false, },
+                option = {
+                    -- specifies the buffer numbers to complete
+                    get_bufnrs = get_small_visible_buffers,
+                },
             },
         },
     }),
 })
+
+-- Use buffer source(s) for search commands
+nvim_cmp.setup.cmdline({ '/', '?' }, {
+    completion = { autocomplete = false, keyword_length = 3 },
+    mapping = nvim_cmp.mapping.preset.cmdline({
+        -- Don't override default behavior
+        ['<C-z>'] = nvim_cmp.config.disable,
+        ['<Tab>'] = nvim_cmp.config.disable,
+        ['<S-Tab>'] = nvim_cmp.config.disable,
+
+        ['<C-x>'] = nvim_cmp.mapping({
+            c = function()
+                if not nvim_cmp.visible() then
+                    --[[
+                    -- Once completion is triggered, it will continue to occur
+                    -- for that word. I don't know whether this is intentional,
+                    -- and I have yet to find a way to, like...return to not
+                    -- auto-completing once auto-completion has been triggered.
+                    --]]
+                    nvim_cmp.complete()
+                end
+            end
+        }),
+    }),
+    sources = nvim_cmp.config.sources({
+        { name = 'fuzzy_buffer', option = { get_bufnrs = get_small_visible_buffers, }, },
+        { name = 'buffer', option = { get_bufnrs = get_small_visible_buffers, }, },
+    }),
+})
+
+
 
 
 -- Plugin settings: mason.nvim, mason-lspconfig.nvim
