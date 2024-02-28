@@ -60,6 +60,7 @@ Plug('nvim-treesitter/nvim-treesitter-context') -- Plugin for sticky headers (us
 Plug('neovim/nvim-lspconfig') -- LSP configurations for neovim's built in LSP client/framework
 Plug('VonHeikemen/lsp-zero.nvim') -- Bridge between nvim-cmp and nvim-lspconfig
 Plug('hrsh7th/nvim-cmp') -- Auto-completion engine
+Plug('hrsh7th/cmp-buffer') -- nvim-cmp source for words in buffers
 Plug('hrsh7th/cmp-nvim-lsp') -- nvim-cmp source for neovim's built-in LSP client
 Plug('hrsh7th/cmp-nvim-lsp-signature-help') -- nvim-cmp source for showing function signatures with current parameter emphasized
 Plug('hrsh7th/cmp-nvim-lua') -- nvim-cmp source for neovim's Lua API
@@ -605,6 +606,26 @@ nvim_cmp.setup({
         { name = 'nvim_lsp_signature_help' },
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
+        {
+            name = 'buffer',
+            option = {
+                -- Specifies the buffer numbers to complete
+                get_bufnrs = function()
+                    local curr_buf = vim.api.nvim_get_current_buf()
+                    local curr_buf_size_bytes = vim.api.nvim_buf_get_offset(
+                        curr_buf,
+                        vim.api.nvim_buf_line_count(curr_buf)
+                    )
+
+                    -- 1 Megabyte max
+                    if curr_buf_size_bytes > 1024 * 1024 then
+                        return {}
+                    end
+
+                    return { curr_buf }
+                end
+            },
+        },
     }),
 })
 
