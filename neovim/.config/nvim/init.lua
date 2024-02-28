@@ -6,13 +6,13 @@ Plug('junegunn/vim-plug') -- Added to get Vim help for vim-plug
 
 -- Niceties
 Plug('tpope/vim-fugitive')
-Plug('mbbill/undotree') -- Undo history tree visualizer
-Plug('folke/todo-comments.nvim') -- Plugin to highlight and search for TODOs and other TODO-type comments
-Plug('tpope/vim-surround') -- Plugin to easily add, change, and remove surrounding character pairs
-Plug('tpope/vim-commentary') -- Plugin to comment/un-comment with keybinds
-Plug('foosoft/vim-argwrap') -- Plugin to quickly expand/collapse lists of things (e.g. function arg lists)
-Plug('windwp/nvim-autopairs') -- Autopairs plugin (insert/delete brackets, parentheses, quotes in pairs)
-Plug('windwp/nvim-ts-autotag') -- Auto-pairing and renaming of HTML tags (achieved by leveraging treesitter)
+Plug('mbbill/undotree')             -- Undo history tree visualizer
+Plug('folke/todo-comments.nvim')    -- Plugin to highlight and search for TODOs and other TODO-type comments
+Plug('tpope/vim-surround')          -- Plugin to easily add, change, and remove surrounding character pairs
+Plug('tpope/vim-commentary')        -- Plugin to comment/un-comment with keybinds
+Plug('foosoft/vim-argwrap')         -- Plugin to quickly expand/collapse lists of things (e.g. function arg lists)
+Plug('windwp/nvim-autopairs')       -- Autopairs plugin (insert/delete brackets, parentheses, quotes in pairs)
+Plug('windwp/nvim-ts-autotag')      -- Auto-pairing and renaming of HTML tags (achieved by leveraging treesitter)
 Plug('milkypostman/vim-togglelist') -- Very old plugin for toggling location list and quickfix list with keybinds
 Plug('nvim-lualine/lualine.nvim')
 
@@ -31,16 +31,17 @@ Plug('iamcco/markdown-preview.nvim', {
 Plug('scrooloose/nerdtree')
 
 -- Search
-Plug('junegunn/fzf', { -- Bare bones (n)vim integration for fzf, defaults to using fzf binary in $PATH, if available
-    ['do'] = vim.fn['fzf#install'], -- (Optional) Post-update hook to get latest version of fzf binary
+Plug('junegunn/fzf', {                             -- Bare bones (n)vim integration for fzf, defaults to using fzf binary in $PATH, if available
+    ['do'] = vim.fn['fzf#install'],                -- (Optional) Post-update hook to get latest version of fzf binary
 })
-Plug('junegunn/fzf.vim') -- Provides native (n)vim commands that leverage fzf
+Plug('junegunn/fzf.vim')                           -- Provides native (n)vim commands that leverage fzf
 -- TODO: Trying out, may replace fzf/fzf.vim
-Plug('nvim-lua/plenary.nvim') -- Dependency for telescope.nvim / common library
-Plug('nvim-telescope/telescope.nvim') -- Highly extensible fuzzy finder
-Plug('nvim-telescope/telescope-fzf-native.nvim', { -- Recommended native telescope sorter (whatever that means); improves sort performance
-    ['do'] = 'make'
-})
+Plug('nvim-lua/plenary.nvim')                      -- Dependency for telescope.nvim / common library
+Plug('nvim-telescope/telescope.nvim')              -- Highly extensible fuzzy finder
+Plug('nvim-telescope/telescope-fzf-native.nvim',
+    {                                              -- Recommended native telescope sorter (whatever that means); improves sort performance
+        ['do'] = 'make'
+    })
 
 -- Session management
 Plug('rmagatti/auto-session')
@@ -48,27 +49,28 @@ Plug('rmagatti/session-lens') -- Auto-session extension, adds fzf-enhanced sessi
 
 -- IDE-like stuff
 Plug('lewis6991/gitsigns.nvim') -- Plugin for git decorations, chunk navigation, etc.
-Plug('majutsushi/tagbar', { -- File tag browser; depends on universal-ctags
+Plug('majutsushi/tagbar', {     -- File tag browser; depends on universal-ctags
     on = { 'TagbarToggle', 'TagbarOpen' }
 })
-Plug('nvim-treesitter/nvim-treesitter', { -- Plugin for tree-sitter functionality (e.g. better syntax highlighting based on tree-sitter's concrete syntax tree; https://github.com/tree-sitter/tree-sitter)
-    ['do'] = ':TSUpdate' -- will fail on fresh install, should work fine on updates (https://github.com/nvim-treesitter/nvim-treesitter/issues/1989)
-})
+Plug('nvim-treesitter/nvim-treesitter',
+    {                                           -- Plugin for tree-sitter functionality (e.g. better syntax highlighting based on tree-sitter's concrete syntax tree; https://github.com/tree-sitter/tree-sitter)
+        ['do'] = ':TSUpdate'                    -- will fail on fresh install, should work fine on updates (https://github.com/nvim-treesitter/nvim-treesitter/issues/1989)
+    })
 Plug('nvim-treesitter/nvim-treesitter-context') -- Plugin for sticky headers (using tree-sitter's syntax trees)
 
 -- LSP stuff
-Plug('neovim/nvim-lspconfig') -- LSP configurations for neovim's built in LSP client/framework
-Plug('VonHeikemen/lsp-zero.nvim') -- Bridge between nvim-cmp and nvim-lspconfig
-Plug('hrsh7th/nvim-cmp') -- Auto-completion engine
-Plug('hrsh7th/cmp-buffer') -- nvim-cmp source for words in buffers
-Plug('hrsh7th/cmp-nvim-lsp') -- nvim-cmp source for neovim's built-in LSP client
+Plug('neovim/nvim-lspconfig')               -- LSP configurations for neovim's built in LSP client/framework
+Plug('VonHeikemen/lsp-zero.nvim')           -- Bridge between nvim-cmp and nvim-lspconfig
+Plug('hrsh7th/nvim-cmp')                    -- Auto-completion engine
+Plug('hrsh7th/cmp-buffer')                  -- nvim-cmp source for words in buffers
+Plug('hrsh7th/cmp-nvim-lsp')                -- nvim-cmp source for neovim's built-in LSP client
 Plug('hrsh7th/cmp-nvim-lsp-signature-help') -- nvim-cmp source for showing function signatures with current parameter emphasized
-Plug('hrsh7th/cmp-nvim-lua') -- nvim-cmp source for neovim's Lua API
-Plug('saadparwaiz1/cmp_luasnip') -- nvim-cmp source for LuaSnip
-Plug('williamboman/mason.nvim') -- External editor tooling management from within neovim
-Plug('williamboman/mason-lspconfig.nvim') -- Bridge from mason.nvim to nvim-lspconfig + some niceties
-Plug('L3MON4D3/LuaSnip') -- Snippets engine (snippets sold separately)
-Plug('rafamadriz/friendly-snippets') -- Collection of snippets for various languages
+Plug('hrsh7th/cmp-nvim-lua')                -- nvim-cmp source for neovim's Lua API
+Plug('saadparwaiz1/cmp_luasnip')            -- nvim-cmp source for LuaSnip
+Plug('williamboman/mason.nvim')             -- External editor tooling management from within neovim
+Plug('williamboman/mason-lspconfig.nvim')   -- Bridge from mason.nvim to nvim-lspconfig + some niceties
+Plug('L3MON4D3/LuaSnip')                    -- Snippets engine (snippets sold separately)
+Plug('rafamadriz/friendly-snippets')        -- Collection of snippets for various languages
 
 -- Color schemes
 Plug('folke/tokyonight.nvim')
@@ -88,7 +90,7 @@ vim.opt.mouse = '' -- Disable the mouse in all modes
 vim.opt.cursorline = true
 vim.opt.cursorcolumn = true
 
-vim.opt.wrap = false -- Disable line wrapping
+vim.opt.wrap = false  -- Disable line wrapping
 
 vim.opt.number = true -- Show line numbers
 
@@ -107,9 +109,9 @@ vim.opt.matchpairs:append('<:>')
 
 -- Tabs, spaces, indentation
 vim.opt.expandtab = true -- Use spaces to insert <Tab>
-vim.opt.tabstop = 4 -- Number of spaces a <Tab> in the file counts for
-vim.opt.softtabstop = 4 -- Number of spaces a <Tab> counts for while performing editing operations
-vim.opt.shiftwidth = 4 -- Number of spaces to use for each step of (auto)indent
+vim.opt.tabstop = 4      -- Number of spaces a <Tab> in the file counts for
+vim.opt.softtabstop = 4  -- Number of spaces a <Tab> counts for while performing editing operations
+vim.opt.shiftwidth = 4   -- Number of spaces to use for each step of (auto)indent
 
 -- QuickFix list / Location list mappings (pair nicely with vim-togglelist)
 vim.keymap.set('n', ']l', '<cmd>lnext<CR>', { remap = false })
@@ -149,7 +151,7 @@ vim.keymap.set(
 )
 
 -- Disable virtual text for diagnostics
-vim.diagnostic.config ({
+vim.diagnostic.config({
     virtual_text = false,
     signs = true,
     underline = true,
@@ -209,7 +211,7 @@ local npairs_brackets = {
 npairs.add_rules({
     -- Rule for a pair with left-side ' ' and right side ' '
     npairs_rule(' ', ' ')
-        -- Pair will only occur if the conditional function returns true
+    -- Pair will only occur if the conditional function returns true
         :with_pair(function(opts)
             -- We are checking if we are inserting a space in (), [], or {}
             local pair = opts.line:sub(opts.col - 1, opts.col)
@@ -224,7 +226,7 @@ npairs.add_rules({
         end)
         :with_move(npairs_conditions.none())
         :with_cr(npairs_conditions.none())
-        -- We only want to delete the pair of spaces when the cursor is as such: ( | )
+    -- We only want to delete the pair of spaces when the cursor is as such: ( | )
         :with_del(function(opts)
             local col = vim.api.nvim_win_get_cursor(0)[2]
             local context = opts.line:sub(col - 1, col + 2)
@@ -247,7 +249,7 @@ for _, bracket in pairs(npairs_brackets) do
             :with_move(function(opts) return opts.char == bracket[2] end)
             :with_del(npairs_conditions.none())
             :use_key(bracket[2])
-            -- Removes the trailing whitespace that can occur without this
+        -- Removes the trailing whitespace that can occur without this
             :replace_map_cr(function(_) return '<C-c>2xi<CR><C-c>O' end)
     })
 end
