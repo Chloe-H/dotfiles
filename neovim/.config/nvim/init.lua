@@ -9,11 +9,11 @@ Plug('tpope/vim-fugitive')
 Plug('mbbill/undotree')             -- Undo history tree visualizer
 Plug('folke/todo-comments.nvim')    -- Plugin to highlight and search for TODOs and other TODO-type comments
 Plug('tpope/vim-surround')          -- Plugin to easily add, change, and remove surrounding character pairs
-Plug('tpope/vim-commentary')        -- Plugin to comment/un-comment with keybinds
+Plug('tpope/vim-commentary')        -- Plugin to comment/un-comment with key binds
 Plug('foosoft/vim-argwrap')         -- Plugin to quickly expand/collapse lists of things (e.g. function arg lists)
 Plug('windwp/nvim-autopairs')       -- Autopairs plugin (insert/delete brackets, parentheses, quotes in pairs)
 Plug('windwp/nvim-ts-autotag')      -- Auto-pairing and renaming of HTML tags (achieved by leveraging treesitter)
-Plug('milkypostman/vim-togglelist') -- Very old plugin for toggling location list and quickfix list with keybinds
+Plug('milkypostman/vim-togglelist') -- Very old plugin for toggling location list and quickfix list with key binds
 Plug('nvim-lualine/lualine.nvim')
 
 Plug(
@@ -93,7 +93,7 @@ Plug('hrsh7th/cmp-nvim-lua')                -- nvim-cmp source for neovim's Lua 
 Plug('saadparwaiz1/cmp_luasnip')            -- nvim-cmp source for LuaSnip
 Plug('tzachar/fuzzy.nvim')                  -- Dependency for cmp-fuzzy-buffer, cmp-fuzzy-path
 Plug('tzachar/cmp-fuzzy-buffer')            -- nvim-cmp source for fuzzy searching current buffer
-Plug('tzachar/cmp-fuzzy-path')              -- nvim-cmp source for fuzzy searching filesystem paths
+Plug('tzachar/cmp-fuzzy-path')              -- nvim-cmp source for fuzzy searching file system paths
 Plug('williamboman/mason.nvim')             -- External editor tooling management from within neovim
 Plug('williamboman/mason-lspconfig.nvim')   -- Bridge from mason.nvim to nvim-lspconfig + some niceties
 Plug('L3MON4D3/LuaSnip')                    -- Snippets engine (snippets sold separately)
@@ -106,6 +106,7 @@ vim.call('plug#end')
 
 
 -- Native settings
+local path_separator = jit.os == 'Windows' and '\\' or '/'
 
 vim.g.mapleader = ' '
 
@@ -126,7 +127,7 @@ vim.opt.colorcolumn = '80,100,120'
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
--- Use unix line endings by default on Windows
+-- Use Unix line endings by default on Windows
 if jit.os == 'Windows' then
     vim.opt.fileformats = 'unix,dos'
 end
@@ -139,6 +140,45 @@ vim.opt.expandtab = true -- Use spaces to insert <Tab>
 vim.opt.tabstop = 4      -- Number of spaces a <Tab> in the file counts for
 vim.opt.softtabstop = 4  -- Number of spaces a <Tab> counts for while performing editing operations
 vim.opt.shiftwidth = 4   -- Number of spaces to use for each step of (auto)indent
+
+-- Spelling settings
+local custom_spellfiles = {}
+local custom_spellfiles_dir = string.format(
+    '%s%s%s%s',
+    vim.fn.stdpath('config'),
+    path_separator,
+    'spell',
+    path_separator
+)
+
+if vim.fn.isdirectory(custom_spellfiles_dir) == 0 then
+    if vim.fn.mkdir(custom_spellfiles_dir, 'p') == 0 then
+        print(string.format(
+            'Failed to create spellfiles directory "%s"',
+            custom_spellfiles_dir
+        ))
+    else
+        print(string.format(
+            'Successfully created spellfiles directory "%s"',
+            custom_spellfiles_dir
+        ))
+    end
+end
+
+for index, custom_spellfile in ipairs({
+    'personal.en.utf-8',
+    'work.en.utf-8',
+}) do
+    custom_spellfiles[index] = string.format(
+        '%s%s.add',
+        custom_spellfiles_dir,
+        custom_spellfile
+    )
+end
+
+vim.opt.spelllang = { 'en', 'en_us', }
+vim.opt.spelloptions = { 'noplainbuffer', 'camel', }
+vim.opt.spellfile = custom_spellfiles
 
 -- QuickFix list / Location list mappings (pair nicely with vim-togglelist)
 vim.keymap.set('n', ']l', '<cmd>lnext<CR>', { remap = false })
