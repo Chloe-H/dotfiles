@@ -91,7 +91,7 @@ Plug('hrsh7th/cmp-nvim-lsp-signature-help') -- nvim-cmp source for showing funct
 Plug('hrsh7th/cmp-nvim-lua')                -- nvim-cmp source for neovim's Lua API
 Plug('saadparwaiz1/cmp_luasnip')            -- nvim-cmp source for LuaSnip
 Plug('tzachar/fuzzy.nvim')                  -- Dependency for cmp-fuzzy-buffer, cmp-fuzzy-path
-Plug('tzachar/cmp-fuzzy-buffer')            -- nvim-cmp source for fuzzy searchingrcurrent buffer
+Plug('tzachar/cmp-fuzzy-buffer')            -- nvim-cmp source for fuzzy searching current buffer
 Plug('tzachar/cmp-fuzzy-path')              -- nvim-cmp source for fuzzy searching filesystem paths
 Plug('williamboman/mason.nvim')             -- External editor tooling management from within neovim
 Plug('williamboman/mason-lspconfig.nvim')   -- Bridge from mason.nvim to nvim-lspconfig + some niceties
@@ -648,6 +648,22 @@ nvim_cmp.setup({
         -- Scroll through the completion documentation
         ['<C-d>'] = nvim_cmp.mapping.scroll_docs(4),
         ['<C-u>'] = nvim_cmp.mapping.scroll_docs(-4),
+
+        -- Trigger auto-completion on matches in visible buffers
+        ['<C-x><C-b>'] = nvim_cmp.mapping.complete({
+            config = {
+                sources = {
+                    {
+                        name = 'fuzzy_buffer',
+                        option = { get_bufnrs = get_small_visible_buffers, },
+                    },
+                    {
+                        name = 'buffer',
+                        option = { get_bufnrs = get_small_visible_buffers, },
+                    },
+                },
+            },
+        }),
     }),
     -- Do not pre-select any items
     preselect = nvim_cmp.PreselectMode.None,
@@ -660,58 +676,54 @@ nvim_cmp.setup({
         { name = 'nvim_lsp_signature_help' },
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
-        { name = 'fuzzy_path' },
-        { -- Fall back to manually triggered completions from buffers. Maybe. Untested. TODO: Test this somehow
-            {
-                name = 'fuzzy_buffer',
-                completion = { autocomplete = false, },
-                option = {
-                    -- specifies the buffer numbers to complete
-                    get_bufnrs = get_small_visible_buffers,
-                },
-            },
-            {
-                name = 'buffer',
-                completion = { autocomplete = false, },
-                option = {
-                    -- specifies the buffer numbers to complete
-                    get_bufnrs = get_small_visible_buffers,
-                },
-            },
+        {
+            name = 'fuzzy_path',
+            completion = { autocomplete = false, },
         },
     }),
 })
 
+-- Command-line mappings
+local command_mappings_override = {
+    -- Don't override default behavior
+    ['<C-z>'] = nvim_cmp.config.disable,
+    ['<Tab>'] = nvim_cmp.config.disable,
+    ['<S-Tab>'] = nvim_cmp.config.disable,
+
+    ['<C-x><C-o>'] = nvim_cmp.mapping({
+        c = function()
+            if not nvim_cmp.visible() then
+                --[[
+                    Once completion is triggered, it will continue to occur
+                    for that word. I don't know whether this is intentional,
+                    and I have yet to find a way to, like...return to not
+                    auto-completing once auto-completion has been triggered.
+                --]]
+                nvim_cmp.complete()
+            end
+        end
+    }),
+}
+
 -- Use buffer source(s) for search commands
 nvim_cmp.setup.cmdline({ '/', '?' }, {
-    completion = { autocomplete = false, keyword_length = 3 },
-    mapping = nvim_cmp.mapping.preset.cmdline({
-        -- Don't override default behavior
-        ['<C-z>'] = nvim_cmp.config.disable,
-        ['<Tab>'] = nvim_cmp.config.disable,
-        ['<S-Tab>'] = nvim_cmp.config.disable,
-
-        ['<C-x>'] = nvim_cmp.mapping({
-            c = function()
-                if not nvim_cmp.visible() then
-                    --[[
-                        Once completion is triggered, it will continue to occur
-                        for that word. I don't know whether this is intentional,
-                        and I have yet to find a way to, like...return to not
-                        auto-completing once auto-completion has been triggered.
-                    --]]
-                    nvim_cmp.complete()
-                end
-            end
-        }),
-    }),
+    completion = { autocomplete = false, keyword_length = 3, },
+    mapping = nvim_cmp.mapping.preset.cmdline(command_mappings_override),
     sources = nvim_cmp.config.sources({
         { name = 'fuzzy_buffer', option = { get_bufnrs = get_small_visible_buffers, }, },
         { name = 'buffer',       option = { get_bufnrs = get_small_visible_buffers, }, },
     }),
 })
 
-
+-- Add sources for command-line mode
+nvim_cmp.setup.cmdline({ ':' }, {
+    completion = { autocomplete = false, keyword_length = 3, },
+    mapping = nvim_cmp.mapping.preset.cmdline(command_mappings_override),
+    sources = nvim_cmp.config.sources({
+        { name = 'fuzzy_path' },
+        { name = 'cmdline' }, -- I'm still not totally sure what this does
+    })
+})
 
 
 -- Plugin settings: mason.nvim, mason-lspconfig.nvim
