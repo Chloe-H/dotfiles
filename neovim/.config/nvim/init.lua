@@ -71,7 +71,8 @@ Plug(
     'nvim-treesitter/nvim-treesitter',
     { ['do'] = ':TSUpdate' }
 )
-Plug('nvim-treesitter/nvim-treesitter-context') -- Plugin for sticky headers (using tree-sitter's syntax trees)
+Plug('nvim-treesitter/nvim-treesitter-context')     -- Plugin for sticky headers (using tree-sitter's syntax trees)
+Plug('nvim-treesitter/nvim-treesitter-textobjects') -- Plugin for treesitter-based node movement, selection, and some other stuff
 
 -- LSP stuff
 Plug('neovim/nvim-lspconfig')     -- LSP configurations for neovim's built in LSP client/framework
@@ -159,7 +160,7 @@ vim.keymap.set('n', '<Leader>wt', '<cmd>tab split<CR>', { remap = false })
 vim.keymap.set('n', '<Leader>/w', '/\\<<C-R>/\\><CR>', { remap = false })
 
 -- Custom function for stripping trailing white space
-strip_trailing_white_space = function()
+local strip_trailing_white_space = function()
     local cursor_pos = vim.fn.getpos('.')
     local current_query = vim.fn.getreg('/')
 
@@ -507,7 +508,7 @@ vim.keymap.set(
 )
 
 
--- Plugin settings: nvim-treesitter, nvim-ts-autotag
+-- Plugin settings: nvim-treesitter, nvim-treesitter-textobjects, nvim-ts-autotag
 require('nvim-treesitter.configs').setup({
     -- Parsers to install by default
     ensure_installed = {
@@ -537,6 +538,15 @@ require('nvim-treesitter.configs').setup({
         enable = true,
     },
 
+    incremental_selection = {
+        enable = true,
+        keymaps = {
+            init_selection = '<Leader>tsis',
+            node_incremental = 'tsn', -- Next increment
+            node_decremental = 'tsp', -- Previous increment
+        },
+    },
+
     -- Warning: Experimental (at time of writing)
     indent = {
         enable = true,
@@ -547,7 +557,84 @@ require('nvim-treesitter.configs').setup({
         --]]
         disable = { 'c', },
     },
+
+    -- Plugin settings: nvim-treesitter-textobjects
+    textobjects = {
+        select = {
+            enable = true,
+            lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
+            keymaps = {
+                -- You can use the capture groups defined in textobjects.scm
+                ['aa'] = '@parameter.outer',
+                ['ia'] = '@parameter.inner',
+                ['af'] = '@function.outer',
+                ['if'] = '@function.inner',
+                ['ac'] = '@class.outer',
+                ['ic'] = '@class.inner',
+            },
+        },
+        move = {
+            enable = true,
+            set_jumps = true,
+            goto_next_start = {
+                [']fo'] = '@function.outer',
+                [']fi'] = '@function.inner',
+                [']]c'] = '@class.outer',
+                [']]b'] = '@block.outer',
+            },
+            goto_next_end = {
+                [']]f'] = '@function.outer',
+            },
+            goto_previous_start = {
+                ['[fo'] = '@function.outer',
+                ['[fi'] = '@function.inner',
+                ['[[c'] = '@class.outer',
+                ['[[b'] = '@block.outer',
+            },
+            goto_previous_end = {
+                ['[[f'] = '@function.outer',
+            },
+        },
+    },
 })
+
+local ts_utils = require('nvim-treesitter.ts_utils')
+
+local goto_sibling_node = function(goto_next, goto_end)
+    -- Get next or previous node
+    local get_node = goto_next and ts_utils.get_next_node or ts_utils.get_previous_node
+
+    return function()
+        local current_node = ts_utils.get_node_at_cursor()
+
+        ts_utils.goto_node(get_node(current_node, true, true), goto_end, false)
+    end
+end
+
+vim.keymap.set(
+    'n',
+    ']n',
+    goto_sibling_node(true, false),
+    { desc = 'Go to start of next sibling node' }
+)
+vim.keymap.set(
+    'n',
+    ']]n',
+    goto_sibling_node(true, true),
+    { desc = 'Go to end of next sibling node' }
+)
+vim.keymap.set(
+    'n',
+    '[n',
+    goto_sibling_node(false, false),
+    { desc = 'Go to start of previous sibling node' }
+)
+vim.keymap.set(
+    'n',
+    '[[n',
+    goto_sibling_node(false, true),
+    { desc = 'Go to end of previous sibling node' }
+)
 
 -- Tree-sitter-based folding
 vim.opt.foldmethod = 'expr'
@@ -567,9 +654,7 @@ treesitter_context.setup({
 vim.keymap.set(
     'n',
     '<Leader>tsc',
-    function()
-        treesitter_context.go_to_context()
-    end,
+    treesitter_context.go_to_context,
     { remap = false }
 )
 
