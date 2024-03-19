@@ -93,7 +93,6 @@ Plug('hrsh7th/cmp-nvim-lua')                -- nvim-cmp source for neovim's Lua 
 Plug('saadparwaiz1/cmp_luasnip')            -- nvim-cmp source for LuaSnip
 Plug('tzachar/fuzzy.nvim')                  -- Dependency for cmp-fuzzy-buffer, cmp-fuzzy-path
 Plug('tzachar/cmp-fuzzy-buffer')            -- nvim-cmp source for fuzzy searching current buffer
-Plug('tzachar/cmp-fuzzy-path')              -- nvim-cmp source for fuzzy searching file system paths
 Plug('williamboman/mason.nvim')             -- External editor tooling management from within neovim
 Plug('williamboman/mason-lspconfig.nvim')   -- Bridge from mason.nvim to nvim-lspconfig + some niceties
 Plug('L3MON4D3/LuaSnip')                    -- Snippets engine (snippets sold separately)
@@ -775,7 +774,8 @@ nvim_cmp.setup({
         ['<C-u>'] = nvim_cmp.mapping.scroll_docs(-4),
 
         -- Trigger auto-completion on matches in visible buffers
-        ['<C-x><C-b>'] = nvim_cmp.mapping.complete({
+        -- Mnemonic: "[s]tart [b]uffer completion"
+        ['<C-s><C-b>'] = nvim_cmp.mapping.complete({
             config = {
                 sources = {
                     {
@@ -801,10 +801,6 @@ nvim_cmp.setup({
         { name = 'nvim_lsp_signature_help' },
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
-        {
-            name = 'fuzzy_path',
-            completion = { autocomplete = false, },
-        },
     }),
 })
 
@@ -845,7 +841,6 @@ nvim_cmp.setup.cmdline({ ':' }, {
     completion = { autocomplete = false, keyword_length = 3, },
     mapping = nvim_cmp.mapping.preset.cmdline(command_mappings_override),
     sources = nvim_cmp.config.sources({
-        { name = 'fuzzy_path' },
         { name = 'cmdline' }, -- I'm still not totally sure what this does
     })
 })
