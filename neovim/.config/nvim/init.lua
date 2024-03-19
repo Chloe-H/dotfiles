@@ -682,18 +682,29 @@ vim.opt.foldenable = false -- Set all folds to be open by default
 
 
 -- Plugin settings: nvim-treesitter-context
+-- TODO: Replace with https://github.com/wellle/context.vim?
 local treesitter_context = require('treesitter-context')
 
 treesitter_context.setup({
-    max_lines = 3,
+    enable = false,
+    max_lines = 2,
+    min_window_height = 25,
+    multiline_threshold = 1,
+    separator = '-',
     trim_scope = 'inner',
 })
 
 -- TODO: remove keymap, try folke/flash?
 vim.keymap.set(
     'n',
-    '<Leader>tsc',
+    '<Leader>tscg',
     treesitter_context.go_to_context,
+    { remap = false }
+)
+vim.keymap.set(
+    'n',
+    '<Leader>tsct',
+    '<cmd>TSContextToggle<CR>',
     { remap = false }
 )
 
