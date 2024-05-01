@@ -388,7 +388,7 @@ require('lualine').setup({
                     happened yet.
                 --]]
                 newfile_status = true,
-                path = 1, -- Relative path
+                path = 4, -- Filename and parent dir, ~ for home dir
                 --[[
                     Shorten path to leave 100 spaces in the window for other
                     components.
