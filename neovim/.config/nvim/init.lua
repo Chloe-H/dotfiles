@@ -457,7 +457,7 @@ telescope.setup({
             i = ts_mappings,
             n = ts_mappings,
         },
-        path_display = { 'smart' },
+        path_display = { 'filename_first' },
     },
     pickers = {
         buffers = {
