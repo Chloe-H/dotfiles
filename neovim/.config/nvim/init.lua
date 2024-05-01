@@ -322,7 +322,16 @@ end
 
 
 -- Plugin settings: lualine.nvim
--- Handy symbols: 
+--[[
+    Sections:
+    +-------------------------------------------------+
+    | A | B | C                             X | Y | Z |
+    +-------------------------------------------------+
+
+    lualine_<section> = { 'left', 'to', 'right' }
+
+    Handy symbols: 
+--]]
 require('lualine').setup({
     options = {
         disabled_filetypes = {
@@ -332,6 +341,7 @@ require('lualine').setup({
         globalstatus = true,
     },
     sections = {
+        lualine_b = {'branch', { 'datetime', style = '%a %H:%M' }},
         lualine_c = {
             {
                 'filename',
@@ -349,30 +359,27 @@ require('lualine').setup({
                 shorting_target = 100,
             },
         },
+        lualine_x = {'diagnostics'},
+        lualine_y = {'fileformat', 'encoding', 'filetype'},
     },
     tabline = {
         lualine_a = {
             {
                 'tabs',
                 mode = 2,
-                use_mode_colors = true,
                 max_length = vim.o.columns,
-
-                fmt = function(name, context)
-                    -- Show + if buffer is modified in tab
-                    local buflist = vim.fn.tabpagebuflist(context.tabnr)
-                    local winnr = vim.fn.tabpagewinnr(context.tabnr)
-                    local bufnr = buflist[winnr]
-                    local mod = vim.fn.getbufvar(bufnr, '&mod')
-
-                    return name .. (mod == 1 and ' +' or '')
-                end
+                use_mode_colors = true,
+                symbols = {
+                    -- Text to show when the file is modified
+                    modified = ' ●',
+                },
             },
         },
         lualine_z = { require('auto-session.lib').current_session_name },
     },
     inactive_winbar = {
-        lualine_a = {
+        lualine_a = {'vim.api.nvim_win_get_number(0)'},
+        lualine_b = {
             {
                 'filename',
                 --[[
@@ -381,12 +388,23 @@ require('lualine').setup({
                     happened yet.
                 --]]
                 newfile_status = true,
-                path = 3,
-            }
+                path = 1, -- Relative path
+                --[[
+                    Shorten path to leave 100 spaces in the window for other
+                    components.
+                --]]
+                shorting_target = 100,
+            },
         },
         lualine_y = {
-            'vim.api.nvim_win_get_number(0)',
+            {
+                'vim.api.nvim_buf_get_name(0)',
+                cond = function()
+                    return vim.fn.winwidth(0) > 100
+                end,
+            }
         },
+        lualine_z = {'vim.api.nvim_win_get_buf(0)'},
     },
 })
 
