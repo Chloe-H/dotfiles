@@ -385,6 +385,8 @@ local get_pleasing_file_name = function(name, context)
     return name
 end
 
+local inactive_window_filename_shorting_target = 100
+
 require('lualine').setup({
     options = { globalstatus = true, },
     sections = {
@@ -446,7 +448,7 @@ require('lualine').setup({
                     Shorten path to leave 100 spaces in the window for other
                     components.
                 --]]
-                shorting_target = 100,
+                shorting_target = inactive_window_filename_shorting_target,
                 fmt = function(name, context)
                     name = get_pleasing_file_name(name, context)
 
@@ -466,10 +468,14 @@ require('lualine').setup({
                 -- Buffer name
                 'vim.api.nvim_buf_get_name(0)',
                 cond = function()
-                    -- attempt to account for other sections
-                    local available_space = vim.fn.winwidth(0) - 15
+                    local space_taken_by_other_sections = 15 -- spitball
+                    local max_available_space = vim.fn.winwidth(0) - space_taken_by_other_sections
+                    local space_likely_remaining = inactive_window_filename_shorting_target - space_taken_by_other_sections
 
-                    return string.len(vim.api.nvim_buf_get_name(0)) < available_space
+                    local space_needed = string.len(vim.api.nvim_buf_get_name(0))
+
+                    return space_needed <= max_available_space
+                        and space_needed < space_likely_remaining
                 end,
             }
         },
