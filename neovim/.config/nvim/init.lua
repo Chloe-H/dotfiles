@@ -360,7 +360,7 @@ local get_pleasing_buffer_name = function(
     elseif buffer_type == 'help' then
         pleasing_name = 'help:' .. vim.fn.fnamemodify(abs_path_to_file, ':t:r')
     elseif buffer_type == 'terminal' then
-        local terminal_command = string.match(abs_path_to_file, 'term:.*:(%a+)')
+        local terminal_command = string.match(abs_path_to_file, 'term:.*:(.+)')
 
         pleasing_name = terminal_command ~= nil and terminal_command
             or vim.fn.fnamemodify(vim.env.SHELL, ':t')
