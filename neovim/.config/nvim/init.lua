@@ -333,64 +333,107 @@ end
     Handy symbols: 
 --]]
 --
-local get_pleasing_file_name = function(name, context)
-    local modified_icon = context.modified_icon
+local get_pleasing_buffer_name = function(
+    original_name,
+    window_type,
+    buffer_type,
+    file_type,
+    abs_path_to_file,
+    context
+)
+    local pleasing_name = original_name
 
-    -- Don't want to see modified icon if we're showing a fancy name
-    context.modified_icon = ''
+    if string.find(file_type, 'Telescope', 0, true) then
+        pleasing_name = 'telescope'
+    elseif file_type == 'fugitive'
+        or file_type == 'nerdtree' then
+        pleasing_name = file_type
+    elseif window_type == 'autocmd' then
+        -- TODO: When would I see this? How does it look?
+        pleasing_name = original_name .. ' [autocommands]'
+    elseif window_type == 'command' then
+        pleasing_name = 'Command Line'
+    elseif window_type == 'loclist' then
+        pleasing_name = 'Location List'
+    elseif window_type == 'quickfix' then
+        pleasing_name = 'Quickfix List'
+    elseif buffer_type == 'help' then
+        pleasing_name = 'help:' .. vim.fn.fnamemodify(abs_path_to_file, ':t:r')
+    elseif buffer_type == 'terminal' then
+        local terminal_command = string.match(abs_path_to_file, 'term:.*:(%a+)')
 
-    -- Get fancy with special file types
-    if vim.bo.filetype == 'fugitive'
-        or vim.bo.filetype == 'nerdtree' then
-        return vim.bo.filetype
-    elseif string.find(vim.bo.filetype, 'Telescope', 0, true) then
-        return 'telescope'
+        pleasing_name = terminal_command ~= nil and terminal_command
+            or vim.fn.fnamemodify(vim.env.SHELL, ':t')
+    elseif vim.fn.isdirectory(abs_path_to_file) == 1 then
+        pleasing_name = vim.fn.fnamemodify(abs_path_to_file, ':p:.')
+    elseif window_type ~= '' then
+        -- Should be popup or preview window
+        pleasing_name = original_name ~= '[No Name]'
+            and '[' .. window_type .. '] ' .. original_name
+            or window_type
     end
 
-    -- Try to replace '[No Name]' with something cooler
-    if string.find(name, '[No Name]', 0, true) then
-        local buffer_type = context.buftype or vim.bo.buftype
+    -- Don't show modified icon when we've got a fancy name
+    context.modified_icon = pleasing_name == original_name
+        and context.modified_icon
+        or ''
 
-        --[[
-            Stolen from lualine source code.
-            Permalink:
-            https://github.com/nvim-lualine/lualine.nvim/blob/0a5a66803c7407767b799067986b4dc3036e1983/lua/lualine/components/buffers/buffer.lua#L125
-        --]]
-        if buffer_type == 'help' then
-            return 'help:' .. vim.fn.fnamemodify(context.file, ':t:r')
-        elseif buffer_type == 'terminal' then
-            local match = string.match(vim.split(context.file, ' ')[1], 'term:.*:(%a+)')
-
-            return match ~= nil and match or vim.fn.fnamemodify(vim.env.SHELL, ':t')
-        elseif buffer_type == 'quickfix' then
-            local is_loclist = 0 ~= vim.fn.getloclist(0, { filewinid = 1 }).filewinid
-
-            return is_loclist and 'Location List' or 'Quickfix List'
-        elseif buffer_type == 'prompt' then
-            return vim.bo.filetype or buffer_type
-        elseif vim.fn.isdirectory(context.file) == 1 then
-            return vim.fn.fnamemodify(context.file, ':p:.')
-        -- TODO: Is this even doing anything?
-        elseif buffer_type ~= ''
-            and buffer_type ~= 'acwrite'
-            and buffer_type ~= 'nofile'
-            and buffer_type ~= 'nowrite' then
-            return '[' .. context.buftype .. ']'
-        end
-    end
-
-    -- Fall back to usual behavior
-    context.modified_icon = modified_icon
-
-    return name
+    return pleasing_name
 end
 
-local inactive_window_filename_shorting_target = 100
+local use_pleasing_name_for_tab = function(name, context)
+    local window_id = vim.fn.win_getid(vim.fn.tabpagewinnr(context.tabnr), context.tabnr)
+    local active_buffer = vim.api.nvim_win_get_buf(window_id)
+
+    local window_type = vim.fn.win_gettype(window_id)
+    local buffer_type = vim.fn.getbufvar(active_buffer, '&bufype')
+    local file_type = vim.fn.getbufvar(active_buffer, '&filetype')
+
+    return get_pleasing_buffer_name(
+        name,
+        window_type,
+        buffer_type,
+        file_type,
+        context.file,
+        context
+    )
+end
+
+local use_pleasing_name_for_window = function(name, context)
+    local window_type = vim.fn.win_gettype()
+    local buffer_type = vim.bo.buftype
+    local file_type = vim.bo.filetype
+    local abs_path_to_file = vim.fn.expand('%:p')
+
+    return get_pleasing_buffer_name(
+        name,
+        window_type,
+        buffer_type,
+        file_type,
+        abs_path_to_file,
+        context
+    )
+end
+
+local window_buffer_location = function(separator, reverse)
+    separator = separator or ':'
+
+    -- Default separator: ':'
+    -- Normal: {buffer index}{separator}{window number}
+    -- Reversed: {window number}{separator}{buffer index}
+    return function()
+        local window_number = vim.api.nvim_win_get_number(0)
+        local buffer_index = vim.api.nvim_win_get_buf(0)
+
+        return reverse and window_number .. separator .. buffer_index
+            or buffer_index .. separator .. window_number
+    end
+end
 
 require('lualine').setup({
     options = { globalstatus = true, },
     sections = {
-        lualine_b = {'branch', { 'datetime', style = '%a %H:%M' }},
+        lualine_b = {'branch', 'vim.api.nvim_win_get_buf(0)'},
         lualine_c = {
             {
                 'filename',
@@ -400,13 +443,14 @@ require('lualine').setup({
                     happened yet.
                 --]]
                 newfile_status = true,
-                path = 3, -- Absolute path, ~ as home dir
+                -- File name and parent dir, ~ for home dir
+                path = 4,
                 --[[
-                    Shorten path to leave 100 spaces in the window for other
-                    components.
+                    Shorten path to leave this many spaces in the window for
+                    other components.
                 --]]
-                shorting_target = 100,
-                fmt = get_pleasing_file_name,
+                shorting_target = 120,
+                fmt = use_pleasing_name_for_window,
             },
         },
         lualine_x = {'diagnostics'},
@@ -426,13 +470,13 @@ require('lualine').setup({
                     -- Text to show when the file is modified
                     modified = ' ●',
                 },
-                fmt = get_pleasing_file_name,
+                fmt = use_pleasing_name_for_tab,
             },
         },
         lualine_z = { require('auto-session.lib').current_session_name },
     },
     inactive_winbar = {
-        lualine_a = {'vim.api.nvim_win_get_number(0)'},
+        lualine_a = {window_buffer_location(' ')},
         lualine_b = {
             {
                 'filename',
@@ -442,45 +486,21 @@ require('lualine').setup({
                     happened yet.
                 --]]
                 newfile_status = true,
-                -- Filename and parent dir, ~ for home dir
+                -- File name and parent dir, ~ for home dir
                 path = 4,
-                --[[
-                    Shorten path to leave 100 spaces in the window for other
-                    components.
-                --]]
-                shorting_target = inactive_window_filename_shorting_target,
-                fmt = function(name, context)
-                    name = get_pleasing_file_name(name, context)
-
-                    local available_space = vim.fn.winwidth(0) - context.options.shorting_target
-
-                    -- Don't show file name if there's not enough room
-                    if available_space <= string.len(name) then
-                        return nil
-                    end
-
-                    return name
-                end,
+                color = 'lualine_c_normal',
+                fmt = use_pleasing_name_for_window,
             },
         },
-        lualine_y = {
+        lualine_x = {
             {
-                -- Buffer name
-                'vim.api.nvim_buf_get_name(0)',
-                cond = function()
-                    local space_taken_by_other_sections = 15 -- spitball
-                    local max_available_space = vim.fn.winwidth(0) - space_taken_by_other_sections
-                    local space_likely_remaining = inactive_window_filename_shorting_target - space_taken_by_other_sections
-
-                    local space_needed = string.len(vim.api.nvim_buf_get_name(0))
-
-                    return space_needed <= max_available_space
-                        and space_needed < space_likely_remaining
-                end,
-            }
+                'filename',
+                -- Don't display file status (e.g. readonly, modified)
+                file_status = false,
+                -- Absolute path, ~ for home dir
+                path = 3,
+            },
         },
-        -- Buffer number (pretty sure, at least)
-        lualine_z = {'vim.api.nvim_win_get_buf(0)'},
     },
 })
 
