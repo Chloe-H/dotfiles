@@ -997,3 +997,57 @@ require('lspconfig.ui.windows').default_options.border = 'rounded'
 lspconfig.html.setup({
     filetypes = { 'html', 'htmldjango', },
 })
+
+-- neovide settings (https://neovide.dev/configuration.html)
+--[[
+    TODO: https://neovide.dev/configuration.html#remember-previous-window-size
+    TODO: https://neovide.dev/configuration.html#animate-cursor-blink
+--]]
+if vim.g.neovide then
+    --[[
+        Number of seconds the scroll animation takes to complete.
+
+        Note that the timing is not completely accurate and might depend
+        slightly on have far you scroll, so experimenting is encouraged in order
+        to tune it to your liking.
+    --]]
+    vim.g.neovide_scroll_animation_length = 0.15
+
+    --[[
+        Number of lines at the end of the scroll action to animate when
+        scrolling more than one screen at a time.
+
+        Set it to 0 to snap to the final position without any animation, or to
+        something big like 9999 to always scroll the whole screen, much like
+        neovide <= 0.10.4 did.
+    --]]
+    vim.g.neovide_scroll_animation_far_lines = 10
+
+    --[[
+        Whether to hide the mouse as soon as you start typing.
+
+        This setting only affects the mouse if it is currently within the bounds
+        of the neovide window. Moving the mouse makes it visible again.
+    --]]
+    vim.g.neovide_hide_mouse_when_typing = true
+
+    --[[
+        What kinds of particles to produce behind the cursor.
+
+        Options at time of writing:
+        "" (default) - no particles
+        "railgun"
+        "torpedo"
+        "pixiedust"
+        "sonicboom"
+        "ripple"
+        "wireframe"
+
+        Source: https://neovide.dev/configuration.html#cursor-particles
+    --]]
+    vim.g.neovide_cursor_vfx_mode = "pixiedust"
+    -- Number of seconds generated particles should survive
+    vim.g.neovide_cursor_vfx_particle_lifetime = 3
+    -- Number of generated particles (so what does a fraction mean?)
+    vim.g.neovide_cursor_vfx_particle_density = 15.0
+end
