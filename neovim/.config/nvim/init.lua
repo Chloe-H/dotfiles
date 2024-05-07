@@ -656,7 +656,7 @@ vim.keymap.set(
 vim.keymap.set(
     'n',
     '<Leader>ftb',
-    '<cmd>TagbarOpen fj<CR>',
+    '<cmd>TagbarOpenAutoClose<CR>',
     { remap = false }
 )
 
