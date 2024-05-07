@@ -56,7 +56,7 @@ Plug('rmagatti/session-lens') -- Auto-session extension, adds fzf-enhanced sessi
 Plug('lewis6991/gitsigns.nvim') -- Plugin for git decorations, chunk navigation, etc.
 Plug(                           -- File tag browser; depends on universal-ctags
     'majutsushi/tagbar',
-    { on = { 'TagbarToggle', 'TagbarOpen' } }
+    { on = { 'TagbarToggle', 'TagbarOpen', 'TagbarOpenAutoClose' } }
 )
 Plug(
 --[[
