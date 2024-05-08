@@ -328,7 +328,7 @@ end
     | A | B | C                             X | Y | Z |
     +-------------------------------------------------+
 
-    lualine_<section> = { 'left', 'to', 'right' }
+    lualine_<section> = { 'left', 'middle', 'right' }
 
     Handy symbols: 
 --]]
@@ -433,7 +433,7 @@ end
 require('lualine').setup({
     options = { globalstatus = true, },
     sections = {
-        lualine_b = {'branch', 'vim.api.nvim_win_get_buf(0)'},
+        lualine_b = {window_buffer_location('›')},
         lualine_c = {
             {
                 'filename',
@@ -451,11 +451,18 @@ require('lualine').setup({
                 --]]
                 shorting_target = 120,
                 fmt = use_pleasing_name_for_window,
+                -- Separator for file name and diagnostics
+                separator = '%#lualine_c_inactive#∙'
+            },
+            {'diagnostics'},
+        },
+        lualine_x = {
+            {
+                require('auto-session.lib').current_session_name,
+                color = 'lualine_a_tabs_inactive',
             },
         },
-        lualine_x = {'diagnostics'},
         lualine_y = {'fileformat', 'encoding', 'filetype'},
-        lualine_z = {'vim.api.nvim_win_get_number(0)', 'location'},
     },
     tabline = {
         lualine_a = {
@@ -473,7 +480,7 @@ require('lualine').setup({
                 fmt = use_pleasing_name_for_tab,
             },
         },
-        lualine_z = { require('auto-session.lib').current_session_name },
+        lualine_z = {'branch'},
     },
     inactive_winbar = {
         lualine_a = {window_buffer_location(' ')},
