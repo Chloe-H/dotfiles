@@ -534,6 +534,25 @@ require('lualine').setup({
 
 -- Plugin settings: NERDTree
 
+-- Close the tree window or bookmark table after opening a file
+vim.g.NERDTreeQuitOnOpen = 3
+-- Display line numbers in the tree window
+vim.g.NERDTreeShowLineNumbers = 1
+-- Don't collapse directories with only one child directory to a single line
+vim.g.NERDTreeCascadeSingleChildDir = 0
+-- Control how a node is opened with the NERDTree-<CR> key
+vim.g.NERDTreeCustomOpenArgs = {
+    -- When opening a file...
+    file = {
+        -- ...open it in a horizontal split
+        where = 'h',
+        -- ...never reuse a window to the file / never jump to such a window
+        reuse = '',
+        -- ...do not keep the tree window open / close the NERDTree window
+        keepopen = false,
+    },
+}
+
 vim.keymap.set(
     'n',
     '<Leader>n',
