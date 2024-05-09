@@ -544,11 +544,11 @@ vim.g.NERDTreeCascadeSingleChildDir = 0
 vim.g.NERDTreeCustomOpenArgs = {
     -- When opening a file...
     file = {
-        -- ...open it in a horizontal split
-        where = 'h',
-        -- ...never reuse a window to the file / never jump to such a window
+        -- ...open it in the previous window
+        where = 'p',
+        -- ...never jump to an existing window into the file
         reuse = '',
-        -- ...do not keep the tree window open / close the NERDTree window
+        -- ...do not keep the tree window open
         keepopen = false,
     },
 }
