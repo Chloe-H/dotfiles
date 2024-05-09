@@ -480,7 +480,27 @@ require('lualine').setup({
                 fmt = use_pleasing_name_for_tab,
             },
         },
-        lualine_z = {'branch'},
+        lualine_z = {
+            {
+                'branch',
+                fmt = function(branch_name, _)
+                    local branch_short_name = string.match(
+                        branch_name,
+                        --[[
+                            ^
+                            Match 0+ of anything non-greedily,
+                            then forward slash (/),
+                            then non-forward slash characters greedily
+                            $
+                        --]]
+                        '^.-/([^/]+)$'
+                    )
+
+                    return branch_short_name ~= nil and branch_short_name
+                        or branch_name
+                end,
+            },
+        },
     },
     inactive_winbar = {
         lualine_a = {window_buffer_location(' ')},
