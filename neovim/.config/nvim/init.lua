@@ -47,6 +47,8 @@ Plug(                                 -- Recommended native telescope sorter (wh
     'nvim-telescope/telescope-fzf-native.nvim',
     { ['do'] = 'make' }
 )
+Plug('nvim-telescope/telescope-file-browser.nvim')   -- File browser extension
+Plug('nvim-telescope/telescope-live-grep-args.nvim') -- Extension that enables passing args to rg/grep finder(s?)
 
 -- Session management
 Plug('rmagatti/auto-session')
@@ -621,11 +623,22 @@ telescope.setup({
             hidden = true,
         },
     },
+    extensions = {
+        file_browser = {
+            hidden = {
+                file_browser = true,
+                folder_browser = true,
+            },
+            use_fd = false,
+        },
+    },
 })
 
 telescope.load_extension('fzf')
 telescope.load_extension('session-lens')
 telescope.load_extension('todo-comments') -- Undocumented, but makes todo-comments show up in telescope's builtins list right away, rather than after running a todo-comments command
+telescope.load_extension('file_browser')
+telescope.load_extension('live_grep_args')
 
 vim.keymap.set(
     'n',
