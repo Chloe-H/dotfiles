@@ -629,6 +629,11 @@ telescope.setup({
                 file_browser = true,
                 folder_browser = true,
             },
+            follow_symlinks = true,
+            -- Hide `../` in the file browser
+            hide_parent_dir = true,
+            -- Show the current relative path from cwd as the prompt prefix
+            prompt_path = true,
             use_fd = false,
         },
     },
