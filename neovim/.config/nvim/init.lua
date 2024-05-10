@@ -534,12 +534,14 @@ require('lualine').setup({
 
 -- Plugin settings: NERDTree
 
+-- Don't replace netrw
+vim.g.NERDTreeHijackNetrw = false
 -- Close the tree window or bookmark table after opening a file
 vim.g.NERDTreeQuitOnOpen = 3
 -- Display line numbers in the tree window
-vim.g.NERDTreeShowLineNumbers = 1
+vim.g.NERDTreeShowLineNumbers = true
 -- Don't collapse directories with only one child directory to a single line
-vim.g.NERDTreeCascadeSingleChildDir = 0
+vim.g.NERDTreeCascadeSingleChildDir = false
 -- Control how a node is opened with the NERDTree-<CR> key
 vim.g.NERDTreeCustomOpenArgs = {
     -- When opening a file...
