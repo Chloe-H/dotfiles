@@ -115,6 +115,7 @@ if [ -f /etc/os-release ]; then
 fi
 
 # Install vim-plug (Source: https://github.com/junegunn/vim-plug#unix-linux)
+# If it doesn't work, see https://github.com/junegunn/vim-plug#installation
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 

@@ -89,12 +89,14 @@ running `git init`.
 
 ## `neovim`
 
-- **Dependency:** Install [vim-plug](https://github.com/junegunn/vim-plug#installation)
+**Setup script:** `manual-backups/setup/neovim/linux/neovide-install.sh`
 
 Ground-up `init.lua`, by which I mean a Neovim/Neovide configuration file that
 I am making from scratch. At time of writing, my intention is to make something
 that (at least *probably*) works on Windows, native Ubuntu, and Ubuntu in WSL.
-    
+
+I haven't _fully_ tested my setup script, but I've done my best to account for
+various versions of Ubuntu and RHEL.
 
 ## `ssh`
 
