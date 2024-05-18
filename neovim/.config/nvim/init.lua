@@ -91,7 +91,8 @@ Plug('hrsh7th/cmp-buffer')        -- nvim-cmp source for words in buffers
 Plug('hrsh7th/cmp-cmdline')                 -- nvim-cmp source for vim/neovim's command line
 Plug('hrsh7th/cmp-nvim-lsp')                -- nvim-cmp source for neovim's built-in LSP client
 Plug('hrsh7th/cmp-nvim-lsp-signature-help') -- nvim-cmp source for showing function signatures with current parameter emphasized
-Plug('hrsh7th/cmp-nvim-lua')                -- nvim-cmp source for neovim's Lua API
+Plug('hrsh7th/cmp-nvim-lua')                -- nvim-cmp source for neovim's Lua API; TODO: remove?
+Plug('folke/neodev.nvim')                   -- full signature help, docs and completion for the nvim lua API
 Plug('saadparwaiz1/cmp_luasnip')            -- nvim-cmp source for LuaSnip
 Plug('tzachar/fuzzy.nvim')                  -- Dependency for cmp-fuzzy-buffer, cmp-fuzzy-path
 Plug('tzachar/cmp-fuzzy-buffer')            -- nvim-cmp source for fuzzy searching current buffer
@@ -1053,8 +1054,12 @@ require('mason-lspconfig').setup({
 })
 
 
+-- Plugin settings: neodev
+require('neodev').setup({})
+
+
 -- Plugin settings: nvim-lspconfig
--- Has to come after mason, mason-lspconfig, and lsp-zero setup
+-- Has to come after mason, mason-lspconfig, lsp-zero, and neodev setup
 local lspconfig = require('lspconfig')
 
 -- Add a border around `Lsp...` windows
