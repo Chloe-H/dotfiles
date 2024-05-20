@@ -330,8 +330,11 @@ vim.diagnostic.config({
 vim.keymap.set(
     'n',
     '<Leader>gflv',
-    '<cmd>vertical Git --paginate log<CR>',
-    { remap = false }
+    '<cmd>vertical Git --paginate log --max-count 100<CR>',
+    {
+        remap = false,
+        desc = 'Show the last 100 commits in a vsplit (mnemonic: "git fugitive log vertical")',
+    }
 )
 
 
