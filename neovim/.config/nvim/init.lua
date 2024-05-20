@@ -183,23 +183,119 @@ vim.opt.spelloptions = { 'noplainbuffer', 'camel', }
 vim.opt.spellfile = custom_spellfiles
 
 -- QuickFix list / Location list mappings (pair nicely with vim-togglelist)
-vim.keymap.set('n', ']l', '<cmd>lnext<CR>', { remap = false })
-vim.keymap.set('n', '[l', '<cmd>lprevious<CR>', { remap = false })
+vim.keymap.set(
+    'n',
+    ']l',
+    '<cmd>lnext<CR>',
+    {
+        remap = false,
+        desc = 'Next location list item',
+    }
+)
+vim.keymap.set(
+    'n',
+    '[l',
+    '<cmd>lprevious<CR>',
+    {
+        remap = false,
+        desc = 'Previous location list item',
+    }
+)
 
-vim.keymap.set('n', ']q', '<cmd>cnext<CR>', { remap = false })
-vim.keymap.set('n', '[q', '<cmd>cprevious<CR>', { remap = false })
+vim.keymap.set(
+    'n',
+    ']q',
+    '<cmd>cnext<CR>',
+    {
+        remap = false,
+        desc = 'Next quickfix item',
+    }
+)
+vim.keymap.set(
+    'n',
+    '[q',
+    '<cmd>cprevious<CR>',
+    {
+        remap = false,
+        desc = 'Previous quickfix item',
+    }
+)
 
 -- Tab mappings
-vim.keymap.set('n', '<Leader>th', '<cmd>tabfirst<CR>', { remap = false })
-vim.keymap.set('n', '<Leader>tl', '<cmd>tablast<CR>', { remap = false })
-vim.keymap.set('n', '<Leader>tt', ':tabedit<Space>', { remap = false })
-vim.keymap.set('n', '<Leader>gt', ':tabnext<Space>', { remap = false })
-vim.keymap.set('n', '<Leader>tm', ':tabmove<Space>', { remap = false })
-vim.keymap.set('n', '<Leader>td', '<cmd>tabclose<CR>', { remap = false })
-vim.keymap.set('n', '<Leader>wt', '<cmd>tab split<CR>', { remap = false })
+vim.keymap.set(
+    'n',
+    '<Leader>th',
+    '<cmd>tabfirst<CR>',
+    {
+        remap = false,
+        desc = 'Go to the first tab (mnemonic: tab head)',
+    }
+)
+vim.keymap.set(
+    'n',
+    '<Leader>tl',
+    '<cmd>tablast<CR>',
+    {
+        remap = false,
+        desc = 'Go to the last tab',
+    }
+)
+vim.keymap.set(
+    'n',
+    '<Leader>tt',
+    ':tabedit<Space>',
+    {
+        remap = false,
+        desc = 'Put ":tabedit " in the command prompt',
+    }
+)
+vim.keymap.set(
+    'n',
+    '<Leader>gt',
+    ':tabnext<Space>',
+    {
+        remap = false,
+        desc = 'Put ":tabnext " in the command prompt (mnemonic: Go to Tab <#>)',
+    }
+)
+vim.keymap.set(
+    'n',
+    '<Leader>tm',
+    ':tabmove<Space>',
+    {
+        remap = false,
+        desc = 'Put ":tabmove " in the command prompt (mnemonic: Tab Move)',
+    }
+)
+vim.keymap.set(
+    'n',
+    '<Leader>td',
+    '<cmd>tabclose<CR>',
+    {
+        remap = false,
+        desc = 'Close the current tab (mnemonic: Tab Delete)',
+    }
+)
+vim.keymap.set(
+    'n',
+    '<Leader>wt',
+    '<cmd>tab split<CR>',
+    {
+        remap = false,
+        desc = 'Open the current window in a new tab',
+    }
+)
 
 -- Search mappings
-vim.keymap.set('n', '<Leader>/w', '/\\<<C-R>/\\><CR>', { remap = false })
+vim.keymap.set(
+    'n',
+    '<Leader>/w',
+    '/\\<<C-R>/\\><CR>',
+    {
+        remap = false,
+        desc = 'Repeat the last search, but treat the query like a word',
+    }
+)
 
 -- Custom function for stripping trailing white space
 local strip_trailing_white_space = function()
@@ -216,7 +312,10 @@ vim.keymap.set(
     'n',
     '<Leader>ss',
     strip_trailing_white_space,
-    { remap = false }
+    {
+        remap = false,
+        desc = 'Strip trailing white space',
+    }
 )
 
 -- Disable virtual text for diagnostics
@@ -241,7 +340,10 @@ vim.keymap.set(
     'n',
     '<Leader>ut',
     '<cmd>UndotreeToggle<CR>',
-    { remap = false }
+    {
+        remap = false,
+        desc = 'Toggle Undotree',
+    }
 )
 
 
@@ -255,7 +357,10 @@ vim.keymap.set(
     'n',
     '<Leader>a',
     '<cmd>ArgWrap<CR>',
-    { remap = false }
+    {
+        remap = false,
+        desc = 'Wrap/unwrap argument list',
+    }
 )
 
 
@@ -562,14 +667,20 @@ vim.keymap.set(
     'n',
     '<Leader>n',
     '<cmd>NERDTreeToggle<CR>',
-    { remap = false }
+    {
+        remap = false,
+        desc = 'Toggle NERDTree window',
+    }
 )
 
 vim.keymap.set(
     'n',
     '<Leader>fn',
     '<cmd>NERDTreeFind<CR>',
-    { remap = false }
+    {
+        remap = false,
+        desc = 'Open NERDTree with the current file focused (mnemonic: Find current file in NERDTree)',
+    }
 )
 
 
@@ -650,7 +761,10 @@ vim.keymap.set(
     'n',
     '<Leader>ts<Space>',
     ':Telescope<Space>',
-    { remap = false }
+    {
+        remap = false,
+        desc = 'Put ":Telescope " in the command prompt',
+    }
 )
 
 
@@ -718,13 +832,19 @@ vim.keymap.set(
     'n',
     '<Leader>tb',
     '<cmd>TagbarToggle<CR>',
-    { remap = false }
+    {
+        remap = false,
+        desc = 'Toggle the Tagbar window (populated by universal ctags)',
+    }
 )
 vim.keymap.set(
     'n',
     '<Leader>ftb',
     '<cmd>TagbarOpenAutoClose<CR>',
-    { remap = false }
+    {
+        remap = false,
+        desc = 'Open Tagbar with the current node focused (mnemonic: Find current node in Tagbar)',
+    }
 )
 
 
@@ -880,13 +1000,19 @@ vim.keymap.set(
     'n',
     '<Leader>tscg',
     treesitter_context.go_to_context,
-    { remap = false }
+    {
+        remap = false,
+        desc = 'Go to treesitter-derived context',
+    }
 )
 vim.keymap.set(
     'n',
     '<Leader>tsct',
     '<cmd>TSContextToggle<CR>',
-    { remap = false }
+    {
+        remap = false,
+        desc = 'Toggle treesitter-derived context display',
+    }
 )
 
 
