@@ -1,8 +1,6 @@
 [user]
 	name = Chloe-H
 	email = Chloe-H@users.noreply.github.com
-[init]
-	templatedir = ~/.git-templates
 [core]
 	excludesfile = ~/.gitignore_global
 ; include only if a remote with the given URL exists (note
@@ -12,5 +10,9 @@
     path = .gitconfigs/.gitconfig.personal
 [includeIf "hasconfig:remote.*.url:*Chloe-H/**"] ; SSH
     path = .gitconfigs/.gitconfig.personal
-[includeIf "hasconfig:remote.*.url:**/git@stash.[REDACTED].com:*/**"]
-    path = .gitconfigs/.gitconfig.work
+[include] ; Work configurations: It's a separate directory to get around stow
+    path = ~/.gitconfigs.work/.gitconfig
+; TODO: Purge in preparation for going public:
+; git/.gitconfigs/.gitconfig.work
+; all refs to work stuff in this file
+; double check all other files for references to work stuff, if easy

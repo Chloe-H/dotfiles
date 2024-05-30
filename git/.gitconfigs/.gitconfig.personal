@@ -4,7 +4,7 @@
 [alias]
 	d = difftool
 [core]
-	editor = vim
+	editor = nvim
 	autocrlf = false
 	ignorecase = false
 [diff]
@@ -18,6 +18,7 @@
 	clean = git-lfs clean -- %f
 [init]
     defaultBranch = main
+	templatedir = ~/.git-templates
 [merge]
 	tool = vimdiff
 	conflictstyle = diff3
