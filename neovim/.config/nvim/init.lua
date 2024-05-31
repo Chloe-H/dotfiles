@@ -356,7 +356,7 @@ todo_comments.setup()
 
 vim.keymap.set(
     'n',
-    '[[t',
+    '[t',
     function()
         todo_comments.jump_prev()
     end,
@@ -365,7 +365,7 @@ vim.keymap.set(
 
 vim.keymap.set(
     'n',
-    ']]t',
+    ']t',
     function()
         todo_comments.jump_next()
     end,
