@@ -351,8 +351,26 @@ vim.keymap.set(
 
 
 -- Plugin settings: todo-comments.nvim
--- TODO: why isn't it finding TODOs in init.lua?
-require('todo-comments').setup()
+local todo_comments = require('todo-comments')
+todo_comments.setup()
+
+vim.keymap.set(
+    'n',
+    '[[t',
+    function()
+        todo_comments.jump_prev()
+    end,
+    { remap = false, desc = 'Go to previous todo comment' }
+)
+
+vim.keymap.set(
+    'n',
+    ']]t',
+    function()
+        todo_comments.jump_next()
+    end,
+    { remap = false, desc = 'Go to next todo comment' }
+)
 
 
 -- Plugin settings: vim-argwrap
