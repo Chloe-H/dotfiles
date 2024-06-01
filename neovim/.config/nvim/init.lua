@@ -562,7 +562,7 @@ end
 require('lualine').setup({
     options = { globalstatus = true, },
     sections = {
-        lualine_b = {window_buffer_location('›')},
+        lualine_b = { window_buffer_location('›') },
         lualine_c = {
             {
                 'filename',
@@ -583,7 +583,7 @@ require('lualine').setup({
                 -- Separator for file name and diagnostics
                 separator = '%#lualine_c_inactive#∙'
             },
-            {'diagnostics'},
+            { 'diagnostics' },
         },
         lualine_x = {
             {
@@ -591,7 +591,7 @@ require('lualine').setup({
                 color = 'lualine_a_tabs_inactive',
             },
         },
-        lualine_y = {'fileformat', 'encoding', 'filetype'},
+        lualine_y = { 'fileformat', 'encoding', 'filetype' },
     },
     tabline = {
         lualine_a = {
@@ -632,7 +632,7 @@ require('lualine').setup({
         },
     },
     inactive_winbar = {
-        lualine_a = {window_buffer_location(' ')},
+        lualine_a = { window_buffer_location(' ') },
         lualine_b = {
             {
                 'filename',
