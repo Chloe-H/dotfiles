@@ -1,6 +1,6 @@
 {
   "version": "1.9.2",
-  "date": 1698165151785,
+  "date": 1717220833222,
   "preferences": {
     "automaticMode": {
       "active": true,
@@ -11,7 +11,9 @@
       "namePrefix": "tmp",
       "color": "toolbar",
       "colorRandom": true,
-      "colorRandomExcluded": [],
+      "colorRandomExcluded": [
+        "pink"
+      ],
       "icon": "fingerprint",
       "iconRandom": false,
       "iconRandomExcluded": [],
@@ -220,6 +222,31 @@
           "excluded": {
             "/^(https://)?([^\\s/]+\\.)*?((firefox\\.com)|(mozilla((\\.org)|(\\.auth0\\.com))))\\b(/.*)?$/": {}
           }
+        },
+        {
+          "pattern": "/^(https://)?([^\\s/]+\\.)*?((twitter|x)\\.com)\\b(/.*)?$/",
+          "always": {
+            "action": "disabled",
+            "allowedInPermanent": false,
+            "allowedInTemporary": false
+          },
+          "navigation": {
+            "action": "global"
+          },
+          "mouseClick": {
+            "middle": {
+              "action": "global"
+            },
+            "ctrlleft": {
+              "action": "global"
+            },
+            "left": {
+              "action": "global"
+            }
+          },
+          "excluded": {
+            "/^(https://)?([^\\s/]+\\.)*?((twitter|x)\\.com)\\b(/.*)?$/": {}
+          }
         }
       ],
       "mac": {
@@ -239,7 +266,7 @@
       "AltO": false,
       "AltI": true
     },
-    "replaceTabs": false,
+    "replaceTabs": true,
     "closeRedirectorTabs": {
       "active": false,
       "delay": 2000,
@@ -271,7 +298,7 @@
     "statistics": true,
     "ui": {
       "expandPreferences": false,
-      "popupDefaultTab": "isolation-global"
+      "popupDefaultTab": "statistics"
     }
   }
 }

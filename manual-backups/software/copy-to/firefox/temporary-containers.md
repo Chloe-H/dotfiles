@@ -41,3 +41,4 @@ https://[REDACTED]-com.access.mcas.ms/aad_login
 - **Amazon/AWS:** `/^(https://)?([^\s/]+\.)*?(aws(apps|\.amazon)?)(\.com)?\b(/.*)?$/`
 - **Bitbucket/Atlassian:** `/^(https://)?([^\s/]+\.)*?(atlassian\.(net|com)|bitbucket\.org)\b(/.*)?$/`
 - **Firefox/Mozilla:** `/^(https://)?([^\s/]+\.)*?((firefox\.com)|(mozilla((\.org)|(\.auth0\.com))))\b(/.*)?$/`
+- **Twitter, currently known as X:**  `/^(https://)?([^\s/]+\.)*?((twitter|x)\.com)\b(/.*)?$/`
