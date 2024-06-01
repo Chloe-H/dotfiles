@@ -352,7 +352,20 @@ vim.keymap.set(
 
 -- Plugin settings: todo-comments.nvim
 local todo_comments = require('todo-comments')
-todo_comments.setup()
+
+todo_comments.setup({
+    search = {
+        args = {
+            '--hidden',
+            -- The rest are from the default setup configurations
+            '--color=never',
+            '--no-heading',
+            '--with-filename',
+            '--line-number',
+            '--column',
+        }
+    }
+})
 
 vim.keymap.set(
     'n',
@@ -370,6 +383,104 @@ vim.keymap.set(
         todo_comments.jump_next()
     end,
     { remap = false, desc = 'Go to next todo comment' }
+)
+
+--[[
+-- Search multiple directories for todo comments. If any are found, populate the
+-- quickfix list with them and open the quickfix window.
+--]]
+local todo_comments_search_dirs = function(opts)
+    -- Default to current directory as needed
+    local dirs_to_search = #opts.fargs > 0 and opts.fargs or { '.' }
+
+    --[[
+    -- HACK: Lightly modify todo-comments's source code as follows:
+    --
+    -- In `todo-comments.nvim\lua\todo-comments\search.lua`...
+    --
+    --  ...rename `M.search` to `M.get_search_job` and have it return the job
+    --      instead of starting it
+    --
+    --  ...add the following:
+    --      ```
+    --      function M.search(cb, opts)
+    --          M.get_search_job(cb, opts):start()
+    --      end
+    --      ```
+    -- TODO: Open a PR or an issue for this?
+    -- None of this would be necessary if the telescope integration supported
+    -- multiple search directories.
+    --]]
+    local get_search_job = require('todo-comments.search').get_search_job
+
+    -- Aggregate search results across directories
+    local results = {}
+    local collect_results = function(curr_results)
+        for _, result in ipairs(curr_results) do
+            table.insert(results, result)
+        end
+    end
+
+    --[[
+    -- Chain the directory searches so the results list will be properly
+    -- populated.
+    --]]
+    local previous_search_job = nil
+
+    for _, directory in ipairs(dirs_to_search) do
+        local current_search_job = get_search_job(
+            collect_results,
+            { cwd = directory }
+        )
+
+        if previous_search_job == nil then
+            current_search_job:start()
+        else
+            previous_search_job:and_then_on_success(current_search_job)
+        end
+
+        previous_search_job = current_search_job
+    end
+
+    --[[
+    -- Report the counts, pop up the quickfix window if we found any matches
+    --]]
+    previous_search_job:after(
+        vim.schedule_wrap(
+            function()
+                print(
+                    'Found '
+                    .. #results
+                    .. ' todo comment'
+                    .. ((#results == 1) and '' or 's')
+                    .. ' across '
+                    .. #dirs_to_search
+                    .. ' director'
+                    .. ((#dirs_to_search == 1) and 'y' or 'ies')
+                )
+
+                if #results > 0 then
+                    vim.fn.setqflist(results, 'r')
+
+                    vim.cmd.copen()
+                end
+            end
+        )
+    )
+end
+
+vim.api.nvim_create_user_command(
+--[[
+    -- Lua: `vim.cmd.TodoSearchDirs('dir1', ..., 'dirN')`
+    -- Vim (EX command): `:TodoSearchDirs dir1 ... dirN`
+    --]]
+    'TodoSearchDirs',
+    todo_comments_search_dirs,
+    {
+        nargs = '*',      -- 0, 1, or many (whitespace-separated) arguments allowed
+        complete = 'dir', -- Enable directory completion for arguments
+        desc = 'Search the given location(s) for todo comments and populate the quickfix list with the results'
+    }
 )
 
 
