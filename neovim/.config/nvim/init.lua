@@ -367,24 +367,6 @@ todo_comments.setup({
     }
 })
 
-vim.keymap.set(
-    'n',
-    '[t',
-    function()
-        todo_comments.jump_prev()
-    end,
-    { remap = false, desc = 'Go to previous todo comment' }
-)
-
-vim.keymap.set(
-    'n',
-    ']t',
-    function()
-        todo_comments.jump_next()
-    end,
-    { remap = false, desc = 'Go to next todo comment' }
-)
-
 --[[
 -- Search multiple directories for todo comments. If any are found, populate the
 -- quickfix list with them and open the quickfix window.
@@ -481,6 +463,34 @@ vim.api.nvim_create_user_command(
         complete = 'dir', -- Enable directory completion for arguments
         desc = 'Search the given location(s) for todo comments and populate the quickfix list with the results'
     }
+)
+
+vim.keymap.set(
+    'n',
+    '<Leader>ftc',
+    ':TodoSearchDirs <Space>',
+    {
+        remap = false,
+        desc = 'Put ":TodoSearchDirs " in the command prompt',
+    }
+)
+
+vim.keymap.set(
+    'n',
+    '[t',
+    function()
+        todo_comments.jump_prev()
+    end,
+    { remap = false, desc = 'Go to previous todo comment' }
+)
+
+vim.keymap.set(
+    'n',
+    ']t',
+    function()
+        todo_comments.jump_next()
+    end,
+    { remap = false, desc = 'Go to next todo comment' }
 )
 
 
