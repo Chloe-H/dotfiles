@@ -468,7 +468,7 @@ vim.api.nvim_create_user_command(
 vim.keymap.set(
     'n',
     '<Leader>ftc',
-    ':TodoSearchDirs <Space>',
+    ':TodoSearchDirs<Space>',
     {
         remap = false,
         desc = 'Put ":TodoSearchDirs " in the command prompt',
