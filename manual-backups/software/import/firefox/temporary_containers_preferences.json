@@ -1,6 +1,6 @@
 {
   "version": "1.9.2",
-  "date": 1717220833222,
+  "date": 1717453358921,
   "preferences": {
     "automaticMode": {
       "active": true,
@@ -41,7 +41,9 @@
             "container": "default"
           }
         },
-        "excluded": {},
+        "excluded": {
+          "/^https://getpocket.com/.*$/": {}
+        },
         "excludedContainers": []
       },
       "domain": [

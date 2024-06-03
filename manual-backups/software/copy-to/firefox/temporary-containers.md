@@ -23,6 +23,15 @@ Testing in [regular expressions 101](https://regex101.com/) with `gm` flags.
 Requires escaping backslashes (Temporary Containers does not require this,
 somehow).
 
+## Global isolation patterns
+
+### Exclude Target Domains
+
+- **Pocket:** `/^https://getpocket.com/.*$/`
+    - Also removed the "Always open in" assignment for it in Multi-Account Containers
+    - All of this is in service of easily signing back in after an update, since
+    (like with Evernote) the extension requires that I authorize it in the
+    default container
 
 ## Per domain isolation patterns
 
