@@ -6,7 +6,7 @@ default_output_file="./exported-task.json"
 
 read -p "User ID: " user_id
 read -p "API Token: " auth_token
-read -p "Task ID: " task_id
+read -p "Task ID (from https://tools.habitica.com/): " task_id
 read -p "Output file (${default_output_file}): " output_file
 
 output_file="${output_file:-${default_output_file}}"
