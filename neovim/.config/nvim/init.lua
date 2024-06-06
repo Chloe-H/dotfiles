@@ -52,7 +52,6 @@ Plug('nvim-telescope/telescope-live-grep-args.nvim') -- Extension that enables p
 
 -- Session management
 Plug('rmagatti/auto-session')
-Plug('rmagatti/session-lens') -- Auto-session extension, adds fzf-enhanced session switching
 
 -- IDE-like stuff
 Plug('lewis6991/gitsigns.nvim') -- Plugin for git decorations, chunk navigation, etc.
@@ -911,7 +910,17 @@ vim.keymap.set(
 
 
 -- Plugin settings: auto-session
-require('auto-session').setup()
+require('auto-session').setup({
+    -- Use git branch to differentiate session name
+    auto_session_use_git_branch = true,
+    auto_session_suppress_dirs = {
+        '~/scoop/apps/neovide/current',
+    },
+
+    session_lens = {
+        previewer = true,
+    },
+})
 
 
 -- Plugin settings: gitsigns.nvim
