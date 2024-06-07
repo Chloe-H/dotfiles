@@ -1328,7 +1328,15 @@ nvim_cmp.setup.cmdline({ ':' }, {
 require('mason').setup({})
 require('mason-lspconfig').setup({
     ensure_installed = {
+        --[[
+            BUG: Latest version of ESLint doesn't work
+            Source: https://github.com/neovim/nvim-lspconfig/issues/3146
+        --]]
+        'eslint@4.8.0', -- TODO: Remove version once fixed
+        'jsonls',
         'lua_ls',
+        'pyright',
+        'tsserver',
     },
     handlers = {
         lsp_zero.default_setup,
