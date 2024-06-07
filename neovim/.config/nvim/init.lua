@@ -25,12 +25,22 @@ Plug(
             TODO: Update to latest and fix all configurations once you have
             nvim ≥ 0.9.4 (search for "Plugin settings: nvim-ts-context-commentstring")
         --]]
-        ['commit'] = '6c30f3c8915d7b31c3decdfe6c7672432da1809d',
+        commit = '6c30f3c8915d7b31c3decdfe6c7672432da1809d',
     }
 )
 Plug('foosoft/vim-argwrap')         -- Plugin to quickly expand/collapse lists of things (e.g. function arg lists)
 Plug('windwp/nvim-autopairs')       -- Autopairs plugin (insert/delete brackets, parentheses, quotes in pairs)
-Plug('windwp/nvim-ts-autotag')      -- Auto-pairing and renaming of HTML tags (achieved by leveraging treesitter)
+Plug(                               -- Auto-pairing and renaming of HTML tags (achieved by leveraging treesitter)
+    'windwp/nvim-ts-autotag',
+    {
+        --[[
+            HACK: Pin version to avoid breaking changes
+            TODO: Update to latest and fix configurations (as needed?) once you
+            have nvim ≥ 0.9.4
+        --]]
+        commit = '531f48334c422222aebc888fd36e7d109cb354cd',
+    }
+)
 Plug('milkypostman/vim-togglelist') -- Very old plugin for toggling location list and quickfix list with key binds
 Plug('nvim-lualine/lualine.nvim')
 
