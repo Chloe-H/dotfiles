@@ -1432,6 +1432,44 @@ lspconfig.html.setup({
 -- Plugin settings: fidget.nvim
 require('fidget').setup()
 
+vim.keymap.set(
+    'n',
+    '<>',
+    '<cmd>Fidget clear<CR>',
+    {
+        remap = false,
+        desc = "Clear fidget's active notifications",
+    }
+)
+
+vim.keymap.set(
+    'n',
+    '<Leader>tsfn',
+    function()
+        -- TODO: Is it necessary to suppress both?
+        vim.cmd([[
+            Fidget suppress true
+            Fidget lsp_suppress true
+            Fidget clear
+        ]])
+
+        -- Re-enable them after 30 seconds
+        vim.defer_fn(
+            function()
+                vim.cmd([[
+                    Fidget suppress false
+                    Fidget lsp_suppress false
+                ]])
+            end,
+            30000
+        )
+    end,
+    {
+        remap = false,
+        desc = "Temporarily suppress fidget notifications",
+    }
+)
+
 
 -- neovide settings (https://neovide.dev/configuration.html)
 --[[
