@@ -389,6 +389,16 @@ vim.keymap.set(
 local todo_comments = require('todo-comments')
 
 todo_comments.setup({
+    keywords = {
+        CONFIG = {
+            icon = ' ',
+            color = 'configuration',
+            alt = { 'Plugin settings', 'Configuration', 'Configurations' },
+        },
+    },
+    colors = {
+        configuration = { '#ED45CE' },
+    },
     search = {
         args = {
             '--hidden',
