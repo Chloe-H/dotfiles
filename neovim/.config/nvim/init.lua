@@ -113,6 +113,7 @@ Plug('nvim-treesitter/nvim-treesitter-textobjects') -- Plugin for treesitter-bas
 -- LSP stuff
 Plug('neovim/nvim-lspconfig')     -- LSP configurations for neovim's built in LSP client/framework
 Plug('VonHeikemen/lsp-zero.nvim') -- Bridge between nvim-cmp and nvim-lspconfig
+Plug('j-hui/fidget.nvim')         -- Extensible UI for Neovim notifications and LSP progress messages (for LSPs using nvim's /$progress handler)
 Plug('hrsh7th/nvim-cmp')          -- Auto-completion engine
 Plug('hrsh7th/cmp-buffer')        -- nvim-cmp source for words in buffers
 --[[
@@ -1416,6 +1417,11 @@ require('lspconfig.ui.windows').default_options.border = 'rounded'
 lspconfig.html.setup({
     filetypes = { 'html', 'htmldjango', },
 })
+
+
+-- Plugin settings: fidget.nvim
+require('fidget').setup()
+
 
 -- neovide settings (https://neovide.dev/configuration.html)
 --[[
