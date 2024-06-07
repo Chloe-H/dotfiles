@@ -9,7 +9,25 @@ Plug('tpope/vim-fugitive')
 Plug('mbbill/undotree')             -- Undo history tree visualizer
 Plug('folke/todo-comments.nvim')    -- Plugin to highlight and search for todo comments
 Plug('tpope/vim-surround')          -- Plugin to easily add, change, and remove surrounding character pairs
-Plug('tpope/vim-commentary')        -- Plugin to comment/un-comment with key binds
+Plug('numtostr/comment.nvim')       -- Plugin to comment/un-comment with key binds
+--[[
+    Plugin to set commentstring based on the cursor's location in the file.
+    (so, e.g., if the cursor is in a JSX block in a JavaScript file, this plugin
+    will ensure that comment.nvim uses the correct syntax when adding comments).
+--]]
+Plug(
+    'JoosepAlviste/nvim-ts-context-commentstring',
+    {
+        --[[
+            HACK: Pin version to avoid breaking changes described here:
+            https://github.com/JoosepAlviste/nvim-ts-context-commentstring/issues/82
+
+            TODO: Update to latest and fix all configurations once you have
+            nvim ≥ 0.9.4 (search for "Plugin settings: nvim-ts-context-commentstring")
+        --]]
+        ['commit'] = '6c30f3c8915d7b31c3decdfe6c7672432da1809d',
+    }
+)
 Plug('foosoft/vim-argwrap')         -- Plugin to quickly expand/collapse lists of things (e.g. function arg lists)
 Plug('windwp/nvim-autopairs')       -- Autopairs plugin (insert/delete brackets, parentheses, quotes in pairs)
 Plug('windwp/nvim-ts-autotag')      -- Auto-pairing and renaming of HTML tags (achieved by leveraging treesitter)
@@ -498,6 +516,18 @@ vim.keymap.set(
     end,
     { remap = false, desc = 'Go to next todo comment' }
 )
+
+
+-- Plugin settings: Comment.nvim, nvim-ts-context-commentstring
+require('Comment').setup({
+    --[[
+        PERF: Only trigger the commentstring calculation as needed
+        Configure Comment.nvim to trigger the commentstring calculation and
+        update logic with its pre_hook configuration.
+        Source: https://github.com/JoosepAlviste/nvim-ts-context-commentstring/wiki/Integrations/9a79249fbecad1c0f86457ae8fdfc0cc39f5317b#commentnvim
+    --]]
+    pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
+})
 
 
 -- Plugin settings: vim-argwrap
@@ -1027,11 +1057,25 @@ require('nvim-treesitter.configs').setup({
     -- ]]
     auto_install = false,
 
-    -- Plugin settings: nvim-ts-autotag
-    -- Configure automatic closing and renaming of tags by nvim-ts-autotag
-    -- It's unclear to me how tightly nvim-ts-autotag is coupled with nvim-treesitter
+    --[[
+        Plugin settings: nvim-ts-autotag
+        Configure automatic closing and renaming of tags by nvim-ts-autotag;
+        it's unclear to me how tightly nvim-ts-autotag is coupled with
+        nvim-treesitter.
+    --]]
     autotag = {
         enable = true,
+    },
+
+    -- Plugin settings: nvim-ts-context-commentstring
+    context_commentstring = {
+        enable = true,
+        --[[
+            PERF: Only trigger the commentstring calculation as needed
+            Start by disabling the default autocmd
+            Source: https://github.com/JoosepAlviste/nvim-ts-context-commentstring/wiki/Integrations/9a79249fbecad1c0f86457ae8fdfc0cc39f5317b
+        --]]
+        enable_autocmd = false,
     },
 
     highlight = {
