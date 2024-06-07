@@ -49,6 +49,7 @@ Plug(                                 -- Recommended native telescope sorter (wh
 )
 Plug('nvim-telescope/telescope-file-browser.nvim')   -- File browser extension
 Plug('nvim-telescope/telescope-live-grep-args.nvim') -- Extension that enables passing args to rg/grep finder(s?)
+Plug('nvim-telescope/telescope-symbols.nvim')        -- Adds a bunch of sources for the symbol picker
 
 -- Session management
 Plug('rmagatti/auto-session')
