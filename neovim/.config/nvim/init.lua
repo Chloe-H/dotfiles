@@ -1011,8 +1011,10 @@ require('nvim-treesitter.configs').setup({
     -- Parsers to install by default
     ensure_installed = {
         'c',
+        'html',
         'javascript',
         'lua',
+        'python',
         'query',
         'typescript',
         'vim',
