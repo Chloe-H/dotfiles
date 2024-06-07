@@ -50,6 +50,11 @@ Plug(                                 -- Recommended native telescope sorter (wh
 Plug('nvim-telescope/telescope-file-browser.nvim')   -- File browser extension
 Plug('nvim-telescope/telescope-live-grep-args.nvim') -- Extension that enables passing args to rg/grep finder(s?)
 Plug('nvim-telescope/telescope-symbols.nvim')        -- Adds a bunch of sources for the symbol picker
+--[[
+    Advanced git search extension for Telescope and fzf-lua; lets me search the
+    bodies of git commit messages!!
+--]]
+Plug('aaronhallaert/advanced-git-search.nvim')
 
 -- Session management
 Plug('rmagatti/auto-session')
@@ -893,11 +898,12 @@ telescope.setup({
     },
 })
 
-telescope.load_extension('fzf')
-telescope.load_extension('session-lens')
-telescope.load_extension('todo-comments') -- Undocumented, but makes todo-comments show up in telescope's builtins list right away, rather than after running a todo-comments command
+telescope.load_extension('advanced_git_search')
 telescope.load_extension('file_browser')
+telescope.load_extension('fzf')
 telescope.load_extension('live_grep_args')
+telescope.load_extension('session-lens')
+telescope.load_extension('todo-comments')
 
 vim.keymap.set(
     'n',
