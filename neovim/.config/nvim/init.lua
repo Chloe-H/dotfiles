@@ -7,7 +7,7 @@ Plug('junegunn/vim-plug') -- Added to get Vim help for vim-plug
 -- Niceties
 Plug('tpope/vim-fugitive')
 Plug('mbbill/undotree')             -- Undo history tree visualizer
-Plug('folke/todo-comments.nvim')    -- Plugin to highlight and search for TODOs and other TODO-type comments
+Plug('folke/todo-comments.nvim')    -- Plugin to highlight and search for todo comments
 Plug('tpope/vim-surround')          -- Plugin to easily add, change, and remove surrounding character pairs
 Plug('tpope/vim-commentary')        -- Plugin to comment/un-comment with key binds
 Plug('foosoft/vim-argwrap')         -- Plugin to quickly expand/collapse lists of things (e.g. function arg lists)
@@ -18,10 +18,10 @@ Plug('nvim-lualine/lualine.nvim')
 
 Plug(
     --[[
-        (copied straight from the README)
-        If you don't have nodejs and yarn
-        use pre build, add 'vim-plug' to the filetype list so vim-plug can update this plugin
-        see: https://github.com/iamcco/markdown-preview.nvim/issues/50
+        INFO: (copied straight from the README) "If you don't have nodejs and
+        yarn, use pre build, add 'vim-plug' to the filetype list so vim-plug can
+        update this plugin"
+        See: https://github.com/iamcco/markdown-preview.nvim/issues/50
     --]]
     'iamcco/markdown-preview.nvim',
     {
@@ -66,13 +66,14 @@ Plug(                           -- File tag browser; depends on universal-ctags
     { on = { 'TagbarToggle', 'TagbarOpen', 'TagbarOpenAutoClose' } }
 )
 Plug(
---[[
+    --[[
         Plugin for tree-sitter functionality
 
         (e.g. better syntax highlighting based on tree-sitter's concrete syntax
         tree; https://github.com/tree-sitter/tree-sitter)
 
-        `:TSUpdate` will fail on fresh install, but should work fine on updates.
+        TODO: Is this ↓ still true?
+        BUG: `:TSUpdate` will fail on fresh install, but should work fine on updates.
         Source: https://github.com/nvim-treesitter/nvim-treesitter/issues/1989
     --]]
     'nvim-treesitter/nvim-treesitter',
@@ -373,8 +374,8 @@ todo_comments.setup({
 })
 
 --[[
--- Search multiple directories for todo comments. If any are found, populate the
--- quickfix list with them and open the quickfix window.
+   Search multiple directories for todo comments. If any are found, populate the
+   quickfix list with them and open the quickfix window.
 --]]
 local todo_comments_search_dirs = function(opts)
     -- Default to current directory as needed
@@ -389,7 +390,7 @@ local todo_comments_search_dirs = function(opts)
     --      instead of starting it
     --
     --  ...add the following:
-    --      ```
+    --      ```lua
     --      function M.search(cb, opts)
     --          M.get_search_job(cb, opts):start()
     --      end
@@ -430,7 +431,7 @@ local todo_comments_search_dirs = function(opts)
     end
 
     --[[
-    -- Report the counts, pop up the quickfix window if we found any matches
+       Report the counts, pop up the quickfix window if we found any matches
     --]]
     previous_search_job:after(
         vim.schedule_wrap(
@@ -457,9 +458,9 @@ local todo_comments_search_dirs = function(opts)
 end
 
 vim.api.nvim_create_user_command(
---[[
-    -- Lua: `vim.cmd.TodoSearchDirs('dir1', ..., 'dirN')`
-    -- Vim (EX command): `:TodoSearchDirs dir1 ... dirN`
+    --[[
+       Lua: `vim.cmd.TodoSearchDirs('dir1', ..., 'dirN')`
+       Vim (EX command): `:TodoSearchDirs dir1 ... dirN`
     --]]
     'TodoSearchDirs',
     todo_comments_search_dirs,
@@ -587,7 +588,6 @@ end
 
     Handy symbols: 
 --]]
---
 local get_pleasing_buffer_name = function(
     original_name,
     window_type,
@@ -742,10 +742,10 @@ require('lualine').setup({
                     local branch_short_name = string.match(
                         branch_name,
                         --[[
-                            ^
-                            Match 0+ of anything non-greedily,
-                            then forward slash (/),
-                            then non-forward slash characters greedily
+                            `^`
+                            `.-` Match 0+ of anything non-greedily,
+                            `/` then forward slash (/),
+                            `([^/]+)` then non-forward slash characters greedily
                             $
                         --]]
                         '^.-/([^/]+)$'
@@ -1045,7 +1045,7 @@ require('nvim-treesitter.configs').setup({
         },
     },
 
-    -- Warning: Experimental (at time of writing)
+    -- WARNING: Experimental (at time of writing)
     indent = {
         enable = true,
 
@@ -1236,10 +1236,10 @@ nvim_cmp.setup({
         ['<C-b>'] = lsp_zero_cmp_action.luasnip_jump_backward(),
 
         --[[
-            Completion menu visible -> navigate to next/prev item in list
-            Cursor on snippet trigger -> expand snippet
-            Snippet placeholder reachable -> navigate to next/prev placeholder
-            Cursor in word that doesn't trigger snippet -> display completion menu
+            Completion menu visible → navigate to next/prev item in list
+            Cursor on snippet trigger → expand snippet
+            Snippet placeholder reachable → navigate to next/prev placeholder
+            Cursor in word that doesn't trigger snippet → display completion menu
             Otherwise, use the fallback (i.e. the key's default behavior)
         --]]
         ['<C-n>'] = lsp_zero_cmp_action.luasnip_supertab(),
@@ -1343,7 +1343,7 @@ require('neodev').setup({})
 
 
 -- Plugin settings: nvim-lspconfig
--- Has to come after mason, mason-lspconfig, lsp-zero, and neodev setup
+-- WARN: Has to come after mason, mason-lspconfig, lsp-zero, and neodev setup
 local lspconfig = require('lspconfig')
 
 -- Add a border around `Lsp...` windows
