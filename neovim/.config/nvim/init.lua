@@ -968,7 +968,7 @@ vim.keymap.set(
 
 vim.keymap.set(
     'n',
-    '<Leader>ffb',
+    '<Leader>ff',
     function()
         telescope.extensions.file_browser.file_browser({
             -- Directory to browse files from (automatically expanded)
