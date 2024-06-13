@@ -107,7 +107,7 @@ Plug(
     'nvim-treesitter/nvim-treesitter',
     { ['do'] = ':TSUpdate' }
 )
-Plug('nvim-treesitter/nvim-treesitter-context')     -- Plugin for sticky headers (using tree-sitter's syntax trees)
+-- TODO: Replace with https://github.com/wellle/context.vim?
 Plug('nvim-treesitter/nvim-treesitter-textobjects') -- Plugin for treesitter-based node movement, selection, and some other stuff
 
 -- LSP stuff
@@ -1205,40 +1205,6 @@ vim.keymap.set(
 vim.opt.foldmethod = 'expr'
 vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 vim.opt.foldenable = false -- Set all folds to be open by default
-
-
--- Plugin settings: nvim-treesitter-context
--- TODO: Replace with https://github.com/wellle/context.vim?
-local treesitter_context = require('treesitter-context')
-
-treesitter_context.setup({
-    enable = false,
-    max_lines = 2,
-    min_window_height = 25,
-    multiline_threshold = 1,
-    separator = '-',
-    trim_scope = 'inner',
-})
-
--- TODO: remove keymap, try folke/flash?
-vim.keymap.set(
-    'n',
-    '<Leader>tscg',
-    treesitter_context.go_to_context,
-    {
-        remap = false,
-        desc = 'Go to treesitter-derived context',
-    }
-)
-vim.keymap.set(
-    'n',
-    '<Leader>tsct',
-    '<cmd>TSContextToggle<CR>',
-    {
-        remap = false,
-        desc = 'Toggle treesitter-derived context display',
-    }
-)
 
 
 -- Plugin settings: lsp-zero.nvim
