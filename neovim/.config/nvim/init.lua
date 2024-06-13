@@ -100,10 +100,11 @@ Plug(
         (e.g. better syntax highlighting based on tree-sitter's concrete syntax
         tree; https://github.com/tree-sitter/tree-sitter)
 
-        TODO: Is this ↓ still true?
         BUG: `:TSUpdate` will fail on fresh install (on Windows specifically, I
         believe), but should work fine on updates.
         Source: https://github.com/nvim-treesitter/nvim-treesitter/issues/1989
+        Workaround: `:TSUpdate` in an elevated neovim/neovide instance (is this
+        the best solution?)
     --]]
     'nvim-treesitter/nvim-treesitter',
     { ['do'] = ':TSUpdate' }
