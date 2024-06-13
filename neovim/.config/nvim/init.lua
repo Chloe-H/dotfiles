@@ -937,16 +937,14 @@ telescope.setup({
     },
     extensions = {
         file_browser = {
-            hidden = {
-                file_browser = true,
-                folder_browser = true,
-            },
-            follow_symlinks = true,
-            -- Hide `../` in the file browser
-            hide_parent_dir = true,
+            -- Show hidden files
+            hidden = true,
+            -- Prefer `plenary.scandir`
+            use_fd = false,
             -- Show the current relative path from cwd as the prompt prefix
             prompt_path = true,
-            use_fd = false,
+            -- Don't create file/folder from prompt if no entry selected
+            create_from_prompt = false,
         },
     },
 })
