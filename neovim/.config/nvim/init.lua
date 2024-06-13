@@ -108,7 +108,7 @@ Plug(
     'nvim-treesitter/nvim-treesitter',
     { ['do'] = ':TSUpdate' }
 )
--- TODO: Replace with https://github.com/wellle/context.vim?
+-- TODO: Try https://github.com/wellle/context.vim?
 Plug('nvim-treesitter/nvim-treesitter-textobjects') -- Plugin for treesitter-based node movement, selection, and some other stuff
 
 -- LSP stuff
