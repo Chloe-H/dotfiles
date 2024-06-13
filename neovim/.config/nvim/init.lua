@@ -966,6 +966,32 @@ vim.keymap.set(
     }
 )
 
+vim.keymap.set(
+    'n',
+    '<Leader>ffb',
+    function()
+        telescope.extensions.file_browser.file_browser({
+            -- Directory to browse files from (automatically expanded)
+            path = '%:p:h',
+            -- Group initial sorting by directories first
+            grouped = true,
+            --[[
+                telescope results setting
+
+                this combined with grouping by directories first puts files
+                first in the results (i.e. close to the prompt)
+            --]]
+            sorting_strategy = 'ascending',
+            -- Select current buffer, if possible
+            select_buffer = true,
+        })
+    end,
+    {
+        remap = false,
+        desc = 'Open telescope file browser with the current file focused (mnemonic: Find current file in file_browser)',
+    }
+)
+
 
 -- Plugin settings: auto-session
 require('auto-session').setup({
