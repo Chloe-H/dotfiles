@@ -101,7 +101,8 @@ Plug(
         tree; https://github.com/tree-sitter/tree-sitter)
 
         TODO: Is this ↓ still true?
-        BUG: `:TSUpdate` will fail on fresh install, but should work fine on updates.
+        BUG: `:TSUpdate` will fail on fresh install (on Windows specifically, I
+        believe), but should work fine on updates.
         Source: https://github.com/nvim-treesitter/nvim-treesitter/issues/1989
     --]]
     'nvim-treesitter/nvim-treesitter',
