@@ -171,6 +171,9 @@ if jit.os == 'Windows' then
     vim.opt.fileformats = 'unix,dos'
 end
 
+-- Add optional plugins
+vim.cmd.packadd('cfilter') -- :Cfilter[!] /{pat}/, :Lfilter[!] /{pat}/
+
 -- Add angle brackets to matched character pairs
 vim.opt.matchpairs:append('<:>')
 
