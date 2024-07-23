@@ -6,10 +6,11 @@ Plug('junegunn/vim-plug') -- Added to get Vim help for vim-plug
 
 -- Niceties
 Plug('tpope/vim-fugitive')
-Plug('mbbill/undotree')             -- Undo history tree visualizer
-Plug('folke/todo-comments.nvim')    -- Plugin to highlight and search for todo comments
-Plug('tpope/vim-surround')          -- Plugin to easily add, change, and remove surrounding character pairs
-Plug('numtostr/comment.nvim')       -- Plugin to comment/un-comment with key binds
+Plug('tpope/vim-rhubarb')         -- Plugin to add GitHub support to vim-fugitive (GBrowse, omni-completion)
+Plug('mbbill/undotree')           -- Undo history tree visualizer
+Plug('folke/todo-comments.nvim')  -- Plugin to highlight and search for todo comments
+Plug('tpope/vim-surround')        -- Plugin to easily add, change, and remove surrounding character pairs
+Plug('numtostr/comment.nvim')     -- Plugin to comment/un-comment with key binds
 --[[
     Plugin to set commentstring based on the cursor's location in the file.
     (so, e.g., if the cursor is in a JSX block in a JavaScript file, this plugin
