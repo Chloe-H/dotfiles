@@ -287,7 +287,7 @@ vim.keymap.set(
     ':tabedit<Space>',
     {
         remap = false,
-        desc = 'Put ":tabedit " in the command prompt',
+        desc = 'Put "tabedit " in the command prompt',
     }
 )
 vim.keymap.set(
@@ -296,7 +296,7 @@ vim.keymap.set(
     ':tabnext<Space>',
     {
         remap = false,
-        desc = 'Put ":tabnext " in the command prompt (mnemonic: Go to Tab <#>)',
+        desc = 'Put "tabnext " in the command prompt (mnemonic: Go to Tab <#>)',
     }
 )
 vim.keymap.set(
@@ -305,7 +305,7 @@ vim.keymap.set(
     ':tabmove<Space>',
     {
         remap = false,
-        desc = 'Put ":tabmove " in the command prompt (mnemonic: Tab Move)',
+        desc = 'Put "tabmove " in the command prompt (mnemonic: Tab Move)',
     }
 )
 vim.keymap.set(
@@ -370,11 +370,21 @@ vim.diagnostic.config({
 -- Plugin settings: vim-fugitive
 vim.keymap.set(
     'n',
-    '<Leader>gflv',
-    '<cmd>vertical Git --paginate log --max-count 100<CR>',
+    '<Leader>gfll',
+    ':vertical Git --paginate log --max-count 100',
     {
         remap = false,
-        desc = 'Show the last 100 commits in a vsplit (mnemonic: "git fugitive log vertical")',
+        desc = 'Put "vertical Git --paginate log --max-count 100" in the command prompt (mnemonic: "git fugitive log (limited)")',
+    }
+)
+
+vim.keymap.set(
+    'n',
+    '<Leader>gflv',
+    '<cmd>vertical Git --paginate log<CR>',
+    {
+        remap = false,
+        desc = 'Show the git logs (i.e. commit history) in a vertical split (mnemonic: "git fugitive log vertical")',
     }
 )
 
@@ -522,7 +532,7 @@ vim.keymap.set(
     ':TodoSearchDirs<Space>',
     {
         remap = false,
-        desc = 'Put ":TodoSearchDirs " in the command prompt',
+        desc = 'Put "TodoSearchDirs " in the command prompt',
     }
 )
 
@@ -966,7 +976,7 @@ vim.keymap.set(
     ':Telescope<Space>',
     {
         remap = false,
-        desc = 'Put ":Telescope " in the command prompt',
+        desc = 'Put "Telescope " in the command prompt',
     }
 )
 
