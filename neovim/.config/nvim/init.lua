@@ -1323,8 +1323,8 @@ nvim_cmp.setup({
         ['<C-u>'] = nvim_cmp.mapping.scroll_docs(-4),
 
         -- Trigger auto-completion on matches in visible buffers
-        -- Mnemonic: "[s]tart [b]uffer completion"
-        ['<C-s><C-b>'] = nvim_cmp.mapping.complete({
+        -- Deliberately similar to CTRL-X CTRL-O (omnifunc completion)
+        ['<C-x><C-b>'] = nvim_cmp.mapping.complete({
             config = {
                 sources = {
                     {
