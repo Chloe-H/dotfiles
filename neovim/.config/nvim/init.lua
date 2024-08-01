@@ -130,6 +130,7 @@ Plug('hrsh7th/cmp-cmdline')                 -- nvim-cmp source for vim/neovim's 
 Plug('hrsh7th/cmp-nvim-lsp')                -- nvim-cmp source for neovim's built-in LSP client
 Plug('hrsh7th/cmp-nvim-lsp-signature-help') -- nvim-cmp source for showing function signatures with current parameter emphasized
 Plug('hrsh7th/cmp-nvim-lua')                -- nvim-cmp source for neovim's Lua API; TODO: remove?
+-- TODO: Replace neodev in nvim >= 0.10
 Plug('folke/neodev.nvim')                   -- full signature help, docs and completion for the nvim lua API
 Plug('saadparwaiz1/cmp_luasnip')            -- nvim-cmp source for LuaSnip
 Plug('tzachar/fuzzy.nvim')                  -- Dependency for cmp-fuzzy-buffer, cmp-fuzzy-path
