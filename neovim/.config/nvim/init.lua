@@ -360,11 +360,12 @@ vim.keymap.set(
     }
 )
 
--- Disable virtual text for diagnostics
 vim.diagnostic.config({
+    -- Disable virtual text for diagnostics
     virtual_text = false,
     signs = true,
     underline = true,
+    float = { source = 'always', },
 })
 
 
