@@ -2,6 +2,12 @@
 
 Workspace for the fiddling I've been doing with Temporary Containers.
 
+## Logging in to add-ons
+
+In the "General" tab, disable "Automatic Mode". You _may_ also need to open a
+new tab in the default container.
+<!-- TODO: Confirm whether opening a new tab in the default container is necessary -->
+
 ## Regular expressions
 
 **Template:** `/^(https://)?([^\s/]+\.)*?( TODO )\b(/.*)?$/`
