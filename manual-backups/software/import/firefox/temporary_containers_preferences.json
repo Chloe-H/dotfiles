@@ -1,6 +1,6 @@
 {
   "version": "1.9.2",
-  "date": 1717453358921,
+  "date": 1723733502867,
   "preferences": {
     "automaticMode": {
       "active": true,
@@ -41,9 +41,7 @@
             "container": "default"
           }
         },
-        "excluded": {
-          "/^https://getpocket.com/.*$/": {}
-        },
+        "excluded": {},
         "excludedContainers": []
       },
       "domain": [
@@ -268,7 +266,7 @@
       "AltO": false,
       "AltI": true
     },
-    "replaceTabs": true,
+    "replaceTabs": false,
     "closeRedirectorTabs": {
       "active": false,
       "delay": 2000,
