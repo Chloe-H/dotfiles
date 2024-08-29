@@ -568,6 +568,11 @@ require('Comment').setup({
     pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
 })
 
+require('Comment.ft')
+    -- Set line and block commentstring for Django HTML template files
+    -- TODO: Fix inconsistency (is treesitter "detecting" HTML inside of htmldjango?)
+    .set('htmldjango', {'{# %s #}', '{% comment %} %s {% endcomment %}'})
+
 
 -- Plugin settings: vim-argwrap
 vim.keymap.set(
