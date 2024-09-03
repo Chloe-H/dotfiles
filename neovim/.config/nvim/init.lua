@@ -142,6 +142,7 @@ Plug('rafamadriz/friendly-snippets')        -- Collection of snippets for variou
 
 -- Color schemes
 Plug('folke/tokyonight.nvim')
+Plug('xero/evangelion.nvim')
 
 vim.call('plug#end')
 
