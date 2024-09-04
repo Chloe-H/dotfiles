@@ -482,7 +482,7 @@ local todo_comments_search_dirs = function(opts)
         if previous_search_job == nil then
             current_search_job:start()
         else
-            previous_search_job:and_then_on_success(current_search_job)
+            previous_search_job:and_then(current_search_job)
         end
 
         previous_search_job = current_search_job
@@ -507,8 +507,6 @@ local todo_comments_search_dirs = function(opts)
 
                 if #results > 0 then
                     vim.fn.setqflist(results, 'r')
-
-                    vim.cmd.copen()
                 end
             end
         )
