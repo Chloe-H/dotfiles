@@ -20,7 +20,9 @@
     defaultBranch = main
 	templatedir = ~/.git-templates
 [merge]
-	tool = vimdiff
+	tool = nvimdiff
 	conflictstyle = diff3
+[mergetool "nvimdiff"]
+    layout = "LOCAL,BASE,REMOTE / MERGED"
 [push]
 	default = nothing
