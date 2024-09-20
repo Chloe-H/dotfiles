@@ -6,13 +6,13 @@ Plug('junegunn/vim-plug') -- Added to get Vim help for vim-plug
 
 -- Niceties
 Plug('tpope/vim-fugitive')
-Plug('tpope/vim-rhubarb')         -- Plugin to add GitHub support to vim-fugitive (GBrowse, omni-completion)
+Plug('tpope/vim-rhubarb')         -- GitHub support in vim-fugitive (GBrowse, omni-completion)
 Plug('mbbill/undotree')           -- Undo history tree visualizer
-Plug('folke/todo-comments.nvim')  -- Plugin to highlight and search for todo comments
-Plug('tpope/vim-surround')        -- Plugin to easily add, change, and remove surrounding character pairs
-Plug('numtostr/comment.nvim')     -- Plugin to comment/un-comment with key binds
+Plug('folke/todo-comments.nvim')  -- Highlighting and search functions for todo comments
+Plug('tpope/vim-surround')        -- Easily add, change, and remove surrounding character pairs
+Plug('numtostr/comment.nvim')     -- (Un)comment with key binds
 --[[
-    Plugin to set commentstring based on the cursor's location in the file.
+    Sets commentstring based on the cursor's location in the file.
     (so, e.g., if the cursor is in a JSX block in a JavaScript file, this plugin
     will ensure that comment.nvim uses the correct syntax when adding comments).
 --]]
@@ -29,7 +29,7 @@ Plug(
         commit = '6c30f3c8915d7b31c3decdfe6c7672432da1809d',
     }
 )
-Plug('foosoft/vim-argwrap')         -- Plugin to quickly expand/collapse lists of things (e.g. function arg lists)
+Plug('foosoft/vim-argwrap')         -- Quickly expand/collapse lists of things (e.g. function arg lists)
 Plug('windwp/nvim-autopairs')       -- Autopairs plugin (insert/delete brackets, parentheses, quotes in pairs)
 Plug(                               -- Auto-pairing and renaming of HTML tags (achieved by leveraging treesitter)
     'windwp/nvim-ts-autotag',
@@ -42,7 +42,7 @@ Plug(                               -- Auto-pairing and renaming of HTML tags (a
         commit = '531f48334c422222aebc888fd36e7d109cb354cd',
     }
 )
-Plug('milkypostman/vim-togglelist') -- Very old plugin for toggling location list and quickfix list with key binds
+Plug('milkypostman/vim-togglelist') -- Toggle location list and quickfix list with key binds (very old plugin)
 Plug('nvim-lualine/lualine.nvim')
 
 Plug(
@@ -68,7 +68,7 @@ Plug( -- Bare bones (n)vim integration for fzf, defaults to using fzf binary in 
     -- (Optional) Post-update hook to get latest version of fzf binary
     { ['do'] = vim.fn['fzf#install'], }
 )
-Plug('junegunn/fzf.vim')              -- Provides native (n)vim commands that leverage fzf
+Plug('junegunn/fzf.vim')              -- Native (n)vim commands that leverage fzf
 -- TODO: Trying out, may replace fzf/fzf.vim
 Plug('nvim-lua/plenary.nvim')         -- Dependency for telescope.nvim / common library
 Plug('nvim-telescope/telescope.nvim') -- Highly extensible fuzzy finder
@@ -76,8 +76,7 @@ Plug(                                 -- Recommended native telescope sorter (wh
     'nvim-telescope/telescope-fzf-native.nvim',
     { ['do'] = 'make' }
 )
-Plug('nvim-telescope/telescope-file-browser.nvim')   -- File browser extension
-Plug('nvim-telescope/telescope-live-grep-args.nvim') -- Extension that enables passing args to rg/grep finder(s?)
+Plug('nvim-telescope/telescope-live-grep-args.nvim') -- Basically live_grep with rg flag support
 Plug('nvim-telescope/telescope-symbols.nvim')        -- Adds a bunch of sources for the symbol picker
 --[[
     Advanced git search extension for Telescope and fzf-lua; lets me search the
@@ -89,14 +88,14 @@ Plug('aaronhallaert/advanced-git-search.nvim')
 Plug('rmagatti/auto-session')
 
 -- IDE-like stuff
-Plug('lewis6991/gitsigns.nvim') -- Plugin for git decorations, chunk navigation, etc.
+Plug('lewis6991/gitsigns.nvim') -- Git decorations, chunk navigation, etc.
 Plug(                           -- File tag browser; depends on universal-ctags
     'majutsushi/tagbar',
     { on = { 'TagbarToggle', 'TagbarOpen', 'TagbarOpenAutoClose' } }
 )
 Plug(
     --[[
-        Plugin for tree-sitter functionality
+        Add tree-sitter functionality
 
         (e.g. better syntax highlighting based on tree-sitter's concrete syntax
         tree; https://github.com/tree-sitter/tree-sitter)
@@ -111,7 +110,7 @@ Plug(
     { ['do'] = ':TSUpdate' }
 )
 -- TODO: Try https://github.com/wellle/context.vim?
-Plug('nvim-treesitter/nvim-treesitter-textobjects') -- Plugin for treesitter-based node movement, selection, and some other stuff
+Plug('nvim-treesitter/nvim-treesitter-textobjects') -- Tree-sitter-based node movement, selection, and some other stuff
 
 -- LSP stuff
 Plug('neovim/nvim-lspconfig')     -- LSP configurations for neovim's built in LSP client/framework
@@ -131,7 +130,7 @@ Plug('hrsh7th/cmp-nvim-lsp')                -- nvim-cmp source for neovim's buil
 Plug('hrsh7th/cmp-nvim-lsp-signature-help') -- nvim-cmp source for showing function signatures with current parameter emphasized
 Plug('hrsh7th/cmp-nvim-lua')                -- nvim-cmp source for neovim's Lua API; TODO: remove?
 -- TODO: Replace neodev in nvim >= 0.10
-Plug('folke/neodev.nvim')                   -- full signature help, docs and completion for the nvim lua API
+Plug('folke/neodev.nvim')                   -- Full signature help, docs and completion for the nvim lua API
 Plug('saadparwaiz1/cmp_luasnip')            -- nvim-cmp source for LuaSnip
 Plug('tzachar/fuzzy.nvim')                  -- Dependency for cmp-fuzzy-buffer, cmp-fuzzy-path
 Plug('tzachar/cmp-fuzzy-buffer')            -- nvim-cmp source for fuzzy searching current buffer
@@ -569,7 +568,7 @@ require('Comment').setup({
 
 require('Comment.ft')
     -- Set line and block commentstring for Django HTML template files
-    -- TODO: Fix inconsistency (is treesitter "detecting" HTML inside of htmldjango?)
+    -- TODO: Fix inconsistency (is tree-sitter "detecting" HTML inside of htmldjango?)
     .set('htmldjango', {'{# %s #}', '{% comment %} %s {% endcomment %}'})
 
 
@@ -917,6 +916,7 @@ vim.g.fzf_action = {
 local telescope = require('telescope')
 local ts_actions = require('telescope.actions')
 local ts_actions_layout = require('telescope.actions.layout')
+
 local ts_mappings = {
     -- Send selected/all results to quickfix list and open it
     ['<C-q>'] = ts_actions.smart_send_to_qflist + ts_actions.open_qflist,
@@ -927,6 +927,7 @@ local ts_mappings = {
     -- Cycle to next layout
     ['<M-n>'] = ts_actions_layout.cycle_layout_next,
 }
+
 telescope.setup({
     defaults = {
         cycle_layout_list = { 'horizontal', 'center', 'vertical' },
@@ -955,22 +956,9 @@ telescope.setup({
             hidden = true,
         },
     },
-    extensions = {
-        file_browser = {
-            -- Show hidden files
-            hidden = true,
-            -- Prefer `plenary.scandir`
-            use_fd = false,
-            -- Show the current relative path from cwd as the prompt prefix
-            prompt_path = true,
-            -- Don't create file/folder from prompt if no entry selected
-            create_from_prompt = false,
-        },
-    },
 })
 
 telescope.load_extension('advanced_git_search')
-telescope.load_extension('file_browser')
 telescope.load_extension('fzf')
 telescope.load_extension('live_grep_args')
 telescope.load_extension('session-lens')
@@ -983,32 +971,6 @@ vim.keymap.set(
     {
         remap = false,
         desc = 'Put "Telescope " in the command prompt',
-    }
-)
-
-vim.keymap.set(
-    'n',
-    '<Leader>ff',
-    function()
-        telescope.extensions.file_browser.file_browser({
-            -- Directory to browse files from (automatically expanded)
-            path = '%:p:h',
-            -- Group initial sorting by directories first
-            grouped = true,
-            --[[
-                telescope results setting
-
-                this combined with grouping by directories first puts files
-                first in the results (i.e. close to the prompt)
-            --]]
-            sorting_strategy = 'ascending',
-            -- Select current buffer, if possible
-            select_buffer = true,
-        })
-    end,
-    {
-        remap = false,
-        desc = 'Open telescope file browser with the current file focused (mnemonic: Find current file in file_browser)',
     }
 )
 
@@ -1255,6 +1217,7 @@ vim.opt.foldenable = false -- Set all folds to be open by default
 
 -- Plugin settings: lsp-zero.nvim
 local lsp_zero = require('lsp-zero')
+
 lsp_zero.extend_lspconfig() -- Must call before setting up a language server or setting up mason-lspconfig
 lsp_zero.on_attach(function(client, bufnr)
     --[[
