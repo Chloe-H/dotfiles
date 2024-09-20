@@ -59,8 +59,9 @@ Plug(
     }
 )
 
--- Navigation
-Plug('scrooloose/nerdtree')
+-- File explorer(s)
+Plug('scrooloose/nerdtree') -- Tried and true
+Plug('stevearc/oil.nvim')   -- Edit your filesystem like it's a vim buffer
 
 -- Search
 Plug( -- Bare bones (n)vim integration for fzf, defaults to using fzf binary in $PATH, if available
@@ -673,7 +674,8 @@ local get_pleasing_buffer_name = function(
     if string.find(file_type, 'Telescope', 0, true) then
         pleasing_name = 'telescope'
     elseif file_type == 'fugitive'
-        or file_type == 'nerdtree' then
+        or file_type == 'nerdtree'
+        or file_type == 'oil' then
         pleasing_name = file_type
     elseif window_type == 'autocmd' then
         -- TODO: When would I see this? How does it look?
@@ -899,6 +901,51 @@ vim.keymap.set(
     {
         remap = false,
         desc = 'Open NERDTree with the current file focused (mnemonic: Find current file in NERDTree)',
+    }
+)
+
+
+-- Plugin settings: Oil
+local oil = require('oil')
+
+local oil_detailed_view = false
+
+oil.setup({
+    -- Don't replace netrw
+    default_file_explorer = false,
+
+    keymaps = {
+        ['gd'] = {
+            desc = 'Toggle file detail view',
+            callback = function()
+                oil_detailed_view = not oil_detailed_view
+
+                oil.set_columns(oil_detailed_view and {
+                    'permissions',
+                    'size',
+                    'birthtime',
+                    'mtime',
+                    'icon',
+                } or { 'icon' })
+            end,
+        },
+    },
+
+    view_options = {
+        -- Show files and directories that start with "."
+        show_hidden = true,
+    },
+})
+
+vim.keymap.set(
+    'n',
+    '<Leader>fo',
+    function()
+        oil.open_float(vim.fn.expand('%:p:h'))
+    end,
+    {
+        remap = false,
+        desc = "Open Oil to the current file's directory (mnemonic: Find current file in Oil)",
     }
 )
 
