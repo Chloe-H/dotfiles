@@ -38,6 +38,13 @@ Plug(                               -- Auto-pairing and renaming of HTML tags (a
             HACK: Pin version to avoid breaking changes
             TODO: Update to latest and fix configurations (as needed?) once you
             have nvim ≥ 0.9.4
+
+            HACK: Fix for auto-pairing in htmldjango files:
+
+            in `nvim-ts-autotag/lua/nvim-ts-autotag/internal.lua`,
+            remove 'htmldjango' from `HBS_TAG`
+
+            Source: https://github.com/windwp/nvim-ts-autotag/issues/127#issuecomment-1670026211
         --]]
         commit = '531f48334c422222aebc888fd36e7d109cb354cd',
     }
@@ -440,22 +447,22 @@ local todo_comments_search_dirs = function(opts)
     local dirs_to_search = #opts.fargs > 0 and opts.fargs or { '.' }
 
     --[[
-    -- HACK: Lightly modify todo-comments's source code as follows:
-    --
-    -- In `todo-comments.nvim\lua\todo-comments\search.lua`...
-    --
-    --  ...rename `M.search` to `M.get_search_job` and have it return the job
-    --      instead of starting it
-    --
-    --  ...add the following:
-    --      ```lua
-    --      function M.search(cb, opts)
-    --          M.get_search_job(cb, opts):start()
-    --      end
-    --      ```
-    -- TODO: Open a PR or an issue for this?
-    -- None of this would be necessary if the telescope integration supported
-    -- multiple search directories.
+       HACK: Lightly modify todo-comments's source code as follows:
+      
+       In `todo-comments.nvim\lua\todo-comments\search.lua`...
+      
+        ...rename `M.search` to `M.get_search_job` and have it return the job
+            instead of starting it
+      
+        ...add the following:
+            ```lua
+            function M.search(cb, opts)
+                M.get_search_job(cb, opts):start()
+            end
+            ```
+       TODO: Open a PR or an issue for this?
+       None of this would be necessary if the telescope integration supported
+       multiple search directories.
     --]]
     local get_search_job = require('todo-comments.search').get_search_job
 
@@ -468,8 +475,8 @@ local todo_comments_search_dirs = function(opts)
     end
 
     --[[
-    -- Chain the directory searches so the results list will be properly
-    -- populated.
+       Chain the directory searches so the results list will be properly
+       populated.
     --]]
     local previous_search_job = nil
 
@@ -747,9 +754,11 @@ end
 local window_buffer_location = function(separator, reverse)
     separator = separator or ':'
 
-    -- Default separator: ':'
-    -- Normal: {buffer index}{separator}{window number}
-    -- Reversed: {window number}{separator}{buffer index}
+    --[[
+        Default separator: ':'
+        Normal: {buffer index}{separator}{window number}
+        Reversed: {window number}{separator}{buffer index}
+    --]]
     return function()
         local window_number = vim.api.nvim_win_get_number(0)
         local buffer_index = vim.api.nvim_win_get_buf(0)
@@ -1118,6 +1127,7 @@ require('nvim-treesitter.configs').setup({
     ensure_installed = {
         'c',
         'html',
+        'htmldjango',
         'javascript',
         'lua',
         'python',
@@ -1138,6 +1148,8 @@ require('nvim-treesitter.configs').setup({
         Configure automatic closing and renaming of tags by nvim-ts-autotag;
         it's unclear to me how tightly nvim-ts-autotag is coupled with
         nvim-treesitter.
+
+        TODO: Probably goes away with autotag upgrade
     --]]
     autotag = {
         enable = true,
@@ -1338,8 +1350,10 @@ nvim_cmp.setup({
         ['<C-d>'] = nvim_cmp.mapping.scroll_docs(4),
         ['<C-u>'] = nvim_cmp.mapping.scroll_docs(-4),
 
-        -- Trigger auto-completion on matches in visible buffers
-        -- Deliberately similar to CTRL-X CTRL-O (omnifunc completion)
+        --[[
+            Trigger auto-completion on matches in visible buffers
+            Deliberately similar to CTRL-X CTRL-O (omnifunc completion)
+        --]]
         ['<C-x><C-b>'] = nvim_cmp.mapping.complete({
             config = {
                 sources = {
