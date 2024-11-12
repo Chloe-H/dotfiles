@@ -1132,6 +1132,7 @@ require('nvim-treesitter.configs').setup({
         'lua',
         'python',
         'query',
+        'tsx',
         'typescript',
         'vim',
         'vimdoc',
