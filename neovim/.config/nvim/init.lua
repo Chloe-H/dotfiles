@@ -987,6 +987,14 @@ local ts_mappings = {
 telescope.setup({
     defaults = {
         cycle_layout_list = { 'horizontal', 'center', 'vertical' },
+        layout_config = {
+            width = function(_, max_columns)
+                local percent_width = 0.8
+                local max_width = 250
+
+                return math.min(math.floor(percent_width * max_columns), max_width)
+            end,
+        },
         layout_strategy = 'vertical',
         mappings = {
             i = ts_mappings,
@@ -1188,7 +1196,7 @@ require('nvim-treesitter.configs').setup({
             Disable for languages where it doesn't work well
             Source: https://www.reddit.com/r/neovim/comments/svywql/comment/hxr0xjl/?context=3
         --]]
-        disable = { 'c', },
+        disable = { 'c', 'tsx', }, -- TODO: Figure out why React files don't indent correctly (TS parser issue?)
     },
 
     -- Plugin settings: nvim-treesitter-textobjects
