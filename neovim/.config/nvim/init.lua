@@ -402,7 +402,11 @@ vim.keymap.set(
     HACK: vim-fugitive doesn't respect my 4-way merge conflict wishes for reasons
     I have yet to uncover, so this is my (likely permanent) workaround.
 
-    fugitive keymaps:
+    Process:
+        1. Load merge conflicts into quickfix window: `:Git mergetool`
+        2. Run this keymap on each merge conflict to get a 4-way diff.
+
+    fugitive keymaps in 4-way diff:
         d2o: Get "our" changes (i.e. the local branch, or the branch being rebased **onto** - the target branch)
         d3o: Get "their" changes (i.e. the remote branch, or the branch being rebased onto a target branch)
 
