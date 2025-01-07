@@ -1011,7 +1011,8 @@ local ts_mappings = {
     -- Cycle to next layout
     ['<M-n>'] = ts_actions_layout.cycle_layout_next,
     -- Freeze the current list and start a fuzzy search in the frozen list
-    ['<C-.>'] = ts_actions.to_fuzzy_refine,
+    ['<C-.>'] = ts_actions.to_fuzzy_refine, -- Not detected in terminals?
+    ['<C-i>'] = ts_actions.to_fuzzy_refine,
 }
 
 telescope.setup({
@@ -1054,8 +1055,15 @@ telescope.setup({
         live_grep_args = {
             mappings = {
                 i = {
+                    -- Not detected in terminals?
                     ["<C-'>"] = ts_lga_actions.quote_prompt(),
                     ['<C-">'] = ts_lga_actions.quote_prompt({
+                        postfix = ' --iglob '
+                    }),
+
+                    -- Fallback
+                    ['<C-o>'] = ts_lga_actions.quote_prompt(),
+                    ['<C-S-O>'] = ts_lga_actions.quote_prompt({
                         postfix = ' --iglob '
                     }),
                 },
