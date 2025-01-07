@@ -998,6 +998,7 @@ vim.g.fzf_action = {
 -- Plugin settings: telescope.nvim
 local telescope = require('telescope')
 local ts_actions = require('telescope.actions')
+local ts_lga_actions = require('telescope-live-grep-args.actions')
 local ts_actions_layout = require('telescope.actions.layout')
 
 local ts_mappings = {
@@ -1009,6 +1010,8 @@ local ts_mappings = {
     ['<M-p>'] = ts_actions_layout.toggle_preview,
     -- Cycle to next layout
     ['<M-n>'] = ts_actions_layout.cycle_layout_next,
+    -- Freeze the current list and start a fuzzy search in the frozen list
+    ['<C-.>'] = ts_actions.to_fuzzy_refine,
 }
 
 telescope.setup({
@@ -1045,6 +1048,18 @@ telescope.setup({
         },
         find_files = {
             hidden = true,
+        },
+    },
+    extensions = {
+        live_grep_args = {
+            mappings = {
+                i = {
+                    ["<C-'>"] = ts_lga_actions.quote_prompt(),
+                    ['<C-">'] = ts_lga_actions.quote_prompt({
+                        postfix = ' --iglob '
+                    }),
+                },
+            },
         },
     },
 })
