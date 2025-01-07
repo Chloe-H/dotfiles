@@ -402,6 +402,10 @@ vim.keymap.set(
     HACK: vim-fugitive doesn't respect my 4-way merge conflict wishes for reasons
     I have yet to uncover, so this is my (likely permanent) workaround.
 
+    fugitive keymaps:
+        d2o: Get "our" changes (i.e. the local branch, or the branch being rebased **onto** - the target branch)
+        d3o: Get "their" changes (i.e. the remote branch, or the branch being rebased onto a target branch)
+
     Sources:
     - https://stackoverflow.com/questions/7309707/why-does-git-mergetool-open-4-windows-in-vimdiff-id-expect-3
     - https://stackoverflow.com/questions/12682164/show-base-in-fugitive-vim-conflict-diff
@@ -413,7 +417,7 @@ vim.keymap.set(
     '<cmd>Gvdiffsplit! | Ghdiffsplit | wincmd j | wincmd J<CR>',
     {
         remap = false,
-        desc = 'Hack for 4-way merge conflict diff; run on a merge conflict (mnemonic: "git fugitive mergetool")'
+        desc = '4-way diff for merge conflicts: d2o/d3o to get "ours"/local / "theirs"/remote, respectively',
     }
 )
 
