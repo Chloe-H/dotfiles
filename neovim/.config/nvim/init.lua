@@ -398,6 +398,25 @@ vim.keymap.set(
     }
 )
 
+--[[
+    HACK: vim-fugitive doesn't respect my 4-way merge conflict wishes for reasons
+    I have yet to uncover, so this is my (likely permanent) workaround.
+
+    Sources:
+    - https://stackoverflow.com/questions/7309707/why-does-git-mergetool-open-4-windows-in-vimdiff-id-expect-3
+    - https://stackoverflow.com/questions/12682164/show-base-in-fugitive-vim-conflict-diff
+    - https://github.com/tpope/vim-fugitive/issues/1306
+--]]
+vim.keymap.set(
+    'n',
+    '<Leader>gfmt',
+    '<cmd>Gvdiffsplit! | Gedit :1 | botright split | Gedit :3',
+    {
+        remap = false,
+        desc = 'Hack for 4-way merge conflict diff; run on a merge conflict (mnemonic: "git fugitive mergetool")'
+    }
+)
+
 
 -- Plugin settings: undotree
 vim.keymap.set(
