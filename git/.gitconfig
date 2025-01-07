@@ -2,7 +2,18 @@
 	name = Chloe-H
 	email = Chloe-H@users.noreply.github.com
 [core]
+	editor = nvim
 	excludesfile = ~/.gitignore_global
+[diff]
+	tool = nvimdiff
+[difftool]
+	prompt = true
+[merge]
+	tool = nvimdiff
+	conflictstyle = diff3
+[mergetool "nvimdiff"]
+    ; Probably unnecessary to include the layout
+    layout = "LOCAL,BASE,REMOTE / MERGED"
 ; include only if a remote with the given URL exists (note
 ; that such a URL may be provided later in a file or in a
 ; file read after this file is read)

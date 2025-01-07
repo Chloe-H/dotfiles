@@ -1,16 +1,9 @@
 [user]
 	email = Chloe-H@users.noreply.github.com
 	name = Chloe
-[alias]
-	d = difftool
 [core]
-	editor = nvim
 	autocrlf = false
 	ignorecase = false
-[diff]
-	tool = vimdiff
-[difftool]
-	prompt = true
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
@@ -19,10 +12,5 @@
 [init]
     defaultBranch = main
 	templatedir = ~/.git-templates
-[merge]
-	tool = nvimdiff
-	conflictstyle = diff3
-[mergetool "nvimdiff"]
-    layout = "LOCAL,BASE,REMOTE / MERGED"
 [push]
 	default = nothing
