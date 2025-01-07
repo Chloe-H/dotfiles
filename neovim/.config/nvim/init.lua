@@ -410,7 +410,7 @@ vim.keymap.set(
 vim.keymap.set(
     'n',
     '<Leader>gfmt',
-    '<cmd>Gvdiffsplit! | Gedit :1 | botright split | Gedit :3',
+    '<cmd>Gvdiffsplit! | Gedit :1 | botright split | Gedit :3<CR>',
     {
         remap = false,
         desc = 'Hack for 4-way merge conflict diff; run on a merge conflict (mnemonic: "git fugitive mergetool")'
