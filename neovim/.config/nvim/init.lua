@@ -1003,15 +1003,15 @@ local ts_actions_layout = require('telescope.actions.layout')
 
 local ts_mappings = {
     -- Send selected/all results to quickfix list and open it
-    ['<C-e>qfs'] = ts_actions.smart_send_to_qflist + ts_actions.open_qflist,
+    ['<C-m>qfs'] = ts_actions.smart_send_to_qflist + ts_actions.open_qflist,
     -- Add selected/all results to quickfix list and open it
-    ['<C-e>qfa'] = ts_actions.smart_add_to_qflist + ts_actions.open_qflist,
+    ['<C-m>qfa'] = ts_actions.smart_add_to_qflist + ts_actions.open_qflist,
     -- Toggle preview
-    ['<C-e>pv'] = ts_actions_layout.toggle_preview,
+    ['<C-m>pv'] = ts_actions_layout.toggle_preview,
     -- Cycle to next layout
-    ['<C-e>nl'] = ts_actions_layout.cycle_layout_next,
+    ['<C-m>nl'] = ts_actions_layout.cycle_layout_next,
     -- Freeze the current list and start a fuzzy search in the frozen list
-    ['<C-e>fz'] = ts_actions.to_fuzzy_refine,
+    ['<C-m>fz'] = ts_actions.to_fuzzy_refine,
 }
 
 telescope.setup({
@@ -1037,11 +1037,11 @@ telescope.setup({
             mappings = {
                 i = {
                     -- Delete selected/all buffers
-                    ['<C-e>bd'] = 'delete_buffer',
+                    ['<C-m>bd'] = 'delete_buffer',
                 },
                 n = {
                     -- Delete selected/all buffers
-                    ['<C-e>bd'] = 'delete_buffer',
+                    ['<C-m>bd'] = 'delete_buffer',
                 },
             },
             sort_mru = true,
@@ -1054,8 +1054,8 @@ telescope.setup({
         live_grep_args = {
             mappings = {
                 i = {
-                    ['<C-e>""'] = ts_lga_actions.quote_prompt(),
-                    ['<C-e>ig'] = ts_lga_actions.quote_prompt({
+                    ['<C-m>""'] = ts_lga_actions.quote_prompt(),
+                    ['<C-m>ig'] = ts_lga_actions.quote_prompt({
                         postfix = ' --iglob '
                     }),
                 },
