@@ -1003,16 +1003,15 @@ local ts_actions_layout = require('telescope.actions.layout')
 
 local ts_mappings = {
     -- Send selected/all results to quickfix list and open it
-    ['<C-q>'] = ts_actions.smart_send_to_qflist + ts_actions.open_qflist,
+    ['<C-e>qfs'] = ts_actions.smart_send_to_qflist + ts_actions.open_qflist,
     -- Add selected/all results to quickfix list and open it
-    ['<M-q>'] = ts_actions.smart_add_to_qflist + ts_actions.open_qflist,
+    ['<C-e>qfa'] = ts_actions.smart_add_to_qflist + ts_actions.open_qflist,
     -- Toggle preview
-    ['<M-p>'] = ts_actions_layout.toggle_preview,
+    ['<C-e>pv'] = ts_actions_layout.toggle_preview,
     -- Cycle to next layout
-    ['<M-n>'] = ts_actions_layout.cycle_layout_next,
+    ['<C-e>nl'] = ts_actions_layout.cycle_layout_next,
     -- Freeze the current list and start a fuzzy search in the frozen list
-    ['<C-.>'] = ts_actions.to_fuzzy_refine, -- Not detected in terminals?
-    ['<C-i>'] = ts_actions.to_fuzzy_refine,
+    ['<C-e>fz'] = ts_actions.to_fuzzy_refine,
 }
 
 telescope.setup({
@@ -1038,11 +1037,11 @@ telescope.setup({
             mappings = {
                 i = {
                     -- Delete selected/all buffers
-                    ['<M-d>'] = 'delete_buffer',
+                    ['<C-e>bd'] = 'delete_buffer',
                 },
                 n = {
                     -- Delete selected/all buffers
-                    ['<M-d>'] = 'delete_buffer',
+                    ['<C-e>bd'] = 'delete_buffer',
                 },
             },
             sort_mru = true,
@@ -1055,15 +1054,8 @@ telescope.setup({
         live_grep_args = {
             mappings = {
                 i = {
-                    -- Not detected in terminals?
-                    ["<C-'>"] = ts_lga_actions.quote_prompt(),
-                    ['<C-">'] = ts_lga_actions.quote_prompt({
-                        postfix = ' --iglob '
-                    }),
-
-                    -- Fallback
-                    ['<C-o>'] = ts_lga_actions.quote_prompt(),
-                    ['<C-S-O>'] = ts_lga_actions.quote_prompt({
+                    ['<C-e>""'] = ts_lga_actions.quote_prompt(),
+                    ['<C-e>ig'] = ts_lga_actions.quote_prompt({
                         postfix = ' --iglob '
                     }),
                 },
