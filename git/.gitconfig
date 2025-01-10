@@ -23,7 +23,3 @@
     path = .gitconfigs/.gitconfig.personal
 [include] ; Work configurations: It's a separate directory to get around stow
     path = ~/.gitconfigs.work/.gitconfig
-; TODO: Purge in preparation for going public:
-; git/.gitconfigs/.gitconfig.work
-; all refs to work stuff in this file
-; double check all other files for references to work stuff, if easy
