@@ -1488,7 +1488,7 @@ require('mason-lspconfig').setup({
         'jsonls',
         'lua_ls',
         'pyright',
-        'tsserver',
+        'ts_ls',
     },
     handlers = {
         lsp_zero.default_setup,
