@@ -1488,6 +1488,7 @@ require('mason-lspconfig').setup({
         'jsonls',
         'lua_ls',
         'pyright',
+        'tailwindcss',
         'ts_ls',
     },
     handlers = {
