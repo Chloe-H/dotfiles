@@ -1,6 +1,6 @@
 [user]
-	email = Chloe-H@users.noreply.github.com
 	name = Chloe
+	email = Chloe-H@users.noreply.github.com
 [core]
 	autocrlf = false
 	ignorecase = false

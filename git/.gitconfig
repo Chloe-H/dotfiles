@@ -1,6 +1,4 @@
-[user]
-	name = Chloe-H
-	email = Chloe-H@users.noreply.github.com
+; WARNING: Do not set "[user]" info here
 [core]
 	editor = nvim
 	excludesfile = ~/.gitignore_global
