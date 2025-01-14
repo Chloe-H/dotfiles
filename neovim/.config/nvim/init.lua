@@ -1481,8 +1481,19 @@ require('mason').setup({})
 require('mason-lspconfig').setup({
     ensure_installed = {
         --[[
-            BUG: Latest version of ESLint doesn't work
+            BUG: Latest version of ESLint language server doesn't work
             Source: https://github.com/neovim/nvim-lspconfig/issues/3146
+
+            Further research suggests that Microsoft's VS Code extension for
+            ESLint (https://github.com/Microsoft/vscode-eslint) comes bundled
+            with the code to make ESLint compatible with / act like a language
+            server (I haven't confirmed the specifics). This ESLint language
+            server, along with other VS Code-specific language servers, are
+            extracted into nvim-compatible releases by hrsh7th, which are then
+            pulled by Mason.
+
+            Extracted VS Code language servers: https://github.com/hrsh7th/vscode-langservers-extracted
+                ↑ I believe this is what I'm version locking
         --]]
         'eslint@4.8.0', -- TODO: Remove version once fixed
         'jsonls',
