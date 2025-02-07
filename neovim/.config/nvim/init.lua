@@ -949,6 +949,8 @@ local oil_detailed_view = false
 oil.setup({
     -- Don't replace netrw
     default_file_explorer = false,
+    -- Send deleted files to the trash instead of permanently deleting them (:help oil-trash)
+    delete_to_trash = true,
 
     keymaps = {
         ['gd'] = {
