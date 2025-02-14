@@ -475,12 +475,12 @@ local todo_comments_search_dirs = function(opts)
 
     --[[
        HACK: Lightly modify todo-comments's source code as follows:
-      
+
        In `todo-comments.nvim\lua\todo-comments\search.lua`...
-      
+
         ...rename `M.search` to `M.get_search_job` and have it return the job
             instead of starting it
-      
+
         ...add the following:
             ```lua
             function M.search(cb, opts)
@@ -1524,6 +1524,64 @@ local lspconfig = require('lspconfig')
 
 -- Add a border around `Lsp...` windows
 require('lspconfig.ui.windows').default_options.border = 'rounded'
+
+--[[
+    NOTE: Demystifying lspconfig language server setup
+
+    See `:h lspconfig-setup`
+
+    Basically, lspconfig is a community-supported plugin that provides nice
+    defaults for a lot of language servers.
+
+    View these defaults:
+    - `:h lspconfig-all`
+    - https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
+
+
+    ```lua
+    lspconfig.<ls name>.setup({
+        cmd = { 'command', '--flag', '--flag value', ... },
+        root_dir = function(filename, bufnr) ... end,
+        filetypes = { ... },
+        ...
+
+        -- Language server-specific settings
+        settings = { ... },
+    })
+    ```
+
+    e.g.,
+
+    ```lua
+    lspconfig.tailwindcss.setup({
+        -- Other settings for lspconfig
+        ...
+
+        -- Tailwind CSS language server settings
+        settings = {
+            -- https://github.com/tailwindlabs/tailwindcss/issues/7553#issuecomment-735915659
+            tailwindCSS = {
+                experimental = {
+                    configFile = nil,
+                    classRegex = {
+                        "<regex>",
+                        ...
+                    },
+                },
+            },
+        },
+    })
+    ```
+
+    Some helpful language server configuration documentation I've found:
+    - **OmniSharp**
+        https://github.com/OmniSharp/omnisharp-roslyn/wiki/Configuration-Options
+
+        (an outlier for supporting hierarchical configuration files)
+
+    - **MDX Analyzer**
+        https://github.com/mdx-js/mdx-analyzer/tree/main/packages/language-server#configuration
+--]]
 
 lspconfig.html.setup({
     filetypes = { 'html', 'htmldjango', },
