@@ -1421,6 +1421,17 @@ nvim_cmp.setup({
                 },
             },
         }),
+
+        -- Use nvim-cmp for language server-focused completion
+        ['<C-x><C-x>'] = nvim_cmp.mapping.complete({
+            config = {
+                sources = {
+                    { name = 'nvim_lsp', },
+                    { name = 'nvim_lua', },
+                    { name = 'luasnip', },
+                },
+            },
+        }),
     }),
     -- Do not pre-select any items
     preselect = nvim_cmp.PreselectMode.None,
@@ -1429,9 +1440,9 @@ nvim_cmp.setup({
         appear in the completion list.
     --]]
     sources = nvim_cmp.config.sources({
-        { name = 'nvim_lua' },
-        { name = 'nvim_lsp_signature_help' },
         { name = 'nvim_lsp' },
+        { name = 'nvim_lsp_signature_help' },
+        { name = 'nvim_lua' },
         { name = 'luasnip' },
     }),
 })
