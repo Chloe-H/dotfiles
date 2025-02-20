@@ -1014,6 +1014,9 @@ local ts_mappings = {
     ['<C-m>nl'] = ts_actions_layout.cycle_layout_next,
     -- Freeze the current list and start a fuzzy search in the frozen list
     ['<C-m>fz'] = ts_actions.to_fuzzy_refine,
+
+    -- Disable everybody's stupid delete mappings
+    ['<C-d>'] = false,
 }
 
 telescope.setup({
@@ -1051,11 +1054,29 @@ telescope.setup({
         find_files = {
             hidden = true,
         },
+        git_branches = {
+            mappings = {
+                i = {
+                    -- Delete currently selected branch, with confirmation
+                    ['<C-m>bd'] = 'git_delete_branch',
+                },
+                n = {
+                    -- Delete currently selected branch, with confirmation
+                    ['<C-m>bd'] = 'git_delete_branch',
+                },
+            },
+        },
     },
     extensions = {
         live_grep_args = {
             mappings = {
                 i = {
+                    ['<C-m>""'] = ts_lga_actions.quote_prompt(),
+                    ['<C-m>ig'] = ts_lga_actions.quote_prompt({
+                        postfix = ' --iglob '
+                    }),
+                },
+                n = {
                     ['<C-m>""'] = ts_lga_actions.quote_prompt(),
                     ['<C-m>ig'] = ts_lga_actions.quote_prompt({
                         postfix = ' --iglob '
@@ -1093,6 +1114,13 @@ require('auto-session').setup({
 
     session_lens = {
         previewer = true,
+
+        mappings = {
+            delete_session = {
+                { 'i', 'n', },
+                '<C-m>sd'
+            },
+        },
     },
 })
 
