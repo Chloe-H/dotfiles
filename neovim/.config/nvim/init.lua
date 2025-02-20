@@ -1008,15 +1008,26 @@ local ts_mappings = {
     ['<C-m>qfs'] = ts_actions.smart_send_to_qflist + ts_actions.open_qflist,
     -- Add selected/all results to quickfix list and open it
     ['<C-m>qfa'] = ts_actions.smart_add_to_qflist + ts_actions.open_qflist,
-    -- Toggle preview
-    ['<C-m>pv'] = ts_actions_layout.toggle_preview,
+
     -- Cycle to next layout
     ['<C-m>nl'] = ts_actions_layout.cycle_layout_next,
     -- Freeze the current list and start a fuzzy search in the frozen list
     ['<C-m>fz'] = ts_actions.to_fuzzy_refine,
 
-    -- Disable everybody's stupid delete mappings
-    ['<C-d>'] = false,
+    -- Scroll results
+    ['<C-m>u'] = ts_actions.results_scrolling_up,
+    ['<C-m>d'] = ts_actions.results_scrolling_down,
+    ['<C-m>h'] = ts_actions.results_scrolling_left,
+    ['<C-m>l'] = ts_actions.results_scrolling_right,
+
+    -- Toggle preview
+    ['<C-m>pv'] = ts_actions_layout.toggle_preview,
+
+    -- Scroll preview
+    ['<C-m>U'] = ts_actions.preview_scrolling_up,
+    ['<C-m>D'] = ts_actions.preview_scrolling_down,
+    ['<C-m>H'] = ts_actions.preview_scrolling_left,
+    ['<C-m>L'] = ts_actions.preview_scrolling_right,
 }
 
 telescope.setup({
