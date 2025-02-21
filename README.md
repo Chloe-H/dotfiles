@@ -141,6 +141,7 @@ nowadays, so it should probably be your go-to. As nice as youtube-dlg is, my
 I've put these in their own section because they don't actually fit the `stow`
 model.
 
+- `fonts/`: Font hoarding
 - `scripts/`: General purpose scripts
 - `setup/`: Scripts for automating setup for software (e.g. installing
 dependencies)
