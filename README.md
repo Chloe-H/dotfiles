@@ -142,6 +142,22 @@ I've put these in their own section because they don't actually fit the `stow`
 model.
 
 - `fonts/`: Font hoarding
+    - **Favorites:**
+        - **OneNote:**
+            - **Default:** `Ubuntu Nerd Font Light`, 11.5 pt
+                - Configurable in options, but only changes "Normal" style
+            - **Code:** `UbuntuMono Nerd Font Mono`
+        - **MobaXterm:** `DejaVuSansM Nerd Font Mono`, 12 pt
+            - Go-to font for Neovim, broadly
+    - **Resources:**
+        - [Nerd Fonts](https://www.nerdfonts.com/font-downloads): Fonts with
+        extra symbols added in; necessary for fancy status lines in, e.g., tmux
+        and Vim/Neovim
+        - Fonts and sites recommended by friends:
+            - [Victor Mono](https://rubjo.github.io/victor-mono/)
+            - [Go fonts - The Go Programming
+            Language](https://go.dev/blog/go-fonts)
+            - [Equity ‹ MB Type](https://mbtype.com/fonts/equity/)
 - `scripts/`: General purpose scripts
 - `setup/`: Scripts for automating setup for software (e.g. installing
 dependencies)
