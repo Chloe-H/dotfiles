@@ -21,9 +21,11 @@
 
 - **Install:** `sudo { pip3 | pip } install virtualenv virtualenvwrapper`
     - Additional setup is already in `.bashrc`
-    - **TODO:** is `sudo` okay and/or necessary?
+<!-- TODO: Is `sudo` okay and/or necessary? -->
 
 ### Vim 8.2+
+
+⚠️ Unmaintained now that I've fully embraced Neovim ⚠️
 
 **Install** for distros that are behind the times:
 1. `sudo add-apt-repository ppa:jonathonf/vim`
@@ -32,7 +34,7 @@
 
 [Source](https://tipsonubuntu.com/2016/09/13/vim-8-0-released-install-ubuntu-16-04/)
 
-**Finally,** clone down [Vim setup repo](https://bitbucket.org/ChloeH/vim-setup/)
+**Finally,** clone my [Vim setup repo](https://bitbucket.org/ChloeH/vim-setup/)
 and follow the instructions in the README.
 
 # Rundown of stowables
@@ -43,10 +45,10 @@ and follow the instructions in the README.
 
 **Notes:**
 - Stow `libinput-gestures-touchpad-config` with
-`sudo stow --target=/etc libinput-gestures-touchpad-config`.
-- Stow `libinput-gestures` like normal.
+`sudo stow --target=/etc libinput-gestures-touchpad-config`
+- Stow `libinput-gestures` like normal
 - When you change the gestures, use `libinput-gestures-setup restart` to load
-them.
+them
 
 ## `bash`
 
@@ -73,7 +75,7 @@ When the hook is working, commit messages on non-`main` branches will start
 with `[<branch name>]`
 
 - **Note:** Run `git init` in repositories cloned before setting up the hook to
-update them to use it.
+update them to use it
 
 #### Setting up the commit hook manually
 
@@ -89,11 +91,17 @@ running `git init`.
 
 ## `neovim`
 
-**Setup script:** `manual-backups/setup/neovim/linux/neovide-install.sh`
+**Setup scripts:** `manual-backups/setup/neovim/`
+
+⚠️ The setup scripts are not fully tested! ⚠️
+
+I only revisit them when I have to set up a new machine, and I don't always have
+the bandwidth to update the script I used based on its performance. But I
+digress.
 
 Ground-up `init.lua`, by which I mean a Neovim/Neovide configuration file that
 I am making from scratch. At time of writing, my intention is to make something
-that (at least *probably*) works on Windows, native Ubuntu, and Ubuntu in WSL.
+that (at least _probably_) works on Windows, native Ubuntu, and Ubuntu in WSL.
 
 I haven't _fully_ tested my setup script, but I've done my best to account for
 various versions of Ubuntu and RHEL.
@@ -104,8 +112,8 @@ various versions of Ubuntu and RHEL.
 time to figure out how to avoid the password prompt *every time* I want to use a
 password-protected key.
 
-- **Pro:** I won't have to fiddle with SSH settings going forward.
-- **Con:** SSH key file names for GitHub and BitBucket are hardcoded.
+- **Pro:** I won't have to fiddle with SSH settings going forward
+- **Con:** SSH key file names for GitHub and BitBucket are hardcoded
 
 ## `tmux`
 
@@ -133,11 +141,14 @@ nowadays, so it should probably be your go-to. As nice as youtube-dlg is, my
 I've put these in their own section because they don't actually fit the `stow`
 model.
 
-- `software`: I may, one day, put scripts or other such things in this repo.
-Hence, this folder, which I made when I did exactly that, long ago.
-    - `copy-to`: Manually copy the contents of each the top-level directories to
-    the respective locations provided [below](#softwarecopy-to).
-    - `import`: Import directories' contents into their namesake programs.
+- `scripts/`: General purpose scripts
+- `setup/`: Scripts for automating setup for software (e.g. installing
+dependencies)
+- `software/`: Configurations for software whose setup I have not automated,
+whether due to lack of bandwidth or infeasibility
+    - `copy-to/`: Manually copy the contents of each the top-level directories to
+    the respective locations provided [below](#softwarecopy-to)
+    - `import/`: Import directories' contents into the respective software
         - **Installs:**
             - [Indicator Stickynotes](https://github.com/umangv/indicator-stickynotes)
             - [OneNote 2016](https://www.onenote.com/download)
@@ -175,7 +186,7 @@ instead.
 
 - **Destination:** `C:\Users\%USERNAME%\Documents\WindowsPowerShell\`
 
-TODO: Move it to the top level and add symlinking instructions
+<!-- TODO: Move it to the top level and add symlinking instructions -->
 
 **Notes:**
 - `(custom)` denotes my additions
