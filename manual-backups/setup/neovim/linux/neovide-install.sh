@@ -1,4 +1,5 @@
 # TODO: Add sharkdp/fd? (https://github.com/sharkdp/fd#installation)
+# TODO: Add nodejs? For npm for mason.nvim? Is that necessary?
 if [ -f /etc/os-release ]; then
     # Courtesy of https://askubuntu.com/a/459425
     # Extract OS identifier

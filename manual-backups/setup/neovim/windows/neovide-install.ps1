@@ -26,6 +26,7 @@ scoop install ripgrep # For `:Rg` in fzf.vim, `live-grep` and `grep_string` in t
 scoop install fd # (Optional) Alternative to `find` for `find_files` and `fd` in telescope (fairly certain)
 scoop install perl # For `:Tags`, `:Helptags` in fzf.vim
 scoop install universal-ctags # For tagbar
+scoop install nodejs # For mason.nvim, so it can install tools
 
 scoop install mingw gcc make # 90% sure /all/ are needed for telescope-fzf-native
 
