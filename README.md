@@ -17,6 +17,28 @@
 
 - **Install:** `sudo apt install tree`
 
+### Auto-completion
+
+#### `fzf`
+
+- **Install:**
+    ```sh
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    ~/.fzf/install
+    ```
+    - Accept fuzzy auto-completion and key bindings
+    - Updates to shell configuration file shouldn't be necessary; # check
+    `.bashrc_extended`
+
+`Ctrl + R` or start typing to auto complete
+
+#### `git` completion
+
+- **Install:** Download `git-completion.bash`, as needed: `curl
+https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+-o ~/.git-completion.bash`
+    - It's probably safest to replace "master" with your installed version (e.g. "v2.39.1")
+
 ### Python virtual environment manager and wrapper
 
 - **Install:** `sudo { pip3 | pip } install virtualenv virtualenvwrapper`
