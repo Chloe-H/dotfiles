@@ -27,16 +27,17 @@
     ~/.fzf/install
     ```
     - Accept fuzzy auto-completion and key bindings
-    - Updates to shell configuration file shouldn't be necessary; # check
+    - Updates to shell configuration file shouldn't be necessary; check
     `.bashrc_extended`
 
 `Ctrl + R` or start typing to auto complete
 
 #### `git` completion
 
-- **Install:** Download `git-completion.bash`, as needed: `curl
-https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
--o ~/.git-completion.bash`
+- **Install:** Download `git-completion.bash`, as needed:
+    `curl
+    https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+    -o ~/.git-completion.bash`
     - It's probably safest to replace "master" with your installed version (e.g. "v2.39.1")
 
 ### Python virtual environment manager and wrapper
