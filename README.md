@@ -35,9 +35,9 @@
 #### `git` completion
 
 - **Install:** Download `git-completion.bash`, as needed:
-    `curl
-    https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
-    -o ~/.git-completion.bash`
+    ```sh
+    curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
+    ```
     - It's probably safest to replace "master" with your installed version (e.g. "v2.39.1")
 
 ### Python virtual environment manager and wrapper
