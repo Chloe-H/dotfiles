@@ -1003,31 +1003,33 @@ local ts_actions = require('telescope.actions')
 local ts_lga_actions = require('telescope-live-grep-args.actions')
 local ts_actions_layout = require('telescope.actions.layout')
 
+local ts_leader = '<C-,>'
+
 local ts_mappings = {
     -- Send selected/all results to quickfix list and open it
-    ['<C-m>qfs'] = ts_actions.smart_send_to_qflist + ts_actions.open_qflist,
+    [ts_leader .. 'qfs'] = ts_actions.smart_send_to_qflist + ts_actions.open_qflist,
     -- Add selected/all results to quickfix list and open it
-    ['<C-m>qfa'] = ts_actions.smart_add_to_qflist + ts_actions.open_qflist,
+    [ts_leader .. 'qfa'] = ts_actions.smart_add_to_qflist + ts_actions.open_qflist,
 
     -- Cycle to next layout
-    ['<C-m>nl'] = ts_actions_layout.cycle_layout_next,
+    [ts_leader .. 'nl'] = ts_actions_layout.cycle_layout_next,
     -- Freeze the current list and start a fuzzy search in the frozen list
-    ['<C-m>fz'] = ts_actions.to_fuzzy_refine,
+    [ts_leader .. 'fz'] = ts_actions.to_fuzzy_refine,
 
     -- Scroll results
-    ['<C-m>u'] = ts_actions.results_scrolling_up,
-    ['<C-m>d'] = ts_actions.results_scrolling_down,
-    ['<C-m>h'] = ts_actions.results_scrolling_left,
-    ['<C-m>l'] = ts_actions.results_scrolling_right,
+    [ts_leader .. 'u'] = ts_actions.results_scrolling_up,
+    [ts_leader .. 'd'] = ts_actions.results_scrolling_down,
+    [ts_leader .. 'h'] = ts_actions.results_scrolling_left,
+    [ts_leader .. 'l'] = ts_actions.results_scrolling_right,
 
     -- Toggle preview
-    ['<C-m>pv'] = ts_actions_layout.toggle_preview,
+    [ts_leader .. 'pv'] = ts_actions_layout.toggle_preview,
 
     -- Scroll preview
-    ['<C-m>U'] = ts_actions.preview_scrolling_up,
-    ['<C-m>D'] = ts_actions.preview_scrolling_down,
-    ['<C-m>H'] = ts_actions.preview_scrolling_left,
-    ['<C-m>L'] = ts_actions.preview_scrolling_right,
+    [ts_leader .. 'U'] = ts_actions.preview_scrolling_up,
+    [ts_leader .. 'D'] = ts_actions.preview_scrolling_down,
+    [ts_leader .. 'H'] = ts_actions.preview_scrolling_left,
+    [ts_leader .. 'L'] = ts_actions.preview_scrolling_right,
 }
 
 telescope.setup({
@@ -1053,11 +1055,11 @@ telescope.setup({
             mappings = {
                 i = {
                     -- Delete selected/all buffers
-                    ['<C-m>bd'] = 'delete_buffer',
+                    [ts_leader .. 'bd'] = 'delete_buffer',
                 },
                 n = {
                     -- Delete selected/all buffers
-                    ['<C-m>bd'] = 'delete_buffer',
+                    [ts_leader .. 'bd'] = 'delete_buffer',
                 },
             },
             sort_mru = true,
@@ -1069,11 +1071,11 @@ telescope.setup({
             mappings = {
                 i = {
                     -- Delete currently selected branch, with confirmation
-                    ['<C-m>bd'] = 'git_delete_branch',
+                    [ts_leader .. 'bd'] = 'git_delete_branch',
                 },
                 n = {
                     -- Delete currently selected branch, with confirmation
-                    ['<C-m>bd'] = 'git_delete_branch',
+                    [ts_leader .. 'bd'] = 'git_delete_branch',
                 },
             },
         },
@@ -1082,14 +1084,14 @@ telescope.setup({
         live_grep_args = {
             mappings = {
                 i = {
-                    ['<C-m>""'] = ts_lga_actions.quote_prompt(),
-                    ['<C-m>ig'] = ts_lga_actions.quote_prompt({
+                    [ts_leader .. '""'] = ts_lga_actions.quote_prompt(),
+                    [ts_leader .. 'ig'] = ts_lga_actions.quote_prompt({
                         postfix = ' --iglob '
                     }),
                 },
                 n = {
-                    ['<C-m>""'] = ts_lga_actions.quote_prompt(),
-                    ['<C-m>ig'] = ts_lga_actions.quote_prompt({
+                    [ts_leader .. '""'] = ts_lga_actions.quote_prompt(),
+                    [ts_leader .. 'ig'] = ts_lga_actions.quote_prompt({
                         postfix = ' --iglob '
                     }),
                 },
@@ -1129,7 +1131,7 @@ require('auto-session').setup({
         mappings = {
             delete_session = {
                 { 'i', 'n', },
-                '<C-m>sd'
+                ts_leader .. 'sd'
             },
         },
     },
