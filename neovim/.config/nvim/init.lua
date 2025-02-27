@@ -1003,9 +1003,13 @@ local ts_actions = require('telescope.actions')
 local ts_lga_actions = require('telescope-live-grep-args.actions')
 local ts_actions_layout = require('telescope.actions.layout')
 
-local ts_leader = '<C-,>'
+-- Ctrl-based key map options are limited: https://stackoverflow.com/a/28003386
+local ts_leader = '<C-b>'
 
 local ts_mappings = {
+    -- Try to ensure nothing unfortunate happens if we time out on the leader key
+    ts_leader = false,
+
     -- Send selected/all results to quickfix list and open it
     [ts_leader .. 'qfs'] = ts_actions.smart_send_to_qflist + ts_actions.open_qflist,
     -- Add selected/all results to quickfix list and open it
