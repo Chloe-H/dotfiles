@@ -101,6 +101,7 @@ Plug(                           -- File tag browser; depends on universal-ctags
     'majutsushi/tagbar',
     { on = { 'TagbarToggle', 'TagbarOpen', 'TagbarOpenAutoClose' } }
 )
+Plug('davidmh/mdx.nvim')        -- "Good enough" MDX file syntax highlighting
 Plug(
     --[[
         Add tree-sitter functionality
@@ -1218,6 +1219,10 @@ vim.keymap.set(
 )
 
 
+-- Plugin settings: mdx.nvim
+require('mdx').setup()
+
+
 -- Plugin settings: nvim-treesitter, nvim-treesitter-textobjects, nvim-ts-autotag
 require('nvim-treesitter.configs').setup({
     -- Parsers to install by default
@@ -1577,6 +1582,7 @@ require('neodev').setup({})
 -- Plugin settings: nvim-lspconfig
 -- WARN: Has to come after mason, mason-lspconfig, lsp-zero, and neodev setup
 local lspconfig = require('lspconfig')
+local lspconfig_utils = require('lspconfig.util')
 
 -- Add a border around `Lsp...` windows
 require('lspconfig.ui.windows').default_options.border = 'rounded'
@@ -1641,6 +1647,20 @@ require('lspconfig.ui.windows').default_options.border = 'rounded'
 
 lspconfig.html.setup({
     filetypes = { 'html', 'htmldjango', },
+})
+
+lspconfig.mdx_analyzer.setup({
+    init_options = { typescript = { enabled = true, }, },
+    root_dir = lspconfig_utils.root_pattern(
+        'node_modules/typescript/',
+        '.git',
+        'package.json'
+    ),
+    settings = {
+        -- Search for "experimentalLanguageServer" in the changelog:
+        -- https://github.com/mdx-js/mdx-analyzer/blob/main/packages/vscode-mdx/CHANGELOG.md
+        mdx = { server = { enable = true, }, },
+    },
 })
 
 
