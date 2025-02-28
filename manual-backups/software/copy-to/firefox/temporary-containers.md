@@ -33,9 +33,9 @@ somehow).
 
 As ordered in Temporary Containers (Options > Isolation > Per Domain).
 
-- **Work:** `/^(https://)?((([^\s/]+\.)*?([REDACTED]|myworkday)\.com)|([REDACTED]-com\.access\.mcas\.ms)|(([^\s/]+\.)*?(live|microsoft(online)?|office|one(drive|note)|outlook|sharepoint|visualstudio|windowsazure)\.com(\.mcas\.ms)?)|(statics\.teams\.cdn\.office\.net)(\.mcas\.ms)?)\b(/.*)?$/`
+- **Work:** `/^(https://)?((([^\s/]+\.)*?([REDACTED]|myworkday)\.com)|([REDACTED]-com\.access\.mcas\.ms)|(([^\s/]+\.)*?(live|microsoft(online)?|office|one(drive|note)|outlook|sharepoint|visualstudio|windowsazure)\.com(\.mcas\.ms)?)|(((statics\.teams\.cdn\.office\.net)|(login)|(mcas-proxyweb))(\.mcas\.ms)))\b(/.*)?$/`
     - **Microsoft:** `/^(https://)?([^\s/]+\.)*?(live|microsoft(online)?|office|one(drive|note)|outlook|sharepoint|visualstudio|windowsazure)\.com(\.mcas\.ms)?\b(/.*)?$/`
-    - **Teams:** `/^(https://)?(statics\.teams\.cdn\.office\.net)(\.mcas\.ms)?\b(/.*)?$/`
+    - **Teams:** `/^(https://)?((statics\.teams\.cdn\.office\.net)|(login)|(mcas-proxyweb))(\.mcas\.ms)\b(/.*)?$/`
     - **Company-specific:** `/^(https://)?((([^\s/]+\.)*?([REDACTED]|myworkday)\.com)|([REDACTED]-com\.access\.mcas\.ms))\b(/.*)?$/`
 - **Microsoft:** `/^(https://)?((([^\s/]+\.)*?(live|microsoft(online)?|office|one(drive|note)|outlook|sharepoint|visualstudio|windowsazure)\.com)|(statics\.teams\.cdn\.office\.net))\b(/.*)?$/`
     - **Microsoft:** `/^(https://)?(([^\s/]+\.)*?(live|microsoft(online)?|office|one(drive|note)|outlook|sharepoint|visualstudio|windowsazure)\.com)\b(/.*)?$/`

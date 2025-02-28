@@ -1,6 +1,6 @@
 {
   "version": "1.9.2",
-  "date": 1723733502867,
+  "date": 1740702874305,
   "preferences": {
     "automaticMode": {
       "active": true,
@@ -46,7 +46,7 @@
       },
       "domain": [
         {
-          "pattern": "/^(https://)?((([^\\s/]+\\.)*?([REDACTED]|myworkday)\\.com)|([REDACTED]-com\\.access\\.mcas\\.ms)|(([^\\s/]+\\.)*?(live|microsoft(online)?|office|one(drive|note)|outlook|sharepoint|visualstudio|windowsazure)\\.com(\\.mcas\\.ms)?)|(statics\\.teams\\.cdn\\.office\\.net)(\\.mcas\\.ms)?)\\b(/.*)?$/",
+          "pattern": "/^(https://)?((([^\\s/]+\\.)*?([REDACTED]|myworkday)\\.com)|([REDACTED]-com\\.access\\.mcas\\.ms)|(([^\\s/]+\\.)*?(live|microsoft(online)?|office|one(drive|note)|outlook|sharepoint|visualstudio|windowsazure)\\.com(\\.mcas\\.ms)?)|(((statics\\.teams\\.cdn\\.office\\.net)|(login)|(mcas-proxyweb))(\\.mcas\\.ms)))\\b(/.*)?$/",
           "always": {
             "action": "enabled",
             "allowedInPermanent": true,
@@ -68,7 +68,7 @@
           },
           "excluded": {
             "/^(https://)?([^\\s/]+\\.)*?(live|microsoft(online)?|office|one(drive|note)|outlook|sharepoint|visualstudio|windowsazure)\\.com(\\.mcas\\.ms)?\\b(/.*)?$/": {},
-            "/^(https://)?(statics\\.teams\\.cdn\\.office\\.net)(\\.mcas\\.ms)?\\b(/.*)?$/": {},
+            "/^(https://)?((statics\\.teams\\.cdn\\.office\\.net)|(login)|(mcas-proxyweb))(\\.mcas\\.ms)\\b(/.*)?$/": {},
             "/^(https://)?((([^\\s/]+\\.)*?([REDACTED]|myworkday)\\.com)|([REDACTED]-com\\.access\\.mcas\\.ms))\\b(/.*)?$/": {}
           }
         },
