@@ -8,6 +8,8 @@ Plug('junegunn/vim-plug') -- Added to get Vim help for vim-plug
 Plug('tpope/vim-fugitive')
 Plug('tpope/vim-rhubarb')         -- GitHub support in vim-fugitive (GBrowse, omni-completion)
 Plug('mbbill/undotree')           -- Undo history tree visualizer
+Plug('brenoprata10/nvim-highlight-colors')
+                                  -- Real-time color highlighting
 Plug('folke/todo-comments.nvim')  -- Highlighting and search functions for todo comments
 Plug('tpope/vim-surround')        -- Easily add, change, and remove surrounding character pairs
 Plug('numtostr/comment.nvim')     -- (Un)comment with key binds
@@ -437,6 +439,13 @@ vim.keymap.set(
         desc = 'Toggle Undotree',
     }
 )
+
+
+-- Plugin settings: nvim-highlight-colors
+require('nvim-highlight-colors').setup({
+    -- Highlight colors in Tailwind CSS classes
+    enable_tailwind = true,
+})
 
 
 -- Plugin settings: todo-comments.nvim
