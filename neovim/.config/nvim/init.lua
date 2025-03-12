@@ -442,7 +442,9 @@ vim.keymap.set(
 
 
 -- Plugin settings: nvim-highlight-colors
-require('nvim-highlight-colors').setup({
+local highlight_colors = require('nvim-highlight-colors')
+
+highlight_colors.setup({
     -- Highlight colors in Tailwind CSS classes
     enable_tailwind = true,
 })
@@ -1443,6 +1445,10 @@ end
 
 nvim_cmp.setup({
     completion = { keyword_length = 3 },
+    formatting = {
+        -- Highlight colors with nvim-highlight-colors
+        format = highlight_colors.format,
+    },
     mapping = nvim_cmp.mapping.preset.insert({
         -- Navigate between snippet placeholders
         ['<C-f>'] = lsp_zero_cmp_action.luasnip_jump_forward(),
