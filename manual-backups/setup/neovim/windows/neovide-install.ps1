@@ -5,6 +5,8 @@
     Alternate source for a lot of this: https://community.ops.io/aowendev/managing-packages-on-windows-with-scoop-411d
 #>
 
+# TODO: Add fzf, git completion?
+
 # Get current execution policy, in case you want to reset it after the install
 Get-ExecutionPolicy -Scope CurrentUser
 

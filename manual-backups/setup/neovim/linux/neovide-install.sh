@@ -1,5 +1,5 @@
 # TODO: Add sharkdp/fd? (https://github.com/sharkdp/fd#installation)
-# TODO: Add nodejs? For npm for mason.nvim? Is that necessary?
+
 if [ -f /etc/os-release ]; then
     # Courtesy of https://askubuntu.com/a/459425
     # Extract OS identifier
@@ -15,6 +15,9 @@ if [ -f /etc/os-release ]; then
     # OS: Ubuntu
     if [ ${OS_ID} == 'ubuntu' ]; then
         sudo apt-get install -y git
+
+        # Install node, npm for mason.nvim (if nothing else)
+        sudo apt install nodejs npm
 
         # Install ripgrep
         if [ ${OS_VERSION} -ge 1810 ]; then
@@ -61,7 +64,7 @@ if [ -f /etc/os-release ]; then
         sudo yum-config-manager --add-repo=https://copr.fedorainfracloud.org/coprs/carlwgeorge/ripgrep/repo/epel-7/carlwgeorge-ripgrep-epel-7.repo
         sudo yum install ripgrep
 
-        # Install snap
+        # Install snap, node/npm
         # RHEL version >= 7
         if [ ${OS_MAJOR_VERSION} -ge 7 ]; then
             # Add the EPEL repository
@@ -71,6 +74,9 @@ if [ -f /etc/os-release ]; then
             elif [ ${OS_MAJOR_VERSION} -eq 7 ]; then
                 sudo rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
             fi
+
+            # Install node, npm for mason.nvim (if nothing else)
+            sudo yum install nodejs npm
 
             # Add "optional" and "extras" repositories
             sudo subscription-manager repos --enable "rhel-*-optional-rpms" --enable "rhel-*-extras-rpms"
@@ -114,6 +120,14 @@ if [ -f /etc/os-release ]; then
         sudo yum install -y neovim python3-neovim
     fi
 fi
+
+
+# Set up fzf for command-line completion
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+
+# Set up git completion
+curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
 
 # Install vim-plug (Source: https://github.com/junegunn/vim-plug#unix-linux)
 # If it doesn't work, see https://github.com/junegunn/vim-plug#installation
