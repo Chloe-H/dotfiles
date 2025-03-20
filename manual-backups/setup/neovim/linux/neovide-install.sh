@@ -52,9 +52,6 @@ if [ -f /etc/os-release ]; then
         cd ${setup_dir}
         unset dev_dir setup_dir
 
-        # Bonus: Install neovide
-        sudo snap install neovide
-
     # OS: Red Hat Enterprise Linux
     elif [ ${OS_ID} == 'rhel' ]; then # Everything in here is untested
         sudo yum install -y git
@@ -118,6 +115,12 @@ if [ -f /etc/os-release ]; then
         # Finally, install neovim
         sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
         sudo yum install -y neovim python3-neovim
+
+        # Bonus: Install neovide (from https://neovide.dev/installation.html#linux)
+        sudo dnf install fontconfig-devel freetype-devel @development-tools \
+            libstdc++-static libstdc++-devel
+        curl --proto '=https' --tlsv1.2 -sSf "https://sh.rustup.rs" | sh
+        cargo install --git https://github.com/neovide/neovide
     fi
 fi
 
