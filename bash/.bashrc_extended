@@ -44,3 +44,8 @@ function git() {
 
 # Git prompt (useful for custom PS1, at bare minimum)
 source ~/.git-bash-prompt.sh
+
+# Source Rust/cargo for neovide binary
+if [[ -f "${HOME}/.cargo/env" ]]; then
+    . "${HOME}/.cargo/env"
+fi
