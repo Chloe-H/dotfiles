@@ -7,6 +7,8 @@ Plug('junegunn/vim-plug') -- Added to get Vim help for vim-plug
 -- Niceties
 Plug('tpope/vim-fugitive')
 Plug('tpope/vim-rhubarb')         -- GitHub support in vim-fugitive (GBrowse, omni-completion)
+Plug('ariel-frischer/bmessages.nvim')
+                                  -- Better neovim messages (`:messages`)
 Plug('mbbill/undotree')           -- Undo history tree visualizer
 Plug('brenoprata10/nvim-highlight-colors')
                                   -- Real-time color highlighting
@@ -427,6 +429,12 @@ vim.keymap.set(
         desc = '4-way diff for merge conflicts: d2o/d3o to get "ours"/local / "theirs"/remote, respectively',
     }
 )
+
+
+-- Plugin settings: bmessages.nvim
+require('bmessages').setup({
+    split_type = "split",
+})
 
 
 -- Plugin settings: undotree
