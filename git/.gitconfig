@@ -1,16 +1,16 @@
 ; WARNING: Do not set "[user]" info here
 [core]
-	editor = nvim
-	excludesfile = ~/.gitignore_global
+    editor = nvim
+    excludesfile = ~/.gitignore_global
 [diff]
-	tool = nvimdiff
+    tool = nvimdiff
 [difftool]
-	prompt = true
+    prompt = true
 [init]
     defaultBranch = main
 [merge]
-	tool = nvimdiff
-	conflictstyle = diff3
+    tool = nvimdiff
+    conflictstyle = diff3
 [mergetool "nvimdiff"]
     ; Probably unnecessary to include the layout
     layout = "LOCAL,BASE,REMOTE / MERGED"

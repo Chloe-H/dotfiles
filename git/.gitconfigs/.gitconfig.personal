@@ -1,16 +1,16 @@
 [user]
-	name = Chloe
-	email = Chloe-H@users.noreply.github.com
+    name = Chloe
+    email = Chloe-H@users.noreply.github.com
 [core]
-	autocrlf = false
-	ignorecase = false
+    autocrlf = false
+    ignorecase = false
 [filter "lfs"]
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+    clean = git-lfs clean -- %f
 [init]
     defaultBranch = main
-	templatedir = ~/.git-templates
+    templatedir = ~/.git-templates
 [push]
-	default = nothing
+    default = nothing
