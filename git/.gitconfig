@@ -6,6 +6,8 @@
 	tool = nvimdiff
 [difftool]
 	prompt = true
+[init]
+    defaultBranch = main
 [merge]
 	tool = nvimdiff
 	conflictstyle = diff3
