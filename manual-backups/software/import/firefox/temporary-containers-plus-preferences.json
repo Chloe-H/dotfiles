@@ -1,0 +1,304 @@
+{
+  "version": "1.0.3",
+  "date": 1746714699892,
+  "preferences": {
+    "automaticMode": {
+      "active": true,
+      "newTab": "created"
+    },
+    "notifications": false,
+    "container": {
+      "namePrefix": "tmp",
+      "color": "toolbar",
+      "colorRandom": true,
+      "colorRandomExcluded": [
+        "pink"
+      ],
+      "icon": "fingerprint",
+      "iconRandom": false,
+      "iconRandomExcluded": [],
+      "numberMode": "reuse",
+      "removal": 900000
+    },
+    "iconColor": "default",
+    "isolation": {
+      "global": {
+        "navigation": {
+          "action": "notsamedomain"
+        },
+        "mouseClick": {
+          "middle": {
+            "action": "notsamedomain",
+            "container": "default"
+          },
+          "ctrlleft": {
+            "action": "never",
+            "container": "default"
+          },
+          "left": {
+            "action": "notsamedomain",
+            "container": "default"
+          }
+        },
+        "excluded": {},
+        "excludedContainers": []
+      },
+      "domain": [
+        {
+          "pattern": "/^(https://)?((([^\\s/]+\\.)*?([REDACTED]|myworkday)\\.com)|([REDACTED]-com\\.access\\.mcas\\.ms)|(([^\\s/]+\\.)*?(live|microsoft(online)?|office|one(drive|note)|outlook|sharepoint|visualstudio|windowsazure)\\.com(\\.mcas\\.ms)?)|(((statics\\.teams\\.cdn\\.office\\.net)|(login)|(mcas-proxyweb))(\\.mcas\\.ms)))\\b(/.*)?$/",
+          "always": {
+            "action": "enabled",
+            "allowedInPermanent": true,
+            "allowedInTemporary": false
+          },
+          "navigation": {
+            "action": "global"
+          },
+          "mouseClick": {
+            "middle": {
+              "action": "global"
+            },
+            "ctrlleft": {
+              "action": "global"
+            },
+            "left": {
+              "action": "global"
+            }
+          },
+          "excluded": {
+            "/^(https://)?([^\\s/]+\\.)*?(live|microsoft(online)?|office|one(drive|note)|outlook|sharepoint|visualstudio|windowsazure)\\.com(\\.mcas\\.ms)?\\b(/.*)?$/": {},
+            "/^(https://)?((statics\\.teams\\.cdn\\.office\\.net)|(login)|(mcas-proxyweb))(\\.mcas\\.ms)\\b(/.*)?$/": {},
+            "/^(https://)?((([^\\s/]+\\.)*?([REDACTED]|myworkday)\\.com)|([REDACTED]-com\\.access\\.mcas\\.ms))\\b(/.*)?$/": {}
+          }
+        },
+        {
+          "pattern": "/^(https://)?((([^\\s/]+\\.)*?(live|microsoft(online)?|office|one(drive|note)|outlook|sharepoint|visualstudio|windowsazure)\\.com)|(statics\\.teams\\.cdn\\.office\\.net))\\b(/.*)?$/",
+          "always": {
+            "action": "enabled",
+            "allowedInPermanent": true,
+            "allowedInTemporary": false
+          },
+          "navigation": {
+            "action": "global"
+          },
+          "mouseClick": {
+            "middle": {
+              "action": "global"
+            },
+            "ctrlleft": {
+              "action": "global"
+            },
+            "left": {
+              "action": "global"
+            }
+          },
+          "excluded": {
+            "/^(https://)?(([^\\s/]+\\.)*?(live|microsoft(online)?|office|one(drive|note)|outlook|sharepoint|visualstudio|windowsazure)\\.com)\\b(/.*)?$/": {},
+            "/^(https://)?(statics\\.teams\\.cdn\\.office\\.net)\\b(/.*)?$/": {}
+          }
+        },
+        {
+          "pattern": "/^(https://)?([^\\s/]+\\.)*?(google(usercontent)?|youtube)\\.com\\b(/.*)?$/",
+          "always": {
+            "action": "enabled",
+            "allowedInPermanent": true,
+            "allowedInTemporary": false
+          },
+          "navigation": {
+            "action": "global"
+          },
+          "mouseClick": {
+            "middle": {
+              "action": "global"
+            },
+            "ctrlleft": {
+              "action": "global"
+            },
+            "left": {
+              "action": "global"
+            }
+          },
+          "excluded": {
+            "/^(https://)?([^\\s/]+\\.)*?(google(usercontent)?|youtube)\\.com\\b(/.*)?$/": {}
+          }
+        },
+        {
+          "pattern": "/^(https://)?([^\\s/]+\\.)*?slack\\.com\\b(/.*)?$/",
+          "always": {
+            "action": "enabled",
+            "allowedInPermanent": true,
+            "allowedInTemporary": false
+          },
+          "navigation": {
+            "action": "global"
+          },
+          "mouseClick": {
+            "middle": {
+              "action": "global"
+            },
+            "ctrlleft": {
+              "action": "global"
+            },
+            "left": {
+              "action": "global"
+            }
+          },
+          "excluded": {
+            "/^(https://)?([^\\s/]+\\.)*?slack\\.com\\b(/.*)?$/": {}
+          }
+        },
+        {
+          "pattern": "/^(https://)?([^\\s/]+\\.)*?(aws(apps|\\.amazon)?)(\\.com)?\\b(/.*)?$/",
+          "always": {
+            "action": "enabled",
+            "allowedInPermanent": true,
+            "allowedInTemporary": false
+          },
+          "navigation": {
+            "action": "global"
+          },
+          "mouseClick": {
+            "middle": {
+              "action": "global"
+            },
+            "ctrlleft": {
+              "action": "global"
+            },
+            "left": {
+              "action": "global"
+            }
+          },
+          "excluded": {
+            "/^(https://)?([^\\s/]+\\.)*?(aws(apps|\\.amazon)?)(\\.com)?\\b(/.*)?$/": {}
+          }
+        },
+        {
+          "pattern": "/^(https://)?([^\\s/]+\\.)*?(atlassian\\.(net|com)|bitbucket\\.org)\\b(/.*)?$/",
+          "always": {
+            "action": "enabled",
+            "allowedInPermanent": true,
+            "allowedInTemporary": false
+          },
+          "navigation": {
+            "action": "global"
+          },
+          "mouseClick": {
+            "middle": {
+              "action": "global"
+            },
+            "ctrlleft": {
+              "action": "global"
+            },
+            "left": {
+              "action": "global"
+            }
+          },
+          "excluded": {
+            "/^(https://)?([^\\s/]+\\.)*?(atlassian\\.(net|com)|bitbucket\\.org)\\b(/.*)?$/": {}
+          }
+        },
+        {
+          "pattern": "/^(https://)?([^\\s/]+\\.)*?((firefox\\.com)|(mozilla((\\.org)|(\\.auth0\\.com))))\\b(/.*)?$/",
+          "always": {
+            "action": "enabled",
+            "allowedInPermanent": true,
+            "allowedInTemporary": false
+          },
+          "navigation": {
+            "action": "global"
+          },
+          "mouseClick": {
+            "middle": {
+              "action": "global"
+            },
+            "ctrlleft": {
+              "action": "global"
+            },
+            "left": {
+              "action": "global"
+            }
+          },
+          "excluded": {
+            "/^(https://)?([^\\s/]+\\.)*?((firefox\\.com)|(mozilla((\\.org)|(\\.auth0\\.com))))\\b(/.*)?$/": {}
+          }
+        },
+        {
+          "pattern": "/^(https://)?([^\\s/]+\\.)*?((twitter|x)\\.com)\\b(/.*)?$/",
+          "always": {
+            "action": "disabled",
+            "allowedInPermanent": false,
+            "allowedInTemporary": false
+          },
+          "navigation": {
+            "action": "global"
+          },
+          "mouseClick": {
+            "middle": {
+              "action": "global"
+            },
+            "ctrlleft": {
+              "action": "global"
+            },
+            "left": {
+              "action": "global"
+            }
+          },
+          "excluded": {
+            "/^(https://)?([^\\s/]+\\.)*?((twitter|x)\\.com)\\b(/.*)?$/": {}
+          }
+        }
+      ],
+      "mac": {
+        "action": "disabled"
+      }
+    },
+    "browserActionPopup": true,
+    "pageAction": false,
+    "contextMenu": true,
+    "contextMenuBookmarks": false,
+    "keyboardShortcuts": {
+      "AltC": true,
+      "AltP": true,
+      "AltN": true,
+      "AltShiftC": false,
+      "AltX": false,
+      "AltO": false,
+      "AltI": true
+    },
+    "replaceTabs": false,
+    "closeRedirectorTabs": {
+      "active": false,
+      "delay": 2000,
+      "domains": [
+        "t.co",
+        "outgoing.prod.mozaws.net",
+        "slack-redir.net",
+        "slack-redir.net"
+      ]
+    },
+    "ignoreRequests": [],
+    "cookies": {
+      "domain": {}
+    },
+    "scripts": {
+      "active": false,
+      "domain": {}
+    },
+    "deletesHistory": {
+      "active": false,
+      "automaticMode": "never",
+      "contextMenu": false,
+      "contextMenuBookmarks": false,
+      "containerAlwaysPerDomain": "never",
+      "containerIsolation": "never",
+      "containerRemoval": 0,
+      "containerMouseClicks": "never",
+      "statistics": false
+    },
+    "statistics": true,
+    "ui": {
+      "expandPreferences": false,
+      "popupDefaultTab": "statistics"
+    }
+  }
+}
