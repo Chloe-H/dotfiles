@@ -101,6 +101,8 @@ Plug('rmagatti/auto-session')
 
 -- IDE-like stuff
 Plug('lewis6991/gitsigns.nvim') -- Git decorations, chunk navigation, etc.
+Plug('liuchengxu/vista.vim')    -- LSP symbol and file tag browser and search
+-- TODO: Deprecate tagbar in favor of vista.vim? Or debug tagbar in tsx files?
 Plug(                           -- File tag browser; depends on universal-ctags
     'majutsushi/tagbar',
     { on = { 'TagbarToggle', 'TagbarOpen', 'TagbarOpenAutoClose' } }
@@ -1218,6 +1220,35 @@ require('gitsigns').setup({
         )
     end
 })
+
+
+-- Plugin settings: vista.vim
+
+-- Open the vista sidebar on the left
+vim.g.vista_sidebar_position = 'vertical topleft'
+
+-- Close the vista window automatically when jumping to a symbol
+vim.g.vista_close_on_jump = 1
+
+vim.keymap.set(
+    'n',
+    '<Leader>vv',
+    '<cmd>Vista!!<CR>',
+    {
+        remap = false,
+        desc = 'Toggle the vista window',
+    }
+)
+
+vim.keymap.set(
+    'n',
+    '<Leader>v<Space>',
+    ':Vista<Space>',
+    {
+        remap = false,
+        desc = 'Put "Vista " in the command prompt',
+    }
+)
 
 
 -- Plugin settings: tagbar
