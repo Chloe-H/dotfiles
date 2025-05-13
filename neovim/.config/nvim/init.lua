@@ -598,7 +598,25 @@ vim.keymap.set(
 
 vim.keymap.set(
     'n',
-    '[t',
+    '[tt',
+    function()
+        todo_comments.jump_prev({ keywords = { "TODO" } })
+    end,
+    { remap = false, desc = 'Go to previous "TODO" comment' }
+)
+
+vim.keymap.set(
+    'n',
+    ']tt',
+    function()
+        todo_comments.jump_next({ keywords = { "TODO" } })
+    end,
+    { remap = false, desc = 'Go to next "TODO" comment' }
+)
+
+vim.keymap.set(
+    'n',
+    '[tc',
     function()
         todo_comments.jump_prev()
     end,
@@ -607,11 +625,43 @@ vim.keymap.set(
 
 vim.keymap.set(
     'n',
-    ']t',
+    ']tc',
     function()
         todo_comments.jump_next()
     end,
     { remap = false, desc = 'Go to next todo comment' }
+)
+
+vim.keymap.set(
+    'n',
+    '[ts',
+    function()
+        todo_comments.jump_prev({
+            keywords = {
+                "CONFIG",
+                "Plugin settings",
+                "Configuration",
+                "Configurations",
+            }
+        })
+    end,
+    { remap = false, desc = 'Go to previous config / plugin settings comment' }
+)
+
+vim.keymap.set(
+    'n',
+    ']ts',
+    function()
+        todo_comments.jump_next({
+            keywords = {
+                "CONFIG",
+                "Plugin settings",
+                "Configuration",
+                "Configurations",
+            }
+        })
+    end,
+    { remap = false, desc = 'Go to next config / plugin settings comment' }
 )
 
 
