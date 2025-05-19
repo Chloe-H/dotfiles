@@ -1096,19 +1096,19 @@ local ts_mappings = {
     [ts_leader .. 'fz'] = ts_actions.to_fuzzy_refine,
 
     -- Scroll results
-    [ts_leader .. 'u'] = ts_actions.results_scrolling_up,
-    [ts_leader .. 'd'] = ts_actions.results_scrolling_down,
-    [ts_leader .. 'h'] = ts_actions.results_scrolling_left,
-    [ts_leader .. 'l'] = ts_actions.results_scrolling_right,
+    [ts_leader .. 'U'] = ts_actions.results_scrolling_up,
+    [ts_leader .. 'D'] = ts_actions.results_scrolling_down,
+    [ts_leader .. 'H'] = ts_actions.results_scrolling_left,
+    [ts_leader .. 'L'] = ts_actions.results_scrolling_right,
 
     -- Toggle preview
     [ts_leader .. 'pv'] = ts_actions_layout.toggle_preview,
 
     -- Scroll preview
-    [ts_leader .. 'U'] = ts_actions.preview_scrolling_up,
-    [ts_leader .. 'D'] = ts_actions.preview_scrolling_down,
-    [ts_leader .. 'H'] = ts_actions.preview_scrolling_left,
-    [ts_leader .. 'L'] = ts_actions.preview_scrolling_right,
+    [ts_leader .. 'u'] = ts_actions.preview_scrolling_up,
+    [ts_leader .. 'd'] = ts_actions.preview_scrolling_down,
+    [ts_leader .. 'h'] = ts_actions.preview_scrolling_left,
+    [ts_leader .. 'l'] = ts_actions.preview_scrolling_right,
 }
 
 telescope.setup({
