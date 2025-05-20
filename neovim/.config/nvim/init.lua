@@ -197,7 +197,7 @@ vim.opt.expandtab = true -- Use spaces to insert <Tab>
 --[[
     TODO: Finish space/tab/indent research
     In the meantime:
-        `:bufdo if &filetype == 'typescriptreact' | setlocal shiftwidth=2 | endif`
+        `:bufdo if &filetype == 'typescript' || &filetype == 'typescriptreact' | setlocal shiftwidth=2 | endif`
 vim.opt.tabstop = 4      -- Number of spaces a <Tab> in the file counts for
 --]]
 vim.opt.softtabstop = 4  -- Number of spaces a <Tab> counts for while performing editing operations
