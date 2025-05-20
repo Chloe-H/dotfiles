@@ -1387,6 +1387,7 @@ require('nvim-treesitter.configs').setup({
         nvim-treesitter.
 
         TODO: Probably goes away with autotag upgrade
+        SEO: "newer version of neovim"?
     --]]
     autotag = {
         enable = true,
