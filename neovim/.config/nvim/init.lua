@@ -29,6 +29,7 @@ Plug(
 
             TODO: Update to latest and fix all configurations once you have
             nvim ≥ 0.9.4 (search for "Plugin settings: nvim-ts-context-commentstring")
+            SEO: "newer version of neovim"
         --]]
         commit = '6c30f3c8915d7b31c3decdfe6c7672432da1809d',
     }
@@ -42,6 +43,7 @@ Plug(                               -- Auto-pairing and renaming of HTML tags (a
             HACK: Pin version to avoid breaking changes
             TODO: Update to latest and fix configurations (as needed?) once you
             have nvim ≥ 0.9.4
+            SEO: "newer version of neovim"
 
             HACK: Fix for auto-pairing in htmldjango files:
 
@@ -142,7 +144,7 @@ Plug('hrsh7th/cmp-cmdline')                 -- nvim-cmp source for vim/neovim's 
 Plug('hrsh7th/cmp-nvim-lsp')                -- nvim-cmp source for neovim's built-in LSP client
 Plug('hrsh7th/cmp-nvim-lsp-signature-help') -- nvim-cmp source for showing function signatures with current parameter emphasized
 Plug('hrsh7th/cmp-nvim-lua')                -- nvim-cmp source for neovim's Lua API; TODO: remove?
--- TODO: Replace neodev in nvim >= 0.10
+-- TODO: Replace neodev in nvim >= 0.10 (SEO: "newer version of neovim")
 Plug('folke/neodev.nvim')                   -- Full signature help, docs and completion for the nvim lua API
 Plug('saadparwaiz1/cmp_luasnip')            -- nvim-cmp source for LuaSnip
 Plug('tzachar/fuzzy.nvim')                  -- Dependency for cmp-fuzzy-buffer, cmp-fuzzy-path
