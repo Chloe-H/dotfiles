@@ -411,8 +411,7 @@ vim.keymap.set(
 )
 
 --[[
-    HACK: vim-fugitive doesn't respect my 4-way merge conflict wishes for reasons
-    I have yet to uncover, so this is my (likely permanent) workaround.
+    TODO: Remove this keymap? How often do I actually use it?
 
     Process:
         1. Load merge conflicts into quickfix window: `:Git mergetool`
@@ -429,11 +428,46 @@ vim.keymap.set(
 --]]
 vim.keymap.set(
     'n',
-    '<Leader>gfmt',
+    '<Leader>gf4d',
     '<cmd>Gvdiffsplit! | Ghdiffsplit | wincmd j | wincmd J<CR>',
     {
         remap = false,
         desc = '4-way diff for merge conflicts: d2o/d3o to get "ours"/local / "theirs"/remote, respectively',
+    }
+)
+
+--[[
+    vim-fugitive - fugitive objects
+    
+    In a merge conflict:
+
+        :1 - the current file's common ancestor
+        :2 - "ours"; the version of the file from the branch being rebased onto
+        :3 - "theirs"; the version of the file from the branch being rebased
+
+    My new approach:
+
+        :tabedit | Git mergetool - Open first merge conflict in a new tab
+
+        :Gtabedit :1 | Gdiff :2 - diff of common ancestor and "our"
+        :Gtabedit :1 | Gdiff :3 - diff of common ancestor and "theirs"
+--]]
+vim.keymap.set(
+    'n',
+    '<Leader>gfmt',
+    '<cmd>tabedit | Git mergetool<CR>',
+    {
+        remap = false,
+        desc = 'Open first merge conflict in a new tab',
+    }
+)
+vim.keymap.set(
+    'n',
+    '<Leader>gfmc',
+    ':Gtabedit :1 | Gdiff :',
+    {
+        remap = false,
+        desc = 'Start a merge conflict diff (:2 - "ours", :3 - "theirs")',
     }
 )
 
