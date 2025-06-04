@@ -1147,17 +1147,19 @@ local ts_mappings = {
     [ts_leader .. 'l'] = ts_actions.preview_scrolling_right,
 }
 
+local ts_layout_config = {
+    width = function(_, max_columns)
+        local percent_width = 0.8
+        local max_width = 250
+
+        return math.min(math.floor(percent_width * max_columns), max_width)
+    end,
+}
+
 telescope.setup({
     defaults = {
         cycle_layout_list = { 'horizontal', 'center', 'vertical' },
-        layout_config = {
-            width = function(_, max_columns)
-                local percent_width = 0.8
-                local max_width = 250
-
-                return math.min(math.floor(percent_width * max_columns), max_width)
-            end,
-        },
+        layout_config = ts_layout_config,
         layout_strategy = 'vertical',
         mappings = {
             i = ts_mappings,
@@ -1233,6 +1235,7 @@ vim.keymap.set(
 
 
 -- Plugin settings: auto-session
+-- TODO: Can this be moved into the "extensions" section of Telescope's config?
 require('auto-session').setup({
     -- Use git branch to differentiate session name
     auto_session_use_git_branch = true,
@@ -1249,6 +1252,9 @@ require('auto-session').setup({
                 ts_leader .. 'sd'
             },
         },
+
+        -- Doesn't respect Telescope's setup defaults, I guess
+        theme_conf = { layout_config = ts_layout_config },
     },
 })
 
