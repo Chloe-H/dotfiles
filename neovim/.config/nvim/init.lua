@@ -449,7 +449,7 @@ vim.keymap.set(
 
         :tabedit | Git mergetool - Open first merge conflict in a new tab
 
-        :Gtabedit :1 | Gdiff :2 - diff of common ancestor and "our"
+        :Gtabedit :1 | Gdiff :2 - diff of common ancestor and "ours"
         :Gtabedit :1 | Gdiff :3 - diff of common ancestor and "theirs"
 --]]
 vim.keymap.set(
