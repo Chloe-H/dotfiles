@@ -129,6 +129,12 @@ Plug('nvim-treesitter/nvim-treesitter-textobjects') -- Tree-sitter-based node mo
 
 -- LSP stuff
 Plug('neovim/nvim-lspconfig')     -- LSP configurations for neovim's built in LSP client/framework
+--[[
+    TODO: Remove lsp-zero
+
+    The README says it's dead and the new docs walk through the same effective
+    setup without the plugin: https://lsp-zero.netlify.app/docs/tutorial.html
+--]]
 Plug('VonHeikemen/lsp-zero.nvim') -- Bridge between nvim-cmp and nvim-lspconfig
 Plug('j-hui/fidget.nvim')         -- Extensible UI for Neovim notifications and LSP progress messages (for LSPs using nvim's /$progress handler)
 Plug('hrsh7th/nvim-cmp')          -- Auto-completion engine
