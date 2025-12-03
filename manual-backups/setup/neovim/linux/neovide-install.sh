@@ -1,3 +1,5 @@
+# NOTE: -Should- work on Ubuntu and various RHEL versions
+
 # TODO: Add sharkdp/fd? (https://github.com/sharkdp/fd#installation)
 
 if [ -f /etc/os-release ]; then

@@ -1,6 +1,25 @@
 # Setup
 
-1. Install `stow`: `sudo apt install stow`
+**Bootstrapping by OS:**
+
+- **Linux:** Use `manual-backups\setup\neovim\linux\neovide-install.sh` to
+    bootstrap neovim (and, if possible, neovide).
+- **Windows:** Use `manual-backups\setup\neovim\windows\neovide-install.ps1` to
+    boostrap **the entire setup**, including neovim and neovide, **prior to
+    cloning this repo.**
+    - At minimum, get through the git installation before cloning
+    - I haven't yet gotten the script to _run_ on Windows, so just copy/paste
+        commands for now
+
+In any case, update each script as needed after each usage.
+
+Before setting up an SSH key to clone the repo, check the contents of `ssh/` for
+the appropriate key file name.
+
+## Linux
+(Ubuntu, usually)
+
+1. Install `stow`(e.g. `sudo apt install stow`)
 2. Clone this repository to your home directory.
 3. Navigate to the repository's directory, then run `stow {directory}` to
     symlink the configurations in `{directory}`.
@@ -117,18 +136,7 @@ running `git init`.
 
 **Setup scripts:** `manual-backups/setup/neovim/`
 
-⚠️ The setup scripts are not fully tested! ⚠️
-
-I only revisit them when I have to set up a new machine, and I don't always have
-the bandwidth to update the script I used based on its performance. But I
-digress.
-
-Ground-up `init.lua`, by which I mean a Neovim/Neovide configuration file that
-I am making from scratch. At time of writing, my intention is to make something
-that (at least _probably_) works on Windows, native Ubuntu, and Ubuntu in WSL.
-
-I haven't _fully_ tested my setup script, but I've done my best to account for
-various versions of Ubuntu and RHEL.
+⚠️ The setup scripts are not guaranteed to be fully tested! ⚠️
 
 ## `ssh`
 
@@ -228,6 +236,7 @@ instead.
 - **Destination:** `C:\Users\%USERNAME%\Documents\WindowsPowerShell\`
 
 <!-- TODO: Move it to the top level and add symlinking instructions -->
+<!-- `New-Item -ItemType SymbolicLink -Path $env:USERPROFILE\Documents\WindowsPowerShell\ -Target .\TODO` -->
 
 **Notes:**
 - `(custom)` denotes my additions
