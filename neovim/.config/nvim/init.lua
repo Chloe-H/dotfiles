@@ -1724,6 +1724,10 @@ nvim_cmp.setup.cmdline({ ':' }, {
 })
 
 
+-- Plugin settings: neodev
+require('neodev').setup({})
+
+
 -- Plugin settings: mason.nvim, mason-lspconfig.nvim
 require('mason').setup({})
 require('mason-lspconfig').setup({
@@ -1758,10 +1762,6 @@ require('mason-lspconfig').setup({
         end,
     },
 })
-
-
--- Plugin settings: neodev
-require('neodev').setup({})
 
 
 -- Plugin settings: nvim-lspconfig
@@ -1832,6 +1832,30 @@ require('lspconfig.ui.windows').default_options.border = 'rounded'
 
 lspconfig.html.setup({
     filetypes = { 'html', 'htmldjango', },
+})
+
+lspconfig.lua_ls.setup({
+    on_attach = function(client)
+        local root_dir = client.config.root_dir
+
+        -- Note that all lua files in this session will get plugin auto-completion
+        if root_dir:find('dotfiles', 1, true) ~= nil then
+            -- Add plugins to library
+            client.config.settings.Lua.workspace.library = vim.list_extend(
+                client.config.settings.Lua.workspace.library or {},
+                vim.fn.glob(
+                    vim.fn.stdpath('data') .. '/plugged/*/lua',
+                    false,
+                    true
+                )
+            )
+        end
+
+        -- Notify server of changes
+        client.notify('workspace/didChangeConfiguration', {
+            settings = client.config.settings,
+        })
+    end,
 })
 
 lspconfig.mdx_analyzer.setup({
