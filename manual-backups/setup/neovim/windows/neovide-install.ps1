@@ -19,10 +19,7 @@ irm get.scoop.sh | iex
 # Install git for dotfiles, possibly also scoop's extras bucket
 scoop install git
 
-<#
-    Symlink configurations (probably need an elevated shell for this);
-    run these at the repo's root
-#>
+# Run the symlink commands in an elevated PowerShell instance at the repo's root
 New-Item -ItemType SymbolicLink -Path $env:LOCALAPPDATA\nvim\ -Target .\neovim\.config\nvim\
 
 New-Item -ItemType SymbolicLink -Path $env:USERPROFILE\.gitconfigs\ -Target .\git\.gitconfigs\
