@@ -22,6 +22,8 @@ scoop install git
 # Run the symlink commands in an elevated PowerShell instance at the repo's root
 New-Item -ItemType SymbolicLink -Path $env:LOCALAPPDATA\nvim\ -Target .\neovim\.config\nvim\
 
+New-Item -ItemType SymbolicLink -Path $env:USERPROFILE\.gitconfig -Target .\git\.gitconfig
+New-Item -ItemType SymbolicLink -Path $env:USERPROFILE\.gitignore_global -Target .\git\.gitignore_global
 New-Item -ItemType SymbolicLink -Path $env:USERPROFILE\.gitconfigs\ -Target .\git\.gitconfigs\
 New-Item -ItemType SymbolicLink -Path $env:USERPROFILE\.git-templates\ -Target .\git\.git-templates\
 
