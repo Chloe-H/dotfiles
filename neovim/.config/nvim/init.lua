@@ -173,11 +173,11 @@ local path_separator = jit.os == 'Windows' and '\\' or '/'
 -- Try to make PowerShell the default terminal for neovim on Windows
 if jit.os == 'Windows' then
     -- Default to PowerShell 7.x, if available
-    if vim.fn.executable("pwsh") == 1 then
-        vim.opt.shell = "pwsh"
+    if vim.fn.executable('pwsh') == 1 then
+        vim.opt.shell = 'pwsh'
     -- Fall back to PowerShell 5.x, if available
-    elseif vim.fn.executable("powershell") == 1 then
-        vim.opt.shell = "powershell"
+    elseif vim.fn.executable('powershell') == 1 then
+        vim.opt.shell = 'powershell'
     end
 end
 
@@ -491,7 +491,7 @@ vim.keymap.set(
 
 -- Plugin settings: bmessages.nvim
 require('bmessages').setup({
-    split_type = "split",
+    split_type = 'split',
 })
 
 
@@ -653,7 +653,7 @@ vim.keymap.set(
     'n',
     '[tt',
     function()
-        todo_comments.jump_prev({ keywords = { "TODO" } })
+        todo_comments.jump_prev({ keywords = { 'TODO' } })
     end,
     { remap = false, desc = 'Go to previous "TODO" comment' }
 )
@@ -662,7 +662,7 @@ vim.keymap.set(
     'n',
     ']tt',
     function()
-        todo_comments.jump_next({ keywords = { "TODO" } })
+        todo_comments.jump_next({ keywords = { 'TODO' } })
     end,
     { remap = false, desc = 'Go to next "TODO" comment' }
 )
@@ -691,10 +691,10 @@ vim.keymap.set(
     function()
         todo_comments.jump_prev({
             keywords = {
-                "CONFIG",
-                "Plugin settings",
-                "Configuration",
-                "Configurations",
+                'CONFIG',
+                'Plugin settings',
+                'Configuration',
+                'Configurations',
             }
         })
     end,
@@ -707,10 +707,10 @@ vim.keymap.set(
     function()
         todo_comments.jump_next({
             keywords = {
-                "CONFIG",
-                "Plugin settings",
-                "Configuration",
-                "Configurations",
+                'CONFIG',
+                'Plugin settings',
+                'Configuration',
+                'Configurations',
             }
         })
     end,
@@ -1822,7 +1822,7 @@ require('lspconfig.ui.windows').default_options.border = 'rounded'
                 experimental = {
                     configFile = nil,
                     classRegex = {
-                        "<regex>",
+                        '<regex>',
                         ...
                     },
                 },
@@ -1921,7 +1921,7 @@ vim.keymap.set(
     end,
     {
         remap = false,
-        desc = "Temporarily suppress fidget notifications",
+        desc = 'Temporarily suppress fidget notifications',
     }
 )
 
@@ -1963,17 +1963,17 @@ if vim.g.neovide then
         What kinds of particles to produce behind the cursor.
 
         Options at time of writing:
-        "" (default) - no particles
-        "railgun"
-        "torpedo"
-        "pixiedust"
-        "sonicboom"
-        "ripple"
-        "wireframe"
+        '' (default) - no particles
+        'railgun'
+        'torpedo'
+        'pixiedust'
+        'sonicboom'
+        'ripple'
+        'wireframe'
 
         Source: https://neovide.dev/configuration.html#cursor-particles
     --]]
-    vim.g.neovide_cursor_vfx_mode = "pixiedust"
+    vim.g.neovide_cursor_vfx_mode = 'pixiedust'
     -- Number of seconds generated particles should survive
     vim.g.neovide_cursor_vfx_particle_lifetime = 3
     -- Number of generated particles (so what does a fraction mean?)
