@@ -170,15 +170,29 @@ vim.call('plug#end')
 -- Native settings
 local path_separator = jit.os == 'Windows' and '\\' or '/'
 
--- Try to make PowerShell the default terminal for neovim on Windows
-if jit.os == 'Windows' then
-    -- Default to PowerShell 7.x, if available
-    if vim.fn.executable('pwsh') == 1 then
-        vim.opt.shell = 'pwsh'
-    -- Fall back to PowerShell 5.x, if available
-    elseif vim.fn.executable('powershell') == 1 then
-        vim.opt.shell = 'powershell'
-    end
+--[[
+    Default to PowerShell on Windows, if available.
+
+    Prefer PowerShell 7.x (pwsh) over 5.x (powershell).
+
+    This enables opening an elevated PowerShell instance using
+    `:!Start-Process PowerShell -Verb RunAs`
+
+    Sources:
+    - `:help shell-powershell`
+    - https://github.com/neovim/neovim/issues/32921
+    - https://stackoverflow.com/questions/76624410/powershell-as-default-shell-in-neovim
+--]]
+if jit.os == 'Windows' and (
+    vim.fn.executable('pwsh') == 1 or vim.fn.executable('powershell') == 1
+) then
+    vim.opt.shell = vim.fn.executable('pwsh') == 1 and 'pwsh' or 'powershell'
+
+    vim.opt.shellcmdflag = '-Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;'
+    vim.opt.shellredir = '-RedirectStandardOutput %s -NoNewWindow -Wait'
+    vim.opt.shellpipe = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
+    vim.opt.shellquote = ''
+    vim.opt.shellxquote = ''
 end
 
 vim.g.mapleader = ' '
