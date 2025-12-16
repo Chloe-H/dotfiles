@@ -95,10 +95,10 @@ them
 
 ## `bash`
 
-(Relatively) platform-agnostic configurations.
+(Probably) platform-agnostic configurations.
 
-Search for `(custom)` to find my additions to an otherwise generalized bash
-script file.
+Work-specific configurations should be added in `~/.bashrc_work`, which will be
+sourced by `.bashrc`.
 
 ### `bash-ubuntu`
 
