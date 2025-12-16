@@ -138,6 +138,19 @@ running `git init`.
 
 ⚠️ The setup scripts are not guaranteed to be fully tested! ⚠️
 
+## `powershell`
+
+**Symlinking on Windows:** In an elevated PowerShell terminal, run
+```powershell
+New-Item -ItemType Directory -Path $env:USERPROFILE\Documents\WindowsPowerShell\
+
+New-Item -ItemType SymbolicLink `
+    -Path $env:USERPROFILE\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 `
+    -Target .\powershell\.config\powershell\Microsoft.PowerShell_profile.ps1
+```
+
+⚠️ The current stow path (everything after `dotfiles/powershell/`) is untested! ⚠️
+
 ## `ssh`
 
 **Recommendation:** Don't put passwords on SSH keys. I haven't yet taken the
@@ -230,17 +243,6 @@ to it in the Startup programs folder. Open that folder by entering
 
 **Win11:** Move To Desktop doesn't seem to work; use [AutoHotKey](#autohotkey)
 instead.
-
-### `powershell`
-
-- **Destination:** `C:\Users\%USERNAME%\Documents\WindowsPowerShell\`
-
-<!-- TODO: Move it to the top level and add symlinking instructions -->
-<!-- `New-Item -ItemType SymbolicLink -Path $env:USERPROFILE\Documents\WindowsPowerShell\ -Target .\TODO` -->
-
-**Notes:**
-- `(custom)` denotes my additions
-- `(work)` denotes additions for work
 
 ### `sublime-text-2`
 
