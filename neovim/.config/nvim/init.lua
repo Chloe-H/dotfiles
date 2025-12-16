@@ -1940,11 +1940,7 @@ vim.keymap.set(
 )
 
 
--- neovide settings (https://neovide.dev/configuration.html)
---[[
-    TODO: https://neovide.dev/configuration.html#remember-previous-window-size
-    TODO: https://neovide.dev/configuration.html#animate-cursor-blink
---]]
+-- Neovide settings (https://neovide.dev/configuration.html)
 if vim.g.neovide then
     --[[
         Number of seconds the scroll animation takes to complete.
