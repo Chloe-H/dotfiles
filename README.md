@@ -140,7 +140,8 @@ running `git init`.
 
 ## `powershell`
 
-**Symlinking on Windows:** In an elevated PowerShell terminal, run
+**Symlinking on Windows:** In an elevated PowerShell terminal at the repo's
+root, run
 ```powershell
 New-Item -ItemType Directory -Path $env:USERPROFILE\Documents\WindowsPowerShell\
 
