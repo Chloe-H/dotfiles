@@ -170,6 +170,17 @@ vim.call('plug#end')
 -- Native settings
 local path_separator = jit.os == 'Windows' and '\\' or '/'
 
+-- Try to make PowerShell the default terminal for neovim on Windows
+if jit.os == 'Windows' then
+    -- Default to PowerShell 7.x, if available
+    if vim.fn.executable("pwsh") == 1 then
+        vim.opt.shell = "pwsh"
+    -- Fall back to PowerShell 5.x, if available
+    elseif vim.fn.executable("powershell") == 1 then
+        vim.opt.shell = "powershell"
+    end
+end
+
 vim.g.mapleader = ' '
 
 vim.opt.termguicolors = true -- TODO: Do I need this?
