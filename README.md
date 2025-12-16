@@ -184,6 +184,8 @@ nowadays, so it should probably be your go-to. As nice as youtube-dlg is, my
 
 # `manual-backups`
 
+<!-- TODO: Move more of these to stowable directories and add symlinking instructions for Windows -->
+
 I've put these in their own section because they don't actually fit the `stow`
 model.
 
