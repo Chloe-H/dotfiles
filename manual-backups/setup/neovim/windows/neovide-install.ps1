@@ -1,3 +1,5 @@
+#Requires -RunAsAdministrator
+
 <#
     Windows doesn't seem to like running this script, but it's still valuable
     as a reference.
