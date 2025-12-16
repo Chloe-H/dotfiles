@@ -77,13 +77,13 @@ Plug('scrooloose/nerdtree') -- Tried and true
 Plug('stevearc/oil.nvim')   -- Edit your filesystem like it's a vim buffer
 
 -- Search
+-- TODO: Get rid of fzf?
 Plug( -- Bare bones (n)vim integration for fzf, defaults to using fzf binary in $PATH, if available
     'junegunn/fzf',
     -- (Optional) Post-update hook to get latest version of fzf binary
     { ['do'] = vim.fn['fzf#install'], }
 )
 Plug('junegunn/fzf.vim')              -- Native (n)vim commands that leverage fzf
--- TODO: Trying out, may replace fzf/fzf.vim
 Plug('nvim-lua/plenary.nvim')         -- Dependency for telescope.nvim / common library
 Plug('nvim-telescope/telescope.nvim') -- Highly extensible fuzzy finder
 Plug(                                 -- Recommended native telescope sorter (whatever that means); improves sort performance
