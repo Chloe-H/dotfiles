@@ -247,6 +247,8 @@ to it in the Startup programs folder. Open that folder by entering
 **Win11:** Move To Desktop doesn't seem to work; use [AutoHotKey](#autohotkey)
 instead.
 
+<!-- TODO: `New-Item -ItemType SymbolicLink -Path ${env:USERPROFILE}\AppData -Target .\TODO` -->
+
 ### `sublime-text-2`
 
 - **Install:** [Sublime Text 2](https://www.sublimetext.com/2)
