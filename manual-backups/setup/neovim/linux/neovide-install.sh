@@ -40,7 +40,7 @@ if [ -f /etc/os-release ]; then
 
         sudo snap install universal-ctags # Untested
 
-        # Finally, install neovim
+        # Install neovim
         # If the installation fails, update the script according to
         # https://github.com/neovim/neovim/wiki/Installing-Neovim#ubuntu
         sudo apt-get install -y ninja-build gettext cmake unzip curl
@@ -53,6 +53,10 @@ if [ -f /etc/os-release ]; then
         sudo make install
         cd ${setup_dir}
         unset dev_dir setup_dir
+
+        # Install neovide (https://neovide.dev)
+        # TODO: Try to get neovide working on Ubuntu
+        sudo snap install neovide
 
     # OS: Red Hat Enterprise Linux
     elif [ ${OS_ID} == 'rhel' ]; then # Everything in here is untested
@@ -114,7 +118,7 @@ if [ -f /etc/os-release ]; then
             unset dev_dir setup_dir
         fi
 
-        # Finally, install neovim
+        # Install neovim
         sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
         sudo yum install -y neovim python3-neovim
 
