@@ -16,6 +16,7 @@ if [ -f /etc/os-release ]; then
 
     # OS: Ubuntu
     if [ ${OS_ID} == 'ubuntu' ]; then
+        sudo apt install tmux
         sudo apt-get install -y git
 
         # Install node, npm for mason.nvim (if nothing else)
@@ -60,6 +61,7 @@ if [ -f /etc/os-release ]; then
 
     # OS: Red Hat Enterprise Linux
     elif [ ${OS_ID} == 'rhel' ]; then # Everything in here is untested
+        sudo yum install tmux
         sudo yum install -y git
 
         # Install ripgrep
