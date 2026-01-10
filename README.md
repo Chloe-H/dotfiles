@@ -2,9 +2,11 @@
 
 **Bootstrapping by OS:**
 
-- **Linux:** Use `manual-backups\setup\neovim\linux\neovide-install.sh` to
-    bootstrap neovim (and, if possible, neovide).
-- **Windows:** Use `manual-backups\setup\neovim\windows\neovide-install.ps1` to
+- **Linux:** Use `manual-backups/setup/bootstrap-linux.sh` to bootstrap the
+    system
+    - **Note:** The script is in a weird spot right now on account of needing
+      all the dotfiles to already be stowed before it'll fully work
+- **Windows:** Use `manual-backups/setup/bootstrap-windows-neovide.ps1` to
     boostrap **the entire setup**, including neovim and neovide, **prior to
     cloning this repo.**
     - At minimum, get through the git installation before cloning

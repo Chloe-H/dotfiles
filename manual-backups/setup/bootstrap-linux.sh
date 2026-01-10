@@ -16,7 +16,8 @@ if [ -f /etc/os-release ]; then
 
     # OS: Ubuntu
     if [ ${OS_ID} == 'ubuntu' ]; then
-        sudo apt install tmux tree
+        # TODO: Add stow commands to script to make it more bootstrap-y
+        sudo apt install stow tmux tree
         sudo apt-get install -y git
 
         # Install node, npm for mason.nvim (if nothing else)
