@@ -16,7 +16,7 @@ if [ -f /etc/os-release ]; then
 
     # OS: Ubuntu
     if [ ${OS_ID} == 'ubuntu' ]; then
-        sudo apt install tmux
+        sudo apt install tmux tree
         sudo apt-get install -y git
 
         # Install node, npm for mason.nvim (if nothing else)
