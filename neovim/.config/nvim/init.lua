@@ -1402,10 +1402,6 @@ vim.keymap.set(
 )
 
 
--- Plugin settings: mdx.nvim
-require('mdx').setup()
-
-
 -- Plugin settings: nvim-treesitter
 
 -- Parsers to install by default
