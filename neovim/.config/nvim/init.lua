@@ -1449,49 +1449,10 @@ require('nvim-treesitter.config').setup({
 
 })
 
-local ts_utils = require('nvim-treesitter.ts_utils')
-
-local goto_sibling_node = function(goto_next, goto_end)
-    -- Get next or previous node
-    local get_node = goto_next and ts_utils.get_next_node or ts_utils.get_previous_node
-
-    return function()
-        local current_node = ts_utils.get_node_at_cursor()
-
-        ts_utils.goto_node(get_node(current_node, true, true), goto_end, false)
-    end
-end
-
-vim.keymap.set(
-    'n',
-    ']n',
-    goto_sibling_node(true, false),
-    { desc = 'Go to start of next sibling node' }
-)
-vim.keymap.set(
-    'n',
-    ']]n',
-    goto_sibling_node(true, true),
-    { desc = 'Go to end of next sibling node' }
-)
-vim.keymap.set(
-    'n',
-    '[n',
-    goto_sibling_node(false, false),
-    { desc = 'Go to start of previous sibling node' }
-)
-vim.keymap.set(
-    'n',
-    '[[n',
-    goto_sibling_node(false, true),
-    { desc = 'Go to end of previous sibling node' }
-)
-
 -- Tree-sitter-based folding
 vim.opt.foldmethod = 'expr'
 vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 vim.opt.foldenable = false -- Set all folds to be open by default
-
 
 
 -- Plugin settings: nvim-treesitter-textobjects
