@@ -20,20 +20,7 @@ Plug('numtostr/comment.nvim')     -- (Un)comment with key binds
     (so, e.g., if the cursor is in a JSX block in a JavaScript file, this plugin
     will ensure that comment.nvim uses the correct syntax when adding comments).
 --]]
-Plug(
-    'JoosepAlviste/nvim-ts-context-commentstring',
-    {
-        --[[
-            HACK: Pin version to avoid breaking changes described here:
-            https://github.com/JoosepAlviste/nvim-ts-context-commentstring/issues/82
-
-            TODO: Update to latest and fix all configurations once you have
-            nvim ≥ 0.9.4 (search for "Plugin settings: nvim-ts-context-commentstring")
-            SEO: "newer version of neovim"
-        --]]
-        commit = '6c30f3c8915d7b31c3decdfe6c7672432da1809d',
-    }
-)
+Plug('JoosepAlviste/nvim-ts-context-commentstring')
 Plug('foosoft/vim-argwrap')         -- Quickly expand/collapse lists of things (e.g. function arg lists)
 Plug('windwp/nvim-autopairs')       -- Autopairs plugin (insert/delete brackets, parentheses, quotes in pairs)
 Plug('milkypostman/vim-togglelist') -- Toggle location list and quickfix list with key binds (very old plugin)
@@ -106,7 +93,12 @@ Plug(
     { ['do'] = ':TSUpdate' }
 )
 -- TODO: Try https://github.com/wellle/context.vim?
-Plug('nvim-treesitter/nvim-treesitter-textobjects') -- Tree-sitter-based node movement, selection, and some other stuff
+Plug(                             -- Tree-sitter-based node movement, selection, and some other stuff
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    {
+        branch = 'main',
+    }
+) 
 Plug('windwp/nvim-ts-autotag')    -- Auto-pairing and renaming of HTML tags (achieved by leveraging treesitter)
 
 -- LSP stuff
@@ -729,6 +721,10 @@ require('Comment.ft')
     -- Set line and block commentstring for Django HTML template files
     -- TODO: Fix inconsistency (is tree-sitter "detecting" HTML inside of htmldjango?)
     .set('htmldjango', {'{# %s #}', '{% comment %} %s {% endcomment %}'})
+
+
+-- Plugin settings: nvim-ts-context-commentstring
+require('ts_context_commentstring').setup({})
 
 
 -- Plugin settings: vim-argwrap
@@ -1410,41 +1406,23 @@ vim.keymap.set(
 require('mdx').setup()
 
 
--- Plugin settings: nvim-treesitter, nvim-treesitter-textobjects
-require('nvim-treesitter.configs').setup({
-    -- Parsers to install by default
-    ensure_installed = {
-        'c',
-        'html',
-        'htmldjango',
-        'javascript',
-        'lua',
-        'python',
-        'query',
-        'tsx',
-        'typescript',
-        'vim',
-        'vimdoc',
-    },
+-- Plugin settings: nvim-treesitter
 
-    --[[
-        Automatically install missing parsers when entering buffer
-        Recommendation: disable if you don't have tree-sitter CLI installed locally
-    -- ]]
-    auto_install = false,
-
-
-    -- Plugin settings: nvim-ts-context-commentstring
-    context_commentstring = {
-        enable = true,
-        --[[
-            PERF: Only trigger the commentstring calculation as needed
-            Start by disabling the default autocmd
-            Source: https://github.com/JoosepAlviste/nvim-ts-context-commentstring/wiki/Integrations/9a79249fbecad1c0f86457ae8fdfc0cc39f5317b
-        --]]
-        enable_autocmd = false,
-    },
-
+-- Parsers to install by default
+require('nvim-treesitter').install({
+    'c',
+    'html',
+    'htmldjango',
+    'javascript',
+    'lua',
+    'python',
+    'query',
+    'tsx',
+    'typescript',
+    'vim',
+    'vimdoc',
+})
+require('nvim-treesitter.config').setup({
     highlight = {
         enable = true,
     },
@@ -1469,44 +1447,6 @@ require('nvim-treesitter.configs').setup({
         disable = { 'c', 'tsx', }, -- TODO: Figure out why React files don't indent correctly (TS parser issue?)
     },
 
-    -- Plugin settings: nvim-treesitter-textobjects
-    textobjects = {
-        select = {
-            enable = true,
-            lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
-            keymaps = {
-                -- You can use the capture groups defined in textobjects.scm
-                ['aa'] = { query = '@parameter.outer', desc = 'Select around function argument (outer)', },
-                ['ia'] = { query = '@parameter.inner', desc = 'Select function argument (inner)', },
-                ['af'] = { query = '@function.outer', desc = 'Select around function definition (outer)', },
-                ['if'] = { query = '@function.inner', desc = 'Select function interior/body (inner)', },
-                ['ac'] = { query = '@class.outer', desc = 'Select around class definition (outer)', },
-                ['ic'] = { query = '@class.inner', desc = 'Select class interior/body (inner)', },
-            },
-        },
-        move = {
-            enable = true,
-            set_jumps = true,
-            goto_next_start = {
-                [']fo'] = { query = '@function.outer', desc = 'Go to start of next function (outer)', },
-                [']fi'] = { query = '@function.inner', desc = 'Go to start of next function (inner)', },
-                [']]c'] = { query = '@class.outer', desc = 'Go to start of next class (outer)', },
-                [']]b'] = { query = '@block.outer', desc = 'Go to start of next block (outer)', },
-            },
-            goto_next_end = {
-                [']]f'] = { query = '@function.outer', desc = 'Go to end of next function (outer)', },
-            },
-            goto_previous_start = {
-                ['[fo'] = { query = '@function.outer', desc = 'Go to start of previous function (outer)', },
-                ['[fi'] = { query = '@function.inner', desc = 'Go to start of previous function (inner)', },
-                ['[[c'] = { query = '@class.outer', desc = 'Go to start of previous class (outer)', },
-                ['[[b'] = { query = '@block.outer', desc = 'Go to start of previous block (outer)', },
-            },
-            goto_previous_end = {
-                ['[[f'] = { query = '@function.outer', desc = 'Go to end of previous function (outer)', },
-            },
-        },
-    },
 })
 
 local ts_utils = require('nvim-treesitter.ts_utils')
@@ -1553,8 +1493,156 @@ vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 vim.opt.foldenable = false -- Set all folds to be open by default
 
 
+
+-- Plugin settings: nvim-treesitter-textobjects
+require('nvim-treesitter-textobjects').setup({
+    select = {
+        -- Automatically jump forward to textobj, similar to targets.vim
+        lookahead = true,
+    },
+    move = {
+        set_jumps = true,
+    }
+})
+
+-- Select keymappings
+local ts_textobjects_select = require('nvim-treesitter-textobjects.select')
+
+vim.keymap.set(
+    { 'x', 'o' },
+    'aa',
+    function()
+        ts_textobjects_select.select_textobject('@parameter.outer', 'textobjects')
+    end,
+    { desc = 'Select around function argument (outer)', }
+)
+vim.keymap.set(
+    { 'x', 'o' },
+    'ia',
+    function()
+        ts_textobjects_select.select_textobject('@parameter.inner', 'textobjects')
+    end,
+    { desc = 'Select function argument (inner)', }
+)
+vim.keymap.set(
+    { 'x', 'o' },
+    'af',
+    function()
+        ts_textobjects_select.select_textobject('@function.outer', 'textobjects')
+    end,
+    { desc = 'Select around function definition (outer)', }
+)
+vim.keymap.set(
+    { 'x', 'o' },
+    'if',
+    function()
+        ts_textobjects_select.select_textobject('@function.inner', 'textobjects')
+    end,
+    { desc = 'Select function interior/body (inner)', }
+)
+vim.keymap.set(
+    { 'x', 'o' },
+    'ac',
+    function()
+        ts_textobjects_select.select_textobject('@class.outer', 'textobjects')
+    end,
+    { desc = 'Select around class definition (outer)', }
+)
+vim.keymap.set(
+    { 'x', 'o' },
+    'ic',
+    function()
+        ts_textobjects_select.select_textobject('@class.inner', 'textobjects')
+    end,
+    { desc = 'Select class interior/body (inner)', }
+)
+
+-- Move keymappings
+local ts_textobjects_move = require('nvim-treesitter-textobjects.move')
+
+vim.keymap.set(
+    { 'n', 'x', 'o' },
+    ']fo',
+    function()
+        ts_textobjects_move.goto_next_start('@function.outer', 'textobjects')
+    end,
+    { desc = 'Go to start of next function (outer)', }
+)
+vim.keymap.set(
+    { 'n', 'x', 'o' },
+    ']fi',
+    function()
+        ts_textobjects_move.goto_next_start('@function.inner', 'textobjects')
+    end,
+    { desc = 'Go to start of next function (inner)', }
+)
+vim.keymap.set(
+    { 'n', 'x', 'o' },
+    ']]c',
+    function()
+        ts_textobjects_move.goto_next_start('@class.outer', 'textobjects')
+    end,
+    { desc = 'Go to start of next class (outer)', }
+)
+vim.keymap.set(
+    { 'n', 'x', 'o' },
+    ']]b',
+    function()
+        ts_textobjects_move.goto_next_start('@block.outer', 'textobjects')
+    end,
+    { desc = 'Go to start of next block (outer)', }
+)
+vim.keymap.set(
+    { 'n', 'x', 'o' },
+    ']]f',
+    function()
+        ts_textobjects_move.goto_next_end('@function.outer', 'textobjects')
+    end,
+    { desc = 'Go to end of next function (outer)', }
+)
+vim.keymap.set(
+    { 'n', 'x', 'o' },
+    '[fo',
+    function()
+        ts_textobjects_move.goto_previous_start('@function.outer', 'textobjects')
+    end,
+    { desc = 'Go to start of previous function (outer)', }
+)
+vim.keymap.set(
+    { 'n', 'x', 'o' },
+    '[fi',
+    function()
+        ts_textobjects_move.goto_previous_start('@function.inner', 'textobjects')
+    end,
+    { desc = 'Go to start of previous function (inner)', }
+)
+vim.keymap.set(
+    { 'n', 'x', 'o' },
+    '[[c',
+    function()
+        ts_textobjects_move.goto_previous_start('@class.outer', 'textobjects')
+    end,
+    { desc = 'Go to start of previous class (outer)', }
+)
+vim.keymap.set(
+    { 'n', 'x', 'o' },
+    '[[b',
+    function()
+        ts_textobjects_move.goto_previous_start('@block.outer', 'textobjects')
+    end,
+    { desc = 'Go to start of previous block (outer)', }
+)
+vim.keymap.set(
+    { 'n', 'x', 'o' },
+    '[[f',
+    function()
+        ts_textobjects_move.goto_next_end('@function.outer', 'textobjects')
+    end,
+    { desc = 'Go to end of previous function (outer)', }
+)
+
+
 -- Plugin settings: nvim-ts-autotag
--- 
 --[[
     NOTE: nvim-ts-autotag setup must occur -after- nvim-treesitter
     Source: https://github.com/windwp/nvim-ts-autotag/issues/33
