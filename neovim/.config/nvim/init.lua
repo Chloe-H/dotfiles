@@ -36,25 +36,6 @@ Plug(
 )
 Plug('foosoft/vim-argwrap')         -- Quickly expand/collapse lists of things (e.g. function arg lists)
 Plug('windwp/nvim-autopairs')       -- Autopairs plugin (insert/delete brackets, parentheses, quotes in pairs)
-Plug(                               -- Auto-pairing and renaming of HTML tags (achieved by leveraging treesitter)
-    'windwp/nvim-ts-autotag',
-    {
-        --[[
-            HACK: Pin version to avoid breaking changes
-            TODO: Update to latest and fix configurations (as needed?) once you
-            have nvim ≥ 0.9.4
-            SEO: "newer version of neovim"
-
-            HACK: Fix for auto-pairing in htmldjango files:
-
-            in `nvim-ts-autotag/lua/nvim-ts-autotag/internal.lua`,
-            remove 'htmldjango' from `HBS_TAG`
-
-            Source: https://github.com/windwp/nvim-ts-autotag/issues/127#issuecomment-1670026211
-        --]]
-        commit = '531f48334c422222aebc888fd36e7d109cb354cd',
-    }
-)
 Plug('milkypostman/vim-togglelist') -- Toggle location list and quickfix list with key binds (very old plugin)
 Plug('nvim-lualine/lualine.nvim')
 
@@ -126,6 +107,7 @@ Plug(
 )
 -- TODO: Try https://github.com/wellle/context.vim?
 Plug('nvim-treesitter/nvim-treesitter-textobjects') -- Tree-sitter-based node movement, selection, and some other stuff
+Plug('windwp/nvim-ts-autotag')    -- Auto-pairing and renaming of HTML tags (achieved by leveraging treesitter)
 
 -- LSP stuff
 Plug('neovim/nvim-lspconfig')     -- LSP configurations for neovim's built in LSP client/framework
@@ -469,7 +451,7 @@ vim.keymap.set(
 
 --[[
     vim-fugitive - fugitive objects
-    
+
     In a merge conflict:
 
         :1 - the current file's common ancestor
@@ -1428,7 +1410,7 @@ vim.keymap.set(
 require('mdx').setup()
 
 
--- Plugin settings: nvim-treesitter, nvim-treesitter-textobjects, nvim-ts-autotag
+-- Plugin settings: nvim-treesitter, nvim-treesitter-textobjects
 require('nvim-treesitter.configs').setup({
     -- Parsers to install by default
     ensure_installed = {
@@ -1451,18 +1433,6 @@ require('nvim-treesitter.configs').setup({
     -- ]]
     auto_install = false,
 
-    --[[
-        Plugin settings: nvim-ts-autotag
-        Configure automatic closing and renaming of tags by nvim-ts-autotag;
-        it's unclear to me how tightly nvim-ts-autotag is coupled with
-        nvim-treesitter.
-
-        TODO: Probably goes away with autotag upgrade
-        SEO: "newer version of neovim"?
-    --]]
-    autotag = {
-        enable = true,
-    },
 
     -- Plugin settings: nvim-ts-context-commentstring
     context_commentstring = {
@@ -1581,6 +1551,23 @@ vim.keymap.set(
 vim.opt.foldmethod = 'expr'
 vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 vim.opt.foldenable = false -- Set all folds to be open by default
+
+
+-- Plugin settings: nvim-ts-autotag
+-- 
+--[[
+    NOTE: nvim-ts-autotag setup must occur -after- nvim-treesitter
+    Source: https://github.com/windwp/nvim-ts-autotag/issues/33
+
+    NOTE: htmldjango hack -may- be outdated
+    HACK: Fix for auto-pairing in htmldjango files:
+
+    in `nvim-ts-autotag/lua/nvim-ts-autotag/internal.lua`,
+    remove 'htmldjango' from `HBS_TAG`
+
+    Source: https://github.com/windwp/nvim-ts-autotag/issues/127#issuecomment-1670026211
+--]]
+require('nvim-ts-autotag').setup({})
 
 
 -- Plugin settings: lsp-zero.nvim
