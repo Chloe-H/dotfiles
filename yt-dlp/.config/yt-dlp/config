@@ -1,5 +1,9 @@
 # Lines starting with # are comments
 
+# Enable EJS script downloads
+# Source: https://github.com/yt-dlp/yt-dlp/wiki/EJS#option-2-enable-ejs-script-downloads-from-npm
+--remote-components ejs:npm
+
 # Use Firefox cookies for age-restricted videos
 --cookies-from-browser "firefox::Primary Google"
 
